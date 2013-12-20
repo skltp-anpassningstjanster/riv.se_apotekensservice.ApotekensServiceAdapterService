@@ -18,9 +18,9 @@
 	<name>${project.artifactId}</name>
 
 	<scm>
-		<connection>http://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/ApotekensServiceAdapterService/trunk</connection>
-		<developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/ApotekensServiceAdapterService/trunk</developerConnection>
-		<url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/ApotekensServiceAdapterService/trunk</url>
+		<connection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/ApotekensServiceAdapterService/tags/1.6.7-RB</connection>
+		<developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/ApotekensServiceAdapterService/branches/1.6.7-RB</developerConnection>
+		<url>https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/ApotekensServiceAdapterService/tags/1.6.7-RB</url>
 	</scm>
 
 	<properties>
@@ -52,7 +52,7 @@
 			<dependency>
 				<groupId>se.inera.pascal.ticket</groupId>
 				<artifactId>TicketMachine</artifactId>
-				<version>1.1.0</version>
+				<version>1.1.1-RC1</version>
 			</dependency>
 
 			<!-- soi toolkit dependencies -->
