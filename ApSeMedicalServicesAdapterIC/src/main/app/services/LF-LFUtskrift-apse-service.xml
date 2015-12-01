@@ -24,7 +24,7 @@ version="EE-3.4.1">
 				connector-ref="soitoolkit-http-connector" 
 				exchange-pattern="request-response"
 				responseTransformer-refs="logRespOut"
-				transformer-refs="logReqIn" doc:name="HTTP">
+				transformer-refs="create-correlation-id logReqIn" doc:name="HTTP">
 			</http:inbound-endpoint>
 			
 	
@@ -32,7 +32,7 @@ version="EE-3.4.1">
 				connector-ref="soitoolkit-https-connector" 
 				exchange-pattern="request-response"
 				responseTransformer-refs="logRespOut"
-				transformer-refs="logReqIn" doc:name="HTTP">
+				transformer-refs="create-correlation-id logReqIn" doc:name="HTTP">
 			</https:inbound-endpoint>
         	
         </composite-source>
@@ -66,14 +66,14 @@ version="EE-3.4.1">
 				connector-ref="soitoolkit-http-connector" 
 				exchange-pattern="request-response"
 				responseTransformer-refs="logRespOut"
-				transformer-refs="logReqIn" doc:name="HTTP">
+				transformer-refs="create-correlation-id logReqIn" doc:name="HTTP">
 			</http:inbound-endpoint>
 			
 			<https:inbound-endpoint address="${inbound.endpoint.https.env2.apotekensservice.lf.LFUtskrift}"
 				connector-ref="soitoolkit-https-connector" 
 				exchange-pattern="request-response"
 				responseTransformer-refs="logRespOut"
-				transformer-refs="logReqIn" doc:name="HTTP">
+				transformer-refs="create-correlation-id logReqIn" doc:name="HTTP">
 			</https:inbound-endpoint>
         
         </composite-source>	

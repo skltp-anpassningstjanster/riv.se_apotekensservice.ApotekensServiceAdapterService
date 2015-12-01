@@ -116,9 +116,7 @@
    		<spring:property name="reversible" value="true"/>
 	</custom-transformer>
 
-	<custom-transformer class="org.soitoolkit.commons.mule.log.correlationid.CreateCorrelationIdTransformer" name="createCorrId"/>
- 	<custom-transformer class="org.soitoolkit.commons.mule.log.correlationid.SaveCorrelationIdTransformer" name="saveCorrId"/>
-	<custom-transformer class="org.soitoolkit.commons.mule.log.correlationid.RestoreCorrelationIdTransformer" name="restoreCorrId"/>
+	<custom-transformer class="se.skltp.adapterservices.apse.apsemedicalservicesadapteric.mule.UseOrCreateCorrelationIdTranformer" name="create-correlation-id"/>
 
     <custom-transformer class="org.soitoolkit.commons.mule.soap.CreateSoapFaultIfExceptionTransformer" name="createSoapFaultIfException"/>
 

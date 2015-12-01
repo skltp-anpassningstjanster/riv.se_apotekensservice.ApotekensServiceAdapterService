@@ -23,13 +23,13 @@
 			connector-ref="soitoolkit-http-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
-			transformer-refs="logReqIn">
+			transformer-refs="create-correlation-id logReqIn">
 		</http:inbound-endpoint>
 		<https:inbound-endpoint address="${inbound.endpoint.https.apotekensservice.lf.AterkallaSamtyckeWebb}"
 			connector-ref="soitoolkit-https-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
-			transformer-refs="logReqIn">
+			transformer-refs="create-correlation-id logReqIn">
 		</https:inbound-endpoint>
 
 		</composite-source>
@@ -62,13 +62,13 @@
 			connector-ref="soitoolkit-http-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
-			transformer-refs="logReqIn">
+			transformer-refs="create-correlation-id logReqIn">
 		</http:inbound-endpoint>
 		<https:inbound-endpoint address="${inbound.endpoint.https.env2.apotekensservice.lf.AterkallaSamtyckeWebb}"
 			connector-ref="soitoolkit-https-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
-			transformer-refs="logReqIn">
+			transformer-refs="create-correlation-id logReqIn">
 		</https:inbound-endpoint>
 		</composite-source>
 
