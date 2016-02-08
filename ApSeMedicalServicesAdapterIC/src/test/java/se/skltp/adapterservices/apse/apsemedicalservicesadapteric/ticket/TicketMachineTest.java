@@ -37,6 +37,8 @@ public class TicketMachineTest {
     @Test
     public void testProduceCompleteSamlTicketFromArgosHeader() throws TicketMachineException {
 
+    System.setProperty("file.encoding", "UTF-8");
+    
 	String forskrivarkod = "1111152";
 	String legitimationskod = "1111111";
 	String fornamn = "Lars";
@@ -66,7 +68,6 @@ public class TicketMachineTest {
 
 	String ticket = new TicketMachine().produceSamlTicket(argosHeader);
 	
-
 	assertThat(ticket, containsString("<saml2:Issuer>pascalonline</saml2:Issuer>"));
 	assertThat(ticket, containsString("Lakare"));
 
