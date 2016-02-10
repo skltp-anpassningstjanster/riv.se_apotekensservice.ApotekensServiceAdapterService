@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4"
+           xmlns:lf5="urn:riv:se.apotekensservice:lf:5"
+           xmlns:lf4="urn:riv:se.apotekensservice:lf:4"
+           targetNamespace="urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="4.0">
+
+        
+    <xs:import namespace="urn:riv:se.apotekensservice:lf:5" schemaLocation="../../core_components/se.apotekensservice_lf_5.0.xsd"/>
+    <xs:import namespace="urn:riv:se.apotekensservice:lf:4" schemaLocation="../../core_components/se.apotekensservice_lf_4.0.xsd"/>
+
+    <!-- Globala element: Metod parametrar -->
+    <xs:element name="LasLFForskrivare" type="LasLFForskrivareRequestType"/>
+    <xs:element name="LasLFForskrivareResponse" type="LasLFForskrivareResponseType"/>
+
+    <!-- Fel -->
+    <xs:element name="ApplicationException" type="lf4:ApplicationException"/>
+    <xs:element name="SystemException" type="lf4:SystemException"/>
+
+    <xs:complexType name="LasLFForskrivareRequestType">
+        <xs:sequence>
+            <xs:element name="atkomsttyp" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Treställig kod för typ av åtkomst. Tillåtna värden:
+                        <itemizedlist>
+                            <listitem>ENG - Engångssamtycke</listitem>
+                            <listitem>SAM - Tillsvidaresamtycke</listitem>
+                            <listitem>NOD - Nödåtkomst</listitem>
+                        </itemizedlist>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <xs:element name="klientinformation" type="lf4:KlientinformationRequest" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Information om anropande system.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <xs:element name="personnummer" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Giltigt personnummer för patient vars läkemedelsförteckning skall hämtas.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <xs:element name="personnummerForskrivare" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Giltigt personnummer för förskrivare som utför sökning. Skall vara
+                        identisk med användare i klientinformation.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+                
+            <xs:element name="arbetsplatsnamn">
+                <xs:annotation>
+                    <xs:documentation>Namn på förskrivarens arbetsplats.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="35"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            
+            <xs:element name="arbetsplatspostort">
+                <xs:annotation>
+                    <xs:documentation>Postort för arbetsplats där läsning utfördes.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="28"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            
+            <xs:element name="arbetsplatsid">
+                <xs:annotation>
+                    <xs:documentation>Arbetsplatsens id.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="64"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+                            
+            <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="LasLFForskrivareResponseType">
+        <xs:sequence>
+            <xs:element name="lakemedelsforteckning" type="lf5:ReceptexpeditionsradResponse" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Patientens läkemedelsförteckning. Om patienten saknar poster i
+                        läkemedelsförteckningen så returneras en tom lista.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <xs:element name="patient" type="lf5:PatientResponse" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Information om patienten vars läkemedelsförteckning man hämtat. Om
+                        patienten är markerad som Avliden så returneras ej läkemedelsförteckning.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <xs:element name="varningsnivaUppnadd" type="xs:boolean" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Flagga som anger om förskrivarens antal läsningar det senaste dygnet
+                        överskridit varningsnivå. Sant om varningsnivå har uppnåtts, annars
+                        falskt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+                            
+            <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+

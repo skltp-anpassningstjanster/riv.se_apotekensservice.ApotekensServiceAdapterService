@@ -15,35 +15,34 @@
 		http://www.mulesoft.org/schema/mule/https     http://www.mulesoft.org/schema/mule/https/current/mule-https.xsd
 	">
 
-	<flow name="Bridged-ApotekenService-SkapaDosunderlagVard">
+	<flow name="Bridged-ApotekenService-KorrigeraOrdinationVard.v5">
 
 		<composite-source>
-		<http:inbound-endpoint address="${inbound.endpoint.http.apotekensservice.or.SkapaDosunderlagVard}"
+		<http:inbound-endpoint address="${inbound.endpoint.http.apotekensservice.or.KorrigeraOrdinationVard.v5}"
 			connector-ref="soitoolkit-http-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
 			transformer-refs="create-correlation-id logReqIn">
 		</http:inbound-endpoint>
-		<https:inbound-endpoint address="${inbound.endpoint.https.apotekensservice.or.SkapaDosunderlagVard}"
+		<https:inbound-endpoint address="${inbound.endpoint.https.apotekensservice.or.KorrigeraOrdinationVard.v5}"
 			connector-ref="soitoolkit-https-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
 			transformer-refs="create-correlation-id logReqIn">
 		</https:inbound-endpoint>
-
 		</composite-source>
 
 		<cxf:proxy-service
-			namespace="urn:riv:se.apotekensservice:or:SkapaDosunderlagVard:1:rivtabp21"
+			namespace="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVard:5:rivtabp21"
 			payload="envelope" 
-			service="SkapaDosunderlagVardResponderService"
-			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC1/interactions/SkapaDosunderlagVardInteraction/SkapaDosunderlagVardInteraction_1.1_rivtabp21.wsdl" />
-		
+			service="KorrigeraOrdinationVardResponderService"
+			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC1/interactions/KorrigeraOrdinationVardInteraction/KorrigeraOrdinationVardInteraction_5.0_rivtabp21.wsdl" />
+			
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
 		
 		<https:outbound-endpoint connector-ref="soitoolkit-https-connector"
-			address="${outbound.endpoint.apotekensservice.or.SkapaDosunderlagVard}"
+			address="${outbound.endpoint.apotekensservice.or.KorrigeraOrdinationVard.v5}"
 			exchange-pattern="request-response" 
 			responseTimeout="${SERVICE_TIMEOUT_MS}"
 			transformer-refs="addContentTypeXmlUtf8 logReqOut" 
@@ -54,34 +53,35 @@
 		
 	</flow>
 	
-	<flow name="Bridged-ApotekenService-SkapaDosunderlagVard-env2">
+	<flow name="Bridged-ApotekenService-KorrigeraOrdinationVard.v5-env2">
 
 		<composite-source>
-		<http:inbound-endpoint address="${inbound.endpoint.http.env2.apotekensservice.or.SkapaDosunderlagVard}"
+		<http:inbound-endpoint address="${inbound.endpoint.http.env2.apotekensservice.or.KorrigeraOrdinationVard.v5}"
 			connector-ref="soitoolkit-http-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
 			transformer-refs="create-correlation-id logReqIn">
 		</http:inbound-endpoint>
-		<https:inbound-endpoint address="${inbound.endpoint.https.env2.apotekensservice.or.SkapaDosunderlagVard}"
+		<https:inbound-endpoint address="${inbound.endpoint.https.env2.apotekensservice.or.KorrigeraOrdinationVard.v5}"
 			connector-ref="soitoolkit-https-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
 			transformer-refs="create-correlation-id logReqIn">
 		</https:inbound-endpoint>
+
 		</composite-source>
 
 		<cxf:proxy-service
-			namespace="urn:riv:se.apotekensservice:or:SkapaDosunderlagVard:1:rivtabp21"
+			namespace="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVard:5:rivtabp21"
 			payload="envelope" 
-			service="SkapaDosunderlagVardResponderService"
-			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC1/interactions/SkapaDosunderlagVardInteraction/SkapaDosunderlagVardInteraction_1.1_rivtabp21.wsdl" />
+			service="KorrigeraOrdinationVardResponderService"
+			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC1/interactions/KorrigeraOrdinationVardInteraction/KorrigeraOrdinationVardInteraction_5.0_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
 		
 		<https:outbound-endpoint connector-ref="soitoolkit-https-connector"
-			address="${outbound.endpoint.env2.apotekensservice.or.SkapaDosunderlagVard}"
+			address="${outbound.endpoint.env2.apotekensservice.or.KorrigeraOrdinationVard.v5}"
 			exchange-pattern="request-response" 
 			responseTimeout="${SERVICE_TIMEOUT_MS}"
 			transformer-refs="addContentTypeXmlUtf8 logReqOut" 

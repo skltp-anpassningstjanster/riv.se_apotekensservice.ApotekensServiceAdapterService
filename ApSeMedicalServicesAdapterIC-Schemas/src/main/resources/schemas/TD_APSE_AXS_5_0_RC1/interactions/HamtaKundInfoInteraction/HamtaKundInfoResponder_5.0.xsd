@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:axs="urn:riv:se.apotekensservice:axs:4" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5" version="5.0">
+  <xs:import schemaLocation="../../core_components/se.apotekensservice_axs_4.0.xsd" namespace="urn:riv:se.apotekensservice:axs:4"/>
+  <xs:element name="HamtaKundInfo" type="HamtaKundInfoRequestType"/>
+  <xs:element name="HamtaKundInfoResponse" type="HamtaKundInfoResponseType"/>
+  <xs:element name="ApplicationException" type="axs:ApplicationException"/>
+  <xs:element name="SystemException" type="axs:SystemException"/>
+  <xs:complexType name="HamtaKundInfoRequestType">
+    <xs:sequence>
+      <xs:element name="klientinformation" type="axs:KlientinformationRequest" nillable="false">
+        <xs:annotation>
+          <xs:documentation>KlientInfo - innehåller information om klienten som gjorde ändringen.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="personnummer" type="xs:string" nillable="false">
+        <xs:annotation>
+          <xs:documentation>Personnummer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:any minOccurs="0" namespace="##other" maxOccurs="unbounded" processContents="lax"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HamtaKundInfoResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apotek" type="axs:ApoteksinformationResponse">
+        <xs:annotation>
+          <xs:documentation>Ev. DOS-apotek som kunden är kopplad till. Om anrop mot underliggande system
+                        (FOLK, OR eller EXPO) misslyckas så lämnas fältet tomt. Om apoteket inte
+                        finns registrerat så returneras apoteksinformation med endast GLN-kod
+                        flaggad som oregistrerad.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="djurreceptFinns" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            <para>
+                        true - om djurrecept finns i RRD
+                    </para>
+            <para>
+                            false - om djurrecept inte finns i RRD
+                        </para>
+                        Om anrop mot RRD ej kan genomföras så lämnas fältet tomt.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="kontoinformation" type="axs:KontoinformationResponse">
+        <xs:annotation>
+          <xs:documentation>Kontoinformation från HKDB. Om personen ej är ansluten till HKDB så
+                        flaggas personen som ej ansluten i kontoinformationen. Om anrop mot PRIS
+                        ej kan genomföras så lämnas fältet tomt.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="kundinformation" type="axs:KundinformationResponse" nillable="false">
+        <xs:annotation>
+          <xs:documentation>Kundinformation från FOLK. Om anrop mot FOLK misslyckas så lämnas fältet
+                        tomt. Inget apotek kommer då heller returneras i svaret.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="receptFinns" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            <para>
+                        true - om recept finns i RR
+                    </para>
+            <para>
+                            false - om recept inte finns i RR
+                        </para>
+                        Om anrop mot RR ej kan genomföras så lämnas fältet tomt.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:any minOccurs="0" namespace="##other" maxOccurs="unbounded" processContents="lax"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
