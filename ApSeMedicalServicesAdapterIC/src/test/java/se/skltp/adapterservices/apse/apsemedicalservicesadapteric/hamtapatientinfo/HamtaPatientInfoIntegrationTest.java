@@ -100,7 +100,7 @@ public class HamtaPatientInfoIntegrationTest extends AbstractTestCase {
 				.requestIncludingCompleteArgosInformation(ssn, to);
 
 		assertNotNull(response);
-		assertEquals("ÅÄÖ", response.getDosproducent());
+		assertEquals(ssn, response.getDosproducent());
 	}
 
 }
