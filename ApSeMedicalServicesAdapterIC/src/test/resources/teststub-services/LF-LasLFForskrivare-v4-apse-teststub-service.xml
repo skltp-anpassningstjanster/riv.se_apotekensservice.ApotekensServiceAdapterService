@@ -22,7 +22,7 @@
 	">
 	
 	<simple-service 
-		name="ApotekenService-LasLFForskrivare-teststub-v4"
+		name="ApotekenService-LasLFForskrivare-v4-teststub"
         address="${inbound.endpoint.apotekensservice.lf.LasLFForskrivare.v4.teststub}" 
         transformer-refs="logReqIn"
         responseTransformer-refs="logRespOut"

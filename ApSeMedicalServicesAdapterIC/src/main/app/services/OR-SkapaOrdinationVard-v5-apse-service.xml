@@ -71,7 +71,7 @@
 		</composite-source>
 
 		<cxf:proxy-service
-			namespace="urn:riv:se.apotekensservice:or:SkapaOrdinationVard:4:rivtabp21"
+			namespace="urn:riv:se.apotekensservice:or:SkapaOrdinationVard:5:rivtabp21"
 			payload="envelope" 
 			service="SkapaOrdinationVardResponderService"
 			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC1/interactions/SkapaOrdinationVardInteraction/SkapaOrdinationVardInteraction_5.0_rivtabp21.wsdl" />
