@@ -93,7 +93,9 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5=se.riv.se.apotekensservice.axs.hamtakundinforesponder.v5</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:axs:HamtaKundInfo:5:rivtabp21=se.riv.inera.se.apotekensservice.axs.hamtakundinfo.v5.rivtabp21</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:axs:HamtaKundInfo:5:rivtabp21=se.riv.se.apotekensservice.axs.hamtakundinfo.v5.rivtabp21</extraarg>
+					<extraarg>-p</extraarg>
+					<extraarg>urn:riv:se.apotekensservice:axs:4=se.riv.se.apotekensservice.axs.v4</extraarg>
                   </extraargs>
                 </wsdloption>             
                 <wsdloption>
@@ -588,7 +590,11 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4=se.riv.se.apotekensservice.lf.laslfforskrivareresponder.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:LasLFForskrivare:4:rivtabp21=se.riv.inera.se.apotekensservice.lf.laslfforskrivare.v4.rivtabp21</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:LasLFForskrivare:4:rivtabp21=se.riv.se.apotekensservice.lf.laslfforskrivare.v4.rivtabp21</extraarg>
+					<extraarg>-p</extraarg>
+					<extraarg>urn:riv:se.apotekensservice:lf:4=se.riv.se.apotekensservice.lf.v4</extraarg>
+					<extraarg>-p</extraarg>
+					<extraarg>urn:riv:se.apotekensservice:lf:5=se.riv.se.apotekensservice.lf.v5</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
@@ -614,7 +620,11 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4=se.riv.se.apotekensservice.lf.laslfprivatpersonresponder.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:LasLFPrivatperson:4:rivtabp21=se.riv.inera.se.apotekensservice.lf.laslfprivatperson.v4.rivtabp21</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:LasLFPrivatperson:4:rivtabp21=se.riv.se.apotekensservice.lf.laslfprivatperson.v4.rivtabp21</extraarg>
+					<extraarg>-p</extraarg>
+					<extraarg>urn:riv:se.apotekensservice:lf:4=se.riv.se.apotekensservice.lf.v4</extraarg>
+					<extraarg>-p</extraarg>
+					<extraarg>urn:riv:se.apotekensservice:lf:5=se.riv.se.apotekensservice.lf.v5</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
@@ -643,6 +653,8 @@
                     <extraarg>urn:riv:inera:se.apotekensservice:lf:LasLFVardsystem:1:rivtabp20=se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v1.rivtabp20</extraarg>
                   </extraargs>
                 </wsdloption>
+				
+				
                 <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_LF_4_0_RC1/interactions/LasLFVardsystemInteraction/LasLFVardsystemInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
@@ -653,9 +665,14 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4=se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:LasLFVardsystem:4:rivtabp21=se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v4.rivtabp21</extraarg>
-                  </extraargs>
+                    <extraarg>urn:riv:se.apotekensservice:lf:LasLFVardsystem:4:rivtabp21=se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21</extraarg>
+					<extraarg>-p</extraarg>
+					<extraarg>urn:riv:se.apotekensservice:lf:4=se.riv.se.apotekensservice.lf.v4</extraarg>
+					<extraarg>-p</extraarg>
+					<extraarg>urn:riv:se.apotekensservice:lf:5=se.riv.se.apotekensservice.lf.v5</extraarg>
+                 </extraargs>
                 </wsdloption>
+				
                 <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_LF_1_0_0_R/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp20.wsdl</wsdl>
                   <extraargs>
@@ -914,7 +931,7 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5=se.riv.se.apotekensservice.or.forlangordinationvardresponder.v5</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:or:ForlangOrdinationVard:5:rivtabp21=se.riv.inera.se.apotekensservice.or.forlangordinationvard.v5.rivtabp21</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:ForlangOrdinationVard:5:rivtabp21=se.riv.se.apotekensservice.or.forlangordinationvard.v5.rivtabp21</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
                     <extraarg>-p</extraarg>
@@ -1143,7 +1160,7 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5=se.riv.se.apotekensservice.or.korrigeraordinationvardresponder.v5</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:or:KorrigeraOrdinationVard:5:rivtabp21=se.riv.inera.se.apotekensservice.or.korrigeraordinationvard.v5.rivtabp21</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:KorrigeraOrdinationVard:5:rivtabp21=se.riv.se.apotekensservice.or.korrigeraordinationvard.v5.rivtabp21</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>  
                     <extraarg>-p</extraarg>
@@ -1222,7 +1239,7 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4=se.riv.se.apotekensservice.or.makuleraordinationvardresponder.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:or:MakuleraOrdinationVard:4:rivtabp20=se.riv.inera.se.apotekensservice.or.makuleraordinationvard.v4.rivtabp21</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:MakuleraOrdinationVard:4:rivtabp20=se.riv.se.apotekensservice.or.makuleraordinationvard.v4.rivtabp21</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
                     <extraarg>-p</extraarg>
@@ -1299,7 +1316,7 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:SkapaDosunderlagVardResponder:1=se.riv.se.apotekensservice.or.skapadosunderlagvardresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:or:SkapaDosunderlagVard:1:rivtabp21=se.riv.inera.se.apotekensservice.or.skapadosunderlagvard.v1.rivtabp21</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:SkapaDosunderlagVard:1:rivtabp21=se.riv.se.apotekensservice.or.skapadosunderlagvard.v1.rivtabp21</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:1=se.riv.se.apotekensservice.or.v1</extraarg>
                     <extraarg>-p</extraarg>
