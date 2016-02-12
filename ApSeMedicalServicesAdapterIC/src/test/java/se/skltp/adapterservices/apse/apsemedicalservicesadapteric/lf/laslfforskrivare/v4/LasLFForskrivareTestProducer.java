@@ -27,9 +27,11 @@ import javax.jws.WebResult;
 import org.w3c.addressing.v1.AttributedURIType;
 
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.lf.laslfforskrivare.v1.rivtabp20.LasLFForskrivareResponderInterface;
-import se.riv.se.apotekensservice.lf.laslfforskrivareresponder.v1.LasLFForskrivareRequestType;
-import se.riv.se.apotekensservice.lf.laslfforskrivareresponder.v1.LasLFForskrivareResponseType;
+import se.riv.se.apotekensservice.lf.laslfforskrivare.v4.rivtabp21.ApplicationException;
+import se.riv.se.apotekensservice.lf.laslfforskrivare.v4.rivtabp21.LasLFForskrivareResponderInterface;
+import se.riv.se.apotekensservice.lf.laslfforskrivare.v4.rivtabp21.SystemException;
+import se.riv.se.apotekensservice.lf.laslfforskrivareresponder.v4.LasLFForskrivareRequestType;
+import se.riv.se.apotekensservice.lf.laslfforskrivareresponder.v4.LasLFForskrivareResponseType;
 
 
 public class LasLFForskrivareTestProducer implements LasLFForskrivareResponderInterface {
@@ -38,16 +40,14 @@ public class LasLFForskrivareTestProducer implements LasLFForskrivareResponderIn
 	@WebResult(name = "LasLFForskrivareResponse", targetNamespace = "urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4", partName = "parameters")
 	@WebMethod(operationName = "LasLFForskrivare", action = "urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4:LasLFForskrivare")
 	public LasLFForskrivareResponseType lasLFForskrivare(
-			@WebParam(partName = "parameters", name = "LasLFForskrivare", targetNamespace = "urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4") LasLFForskrivareRequestType parameters,
-			@WebParam(partName = "LogicalAddress", name = "To", targetNamespace = "http://www.w3.org/2005/08/addressing", header = true) AttributedURIType logicalAddress,
-			@WebParam(partName = "ArgosHeader", name = "ArgosHeader", targetNamespace = "urn:riv:inera.se.apotekensservice:argos:1", header = true) ArgosHeaderType argosHeader)
-			throws se.riv.inera.se.apotekensservice.lf.laslfforskrivare.v1.rivtabp20.SystemException,
-			se.riv.inera.se.apotekensservice.lf.laslfforskrivare.v1.rivtabp20.ApplicationException {
+			@WebParam(partName = "parameters", name = "LasLFForskrivare", targetNamespace = "urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4") LasLFForskrivareRequestType arg0, 
+			@WebParam(partName = "LogicalAddress", name = "LogicalAddress", targetNamespace = "http://www.w3.org/2005/08/addressing", header = true) String arg1,
+			@WebParam(partName = "ArgosHeader", name = "ArgosHeader", targetNamespace = "urn:riv:inera.se.apotekensservice:argos:1", header = true) ArgosHeaderType arg2) 
+					throws ApplicationException, SystemException {
 		// TODO Auto-generated method stub
 
 		LasLFForskrivareResponseType response = new LasLFForskrivareResponseType();
 		return response;
-		
 	}
 
 

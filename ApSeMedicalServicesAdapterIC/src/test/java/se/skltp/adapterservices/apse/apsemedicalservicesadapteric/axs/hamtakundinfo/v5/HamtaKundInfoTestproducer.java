@@ -5,14 +5,14 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import riv.se_apotekensservice.axs.hamtakundinfo._4.rivtabp21.ApplicationException;
-import riv.se_apotekensservice.axs.hamtakundinfo._4.rivtabp21.HamtaKundInfoResponderInterface;
-import riv.se_apotekensservice.axs.hamtakundinfo._4.rivtabp21.SystemException;
-import se.riv.se.apotekensservice.axs.hamtakundinforesponder.v4.HamtaKundInfoRequestType;
-import se.riv.se.apotekensservice.axs.hamtakundinforesponder.v4.HamtaKundInfoResponseType;
+import se.riv.se.apotekensservice.axs.hamtakundinfo.v5.rivtabp21.ApplicationException;
+import se.riv.se.apotekensservice.axs.hamtakundinfo.v5.rivtabp21.HamtaKundInfoResponderInterface;
+import se.riv.se.apotekensservice.axs.hamtakundinfo.v5.rivtabp21.SystemException;
+import se.riv.se.apotekensservice.axs.hamtakundinforesponder.v5.HamtaKundInfoRequestType;
+import se.riv.se.apotekensservice.axs.hamtakundinforesponder.v5.HamtaKundInfoResponseType;
 
-import riv.se_apotekensservice.axs._4.ApoteksinformationResponse;
-import riv.se_apotekensservice.axs._4.KundinformationResponse;
+import se.riv.se.apotekensservice.axs.v4.ApoteksinformationResponse;
+import se.riv.se.apotekensservice.axs.v4.KundinformationResponse;
 
 public class HamtaKundInfoTestproducer implements HamtaKundInfoResponderInterface {
 	

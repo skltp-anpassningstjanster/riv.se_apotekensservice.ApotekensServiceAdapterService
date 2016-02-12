@@ -27,9 +27,11 @@ import javax.jws.WebResult;
 import org.w3c.addressing.v1.AttributedURIType;
 
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.lf.laslfprivatperson.v1.rivtabp20.LasLFPrivatpersonResponderInterface;
-import se.riv.se.apotekensservice.lf.laslfprivatpersonresponder.v1.LasLFPrivatpersonRequestType;
-import se.riv.se.apotekensservice.lf.laslfprivatpersonresponder.v1.LasLFPrivatpersonResponseType;
+import se.riv.se.apotekensservice.lf.laslfprivatperson.v4.rivtabp21.ApplicationException;
+import se.riv.se.apotekensservice.lf.laslfprivatperson.v4.rivtabp21.LasLFPrivatpersonResponderInterface;
+import se.riv.se.apotekensservice.lf.laslfprivatperson.v4.rivtabp21.SystemException;
+import se.riv.se.apotekensservice.lf.laslfprivatpersonresponder.v4.LasLFPrivatpersonRequestType;
+import se.riv.se.apotekensservice.lf.laslfprivatpersonresponder.v4.LasLFPrivatpersonResponseType;
 
 
 public class LasLFPrivatpersonTestProducer implements LasLFPrivatpersonResponderInterface {
@@ -39,15 +41,15 @@ public class LasLFPrivatpersonTestProducer implements LasLFPrivatpersonResponder
 	@WebMethod(operationName = "LasLFPrivatperson", action = "urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4:LasLFPrivatperson")
 	public LasLFPrivatpersonResponseType lasLFPrivatperson(
 			@WebParam(partName = "parameters", name = "LasLFPrivatperson", targetNamespace = "urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4") LasLFPrivatpersonRequestType parameters,
-			@WebParam(partName = "LogicalAddress", name = "To", targetNamespace = "http://www.w3.org/2005/08/addressing", header = true) AttributedURIType logicalAddress,
+			@WebParam(partName = "LogicalAddress", name = "LogicalAddress", targetNamespace = "http://www.w3.org/2005/08/addressing", header = true) String logicalAddress,
 			@WebParam(partName = "ArgosHeader", name = "ArgosHeader", targetNamespace = "urn:riv:inera.se.apotekensservice:argos:1", header = true) ArgosHeaderType argosHeader)
-			throws se.riv.inera.se.apotekensservice.lf.laslfprivatperson.v1.rivtabp20.SystemException,
-			se.riv.inera.se.apotekensservice.lf.laslfprivatperson.v1.rivtabp20.ApplicationException {
+			throws SystemException,	ApplicationException {
 		// TODO Auto-generated method stub
 
 		LasLFPrivatpersonResponseType response = new LasLFPrivatpersonResponseType();
 		return response;
 	}
+
 
 	
 }
