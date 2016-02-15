@@ -18805,7 +18805,7 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:HamtaOrdinationerPrivatperson>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5:HamtaOrdinationerPrivatperson"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="a03dbca4-07ff-4ff3-85f3-0164faef21e9" name="ForlangOrdinationVard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ForlangOrdinationVardResponderBinding</con:interface><con:operation>ForlangOrdinationVard</con:operation><con:request name="ForlangOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="bf7b506c-2a31-4008-b814-e3c668bf2476"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/ForlangOrdinationerVardResponder/V5</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5:HamtaOrdinationerPrivatperson"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="a03dbca4-07ff-4ff3-85f3-0164faef21e9" name="ForlangOrdinationVard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ForlangOrdinationVardResponderBinding</con:interface><con:operation>ForlangOrdinationVard</con:operation><con:request name="ForlangOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="bf7b506c-2a31-4008-b814-e3c668bf2476"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/ForlangOrdinationVardResponder/V5</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -18858,8 +18858,8 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <urn2:ForlangOrdinationVard>\r
          <!--Optional:-->\r
          <urn2:notatOrdination>?</urn2:notatOrdination>\r
-         <urn2:ordinationsId>?</urn2:ordinationsId>\r
-         <urn2:ordinationstidpunkt>?</urn2:ordinationstidpunkt>\r
+         <urn2:ordinationsId>1</urn2:ordinationsId>\r
+         <urn2:ordinationstidpunkt>20160215</urn2:ordinationstidpunkt>\r
          <urn2:ordinatorsKontaktuppgift>\r
             <!--Optional:-->\r
             <urn3:adress1>?</urn3:adress1>\r
@@ -18877,17 +18877,17 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          </urn2:ordinatorsKontaktuppgift>\r
          <urn2:originalOrdinationsId>?</urn2:originalOrdinationsId>\r
          <!--Optional:-->\r
-         <urn2:sistaGiltighetsdag>?</urn2:sistaGiltighetsdag>\r
-         <urn2:underlagsversion>?</urn2:underlagsversion>\r
+         <urn2:sistaGiltighetsdag>20160215</urn2:sistaGiltighetsdag>\r
+         <urn2:underlagsversion>1</urn2:underlagsversion>\r
          <!--Optional:-->\r
          <urn2:utsattning>\r
             <!--Optional:-->\r
             <urn4:kommentar>?</urn4:kommentar>\r
             <!--Optional:-->\r
-            <urn4:utsattningstidpunkt>?</urn4:utsattningstidpunkt>\r
+            <urn4:utsattningstidpunkt>20160215</urn4:utsattningstidpunkt>\r
             <!--You may enter ANY elements at this point-->\r
          </urn2:utsattning>\r
          <!--You may enter ANY elements at this point-->\r
       </urn2:ForlangOrdinationVard>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5:ForlangOrdinationVard"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>serviceEndpoint</con:name><con:value>https://ine-dit-app03.sth.basefarm.net:15005</con:value></con:property><con:property><con:name>servicePath</con:name><con:value>anp/apsemedicalservicesadapter/teststub/se/apotekensservice</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="088ca6f5-1e70-4d01-ae23-ae4b3cc7cfef" name="SOAP Response"/><con:assertion type="Schema Compliance" id="74a0240f-6ef6-41b3-b2ed-6b91bb918606" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="29c9ba9b-184b-4c50-845e-3c59814e8388" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5:ForlangOrdinationVard"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>serviceEndpoint</con:name><con:value>https://ine-dit-app03.sth.basefarm.net:15005</con:value></con:property><con:property><con:name>servicePath</con:name><con:value>anp/apsemedicalservicesadapter/teststub/se/apotekensservice</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

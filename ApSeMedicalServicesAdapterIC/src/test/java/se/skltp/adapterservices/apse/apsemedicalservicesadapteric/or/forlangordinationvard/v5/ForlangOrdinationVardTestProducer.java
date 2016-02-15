@@ -39,12 +39,11 @@ public class ForlangOrdinationVardTestProducer implements ForlangOrdinationVardR
 	@WebMethod(operationName = "ForlangOrdinationVard", action = "urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5:ForlangOrdinationVard")
 	public ForlangOrdinationVardResponseType forlangOrdinationVard(
 			@WebParam(partName = "parameters", name = "ForlangOrdinationVard", targetNamespace = "urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5") ForlangOrdinationVardRequestType parameters,
-			@WebParam(partName = "LogicalAddress", name = "To", targetNamespace = "http://www.w3.org/2005/08/addressing", header = true) String logicalAddress,
+			@WebParam(partName = "LogicalAddress", name = "LogicalAddress", targetNamespace = "urn:riv:itintegration:registry:1", header = true) String logicalAddress,
 			@WebParam(partName = "ArgosHeader", name = "ArgosHeader", targetNamespace = "urn:riv:inera.se.apotekensservice:argos:1", header = true) ArgosHeaderType argosHeader)
 			throws SystemException, ApplicationException {
 		
 		ForlangOrdinationVardResponseType response = new ForlangOrdinationVardResponseType();
 		return response;
 	}
-
 }
