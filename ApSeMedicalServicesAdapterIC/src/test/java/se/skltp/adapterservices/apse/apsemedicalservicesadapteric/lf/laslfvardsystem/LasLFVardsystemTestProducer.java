@@ -30,6 +30,7 @@ import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
 import se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v1.rivtabp20.LasLFVardsystemResponderInterface;
 import se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v1.LasLFVardsystemRequestType;
 import se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v1.LasLFVardsystemResponseType;
+import riv.se_apotekensservice.lf._1.PatientResponse;
 
 
 public class LasLFVardsystemTestProducer implements LasLFVardsystemResponderInterface {
@@ -46,6 +47,14 @@ public class LasLFVardsystemTestProducer implements LasLFVardsystemResponderInte
 		// TODO Auto-generated method stub
 
 		LasLFVardsystemResponseType response = new LasLFVardsystemResponseType();
+		String ssn = parameters.getPersonnummer();
+		PatientResponse p = new PatientResponse();
+		p.setPersonnummer(ssn);
+		p.setFornamn("Fornamn");
+		p.setEfternamn("Efternamn");
+		p.setAvliden(false);
+		response.setPatient(p);
+		response.setVarningsnivaUppnadd(false);
 		return response;
 		
 	}

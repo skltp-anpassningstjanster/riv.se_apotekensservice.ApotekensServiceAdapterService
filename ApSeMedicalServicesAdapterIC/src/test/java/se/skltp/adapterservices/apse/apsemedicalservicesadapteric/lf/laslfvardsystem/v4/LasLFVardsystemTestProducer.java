@@ -30,6 +30,7 @@ import se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21.LasLFVardsyste
 import se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21.SystemException;
 import se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v4.LasLFVardsystemRequestType;
 import se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v4.LasLFVardsystemResponseType;
+import se.riv.se.apotekensservice.lf.v5.PatientResponse;
 
 
 public class LasLFVardsystemTestProducer implements LasLFVardsystemResponderInterface {
@@ -42,8 +43,17 @@ public class LasLFVardsystemTestProducer implements LasLFVardsystemResponderInte
 			@WebParam(partName = "LogicalAddress", name = "LogicalAddress", targetNamespace = "http://www.w3.org/2005/08/addressing", header = true) String arg1,
 			@WebParam(partName = "ArgosHeader", name = "ArgosHeader", targetNamespace = "urn:riv:inera.se.apotekensservice:argos:1", header = true) ArgosHeaderType arg2) 
 					throws SystemException, ApplicationException {
-		// TODO Auto-generated method stub
+
+		// Create the response and set some values
 		LasLFVardsystemResponseType response = new LasLFVardsystemResponseType();
+		String ssn = arg0.getPersonnummer();
+		PatientResponse p = new PatientResponse();
+		p.setPersonnummer(ssn);
+		p.setFornamn("Fornamn");
+		p.setEfternamn("Efternamn");
+		p.setAvliden(false);
+		response.setPatient(p);
+		response.setVarningsnivaUppnadd(false);
 		return response;
 	}
 
