@@ -30,7 +30,6 @@ import se.riv.se.apotekensservice.or.forlangordinationvard.v5.rivtabp21.ForlangO
 import se.riv.se.apotekensservice.or.forlangordinationvard.v5.rivtabp21.SystemException;
 import se.riv.se.apotekensservice.or.forlangordinationvardresponder.v5.ForlangOrdinationVardRequestType;
 import se.riv.se.apotekensservice.or.forlangordinationvardresponder.v5.ForlangOrdinationVardResponseType;
-import se.riv.se.apotekensservice.or.v4.AFFResultatResponse;
 
 
 public class ForlangOrdinationVardTestProducer implements ForlangOrdinationVardResponderInterface {
@@ -46,6 +45,7 @@ public class ForlangOrdinationVardTestProducer implements ForlangOrdinationVardR
 		
 		ForlangOrdinationVardResponseType response = new ForlangOrdinationVardResponseType();
 		response.setOrdinationsId(parameters.getOrdinationsId());
+		response.setUnderlagsversion(parameters.getUnderlagsversion());
 		return response;
 	}
 }
