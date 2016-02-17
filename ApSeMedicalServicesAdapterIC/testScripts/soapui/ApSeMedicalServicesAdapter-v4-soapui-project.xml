@@ -3537,7 +3537,7 @@ markerad som avliden, annars falskt.</xs:documentation>
       <xs:any processContents="lax" maxOccurs="unbounded" namespace="##other" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/LasLFForskrivareResponder/V4</con:endpoint></con:endpoints><con:operation id="b0231d2d-8e31-4ebb-b1d9-8693c55cca1a" isOneWay="false" action="urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4:LasLFForskrivare" name="LasLFForskrivare" bindingOperationName="LasLFForskrivare" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="193a8aa1-65cf-436c-8822-ed534ad44189" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/LasLFForskrivareResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/LasLFForskrivareResponder/V4</con:endpoint><con:endpoint>${#TestSuite#serviceEndpoint}/vp/LasLFForskrivare/4/rivtabp21</con:endpoint></con:endpoints><con:operation id="b0231d2d-8e31-4ebb-b1d9-8693c55cca1a" isOneWay="false" action="urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4:LasLFForskrivare" name="LasLFForskrivare" bindingOperationName="LasLFForskrivare" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="193a8aa1-65cf-436c-8822-ed534ad44189" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/LasLFForskrivareResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -4986,7 +4986,7 @@ markerad som avliden, annars falskt.</xs:documentation>
       <xs:any processContents="lax" maxOccurs="unbounded" namespace="##other" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/LasLFPrivatpersonResponder/V4</con:endpoint></con:endpoints><con:operation id="db27e763-e329-4d57-a052-1a91ef9f588d" isOneWay="false" action="urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4:LasLFPrivatperson" name="LasLFPrivatperson" bindingOperationName="LasLFPrivatperson" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3c43a188-116e-4308-b679-f31bf20f28e1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/LasLFPrivatpersonResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/LasLFPrivatpersonResponder/V4</con:endpoint><con:endpoint>${#TestSuite#serviceEndpoint}/vp/LasLFPrivatperson/4/rivtabp21</con:endpoint></con:endpoints><con:operation id="db27e763-e329-4d57-a052-1a91ef9f588d" isOneWay="false" action="urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4:LasLFPrivatperson" name="LasLFPrivatperson" bindingOperationName="LasLFPrivatperson" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3c43a188-116e-4308-b679-f31bf20f28e1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/LasLFPrivatpersonResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -6485,7 +6485,7 @@ markerad som avliden, annars falskt.</xs:documentation>
       <xs:any processContents="lax" maxOccurs="unbounded" namespace="##other" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/LasLFVardsystemResponder/V4</con:endpoint></con:endpoints><con:operation id="e507afda-0191-4f50-a4d8-4f2ee57521a0" isOneWay="false" action="urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4:LasLFVardsystem" name="LasLFVardsystem" bindingOperationName="LasLFVardsystem" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="39c9ab6c-f9f8-4d6f-b991-1fd5226915e2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/LasLFVardsystemResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/LasLFVardsystemResponder/V4</con:endpoint><con:endpoint>${#TestSuite#serviceEndpoint}/vp/LasLFVardsystem/4/rivtabp21</con:endpoint></con:endpoints><con:operation id="e507afda-0191-4f50-a4d8-4f2ee57521a0" isOneWay="false" action="urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4:LasLFVardsystem" name="LasLFVardsystem" bindingOperationName="LasLFVardsystem" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="39c9ab6c-f9f8-4d6f-b991-1fd5226915e2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/LasLFVardsystemResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -14423,7 +14423,7 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:any processContents="lax" maxOccurs="unbounded" namespace="##other" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/MakuleraOrdinationVardResponder/V4</con:endpoint></con:endpoints><con:operation id="12cd14f3-3def-4854-b94d-3adcd5f3761f" isOneWay="false" action="urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4:MakuleraOrdinationVard" name="MakuleraOrdinationVard" bindingOperationName="MakuleraOrdinationVard" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f53278c2-8c13-4d5c-9263-c9fd5f45af30" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/MakuleraOrdinationVardResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:or:5">\r
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/MakuleraOrdinationVardResponder/V4</con:endpoint><con:endpoint>${#TestSuite#serviceEndpoint}/vp/MakuleraOrdinationVard/4/rivtabp21</con:endpoint></con:endpoints><con:operation id="12cd14f3-3def-4854-b94d-3adcd5f3761f" isOneWay="false" action="urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4:MakuleraOrdinationVard" name="MakuleraOrdinationVard" bindingOperationName="MakuleraOrdinationVard" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f53278c2-8c13-4d5c-9263-c9fd5f45af30" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/MakuleraOrdinationVardResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:or:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -14490,7 +14490,7 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:MakuleraOrdinationVard>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4:MakuleraOrdinationVard"/></con:call></con:operation></con:interface><con:testSuite name="TestSuite ApSe v4" id="992e88b3-d4f2-441e-a0a7-5f16414478c6"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - AXS" searchProperties="true" id="2158dc57-b17d-47bf-9ec7-5734c1ac7b09"><con:settings/><con:testStep type="request" name="HamtaKundInfo" id="1c6cd8f1-586f-4af6-8ade-1cbee64539ad"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaKundInfoResponderBinding</con:interface><con:operation>HamtaKundInfo</con:operation><con:request name="HamtaKundInfo" id="6f28e7da-559b-4506-b032-aa0fc7ac80f2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/HamtaKundInfoResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:axs:4">
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4:MakuleraOrdinationVard"/></con:call></con:operation></con:interface><con:testSuite name="TestSuite ApSe v4 - Dev" id="992e88b3-d4f2-441e-a0a7-5f16414478c6"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - AXS" searchProperties="true" id="2158dc57-b17d-47bf-9ec7-5734c1ac7b09"><con:settings/><con:testStep type="request" name="HamtaKundInfo" id="1c6cd8f1-586f-4af6-8ade-1cbee64539ad"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaKundInfoResponderBinding</con:interface><con:operation>HamtaKundInfo</con:operation><con:request name="HamtaKundInfo" id="6f28e7da-559b-4506-b032-aa0fc7ac80f2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/HamtaKundInfoResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:axs:4">
    <soapenv:Header>
       <urn:ArgosHeader/>
       <urn1:LogicalAddress>?</urn1:LogicalAddress>
@@ -14505,7 +14505,7 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <urn2:personnummer>?</urn2:personnummer>
       </urn2:HamtaKundInfo>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="4f5e24e0-863c-46b5-a435-4661e727716c"/><con:assertion type="Schema Compliance" disabled="true" id="7e970e47-e36a-43f2-8eb8-232180a8faf8"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="07fb5ca4-6b37-4d67-bea4-6eec5f925719"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="HamtaPatientInfo" id="8e7401d3-9a81-4223-a513-7d87ed579fcc"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaPatientInfoResponderBinding</con:interface><con:operation>HamtaPatientInfo</con:operation><con:request name="HamtaPatientInfo" id="68cd4b35-bdb8-41dc-84c9-1493d221af87"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/HamtaPatientInfoResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaPatientInfoResponder:4">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="4f5e24e0-863c-46b5-a435-4661e727716c"/><con:assertion type="Schema Compliance" id="7e970e47-e36a-43f2-8eb8-232180a8faf8" disabled="true"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="07fb5ca4-6b37-4d67-bea4-6eec5f925719"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="HamtaPatientInfo" id="8e7401d3-9a81-4223-a513-7d87ed579fcc"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaPatientInfoResponderBinding</con:interface><con:operation>HamtaPatientInfo</con:operation><con:request name="HamtaPatientInfo" id="68cd4b35-bdb8-41dc-84c9-1493d221af87"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/HamtaPatientInfoResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaPatientInfoResponder:4">
    <soapenv:Header>
       <urn:ArgosHeader/>
       <urn1:LogicalAddress>?</urn1:LogicalAddress>
@@ -14515,7 +14515,7 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <urn2:personnummer>?</urn2:personnummer>
       </urn2:HamtaPatientInfo>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a2508032-76c7-4710-84ae-86fba8e6b674"/><con:assertion type="Schema Compliance" id="30695842-33f7-47bb-b2f3-28a5637ba184"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="1d8200d2-cee1-4965-b890-aefe2c6ba42c"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="UppdateraSamtycke" id="e4018b9d-fda7-4e5e-aa2d-bad9f243a5df"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UppdateraSamtyckeResponderBinding</con:interface><con:operation>UppdateraSamtycke</con:operation><con:request name="UppdateraSamtycke" id="42df60be-55db-4a04-8193-104239949637"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/UppdateraSamtyckeResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:UppdateraSamtyckeResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:axs:4">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a2508032-76c7-4710-84ae-86fba8e6b674"/><con:assertion type="Schema Compliance" id="30695842-33f7-47bb-b2f3-28a5637ba184"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="1d8200d2-cee1-4965-b890-aefe2c6ba42c"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="UppdateraSamtycke" id="e4018b9d-fda7-4e5e-aa2d-bad9f243a5df"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UppdateraSamtyckeResponderBinding</con:interface><con:operation>UppdateraSamtycke</con:operation><con:request name="UppdateraSamtycke" id="42df60be-55db-4a04-8193-104239949637"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/UppdateraSamtyckeResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:UppdateraSamtyckeResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:axs:4">
    <soapenv:Header>
       <urn:ArgosHeader/>
       <urn1:LogicalAddress>?</urn1:LogicalAddress>
@@ -14531,7 +14531,7 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <urn2:samtycke/>
       </urn2:UppdateraSamtycke>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b8265848-3166-43db-a8d6-bf9add42faa5"/><con:assertion type="Schema Compliance" id="42d30477-8af7-421a-a8e2-e8e2e681b911"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="6cb52924-81ee-4b45-b597-4b83af1fda26"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a4ae0040-f42d-4315-9ba6-caa29940c70f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - LF" searchProperties="true"><con:settings/><con:testStep type="request" id="aa0a960c-917e-40c8-b20e-bbdbfd68983b" name="LasLFVardsystem"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LasLFVardsystemResponderBinding</con:interface><con:operation>LasLFVardsystem</con:operation><con:request name="LasLFVardsystem" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="2c7580c9-33ba-4bea-8c99-031c7debf716"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/LasLFVardsystemResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b8265848-3166-43db-a8d6-bf9add42faa5"/><con:assertion type="Schema Compliance" id="42d30477-8af7-421a-a8e2-e8e2e681b911"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="6cb52924-81ee-4b45-b597-4b83af1fda26"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a4ae0040-f42d-4315-9ba6-caa29940c70f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - LF" searchProperties="true"><con:settings/><con:testStep type="request" id="aa0a960c-917e-40c8-b20e-bbdbfd68983b" name="LasLFVardsystem"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LasLFVardsystemResponderBinding</con:interface><con:operation>LasLFVardsystem</con:operation><con:request name="LasLFVardsystem" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="2c7580c9-33ba-4bea-8c99-031c7debf716"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/LasLFVardsystemResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -14603,7 +14603,7 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:LasLFVardsystem>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7b127cee-ff90-49bf-a684-eebd8e20b2a7" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f430c009-20f4-45ed-833f-b2bfbb17ae72" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="d4aa7d05-e509-477f-a7a6-e0439903dee8" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4:LasLFVardsystem"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="aa4404d9-34a1-42f4-b354-c7869f8b4b39" name="LasLFPrivatperson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LasLFPrivatpersonResponderBinding</con:interface><con:operation>LasLFPrivatperson</con:operation><con:request name="LasLFPrivatperson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="719c8e67-ee04-4bc9-ba95-95f6486bb23e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/LasLFPrivatpersonResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7b127cee-ff90-49bf-a684-eebd8e20b2a7" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f430c009-20f4-45ed-833f-b2bfbb17ae72" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="d4aa7d05-e509-477f-a7a6-e0439903dee8" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4:LasLFVardsystem"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="aa4404d9-34a1-42f4-b354-c7869f8b4b39" name="LasLFPrivatperson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LasLFPrivatpersonResponderBinding</con:interface><con:operation>LasLFPrivatperson</con:operation><con:request name="LasLFPrivatperson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="719c8e67-ee04-4bc9-ba95-95f6486bb23e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/LasLFPrivatpersonResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -14662,7 +14662,7 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:LasLFPrivatperson>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="fca612c9-370e-4f36-8526-8f1fa9918e3f" name="SOAP Response"/><con:assertion type="Schema Compliance" id="0ba7d50a-5719-4d57-8d5e-c203fe00b8ed" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="5839c84e-e2c7-4fe4-90f5-3ee5ebbdcf5e" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4:LasLFPrivatperson"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="6efe719c-d5ca-41d6-a712-f9d121823b5d" name="LasLFForskrivare"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LasLFForskrivareResponderBinding</con:interface><con:operation>LasLFForskrivare</con:operation><con:request name="LasLFForskrivare" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e43365df-0c72-465c-9b5b-c4c00b8990f1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/LasLFForskrivareResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="fca612c9-370e-4f36-8526-8f1fa9918e3f" name="SOAP Response"/><con:assertion type="Schema Compliance" id="0ba7d50a-5719-4d57-8d5e-c203fe00b8ed" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="5839c84e-e2c7-4fe4-90f5-3ee5ebbdcf5e" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4:LasLFPrivatperson"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="6efe719c-d5ca-41d6-a712-f9d121823b5d" name="LasLFForskrivare"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LasLFForskrivareResponderBinding</con:interface><con:operation>LasLFForskrivare</con:operation><con:request name="LasLFForskrivare" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e43365df-0c72-465c-9b5b-c4c00b8990f1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/LasLFForskrivareResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -14726,7 +14726,7 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:LasLFForskrivare>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="1063e572-6f8b-436d-b2a5-aed17de897ae" name="SOAP Response"/><con:assertion type="Schema Compliance" id="03580a99-713b-48a0-a2f8-6d1874d07444" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="4094f47b-92c5-4925-845f-2e831616e5e0" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4:LasLFForskrivare"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="9446311e-91c6-4291-8940-07528af26c2a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - OR" searchProperties="true"><con:settings/><con:testStep type="request" id="6bebc176-a51c-40b9-9d07-7738443e3bcc" name="HamtaIckeAktuellaOrdinationer"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaIckeAktuellaOrdinationerResponderBinding</con:interface><con:operation>HamtaIckeAktuellaOrdinationer</con:operation><con:request name="HamtaIckeAktuellaOrdinationer" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="d4e3d36b-53b1-41fb-9664-558d149482fe"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/HamtaIckeAktuellaOrdinationerResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationerResponder:4">\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="1063e572-6f8b-436d-b2a5-aed17de897ae" name="SOAP Response"/><con:assertion type="Schema Compliance" id="03580a99-713b-48a0-a2f8-6d1874d07444" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="4094f47b-92c5-4925-845f-2e831616e5e0" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4:LasLFForskrivare"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="9446311e-91c6-4291-8940-07528af26c2a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - OR" searchProperties="true"><con:settings/><con:testStep type="request" id="6bebc176-a51c-40b9-9d07-7738443e3bcc" name="HamtaIckeAktuellaOrdinationer"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaIckeAktuellaOrdinationerResponderBinding</con:interface><con:operation>HamtaIckeAktuellaOrdinationer</con:operation><con:request name="HamtaIckeAktuellaOrdinationer" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="d4e3d36b-53b1-41fb-9664-558d149482fe"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/HamtaIckeAktuellaOrdinationerResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationerResponder:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -14783,7 +14783,7 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:HamtaIckeAktuellaOrdinationer>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="1a1386e1-8d8c-49a7-8bad-7137918ba42c" name="SOAP Response"/><con:assertion type="Schema Compliance" id="fd9410f0-5a69-46c2-a6fb-921819a4a17f" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="08745af8-6b82-4b11-a35e-6ab00de3894b" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationerResponder:4:HamtaIckeAktuellaOrdinationer"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="271d7fa9-f62c-4d8c-afee-cc6c2b836c58" name="MakuleraOrdinationVard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MakuleraOrdinationVardResponderBinding</con:interface><con:operation>MakuleraOrdinationVard</con:operation><con:request name="MakuleraOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="12b3de3d-a559-4828-be8c-a565749c9723"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/MakuleraOrdinationVardResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:or:5">\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="1a1386e1-8d8c-49a7-8bad-7137918ba42c" name="SOAP Response"/><con:assertion type="Schema Compliance" id="fd9410f0-5a69-46c2-a6fb-921819a4a17f" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="08745af8-6b82-4b11-a35e-6ab00de3894b" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationerResponder:4:HamtaIckeAktuellaOrdinationer"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="271d7fa9-f62c-4d8c-afee-cc6c2b836c58" name="MakuleraOrdinationVard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MakuleraOrdinationVardResponderBinding</con:interface><con:operation>MakuleraOrdinationVard</con:operation><con:request name="MakuleraOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="12b3de3d-a559-4828-be8c-a565749c9723"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/MakuleraOrdinationVardResponder/V4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:or:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -14850,4 +14850,364 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:MakuleraOrdinationVard>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2f75c683-3952-449c-8729-49449ef06482" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b6e2c607-c263-4586-a56b-89bdd5ce23eb" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="526c85ad-4fd7-4fad-8537-3f0b597f7a1d" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4:MakuleraOrdinationVard"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>serviceEndpoint</con:name><con:value>https://ine-dit-app03.sth.basefarm.net:15005</con:value></con:property><con:property><con:name>servicePath</con:name><con:value>anp/apsemedicalservicesadapter/teststub/se/apotekensservice</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2f75c683-3952-449c-8729-49449ef06482" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b6e2c607-c263-4586-a56b-89bdd5ce23eb" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="526c85ad-4fd7-4fad-8537-3f0b597f7a1d" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4:MakuleraOrdinationVard"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>serviceEndpoint</con:name><con:value>https://ine-dit-app03.sth.basefarm.net:15005</con:value></con:property></con:properties></con:testSuite><con:testSuite name="TestSuite ApSe v4 - Test/QA" id="28790f82-dbc0-41eb-81e4-d18c75a4c990"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - AXS" searchProperties="true" id="50541978-2f71-42ff-912a-2baae79ac7ab"><con:settings/><con:testStep type="request" name="HamtaKundInfo" id="34b05cfc-ffc4-4b53-a4fb-44305ef5bd3e"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaKundInfoResponderBinding</con:interface><con:operation>HamtaKundInfo</con:operation><con:request name="HamtaKundInfo" id="6f28e7da-559b-4506-b032-aa0fc7ac80f2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaKundInfo/4/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:axs:4">
+   <soapenv:Header>
+      <urn:ArgosHeader/>
+      <urn1:LogicalAddress>?</urn1:LogicalAddress>
+   </soapenv:Header>
+   <soapenv:Body>
+      <urn2:HamtaKundInfo>
+         <urn2:klientinformation>
+            <urn3:anvandare>?</urn3:anvandare>
+            <urn3:session>?</urn3:session>
+            <urn3:system>?</urn3:system>
+         </urn2:klientinformation>
+         <urn2:personnummer>?</urn2:personnummer>
+      </urn2:HamtaKundInfo>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="4f5e24e0-863c-46b5-a435-4661e727716c"/><con:assertion type="Schema Compliance" id="7e970e47-e36a-43f2-8eb8-232180a8faf8" disabled="true"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="07fb5ca4-6b37-4d67-bea4-6eec5f925719"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="HamtaPatientInfo" id="ae324ca4-687d-43ef-9dcf-728395219d77"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaPatientInfoResponderBinding</con:interface><con:operation>HamtaPatientInfo</con:operation><con:request name="HamtaPatientInfo" id="68cd4b35-bdb8-41dc-84c9-1493d221af87"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaPatientInfo/4/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaPatientInfoResponder:4">
+   <soapenv:Header>
+      <urn:ArgosHeader/>
+      <urn1:LogicalAddress>?</urn1:LogicalAddress>
+   </soapenv:Header>
+   <soapenv:Body>
+      <urn2:HamtaPatientInfo>
+         <urn2:personnummer>?</urn2:personnummer>
+      </urn2:HamtaPatientInfo>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a2508032-76c7-4710-84ae-86fba8e6b674"/><con:assertion type="Schema Compliance" id="30695842-33f7-47bb-b2f3-28a5637ba184"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="1d8200d2-cee1-4965-b890-aefe2c6ba42c"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="UppdateraSamtycke" id="574935c3-c864-4dc9-8274-47c8b19b1a05"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UppdateraSamtyckeResponderBinding</con:interface><con:operation>UppdateraSamtycke</con:operation><con:request name="UppdateraSamtycke" id="42df60be-55db-4a04-8193-104239949637"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/UppdateraSamtycke/4/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:UppdateraSamtyckeResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:axs:4">
+   <soapenv:Header>
+      <urn:ArgosHeader/>
+      <urn1:LogicalAddress>?</urn1:LogicalAddress>
+   </soapenv:Header>
+   <soapenv:Body>
+      <urn2:UppdateraSamtycke>
+         <urn2:klientinformation>
+            <urn3:anvandare>?</urn3:anvandare>
+            <urn3:session>?</urn3:session>
+            <urn3:system>?</urn3:system>
+         </urn2:klientinformation>
+         <urn2:personnummer>?</urn2:personnummer>
+         <urn2:samtycke/>
+      </urn2:UppdateraSamtycke>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b8265848-3166-43db-a8d6-bf9add42faa5"/><con:assertion type="Schema Compliance" id="42d30477-8af7-421a-a8e2-e8e2e681b911"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="6cb52924-81ee-4b45-b597-4b83af1fda26"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="6c20ae53-719e-4bca-b697-76aad1847d3e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - LF" searchProperties="true"><con:settings/><con:testStep type="request" id="9d21c90c-0197-49d3-aea2-89b04cf6f62e" name="LasLFVardsystem"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LasLFVardsystemResponderBinding</con:interface><con:operation>LasLFVardsystem</con:operation><con:request name="LasLFVardsystem" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="2c7580c9-33ba-4bea-8c99-031c7debf716"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/LasLFVardsystem/4/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
+   <soapenv:Header>\r
+      <urn:ArgosHeader>\r
+         <!--Optional:-->\r
+         <urn:forskrivarkod>?</urn:forskrivarkod>\r
+         <!--Optional:-->\r
+         <urn:legitimationskod>?</urn:legitimationskod>\r
+         <!--Optional:-->\r
+         <urn:fornamn>?</urn:fornamn>\r
+         <!--Optional:-->\r
+         <urn:efternamn>?</urn:efternamn>\r
+         <!--Optional:-->\r
+         <urn:yrkesgrupp>?</urn:yrkesgrupp>\r
+         <!--Optional:-->\r
+         <urn:befattningskod>?</urn:befattningskod>\r
+         <!--Optional:-->\r
+         <urn:arbetsplatskod>?</urn:arbetsplatskod>\r
+         <!--Optional:-->\r
+         <urn:arbetsplatsnamn>?</urn:arbetsplatsnamn>\r
+         <!--Optional:-->\r
+         <urn:postort>?</urn:postort>\r
+         <!--Optional:-->\r
+         <urn:postadress>?</urn:postadress>\r
+         <!--Optional:-->\r
+         <urn:postnummer>?</urn:postnummer>\r
+         <!--Optional:-->\r
+         <urn:telefonnummer>?</urn:telefonnummer>\r
+         <!--Optional:-->\r
+         <urn:requestId>?</urn:requestId>\r
+         <!--Optional:-->\r
+         <urn:rollnamn>?</urn:rollnamn>\r
+         <!--Optional:-->\r
+         <urn:hsaID>?</urn:hsaID>\r
+         <!--Optional:-->\r
+         <urn:katalog>?</urn:katalog>\r
+         <!--Optional:-->\r
+         <urn:organisationsnummer>?</urn:organisationsnummer>\r
+         <!--Optional:-->\r
+         <urn:systemnamn>?</urn:systemnamn>\r
+         <!--Optional:-->\r
+         <urn:systemversion>?</urn:systemversion>\r
+         <!--Optional:-->\r
+         <urn:systemIp>?</urn:systemIp>\r
+         <!--You may enter ANY elements at this point-->\r
+      </urn:ArgosHeader>\r
+      <urn1:LogicalAddress>?</urn1:LogicalAddress>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <urn2:LasLFVardsystem>\r
+         <!--Optional:-->\r
+         <urn2:anvandarnamn>?</urn2:anvandarnamn>\r
+         <!--Optional:-->\r
+         <urn2:arbetsplatsId>?</urn2:arbetsplatsId>\r
+         <!--Optional:-->\r
+         <urn2:arbetsplatskod>?</urn2:arbetsplatskod>\r
+         <!--Optional:-->\r
+         <urn2:arbetsplatsnamn>?</urn2:arbetsplatsnamn>\r
+         <!--Optional:-->\r
+         <urn2:arbetsplatsort>?</urn2:arbetsplatsort>\r
+         <urn2:atkomsttyp>?</urn2:atkomsttyp>\r
+         <!--Optional:-->\r
+         <urn2:forskrivarkod>?</urn2:forskrivarkod>\r
+         <urn2:klientinformation>\r
+            <urn3:anvandare>?</urn3:anvandare>\r
+            <urn3:session>?</urn3:session>\r
+            <urn3:system>?</urn3:system>\r
+            <!--You may enter ANY elements at this point-->\r
+         </urn2:klientinformation>\r
+         <urn2:personnummer>?</urn2:personnummer>\r
+         <!--You may enter ANY elements at this point-->\r
+      </urn2:LasLFVardsystem>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7b127cee-ff90-49bf-a684-eebd8e20b2a7" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f430c009-20f4-45ed-833f-b2bfbb17ae72" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="d4aa7d05-e509-477f-a7a6-e0439903dee8" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4:LasLFVardsystem"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="2267e3d6-03b7-4634-84d0-72363d54221d" name="LasLFPrivatperson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LasLFPrivatpersonResponderBinding</con:interface><con:operation>LasLFPrivatperson</con:operation><con:request name="LasLFPrivatperson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="719c8e67-ee04-4bc9-ba95-95f6486bb23e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/LasLFPrivatperson/4/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
+   <soapenv:Header>\r
+      <urn:ArgosHeader>\r
+         <!--Optional:-->\r
+         <urn:forskrivarkod>?</urn:forskrivarkod>\r
+         <!--Optional:-->\r
+         <urn:legitimationskod>?</urn:legitimationskod>\r
+         <!--Optional:-->\r
+         <urn:fornamn>?</urn:fornamn>\r
+         <!--Optional:-->\r
+         <urn:efternamn>?</urn:efternamn>\r
+         <!--Optional:-->\r
+         <urn:yrkesgrupp>?</urn:yrkesgrupp>\r
+         <!--Optional:-->\r
+         <urn:befattningskod>?</urn:befattningskod>\r
+         <!--Optional:-->\r
+         <urn:arbetsplatskod>?</urn:arbetsplatskod>\r
+         <!--Optional:-->\r
+         <urn:arbetsplatsnamn>?</urn:arbetsplatsnamn>\r
+         <!--Optional:-->\r
+         <urn:postort>?</urn:postort>\r
+         <!--Optional:-->\r
+         <urn:postadress>?</urn:postadress>\r
+         <!--Optional:-->\r
+         <urn:postnummer>?</urn:postnummer>\r
+         <!--Optional:-->\r
+         <urn:telefonnummer>?</urn:telefonnummer>\r
+         <!--Optional:-->\r
+         <urn:requestId>?</urn:requestId>\r
+         <!--Optional:-->\r
+         <urn:rollnamn>?</urn:rollnamn>\r
+         <!--Optional:-->\r
+         <urn:hsaID>?</urn:hsaID>\r
+         <!--Optional:-->\r
+         <urn:katalog>?</urn:katalog>\r
+         <!--Optional:-->\r
+         <urn:organisationsnummer>?</urn:organisationsnummer>\r
+         <!--Optional:-->\r
+         <urn:systemnamn>?</urn:systemnamn>\r
+         <!--Optional:-->\r
+         <urn:systemversion>?</urn:systemversion>\r
+         <!--Optional:-->\r
+         <urn:systemIp>?</urn:systemIp>\r
+         <!--You may enter ANY elements at this point-->\r
+      </urn:ArgosHeader>\r
+      <urn1:LogicalAddress>?</urn1:LogicalAddress>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <urn2:LasLFPrivatperson>\r
+         <urn2:klientinformation>\r
+            <urn3:anvandare>?</urn3:anvandare>\r
+            <urn3:session>?</urn3:session>\r
+            <urn3:system>?</urn3:system>\r
+            <!--You may enter ANY elements at this point-->\r
+         </urn2:klientinformation>\r
+         <urn2:personnummer>?</urn2:personnummer>\r
+         <!--You may enter ANY elements at this point-->\r
+      </urn2:LasLFPrivatperson>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="fca612c9-370e-4f36-8526-8f1fa9918e3f" name="SOAP Response"/><con:assertion type="Schema Compliance" id="0ba7d50a-5719-4d57-8d5e-c203fe00b8ed" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="5839c84e-e2c7-4fe4-90f5-3ee5ebbdcf5e" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4:LasLFPrivatperson"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="20225b0a-046c-4c41-a3d3-bf507014e725" name="LasLFForskrivare"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LasLFForskrivareResponderBinding</con:interface><con:operation>LasLFForskrivare</con:operation><con:request name="LasLFForskrivare" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e43365df-0c72-465c-9b5b-c4c00b8990f1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/LasLFForskrivare/4/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:lf:4">\r
+   <soapenv:Header>\r
+      <urn:ArgosHeader>\r
+         <!--Optional:-->\r
+         <urn:forskrivarkod>?</urn:forskrivarkod>\r
+         <!--Optional:-->\r
+         <urn:legitimationskod>?</urn:legitimationskod>\r
+         <!--Optional:-->\r
+         <urn:fornamn>?</urn:fornamn>\r
+         <!--Optional:-->\r
+         <urn:efternamn>?</urn:efternamn>\r
+         <!--Optional:-->\r
+         <urn:yrkesgrupp>?</urn:yrkesgrupp>\r
+         <!--Optional:-->\r
+         <urn:befattningskod>?</urn:befattningskod>\r
+         <!--Optional:-->\r
+         <urn:arbetsplatskod>?</urn:arbetsplatskod>\r
+         <!--Optional:-->\r
+         <urn:arbetsplatsnamn>?</urn:arbetsplatsnamn>\r
+         <!--Optional:-->\r
+         <urn:postort>?</urn:postort>\r
+         <!--Optional:-->\r
+         <urn:postadress>?</urn:postadress>\r
+         <!--Optional:-->\r
+         <urn:postnummer>?</urn:postnummer>\r
+         <!--Optional:-->\r
+         <urn:telefonnummer>?</urn:telefonnummer>\r
+         <!--Optional:-->\r
+         <urn:requestId>?</urn:requestId>\r
+         <!--Optional:-->\r
+         <urn:rollnamn>?</urn:rollnamn>\r
+         <!--Optional:-->\r
+         <urn:hsaID>?</urn:hsaID>\r
+         <!--Optional:-->\r
+         <urn:katalog>?</urn:katalog>\r
+         <!--Optional:-->\r
+         <urn:organisationsnummer>?</urn:organisationsnummer>\r
+         <!--Optional:-->\r
+         <urn:systemnamn>?</urn:systemnamn>\r
+         <!--Optional:-->\r
+         <urn:systemversion>?</urn:systemversion>\r
+         <!--Optional:-->\r
+         <urn:systemIp>?</urn:systemIp>\r
+         <!--You may enter ANY elements at this point-->\r
+      </urn:ArgosHeader>\r
+      <urn1:LogicalAddress>?</urn1:LogicalAddress>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <urn2:LasLFForskrivare>\r
+         <urn2:atkomsttyp>?</urn2:atkomsttyp>\r
+         <urn2:klientinformation>\r
+            <urn3:anvandare>?</urn3:anvandare>\r
+            <urn3:session>?</urn3:session>\r
+            <urn3:system>?</urn3:system>\r
+            <!--You may enter ANY elements at this point-->\r
+         </urn2:klientinformation>\r
+         <urn2:personnummer>?</urn2:personnummer>\r
+         <urn2:personnummerForskrivare>?</urn2:personnummerForskrivare>\r
+         <urn2:arbetsplatsnamn>?</urn2:arbetsplatsnamn>\r
+         <urn2:arbetsplatspostort>?</urn2:arbetsplatspostort>\r
+         <urn2:arbetsplatsid>?</urn2:arbetsplatsid>\r
+         <!--You may enter ANY elements at this point-->\r
+      </urn2:LasLFForskrivare>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="1063e572-6f8b-436d-b2a5-aed17de897ae" name="SOAP Response"/><con:assertion type="Schema Compliance" id="03580a99-713b-48a0-a2f8-6d1874d07444" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="4094f47b-92c5-4925-845f-2e831616e5e0" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4:LasLFForskrivare"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="10e44c12-b798-4b92-9b81-4be4395c7946" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - OR" searchProperties="true"><con:settings/><con:testStep type="request" id="0917f44c-140a-4998-8a05-e5cf9b20938a" name="HamtaIckeAktuellaOrdinationer"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaIckeAktuellaOrdinationerResponderBinding</con:interface><con:operation>HamtaIckeAktuellaOrdinationer</con:operation><con:request name="HamtaIckeAktuellaOrdinationer" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="d4e3d36b-53b1-41fb-9664-558d149482fe"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaIckeAktuellaOrdinationer/4/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationerResponder:4">\r
+   <soapenv:Header>\r
+      <urn:ArgosHeader>\r
+         <!--Optional:-->\r
+         <urn:forskrivarkod>?</urn:forskrivarkod>\r
+         <!--Optional:-->\r
+         <urn:legitimationskod>?</urn:legitimationskod>\r
+         <!--Optional:-->\r
+         <urn:fornamn>?</urn:fornamn>\r
+         <!--Optional:-->\r
+         <urn:efternamn>?</urn:efternamn>\r
+         <!--Optional:-->\r
+         <urn:yrkesgrupp>?</urn:yrkesgrupp>\r
+         <!--Optional:-->\r
+         <urn:befattningskod>?</urn:befattningskod>\r
+         <!--Optional:-->\r
+         <urn:arbetsplatskod>?</urn:arbetsplatskod>\r
+         <!--Optional:-->\r
+         <urn:arbetsplatsnamn>?</urn:arbetsplatsnamn>\r
+         <!--Optional:-->\r
+         <urn:postort>?</urn:postort>\r
+         <!--Optional:-->\r
+         <urn:postadress>?</urn:postadress>\r
+         <!--Optional:-->\r
+         <urn:postnummer>?</urn:postnummer>\r
+         <!--Optional:-->\r
+         <urn:telefonnummer>?</urn:telefonnummer>\r
+         <!--Optional:-->\r
+         <urn:requestId>?</urn:requestId>\r
+         <!--Optional:-->\r
+         <urn:rollnamn>?</urn:rollnamn>\r
+         <!--Optional:-->\r
+         <urn:directoryID>?</urn:directoryID>\r
+         <!--Optional:-->\r
+         <urn:hsaID>?</urn:hsaID>\r
+         <!--Optional:-->\r
+         <urn:katalog>?</urn:katalog>\r
+         <!--Optional:-->\r
+         <urn:organisationsnummer>?</urn:organisationsnummer>\r
+         <!--Optional:-->\r
+         <urn:systemnamn>?</urn:systemnamn>\r
+         <!--Optional:-->\r
+         <urn:systemversion>?</urn:systemversion>\r
+         <!--Optional:-->\r
+         <urn:systemIp>?</urn:systemIp>\r
+         <!--You may enter ANY elements at this point-->\r
+      </urn:ArgosHeader>\r
+      <urn1:LogicalAddress>?</urn1:LogicalAddress>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <urn2:HamtaIckeAktuellaOrdinationer>\r
+         <!--Optional:-->\r
+         <urn2:fromDatum>20160216</urn2:fromDatum>\r
+         <urn2:personnummer>?</urn2:personnummer>\r
+         <!--You may enter ANY elements at this point-->\r
+      </urn2:HamtaIckeAktuellaOrdinationer>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="1a1386e1-8d8c-49a7-8bad-7137918ba42c" name="SOAP Response"/><con:assertion type="Schema Compliance" id="fd9410f0-5a69-46c2-a6fb-921819a4a17f" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="08745af8-6b82-4b11-a35e-6ab00de3894b" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationerResponder:4:HamtaIckeAktuellaOrdinationer"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="717317f7-0684-4c53-bb78-557e241b943b" name="MakuleraOrdinationVard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MakuleraOrdinationVardResponderBinding</con:interface><con:operation>MakuleraOrdinationVard</con:operation><con:request name="MakuleraOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="12b3de3d-a559-4828-be8c-a565749c9723"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/MakuleraOrdinationVard/4/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4" xmlns:urn3="urn:riv:se.apotekensservice:or:5">\r
+   <soapenv:Header>\r
+      <urn:ArgosHeader>\r
+         <!--Optional:-->\r
+         <urn:forskrivarkod>?</urn:forskrivarkod>\r
+         <!--Optional:-->\r
+         <urn:legitimationskod>?</urn:legitimationskod>\r
+         <!--Optional:-->\r
+         <urn:fornamn>?</urn:fornamn>\r
+         <!--Optional:-->\r
+         <urn:efternamn>?</urn:efternamn>\r
+         <!--Optional:-->\r
+         <urn:yrkesgrupp>?</urn:yrkesgrupp>\r
+         <!--Optional:-->\r
+         <urn:befattningskod>?</urn:befattningskod>\r
+         <!--Optional:-->\r
+         <urn:arbetsplatskod>?</urn:arbetsplatskod>\r
+         <!--Optional:-->\r
+         <urn:arbetsplatsnamn>?</urn:arbetsplatsnamn>\r
+         <!--Optional:-->\r
+         <urn:postort>?</urn:postort>\r
+         <!--Optional:-->\r
+         <urn:postadress>?</urn:postadress>\r
+         <!--Optional:-->\r
+         <urn:postnummer>?</urn:postnummer>\r
+         <!--Optional:-->\r
+         <urn:telefonnummer>?</urn:telefonnummer>\r
+         <!--Optional:-->\r
+         <urn:requestId>?</urn:requestId>\r
+         <!--Optional:-->\r
+         <urn:rollnamn>?</urn:rollnamn>\r
+         <!--Optional:-->\r
+         <urn:directoryID>?</urn:directoryID>\r
+         <!--Optional:-->\r
+         <urn:hsaID>?</urn:hsaID>\r
+         <!--Optional:-->\r
+         <urn:katalog>?</urn:katalog>\r
+         <!--Optional:-->\r
+         <urn:organisationsnummer>?</urn:organisationsnummer>\r
+         <!--Optional:-->\r
+         <urn:systemnamn>?</urn:systemnamn>\r
+         <!--Optional:-->\r
+         <urn:systemversion>?</urn:systemversion>\r
+         <!--Optional:-->\r
+         <urn:systemIp>?</urn:systemIp>\r
+         <!--You may enter ANY elements at this point-->\r
+      </urn:ArgosHeader>\r
+      <urn1:LogicalAddress>?</urn1:LogicalAddress>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <urn2:MakuleraOrdinationVard>\r
+         <!--Optional:-->\r
+         <urn2:makulering>\r
+            <!--Optional:-->\r
+            <urn3:kommentar>?</urn3:kommentar>\r
+            <urn3:orsakskod>1</urn3:orsakskod>\r
+            <urn3:paUppdragAv>?</urn3:paUppdragAv>\r
+            <!--Optional:-->\r
+            <urn3:samtyckeMakulering>?</urn3:samtyckeMakulering>\r
+            <!--You may enter ANY elements at this point-->\r
+         </urn2:makulering>\r
+         <urn2:ordinationsId>1</urn2:ordinationsId>\r
+         <!--Optional:-->\r
+         <urn2:underlagsversion>1</urn2:underlagsversion>\r
+         <!--You may enter ANY elements at this point-->\r
+      </urn2:MakuleraOrdinationVard>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2f75c683-3952-449c-8729-49449ef06482" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b6e2c607-c263-4586-a56b-89bdd5ce23eb" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="526c85ad-4fd7-4fad-8537-3f0b597f7a1d" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:MakuleraOrdinationVardResponder:4:MakuleraOrdinationVard"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>serviceEndpoint</con:name><con:value>https://test.esb.ntjp.se:443</con:value></con:property><con:property><con:name>serviceEndpoint - test</con:name><con:value>https://test.esb.ntjp.se:443</con:value></con:property><con:property><con:name>serviceEndpoint - qa</con:name><con:value>???</con:value></con:property></con:properties></con:testSuite><con:properties><con:property><con:name>serviceEndpoint</con:name><con:value>https://ine-dit-app03.sth.basefarm.net:15005</con:value></con:property><con:property><con:name>servicePath</con:name><con:value>anp/apsemedicalservicesadapter/teststub/se/apotekensservice</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
