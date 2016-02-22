@@ -36,7 +36,7 @@
 			namespace="urn:riv:se.apotekensservice:or:ForlangOrdinationVard:5:rivtabp21"
 			payload="envelope" 
 			service="ForlangOrdinationVardResponderService"
-			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC1/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_5.0_rivtabp21.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC2/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_5.0_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
@@ -76,7 +76,7 @@
 			namespace="urn:riv:se.apotekensservice:or:ForlangOrdinationVard:5:rivtabp21"
 			payload="envelope" 
 			service="ForlangOrdinationVardResponderService"
-			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC1/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_5.0_rivtabp21.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC2/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_5.0_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />

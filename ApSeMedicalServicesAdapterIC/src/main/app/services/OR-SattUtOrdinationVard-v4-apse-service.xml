@@ -15,16 +15,16 @@
 		http://www.mulesoft.org/schema/mule/https     http://www.mulesoft.org/schema/mule/https/current/mule-https.xsd
 	">
 
-	<flow name="Bridged-ApotekenService-MakuleraOrdinationVard.v4">
+	<flow name="Bridged-ApotekenService-SattUtOrdinationVard.v4">
 
 		<composite-source>
-		<http:inbound-endpoint address="${inbound.endpoint.http.apotekensservice.or.MakuleraOrdinationVard.v4}"
+		<http:inbound-endpoint address="${inbound.endpoint.http.apotekensservice.or.SattUtOrdinationVard.v4}"
 			connector-ref="soitoolkit-http-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
 			transformer-refs="create-correlation-id logReqIn">
 		</http:inbound-endpoint>
-		<https:inbound-endpoint address="${inbound.endpoint.https.apotekensservice.or.MakuleraOrdinationVard.v4}"
+		<https:inbound-endpoint address="${inbound.endpoint.https.apotekensservice.or.SattUtOrdinationVard.v4}"
 			connector-ref="soitoolkit-https-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
@@ -33,16 +33,16 @@
 		</composite-source>
 
 		<cxf:proxy-service
-			namespace="urn:riv:se.apotekensservice:or:MakuleraOrdinationVard:4:rivtabp21"
+			namespace="urn:riv:se.apotekensservice:or:SattUtOrdinationVard:4:rivtabp21"
 			payload="envelope" 
-			service="MakuleraOrdinationVardResponderService"
-			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC2/interactions/MakuleraOrdinationVardInteraction/MakuleraOrdinationVardInteraction_4.0_rivtabp21.wsdl" />
+			service="SattUtOrdinationVardResponderService"
+			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC2/interactions/SattUtOrdinationVardInteraction/SattUtOrdinationVardInteraction_4.0_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
 		
 		<https:outbound-endpoint connector-ref="soitoolkit-https-connector"
-			address="${outbound.endpoint.apotekensservice.or.MakuleraOrdinationVard.v4}"
+			address="${outbound.endpoint.apotekensservice.or.SattUtOrdinationVard.v4}"
 			exchange-pattern="request-response" 
 			responseTimeout="${SERVICE_TIMEOUT_MS}"
 			transformer-refs="addContentTypeXmlUtf8 logReqOut" 
@@ -53,16 +53,16 @@
 		
 	</flow>
 	
-	<flow name="Bridged-ApotekenService-MakuleraOrdinationVard.v4-env2">
+	<flow name="Bridged-ApotekenService-SattUtOrdinationVard.v4-env2">
 
 		<composite-source>
-		<http:inbound-endpoint address="${inbound.endpoint.http.env2.apotekensservice.or.MakuleraOrdinationVard.v4}"
+		<http:inbound-endpoint address="${inbound.endpoint.http.env2.apotekensservice.or.SattUtOrdinationVard.v4}"
 			connector-ref="soitoolkit-http-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
 			transformer-refs="create-correlation-id logReqIn">
 		</http:inbound-endpoint>
-		<https:inbound-endpoint address="${inbound.endpoint.https.env2.apotekensservice.or.MakuleraOrdinationVard.v4}"
+		<https:inbound-endpoint address="${inbound.endpoint.https.env2.apotekensservice.or.SattUtOrdinationVard.v4}"
 			connector-ref="soitoolkit-https-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
@@ -71,16 +71,16 @@
 		</composite-source>
 
 		<cxf:proxy-service
-			namespace="urn:riv:se.apotekensservice:or:MakuleraOrdinationVard:4:rivtabp21"
+			namespace="urn:riv:se.apotekensservice:or:SattUtOrdinationVard:4:rivtabp21"
 			payload="envelope" 
-			service="MakuleraOrdinationVardResponderService"
-			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC2/interactions/MakuleraOrdinationVardInteraction/MakuleraOrdinationVardInteraction_4.0_rivtabp21.wsdl" />
+			service="SattUtOrdinationVardResponderService"
+			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC2/interactions/SattUtOrdinationVardInteraction/SattUtOrdinationVardInteraction_4.0_rivtabp21.wsdl" />
 			
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
 		
 		<https:outbound-endpoint connector-ref="soitoolkit-https-connector"
-			address="${outbound.endpoint.env2.apotekensservice.or.MakuleraOrdinationVard.v4}"
+			address="${outbound.endpoint.env2.apotekensservice.or.SattUtOrdinationVard.v4}"
 			exchange-pattern="request-response" 
 			responseTimeout="${SERVICE_TIMEOUT_MS}"
 			transformer-refs="addContentTypeXmlUtf8 logReqOut" 
