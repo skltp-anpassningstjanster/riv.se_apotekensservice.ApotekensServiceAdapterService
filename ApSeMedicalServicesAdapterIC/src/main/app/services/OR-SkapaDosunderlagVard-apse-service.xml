@@ -37,7 +37,7 @@
 			namespace="urn:riv:se.apotekensservice:or:SkapaDosunderlagVard:1:rivtabp21"
 			payload="envelope" 
 			service="SkapaDosunderlagVardResponderService"
-			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC2/interactions/SkapaDosunderlagVardInteraction/SkapaDosunderlagVardInteraction_1.1_rivtabp21.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_OR_5_0/interactions/SkapaDosunderlagVardInteraction/SkapaDosunderlagVardInteraction_1.1_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
@@ -75,7 +75,7 @@
 			namespace="urn:riv:se.apotekensservice:or:SkapaDosunderlagVard:1:rivtabp21"
 			payload="envelope" 
 			service="SkapaDosunderlagVardResponderService"
-			wsdlLocation="classpath:/TD_APSE_OR_5_0_RC2/interactions/SkapaDosunderlagVardInteraction/SkapaDosunderlagVardInteraction_1.1_rivtabp21.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_OR_5_0/interactions/SkapaDosunderlagVardInteraction/SkapaDosunderlagVardInteraction_1.1_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />

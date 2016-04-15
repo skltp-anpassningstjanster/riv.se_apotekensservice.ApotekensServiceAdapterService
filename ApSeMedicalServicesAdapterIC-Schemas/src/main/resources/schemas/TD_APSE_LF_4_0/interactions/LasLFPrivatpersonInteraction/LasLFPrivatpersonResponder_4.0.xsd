@@ -6,7 +6,7 @@
            targetNamespace="urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified"
-           version="1.0">
+           version="4.0">
 
         
     <xs:import namespace="urn:riv:se.apotekensservice:lf:4" schemaLocation="../../core_components/se.apotekensservice_lf_4.0.xsd"/>

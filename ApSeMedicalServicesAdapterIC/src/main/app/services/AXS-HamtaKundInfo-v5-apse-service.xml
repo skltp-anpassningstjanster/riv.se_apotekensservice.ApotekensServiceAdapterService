@@ -40,7 +40,7 @@
 			namespace="urn:riv:se.apotekensservice:axs:HamtaKundInfo:5:rivtabp21"
 			payload="envelope" 
 			service="HamtaKundInfoResponderService"
-			wsdlLocation="classpath:/TD_APSE_AXS_5_0_RC1/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_5.0_rivtabp21.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_AXS_5_0/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_5.0_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
@@ -82,7 +82,7 @@
 			namespace="urn:riv:se.apotekensservice:axs:HamtaKundInfo:5:rivtabp21"
 			payload="envelope" 
 			service="HamtaKundInfoResponderService"
-			wsdlLocation="classpath:/TD_APSE_AXS_5_0_RC1/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_5.0_rivtabp21.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_AXS_5_0/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_5.0_rivtabp21.wsdl" />
 			
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
