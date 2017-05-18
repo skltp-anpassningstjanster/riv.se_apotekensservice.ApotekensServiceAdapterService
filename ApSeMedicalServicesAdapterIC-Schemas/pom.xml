@@ -45,7 +45,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_AXS_1_0_0_R/interactions/HamtaFolkInfoInteraction/HamtaFolkInfoInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_AXS_4_0_RC1/interactions/HamtaFolkInfoInteraction/HamtaFolkInfoInteraction_1.0_rivtabp20.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
