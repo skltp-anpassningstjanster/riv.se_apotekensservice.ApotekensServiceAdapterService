@@ -40,7 +40,7 @@
 			namespace="urn:riv:inera:se.apotekensservice:pris:HamtaHkdbKonto:1:rivtabp20"
 			payload="envelope" 
 			service="HamtaHkdbKontoResponderService"
-			wsdlLocation="classpath:/TD_APSE_PRIS_1_0_0_SNAPSHOT/interactions/HamtaHkdbKontoInteraction/HamtaHkdbKontoInteraction_1.0_rivtabp20.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_PRIS_2_0_RC1/interactions/HamtaHkdbKontoInteraction/HamtaHkdbKontoInteraction_1.0_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
@@ -78,7 +78,7 @@
 			namespace="urn:riv:inera:se.apotekensservice:pris:HamtaHkdbKonto:1:rivtabp20"
 			payload="envelope" 
 			service="HamtaHkdbKontoResponderService"
-			wsdlLocation="classpath:/TD_APSE_PRIS_1_0_0_SNAPSHOT/interactions/HamtaHkdbKontoInteraction/HamtaHkdbKontoInteraction_1.0_rivtabp20.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_PRIS_2_0_RC1/interactions/HamtaHkdbKontoInteraction/HamtaHkdbKontoInteraction_1.0_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />

@@ -1467,133 +1467,119 @@
               <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
               <wsdlOptions>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_PRIS_1_0_0_SNAPSHOT/interactions/HamtaBarnInteraction/HamtaBarnInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_PRIS_2_0_RC1/interactions/HamtaBarnInteraction/HamtaBarnInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:pris:HamtaBarnResponder:1=se.riv.se.apotekensservice.pris.hamtabarnresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:pris:HamtaBarn:1:rivtabp20=se.riv.inera.se.apotekensservice.pris.hamtabarn.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:HamtaBarn:1:rivtabp21=se.riv.inera.se.apotekensservice.pris.hamtabarn.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_PRIS_1_0_0_SNAPSHOT/interactions/HamtaHkdbKontoInteraction/HamtaHkdbKontoInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_PRIS_2_0_RC1/interactions/HamtaHkdbKontoInteraction/HamtaHkdbKontoInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:pris:HamtaHkdbKontoResponder:1=se.riv.se.apotekensservice.pris.hamtahkdbkontoresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:pris:HamtaHkdbKonto:1:rivtabp20=se.riv.inera.se.apotekensservice.pris.hamtahkdbkonto.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:HamtaHkdbKonto:1:rivtabp21=se.riv.inera.se.apotekensservice.pris.hamtahkdbkonto.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_PRIS_1_0_0_SNAPSHOT/interactions/HamtaHkdbTransaktionerInteraction/HamtaHkdbTransaktionerInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_PRIS_2_0_RC1/interactions/HamtaHkdbTransaktionerInteraction/HamtaHkdbTransaktionerInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:pris:HamtaHkdbTransaktionerResponder:1=se.riv.se.apotekensservice.pris.hamtahkdbtransaktionerresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:pris:HamtaHkdbTransaktioner:1:rivtabp20=se.riv.inera.se.apotekensservice.pris.hamtahkdbtransaktioner.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:HamtaHkdbTransaktioner:1:rivtabp21=se.riv.inera.se.apotekensservice.pris.hamtahkdbtransaktioner.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_PRIS_1_0_0_SNAPSHOT/interactions/HamtaHkdbTransaktionerWebbInteraction/HamtaHkdbTransaktionerWebbInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_PRIS_2_0_RC1/interactions/HamtaHkdbTransaktionerWebbInteraction/HamtaHkdbTransaktionerWebbInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:pris:HamtaHkdbTransaktionerWebbResponder:1=se.riv.se.apotekensservice.pris.hamtahkdbtransaktionerwebbresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:pris:HamtaHkdbTransaktionerWebb:1:rivtabp20=se.riv.inera.se.apotekensservice.pris.hamtahkdbtransaktionerwebb.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:HamtaHkdbTransaktionerWebb:1:rivtabp21=se.riv.inera.se.apotekensservice.pris.hamtahkdbtransaktionerwebb.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_PRIS_1_0_0_SNAPSHOT/interactions/KontrolleraFormanInteraction/KontrolleraFormanInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_PRIS_2_0_RC1/interactions/KontrolleraFormanInteraction/KontrolleraFormanInteraction_1.1_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:pris:KontrolleraFormanResponder:1=se.riv.se.apotekensservice.pris.kontrolleraformanresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:pris:KontrolleraForman:1:rivtabp20=se.riv.inera.se.apotekensservice.pris.kontrolleraforman.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:KontrolleraFormanResponder:1.1=se.riv.se.apotekensservice.pris.kontrolleraformanresponder.v1_1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:KontrolleraForman:1:rivtabp21=se.riv.inera.se.apotekensservice.pris.kontrolleraforman.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_PRIS_1_0_0_SNAPSHOT/interactions/KopplaBarnKontoInteraction/KopplaBarnKontoInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_PRIS_2_0_RC1/interactions/KopplaBarnKontoInteraction/KopplaBarnKontoInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
+                    <extraarg>urn:riv:inera.se.apotekensservice:argos:4=se.riv.inera.se.apotekensservice.argos.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:KopplaBarnKontoResponder:4=se.riv.se.apotekensservice.pris.kopplabarnkontoresponder.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:pris:KopplaBarnKontoResponder:1=se.riv.se.apotekensservice.pris.kopplabarnkontoresponder.v1</extraarg>
-                    <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:pris:KopplaBarnKonto:1:rivtabp20=se.riv.inera.se.apotekensservice.pris.kopplabarnkonto.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:KopplaBarnKonto:4:rivtabp21=se.riv.inera.se.apotekensservice.pris.kopplabarnkonto.v4.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_PRIS_1_0_0_SNAPSHOT/interactions/PrisfragaInteraction/PrisfragaInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_PRIS_2_0_RC1/interactions/PrisfragaInteraction/PrisfragaInteraction_1.1_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
+                    <extraarg>urn:riv:inera.se.apotekensservice:argos:4=se.riv.inera.se.apotekensservice.argos.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:PrisfragaResponder:4=se.riv.se.apotekensservice.pris.prisfragaresponder.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:pris:PrisfragaResponder:1=se.riv.se.apotekensservice.pris.prisfragaresponder.v1</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:PrisfragaResponder:4.1=se.riv.se.apotekensservice.pris.prisfragaresponder.v4_1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:pris:Prisfraga:1:rivtabp20=se.riv.inera.se.apotekensservice.pris.prisfraga.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:Prisfraga:4:rivtabp21=se.riv.inera.se.apotekensservice.pris.prisfraga.v4.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_PRIS_1_0_0_SNAPSHOT/interactions/RegistreraHkdbTransaktionInteraction/RegistreraHkdbTransaktionInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_PRIS_2_0_RC1/interactions/RegistreraHkdbTransaktionInteraction/RegistreraHkdbTransaktionInteraction_1.1_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:pris:RegistreraHkdbTransaktionResponder:1=se.riv.se.apotekensservice.pris.registrerahkdbtransaktionresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:pris:RegistreraHkdbTransaktion:1:rivtabp20=se.riv.inera.se.apotekensservice.pris.registrerahkdbtransaktion.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:RegistreraHkdbTransaktionResponder:1.1=se.riv.se.apotekensservice.pris.registrerahkdbtransaktionresponder.v1_1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:RegistreraHkdbTransaktion:1:rivtabp21=se.riv.inera.se.apotekensservice.pris.registrerahkdbtransaktion.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_PRIS_1_0_0_SNAPSHOT/interactions/SkapaHkdbKontoInteraction/SkapaHkdbKontoInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_PRIS_2_0_RC1/interactions/SkapaHkdbKontoInteraction/SkapaHkdbKontoInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
+                    <extraarg>urn:riv:inera.se.apotekensservice:argos:4=se.riv.inera.se.apotekensservice.argos.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:SkapaHkdbKontoResponder:4=se.riv.se.apotekensservice.pris.skapahkdbkontoresponder.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:pris:SkapaHkdbKontoResponder:1=se.riv.se.apotekensservice.pris.skapahkdbkontoresponder.v1</extraarg>
-                    <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:pris:SkapaHkdbKonto:1:rivtabp20=se.riv.inera.se.apotekensservice.pris.skapahkdbkonto.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:SkapaHkdbKonto:4:rivtabp21=se.riv.inera.se.apotekensservice.pris.skapahkdbkonto.v4.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_PRIS_1_0_0_SNAPSHOT/interactions/TaBortHkdbKontoInteraction/TaBortHkdbKontoInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_PRIS_2_0_RC1/interactions/TaBortHkdbKontoInteraction/TaBortHkdbKontoInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:pris:TaBortHkdbKontoResponder:1=se.riv.se.apotekensservice.pris.taborthkdbkontoresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:pris:TaBortHkdbKonto:1:rivtabp20=se.riv.inera.se.apotekensservice.pris.taborthkdbkonto.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:pris:TaBortHkdbKonto:1:rivtabp21=se.riv.inera.se.apotekensservice.pris.taborthkdbkonto.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
               </wsdlOptions>
@@ -1604,7 +1590,6 @@
           </execution>
 		</executions>
 		</plugin>
-		
 		<plugin>
 			<artifactId>maven-compiler-plugin</artifactId>
 			<configuration>
