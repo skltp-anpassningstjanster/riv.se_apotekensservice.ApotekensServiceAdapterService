@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeReceptResponder:1:ext:1"
+           targetNamespace="urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeReceptResponder:1:ext:1"
+           version="1.0">
+
+    <xs:element name="applikationsnamn" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Namnet på den applikation som kunden använder.</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+
+    <xs:element name="extension1" type="ExtensionType"/>
+
+    <xs:complexType name="ExtensionType">
+        <xs:sequence>
+            <xs:any namespace="##any"
+                    processContents="lax"
+                    minOccurs="0"
+                    maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeReceptResponder:1"
+           xmlns:or="urn:riv:se.apotekensservice:or:1"
+           xmlns:e1="urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeReceptResponder:1:ext:1"
+           targetNamespace="urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeReceptResponder:1"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.1">
+
+    <xs:import namespace="urn:riv:se.apotekensservice:or:1" schemaLocation="../../core_components/se.apotekensservice_or_1.0.xsd"/>
+
+    <xs:import namespace="urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeReceptResponder:1:ext:1"
+                        schemaLocation="SkrivUtMinaSparadeReceptResponder_1_ext_1.0.xsd"/>
+
+    <!-- Globala element: Metod parametrar -->
+    <xs:element name="SkrivUtMinaSparadeRecept" type="SkrivUtMinaSparadeReceptRequestType"/>
+    <xs:element name="SkrivUtMinaSparadeReceptResponse" type="SkrivUtMinaSparadeReceptResponseType"/>
+
+    <!-- Fel -->
+    <xs:element name="ApplicationException" type="or:ApplicationException"/>
+    <xs:element name="SystemException" type="or:SystemException"/>
+
+         <xs:complexType name="SkrivUtMinaSparadeReceptRequestType">
+            <xs:sequence>
+                <xs:element name="personnummer" type="xs:string" nillable="false">
+                    <xs:annotation>
+                        <xs:documentation>Giltigt personnummer.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+
+                <xs:element name="sorteringsordning" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Sorteringsordning.
+A : Stigande efter artikelbenämning, stigande efter ordinationstidpunkt
+D : Fallande efter ordinationstidpunkt, stigande efter artikelbenämning</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="e1:applikationsnamn" minOccurs="0"/>
+                <xs:element ref="e1:extension1" minOccurs="0"/>
+            </xs:sequence>
+         </xs:complexType>
+
+            <xs:complexType name="SkrivUtMinaSparadeReceptResponseType">
+            <xs:sequence>
+                <xs:element name="dosSamtycke" type="xs:boolean" nillable="false">
+                    <xs:annotation>
+                        <xs:documentation>Markering om kunden har dossamtycke enligt FOLK</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="hkdbSamtycke" type="xs:boolean" nillable="false">
+                    <xs:annotation>
+                        <xs:documentation>Markering om kunden har samtyckt till HKDB enligt FOLK</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="rrSamtycke" type="xs:boolean" nillable="false">
+                    <xs:annotation>
+                        <xs:documentation>Markering om kunden har samtyckt till RR enligt FOLK</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="sparadeRecept" type="xs:base64Binary" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>En byte array innehållande pdf-dokumentet.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="statuskod" type="xs:int" nillable="false">
+                    <xs:annotation>
+                        <xs:documentation>Kundens statuskod enligt FOLK</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+
+                <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+    </xs:schema>
+

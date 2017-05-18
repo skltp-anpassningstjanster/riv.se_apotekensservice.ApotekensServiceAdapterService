@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:riv:se.apotekensservice:or:HamtaAktuellaOrdinationerResponder:4"
+           xmlns:or4="urn:riv:se.apotekensservice:or:4"
+           xmlns:or="urn:riv:se.apotekensservice:or:6"
+           targetNamespace="urn:riv:se.apotekensservice:or:HamtaAktuellaOrdinationerResponder:4"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="4.0">
+
+        
+    <xs:import namespace="urn:riv:se.apotekensservice:or:6" schemaLocation="../../core_components/se.apotekensservice_or_6.0.xsd"/>
+
+    <!-- Globala element: Metod parametrar -->
+    <xs:element name="HamtaAktuellaOrdinationer" type="HamtaAktuellaOrdinationerRequestType"/>
+    <xs:element name="HamtaAktuellaOrdinationerResponse" type="HamtaAktuellaOrdinationerResponseType"/>
+
+    <!-- Fel -->
+    <xs:element name="ApplicationException" type="or4:ApplicationException"/>
+    <xs:element name="SystemException" type="or4:SystemException"/>
+
+    <xs:complexType name="HamtaAktuellaOrdinationerRequestType">
+        <xs:sequence>
+            <xs:element name="personnummer" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Giltigt personnummer för patient.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="HamtaAktuellaOrdinationerResponseType">
+        <xs:sequence>
+                <xs:element name="apoteksInformationLista" type="or4:ApoteksinformationResponse" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Lista med apotek därifrån förändringar eller skapande utförts på/av ordinationerna.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+                <xs:element name="arbetsplatsInfoLista" type="or4:ArbetsplatsInfoResponse" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Lista med arbetsplatser därifrån förändringar utförts på ordinationerna.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+                <xs:element name="artikelLista" type="or4:ArtikelResponse" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Lista med artikelinformation för de varor som ingår i ordinationerna.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+                <xs:element name="forskrivarInfoLista" type="or4:ForskrivarinfoResponse" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Lista med förskrivare som gjort förändringar i ordinationerna.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <xs:element name="ordinationslista" type="or:OrdinationslistaResponse" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Ordinationslista</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ExtensionType">
+        <xs:sequence>
+            <xs:any namespace="##any"
+                    processContents="lax"
+                    minOccurs="0"
+                    maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:riv:se.apotekensservice:pris:SkapaHkdbKontoResponder:4"
+           xmlns:pris = "urn:riv:se.apotekensservice:pris:4"
+           targetNamespace="urn:riv:se.apotekensservice:pris:SkapaHkdbKontoResponder:4"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="4.0">
+
+    <xs:import namespace="urn:riv:se.apotekensservice:pris:4" schemaLocation="../../core_components/se.apotekensservice_pris_4.0.xsd"/>
+
+    <!-- Globala element: Metod parametrar -->
+    <xs:element name="SkapaHkdbKonto" type="SkapaHkdbKontoRequestType"/>
+    <xs:element name="SkapaHkdbKontoResponse" type="SkapaHkdbKontoResponseType"/>
+
+    <!-- Fel -->
+    <xs:element name="ApplicationException" type="pris:ApplicationException"/>
+    <xs:element name="SystemException" type="pris:SystemException"/>
+
+            <xs:complexType name="SkapaHkdbKontoRequestType">
+            <xs:sequence>
+                <xs:element name="huvudPersNr" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Personnummer för eventuell huvudperson.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="klientinformation" type="pris:KlientinformationRequest" nillable="false">
+                    <xs:annotation>
+                        <xs:documentation>Objekt innehållande information om anropande klientsystem.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="periodBrutto" type="xs:double" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Ackumulerat bruttobelopp i kronor och ören.
+Från och med version 10.3 ersätter periodBrutto periodNetto.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="periodStart" type="xs:dateTime" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Eventuellt startdatum för innevarande högkostnadsperiod.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="persNr" type="xs:string" nillable="false">
+                    <xs:annotation>
+                        <xs:documentation>Personnummer för den som ska anslutas.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                            
+                <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    
+            <xs:complexType name="SkapaHkdbKontoResponseType">
+            <xs:sequence>
+                <xs:element name="ansluten" type="xs:boolean" nillable="false">
+                    <xs:annotation>
+                        <xs:documentation>Personens högkostnadsstatus.
+False - Konto ej skapat
+True - Konto skapat</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                            
+                <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+
+
+	</xs:schema>

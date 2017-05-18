@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:6"
+           xmlns:or="urn:riv:se.apotekensservice:or:5"
+           xmlns:or4="urn:riv:se.apotekensservice:or:4"
+           targetNamespace="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:6"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="6.0">
+
+    <xs:import namespace="urn:riv:se.apotekensservice:or:5" schemaLocation="../../core_components/se.apotekensservice_or_5.0.xsd"/>
+
+    <!-- Globala element: Metod parametrar -->
+    <xs:element name="SkapaOrdinationVard" type="SkapaOrdinationVardRequestType"/>
+    <xs:element name="SkapaOrdinationVardResponse" type="SkapaOrdinationVardResponseType"/>
+
+    <!-- Fel -->
+    <xs:element name="ApplicationException" type="or4:ApplicationException"/>
+    <xs:element name="SystemException" type="or4:SystemException"/>
+
+            <xs:complexType name="SkapaOrdinationVardRequestType">
+            	
+            <xs:sequence>
+                <xs:element name="bytesEj" type="or:char" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Markering att farmaceut eller patient beslutat att ordinerad artikel ej får bytas ut.
+
+A=Apoteks-nej, L=Förskrivar-nej, P=Patient-nej.
+
+
+Får enbart anges för Ordinationstyp=D (Dispenserad ordination).</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="dispenseradOrdination" type="or:DispenseradOrdinationRequest" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Dispenserad ordination.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="helforpackningsordination" type="or:HelforpackningsordinationRequest" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Helforpackningsordination</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="ordinatorsKontaktuppgift" type="or4:KontaktuppgiftRequest" nillable="false">
+                    <xs:annotation>
+                        <xs:documentation>Ordinatörens kontaktinformation.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="underlagsversion" type="xs:int" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Version på Ordinationslista. Används för att verifiera att klientsystemet har rätt underlag vid uppdateringar. 
+Obligatorisk parameter om ordinationen tillhör patient med dosunderlag.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+
+                <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    
+            <xs:complexType name="SkapaOrdinationVardResponseType">
+            <xs:sequence>
+                <xs:element name="affResultat" type="or4:AFFResultatResponse" nillable="false">
+                    <xs:annotation>
+                        <xs:documentation>AFF-resultat för skapandet av ordinationen</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="ordinationsstatus" type="or4:OrdinationsstatusResponse" minOccurs="0"/>
+            
+                <xs:element name="skapatOrdinationsId" type="xs:long" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Om ordination skapats, returneras ordinationsid.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            
+                <xs:element name="underlagsversion" type="xs:int" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Version på Ordinationslista. Används för att verifiera att klientsystemet har rätt underlag vid uppdateringar. 
+Obligatorisk parameter om ordinationen tillhör patient med dosunderlag.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+
+                <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="ExtensionType">
+            <xs:sequence>
+                <xs:any namespace="##any"
+                        processContents="lax"
+                        minOccurs="0"
+                        maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+	</xs:schema>
