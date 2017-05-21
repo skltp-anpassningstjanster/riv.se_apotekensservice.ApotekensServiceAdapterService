@@ -1,6 +1,5 @@
 package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.expo.sokdosmottagare;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static se.skltp.adapterservices.apse.apsemedicalservicesadapteric.ApSeMedicalServicesAdapterICMuleServer.getAddress;
 
