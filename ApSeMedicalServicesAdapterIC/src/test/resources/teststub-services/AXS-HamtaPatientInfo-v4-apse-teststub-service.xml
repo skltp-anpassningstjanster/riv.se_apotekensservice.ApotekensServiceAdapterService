@@ -28,7 +28,7 @@
         transformer-refs="logReqIn"
         responseTransformer-refs="logRespOut"
         type="jax-ws"
-        component-class="se.skltp.adapterservices.apse.apsemedicalservicesadapteric.hamtapatientinfo.v4.HamtaPatientInfoTestProducer">
+        component-class="se.skltp.adapterservices.apse.apsemedicalservicesadapteric.axs.hamtapatientinfo.v4.HamtaPatientInfoTestProducer">
     </simple-service>
 
 </mule>
