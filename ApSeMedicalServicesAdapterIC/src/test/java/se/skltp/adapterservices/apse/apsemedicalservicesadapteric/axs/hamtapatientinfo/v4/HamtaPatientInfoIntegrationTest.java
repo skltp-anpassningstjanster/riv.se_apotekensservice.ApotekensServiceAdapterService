@@ -18,7 +18,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
-package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.hamtapatientinfo.v4;
+package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.axs.hamtapatientinfo.v4;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

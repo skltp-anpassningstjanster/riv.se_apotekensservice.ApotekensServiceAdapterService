@@ -18,7 +18,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
-package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.hamtaaktuellaordinationer;
+package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.or.hamtaaktuellaordinationer;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.Assert.assertEquals;
