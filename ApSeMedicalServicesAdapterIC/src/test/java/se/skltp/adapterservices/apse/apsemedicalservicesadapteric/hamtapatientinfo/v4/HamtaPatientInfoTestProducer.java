@@ -23,16 +23,12 @@ package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.hamtapatienti
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
-import javax.jws.WebService;
-
-import org.w3c.addressing.v1.AttributedURIType;
-
 import riv.se_apotekensservice.axs._4.ApoteksinformationResponse;
 import riv.se_apotekensservice.axs._4.PatientInformationResponse;
-import riv.se_apotekensservice.axs.hamtapatientinfo._4.rivtabp21.ApplicationException;
-import riv.se_apotekensservice.axs.hamtapatientinfo._4.rivtabp21.HamtaPatientInfoResponderInterface;
-import riv.se_apotekensservice.axs.hamtapatientinfo._4.rivtabp21.SystemException;
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
+import se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.ApplicationException;
+import se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.HamtaPatientInfoResponderInterface;
+import se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.SystemException;
 import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v4.HamtaPatientInfoRequestType;
 import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v4.HamtaPatientInfoResponseType;
 

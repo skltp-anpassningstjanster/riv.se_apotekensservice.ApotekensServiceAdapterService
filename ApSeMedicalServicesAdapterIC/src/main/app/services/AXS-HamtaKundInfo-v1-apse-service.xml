@@ -39,7 +39,7 @@
 			namespace="urn:riv:inera:se.apotekensservice:axs:HamtaKundInfo:1:rivtabp20"
 			payload="envelope" 
 			service="HamtaKundInfoResponderService"
-			wsdlLocation="classpath:/TD_APSE_AXS_1_0_0_R/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_1.0_rivtabp20.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_AXS_4_0_RC1/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_1.0_rivtabp20.wsdl" />
 			
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
@@ -81,7 +81,7 @@
 			namespace="urn:riv:inera:se.apotekensservice:axs:HamtaKundInfo:1:rivtabp20"
 			payload="envelope" 
 			service="HamtaKundInfoResponderService"
-			wsdlLocation="classpath:/TD_APSE_AXS_1_0_0_R/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_1.0_rivtabp20.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_AXS_4_0_RC1/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_1.0_rivtabp20.wsdl" />
 			
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />

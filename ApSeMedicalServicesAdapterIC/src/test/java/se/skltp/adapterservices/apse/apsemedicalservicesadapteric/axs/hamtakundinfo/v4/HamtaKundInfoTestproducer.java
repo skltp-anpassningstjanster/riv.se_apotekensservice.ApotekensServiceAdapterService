@@ -5,9 +5,9 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import riv.se_apotekensservice.axs.hamtakundinfo._4.rivtabp21.ApplicationException;
-import riv.se_apotekensservice.axs.hamtakundinfo._4.rivtabp21.HamtaKundInfoResponderInterface;
-import riv.se_apotekensservice.axs.hamtakundinfo._4.rivtabp21.SystemException;
+import se.riv.inera.se.apotekensservice.axs.hamtakundinfo.v4.rivtabp21.ApplicationException;
+import se.riv.inera.se.apotekensservice.axs.hamtakundinfo.v4.rivtabp21.HamtaKundInfoResponderInterface;
+import se.riv.inera.se.apotekensservice.axs.hamtakundinfo.v4.rivtabp21.SystemException;
 import se.riv.se.apotekensservice.axs.hamtakundinforesponder.v4.HamtaKundInfoRequestType;
 import se.riv.se.apotekensservice.axs.hamtakundinforesponder.v4.HamtaKundInfoResponseType;
 

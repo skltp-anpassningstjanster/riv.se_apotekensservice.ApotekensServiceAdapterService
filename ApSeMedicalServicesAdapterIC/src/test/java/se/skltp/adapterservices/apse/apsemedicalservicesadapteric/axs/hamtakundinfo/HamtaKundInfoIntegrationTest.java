@@ -13,7 +13,8 @@ import org.soitoolkit.commons.mule.test.AbstractJmsTestUtil;
 import org.soitoolkit.commons.mule.test.ActiveMqJmsTestUtil;
 import org.soitoolkit.commons.mule.test.junit4.AbstractTestCase;
 
-import se.riv.se.apotekensservice.axs.hamtakundinforesponder.v1.HamtaKundInfoResponseType;
+import se.riv.se.apotekensservice.axs.hamtakundinforesponder.v4.HamtaKundInfoResponseType;
+
 
 public class HamtaKundInfoIntegrationTest extends AbstractTestCase {
 	@SuppressWarnings("unused")

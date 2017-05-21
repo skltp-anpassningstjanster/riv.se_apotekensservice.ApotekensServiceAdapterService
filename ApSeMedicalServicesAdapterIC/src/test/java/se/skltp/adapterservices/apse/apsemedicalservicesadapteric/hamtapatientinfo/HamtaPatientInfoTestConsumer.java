@@ -28,13 +28,10 @@ import org.apache.cxf.bus.spring.SpringBusFactory;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.soitoolkit.commons.mule.util.RecursiveResourceBundle;
-import org.w3c.addressing.v1.AttributedURIType;
-
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v1.rivtabp20.HamtaPatientInfoResponderInterface;
-import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v1.HamtaPatientInfoRequestType;
-import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v1.HamtaPatientInfoResponseType;
+import se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.HamtaPatientInfoResponderInterface;
+import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v4.HamtaPatientInfoRequestType;
+import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v4.HamtaPatientInfoResponseType;
 
 public class HamtaPatientInfoTestConsumer {
 
@@ -57,11 +54,10 @@ public class HamtaPatientInfoTestConsumer {
 		_service = (HamtaPatientInfoResponderInterface) proxyFactory.create();
 	}
 
-	public HamtaPatientInfoResponseType requestIncludingCompleteArgosInformation(String socialSecurityNumber, String to)
-			throws se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v1.rivtabp20.ApplicationException,
-			se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v1.rivtabp20.SystemException {
+	public HamtaPatientInfoResponseType requestIncludingCompleteArgosInformation(String socialSecurityNumber, String logicalAddress)
+			throws se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.ApplicationException,
+			se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.SystemException {
 		ArgosHeaderType argosHeader = createOrganizationArgosHeader();
-		AttributedURIType logicalAddress = createLogicalAddress(to);
 		HamtaPatientInfoRequestType requestSocialSecurityNumber = createSocialSecurityNumberRequest(socialSecurityNumber);
 		return _service.hamtaPatientInfo(requestSocialSecurityNumber, logicalAddress, argosHeader);
 	}
@@ -72,9 +68,4 @@ public class HamtaPatientInfoTestConsumer {
 		return aktuellaOrdinationerRequest;
 	}
 
-	private AttributedURIType createLogicalAddress(String logicalAddress) {
-		AttributedURIType logicalAddressType = new AttributedURIType();
-		logicalAddressType.setValue(logicalAddress);
-		return logicalAddressType;
-	}
 }

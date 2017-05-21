@@ -32,7 +32,7 @@ import org.soitoolkit.commons.mule.test.AbstractJmsTestUtil;
 import org.soitoolkit.commons.mule.test.ActiveMqJmsTestUtil;
 import org.soitoolkit.commons.mule.test.junit4.AbstractTestCase;
 
-import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v1.HamtaPatientInfoResponseType;
+import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v4.HamtaPatientInfoResponseType;
 import se.skltp.adapterservices.apse.apsemedicalservicesadapteric.lfutskrift.LFUtskriftIntegrationTest;
 
 public class HamtaPatientInfoIntegrationTest extends AbstractTestCase {

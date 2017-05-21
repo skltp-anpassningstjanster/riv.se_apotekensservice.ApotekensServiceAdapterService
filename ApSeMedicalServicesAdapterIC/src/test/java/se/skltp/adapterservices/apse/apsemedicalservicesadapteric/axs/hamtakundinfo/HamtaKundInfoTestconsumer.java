@@ -6,12 +6,10 @@ import org.apache.cxf.bus.spring.SpringBusFactory;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.addressing.v1.AttributedURIType;
-
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.axs.hamtakundinfo.v1.rivtabp20.HamtaKundInfoResponderInterface;
-import se.riv.se.apotekensservice.axs.hamtakundinforesponder.v1.HamtaKundInfoRequestType;
-import se.riv.se.apotekensservice.axs.hamtakundinforesponder.v1.HamtaKundInfoResponseType;
+import se.riv.inera.se.apotekensservice.axs.hamtakundinfo.v4.rivtabp21.HamtaKundInfoResponderInterface;
+import se.riv.se.apotekensservice.axs.hamtakundinforesponder.v4.HamtaKundInfoRequestType;
+import se.riv.se.apotekensservice.axs.hamtakundinforesponder.v4.HamtaKundInfoResponseType;
 
 public class HamtaKundInfoTestconsumer {
 
@@ -38,12 +36,7 @@ public class HamtaKundInfoTestconsumer {
 		log.debug("Calling sample-soap-service with id = {}", id);
 		HamtaKundInfoRequestType request = new HamtaKundInfoRequestType();
 		request.setPersonnummer(id);
-		return _service.hamtaKundInfo(request, createLogicalAddress("TEST"), argosHeader);
+		return _service.hamtaKundInfo(request, "TEST", argosHeader);
 	}
 
-	private AttributedURIType createLogicalAddress(String logicalAddress) {
-		AttributedURIType logicalAddressType = new AttributedURIType();
-		logicalAddressType.setValue(logicalAddress);
-		return logicalAddressType;
-	}
 }
