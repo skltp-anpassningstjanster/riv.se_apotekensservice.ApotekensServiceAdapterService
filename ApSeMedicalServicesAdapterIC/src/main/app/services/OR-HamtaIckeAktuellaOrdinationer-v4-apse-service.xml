@@ -36,7 +36,7 @@
 			namespace="urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationer:4:rivtabp21"
 			payload="envelope" 
 			service="HamtaIckeAktuellaOrdinationerResponderService"
-			wsdlLocation="classpath:/TD_APSE_OR_4_0_RC3/interactions/HamtaIckeAktuellaOrdinationerInteraction/HamtaIckeAktuellaOrdinationerInteraction_4.0_rivtabp21.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_OR_5_0/interactions/HamtaIckeAktuellaOrdinationerInteraction/HamtaIckeAktuellaOrdinationerInteraction_4.0_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
@@ -74,7 +74,7 @@
 			namespace="urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationer:4:rivtabp21"
 			payload="envelope" 
 			service="HamtaIckeAktuellaOrdinationerResponderService"
-			wsdlLocation="classpath:/TD_APSE_OR_4_0_RC3/interactions/HamtaIckeAktuellaOrdinationerInteraction/HamtaIckeAktuellaOrdinationerInteraction_4.0_rivtabp21.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_OR_5_0/interactions/HamtaIckeAktuellaOrdinationerInteraction/HamtaIckeAktuellaOrdinationerInteraction_4.0_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
