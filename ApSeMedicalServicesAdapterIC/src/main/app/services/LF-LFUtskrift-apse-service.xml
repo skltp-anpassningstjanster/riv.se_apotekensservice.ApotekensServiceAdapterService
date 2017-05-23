@@ -41,7 +41,7 @@ version="EE-3.4.1">
 			namespace="urn:riv:inera:se.apotekensservice:lf:LFUtskrift:1:rivtabp20"
 			service="LFUtskriftResponderService"
 			payload="envelope"
-			wsdlLocation="classpath:/TD_APSE_LF_1_0_0_R/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp20.wsdl" doc:name="SOAP"/>	
+			wsdlLocation="classpath:/TD_APSE_LF_4_0/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp20.wsdl" doc:name="SOAP"/>	
 		 
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
@@ -82,7 +82,7 @@ version="EE-3.4.1">
 			namespace="urn:riv:inera:se.apotekensservice:lf:LFUtskrift:1:rivtabp20"
 			service="LFUtskriftResponderService"
 			payload="envelope"
-			wsdlLocation="classpath:/TD_APSE_LF_1_0_0_R/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp20.wsdl" doc:name="SOAP"/>	
+			wsdlLocation="classpath:/TD_APSE_LF_4_0/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp20.wsdl" doc:name="SOAP"/>	
 		 
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />

@@ -35,7 +35,7 @@ import se.riv.se.apotekensservice.lf.lfutskriftresponder.v1.LFUtskriftResponseTy
 @WebService(serviceName = "LFUtskriftResponderService", 
 			endpointInterface = "se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp20.LFUtskriftResponderInterface", 
 			portName = "LFUtskriftResponderPort", targetNamespace = "urn:riv:inera:se.apotekensservice:lf:LFUtskrift:1:rivtabp20", 
-			wsdlLocation = "TD_APSE_LF_1_0_0_R/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp20.wsdl")
+			wsdlLocation = "TD_APSE_LF_4_0/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp20.wsdl")
 public class LFUtskriftTestProducer implements LFUtskriftResponderInterface {
 	
 	public static final String CITIZENREQUEST = "188803099368";

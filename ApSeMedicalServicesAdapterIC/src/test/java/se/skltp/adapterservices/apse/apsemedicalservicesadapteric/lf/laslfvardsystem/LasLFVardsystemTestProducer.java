@@ -21,30 +21,24 @@
 package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.lf.laslfvardsystem;
 
 import javax.jws.WebMethod;
-import javax.jws.WebParam;
 import javax.jws.WebResult;
 
-import org.w3c.addressing.v1.AttributedURIType;
-
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v1.rivtabp20.LasLFVardsystemResponderInterface;
-import se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v1.LasLFVardsystemRequestType;
-import se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v1.LasLFVardsystemResponseType;
-import riv.se_apotekensservice.lf._1.PatientResponse;
+import se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21.ApplicationException;
+import se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21.LasLFVardsystemResponderInterface;
+import se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21.SystemException;
+import se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v4.LasLFVardsystemRequestType;
+import se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v4.LasLFVardsystemResponseType;
+import se.riv.se.apotekensservice.lf.v5.PatientResponse;
 
 
 public class LasLFVardsystemTestProducer implements LasLFVardsystemResponderInterface {
 
 	@Override
-	@WebResult(name = "LasLFVardsystemResponse", targetNamespace = "urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:1", partName = "parameters")
-	@WebMethod(operationName = "LasLFVardsystem", action = "urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:1:LasLFVardsystem")
-	public LasLFVardsystemResponseType lasLFVardsystem(
-			@WebParam(partName = "parameters", name = "LasLFVardsystem", targetNamespace = "urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:1") LasLFVardsystemRequestType parameters,
-			@WebParam(partName = "LogicalAddress", name = "To", targetNamespace = "http://www.w3.org/2005/08/addressing", header = true) AttributedURIType logicalAddress,
-			@WebParam(partName = "ArgosHeader", name = "ArgosHeader", targetNamespace = "urn:riv:inera.se.apotekensservice:argos:1", header = true) ArgosHeaderType argosHeader)
-			throws se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v1.rivtabp20.SystemException,
-			se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v1.rivtabp20.ApplicationException {
-		// TODO Auto-generated method stub
+	@WebResult(name = "LasLFVardsystemResponse", targetNamespace = "urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4", partName = "parameters")
+	@WebMethod(operationName = "LasLFVardsystem", action = "urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4:LasLFVardsystem")
+	public LasLFVardsystemResponseType lasLFVardsystem(LasLFVardsystemRequestType parameters, String logicalAddress,
+			ArgosHeaderType argosHeader) throws SystemException, ApplicationException {
 
 		LasLFVardsystemResponseType response = new LasLFVardsystemResponseType();
 		String ssn = parameters.getPersonnummer();
@@ -56,7 +50,6 @@ public class LasLFVardsystemTestProducer implements LasLFVardsystemResponderInte
 		response.setPatient(p);
 		response.setVarningsnivaUppnadd(false);
 		return response;
-		
 	}
 
 

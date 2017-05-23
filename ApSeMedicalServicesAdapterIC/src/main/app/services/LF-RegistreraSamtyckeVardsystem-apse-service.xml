@@ -37,7 +37,7 @@
 			namespace="urn:riv:inera:se.apotekensservice:lf:RegistreraSamtyckeVardsystem:1:rivtabp20"
 			payload="envelope" 
 			service="RegistreraSamtyckeVardsystemResponderService"
-			wsdlLocation="classpath:/TD_APSE_LF_1_0_0_R/interactions/RegistreraSamtyckeVardsystemInteraction/RegistreraSamtyckeVardsystemInteraction_1.0_rivtabp20.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_LF_4_0/interactions/RegistreraSamtyckeVardsystemInteraction/RegistreraSamtyckeVardsystemInteraction_1.0_rivtabp20.wsdl" />
 			
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
@@ -76,7 +76,7 @@
 			namespace="urn:riv:inera:se.apotekensservice:lf:RegistreraSamtyckeVardsystem:1:rivtabp20"
 			payload="envelope" 
 			service="RegistreraSamtyckeVardsystemResponderService"
-			wsdlLocation="classpath:/TD_APSE_LF_1_0_0_R/interactions/RegistreraSamtyckeVardsystemInteraction/RegistreraSamtyckeVardsystemInteraction_1.0_rivtabp20.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_LF_4_0/interactions/RegistreraSamtyckeVardsystemInteraction/RegistreraSamtyckeVardsystemInteraction_1.0_rivtabp20.wsdl" />
 			
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
