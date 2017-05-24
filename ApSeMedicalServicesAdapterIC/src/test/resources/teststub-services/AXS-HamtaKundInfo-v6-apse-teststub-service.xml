@@ -20,12 +20,12 @@
 	<!-- Name of this file is mandatory and may not be changed. -->
 	
 	<simple-service 
-		name="ApotekenService-axs-HamtaKundInfo-v4-teststub"
-        address="${inbound.endpoint.apotekensservice.axs.HamtaKundInfo.v4.teststub}" 
+		name="ApotekenService-axs-HamtaKundInfo-v6-teststub"
+        address="${inbound.endpoint.apotekensservice.axs.HamtaKundInfo.v6.teststub}" 
         transformer-refs="logReqIn"
         responseTransformer-refs="logRespOut"
         type="jax-ws"
-        component-class="se.skltp.adapterservices.apse.apsemedicalservicesadapteric.axs.hamtakundinfo.v4.HamtaKundInfoTestproducer">
+        component-class="se.skltp.adapterservices.apse.apsemedicalservicesadapteric.axs.hamtakundinfo.v6.HamtaKundInfoTestproducer">
     </simple-service>
 
 </mule>

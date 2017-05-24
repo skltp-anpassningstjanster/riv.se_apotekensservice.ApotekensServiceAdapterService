@@ -39,7 +39,7 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:6=se.riv.se.apotekensservice.axs.hamtakundinforesponder.v6</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:axs:HamtaKundInfo:6:rivtabp21=se.riv.inera.se.apotekensservice.axs.hamtakundinfo.v6.rivtabp21</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:axs:HamtaKundInfo:6:rivtabp21=se.riv.se.apotekensservice.axs.hamtakundinfo.v6.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
 				<wsdloption>
@@ -63,7 +63,18 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:axs:HamtaPatientInfoResponder:4=se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:axs:HamtaPatientInfo:4:rivtabp21=se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:axs:HamtaPatientInfo:4:rivtabp21=se.riv.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21</extraarg>
+                  </extraargs>
+                </wsdloption>                
+                <wsdloption>
+                  <wsdl>${schema.path}/TD_APSE_AXS_6_0_RC1/interactions/HamtaPatientInfoInteraction/HamtaPatientInfoInteraction_4.0_rivtabp21.wsdl</wsdl>
+                  <extraargs>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:axs:HamtaPatientInfoResponder:5=se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v5</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:axs:HamtaPatientInfo:5:rivtabp21=se.riv.se.apotekensservice.axs.hamtapatientinfo.v5.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>                
                 <wsdloption>
