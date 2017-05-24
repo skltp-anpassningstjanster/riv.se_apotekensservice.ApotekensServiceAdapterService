@@ -36,7 +36,7 @@
 			namespace="urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeRecept:1:rivtabp21"
 			payload="envelope" 
 			service="SkrivUtMinaSparadeReceptResponderService"
-			wsdlLocation="classpath:/TD_APSE_OR_4_0_RC3/interactions/SkrivUtMinaSparadeReceptInteraction/SkrivUtMinaSparadeReceptInteraction_1.0_rivtabp21.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_OR_5_0/interactions/SkrivUtMinaSparadeReceptInteraction/SkrivUtMinaSparadeReceptInteraction_1.0_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
@@ -74,7 +74,7 @@
 			namespace="urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeRecept:1:rivtabp21"
 			payload="envelope" 
 			service="SkrivUtMinaSparadeReceptResponderService"
-			wsdlLocation="classpath:/TD_APSE_OR_4_0_RC3/interactions/SkrivUtMinaSparadeReceptInteraction/SkrivUtMinaSparadeReceptInteraction_1.0_rivtabp21.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_OR_5_0/interactions/SkrivUtMinaSparadeReceptInteraction/SkrivUtMinaSparadeReceptInteraction_1.0_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
