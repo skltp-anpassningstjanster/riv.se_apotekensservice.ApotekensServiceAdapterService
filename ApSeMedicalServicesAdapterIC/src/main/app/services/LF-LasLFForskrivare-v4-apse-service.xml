@@ -37,7 +37,7 @@
 			namespace="urn:riv:se.apotekensservice:lf:LasLFForskrivare:4:rivtabp21"
 			payload="envelope" 
 			service="LasLFForskrivareResponderService"
-			wsdlLocation="classpath:/TD_APSE_LF_4_0/interactions/LasLFForskrivareInteraction/LasLFForskrivareInteraction_4.0_rivtabp21.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_LF_5_0_RC1/interactions/LasLFForskrivareInteraction/LasLFForskrivareInteraction_4.0_rivtabp21.wsdl" />
 			
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
@@ -76,7 +76,7 @@
 			namespace="urn:riv:se.apotekensservice:lf:LasLFForskrivare:4:rivtabp21"
 			payload="envelope" 
 			service="LasLFForskrivareResponderService"
-			wsdlLocation="classpath:/TD_APSE_LF_4_0/interactions/LasLFForskrivareInteraction/LasLFForskrivareInteraction_4.0_rivtabp21.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_LF_5_0_RC1/interactions/LasLFForskrivareInteraction/LasLFForskrivareInteraction_4.0_rivtabp21.wsdl" />
 			
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />

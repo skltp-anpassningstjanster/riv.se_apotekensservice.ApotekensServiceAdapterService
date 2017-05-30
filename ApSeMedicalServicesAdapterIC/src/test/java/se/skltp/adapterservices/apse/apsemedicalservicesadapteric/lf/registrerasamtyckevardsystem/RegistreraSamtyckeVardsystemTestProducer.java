@@ -21,13 +21,12 @@
 package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.lf.registrerasamtyckevardsystem;
 
 import javax.jws.WebMethod;
-import javax.jws.WebParam;
 import javax.jws.WebResult;
 
-import org.w3c.addressing.v1.AttributedURIType;
-
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.lf.registrerasamtyckevardsystem.v1.rivtabp20.RegistreraSamtyckeVardsystemResponderInterface;
+import se.riv.inera.se.apotekensservice.lf.registrerasamtyckevardsystem.v1.rivtabp21.ApplicationException;
+import se.riv.inera.se.apotekensservice.lf.registrerasamtyckevardsystem.v1.rivtabp21.RegistreraSamtyckeVardsystemResponderInterface;
+import se.riv.inera.se.apotekensservice.lf.registrerasamtyckevardsystem.v1.rivtabp21.SystemException;
 import se.riv.se.apotekensservice.lf.registrerasamtyckevardsystemresponder.v1.RegistreraSamtyckeVardsystemRequestType;
 import se.riv.se.apotekensservice.lf.registrerasamtyckevardsystemresponder.v1.RegistreraSamtyckeVardsystemResponseType;
 
@@ -38,13 +37,8 @@ public class RegistreraSamtyckeVardsystemTestProducer implements RegistreraSamty
 	@WebResult(name = "RegistreraSamtyckeVardsystemResponse", targetNamespace = "urn:riv:se.apotekensservice:lf:RegistreraSamtyckeVardsystemResponder:1", partName = "parameters")
 	@WebMethod(operationName = "RegistreraSamtyckeVardsystem", action = "urn:riv:se.apotekensservice:lf:RegistreraSamtyckeVardsystemResponder:1:RegistreraSamtyckeVardsystem")
 	public RegistreraSamtyckeVardsystemResponseType registreraSamtyckeVardsystem(
-			@WebParam(partName = "parameters", name = "RegistreraSamtyckeVardsystem", targetNamespace = "urn:riv:se.apotekensservice:lf:RegistreraSamtyckeVardsystemResponder:1") RegistreraSamtyckeVardsystemRequestType parameters,
-			@WebParam(partName = "LogicalAddress", name = "To", targetNamespace = "http://www.w3.org/2005/08/addressing", header = true) AttributedURIType logicalAddress,
-			@WebParam(partName = "ArgosHeader", name = "ArgosHeader", targetNamespace = "urn:riv:inera.se.apotekensservice:argos:1", header = true) ArgosHeaderType argosHeader)
-			throws se.riv.inera.se.apotekensservice.lf.registrerasamtyckevardsystem.v1.rivtabp20.SystemException,
-			se.riv.inera.se.apotekensservice.lf.registrerasamtyckevardsystem.v1.rivtabp20.ApplicationException {
-		// TODO Auto-generated method stub
-
+			RegistreraSamtyckeVardsystemRequestType parameters, String logicalAddress, ArgosHeaderType argosHeader)
+					throws SystemException, ApplicationException {
 		RegistreraSamtyckeVardsystemResponseType response = new RegistreraSamtyckeVardsystemResponseType();
 		return response;
 	}

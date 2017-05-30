@@ -21,13 +21,12 @@
 package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.lf.kontrolleraforskrivarbehorighet;
 
 import javax.jws.WebMethod;
-import javax.jws.WebParam;
 import javax.jws.WebResult;
 
-import org.w3c.addressing.v1.AttributedURIType;
-
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.lf.kontrolleraforskrivarbehorighet.v1.rivtabp20.KontrolleraForskrivarbehorighetResponderInterface;
+import se.riv.inera.se.apotekensservice.lf.kontrolleraforskrivarbehorighet.v1.rivtabp21.ApplicationException;
+import se.riv.inera.se.apotekensservice.lf.kontrolleraforskrivarbehorighet.v1.rivtabp21.KontrolleraForskrivarbehorighetResponderInterface;
+import se.riv.inera.se.apotekensservice.lf.kontrolleraforskrivarbehorighet.v1.rivtabp21.SystemException;
 import se.riv.se.apotekensservice.lf.kontrolleraforskrivarbehorighetresponder.v1.KontrolleraForskrivarbehorighetRequestType;
 import se.riv.se.apotekensservice.lf.kontrolleraforskrivarbehorighetresponder.v1.KontrolleraForskrivarbehorighetResponseType;
 
@@ -38,16 +37,12 @@ public class KontrolleraForskrivarbehorighetTestProducer implements KontrolleraF
 	@WebResult(name = "KontrolleraForskrivarbehorighetResponse", targetNamespace = "urn:riv:se.apotekensservice:lf:KontrolleraForskrivarbehorighetResponder:1", partName = "parameters")
 	@WebMethod(operationName = "KontrolleraForskrivarbehorighet", action = "urn:riv:se.apotekensservice:lf:KontrolleraForskrivarbehorighetResponder:1:KontrolleraForskrivarbehorighet")
 	public KontrolleraForskrivarbehorighetResponseType kontrolleraForskrivarbehorighet(
-			@WebParam(partName = "parameters", name = "KontrolleraForskrivarbehorighet", targetNamespace = "urn:riv:se.apotekensservice:lf:KontrolleraForskrivarbehorighetResponder:1") KontrolleraForskrivarbehorighetRequestType parameters,
-			@WebParam(partName = "LogicalAddress", name = "To", targetNamespace = "http://www.w3.org/2005/08/addressing", header = true) AttributedURIType logicalAddress,
-			@WebParam(partName = "ArgosHeader", name = "ArgosHeader", targetNamespace = "urn:riv:inera.se.apotekensservice:argos:1", header = true) ArgosHeaderType argosHeader)
-			throws se.riv.inera.se.apotekensservice.lf.kontrolleraforskrivarbehorighet.v1.rivtabp20.ApplicationException,
-			se.riv.inera.se.apotekensservice.lf.kontrolleraforskrivarbehorighet.v1.rivtabp20.SystemException {
-		// TODO Auto-generated method stub
+			KontrolleraForskrivarbehorighetRequestType parameters, String logicalAddress, ArgosHeaderType argosHeader)
+					throws ApplicationException, SystemException {
 		
 		KontrolleraForskrivarbehorighetResponseType response = new KontrolleraForskrivarbehorighetResponseType();
 		return response;
-		
+
 	}
 
 }

@@ -26,9 +26,9 @@ import javax.jws.WebResult;
 import riv.se_apotekensservice.axs._4.ApoteksinformationResponse;
 import riv.se_apotekensservice.axs._4.PatientInformationResponse;
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.ApplicationException;
-import se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.HamtaPatientInfoResponderInterface;
-import se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.SystemException;
+import se.riv.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.ApplicationException;
+import se.riv.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.HamtaPatientInfoResponderInterface;
+import se.riv.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.SystemException;
 import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v4.HamtaPatientInfoRequestType;
 import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v4.HamtaPatientInfoResponseType;
 

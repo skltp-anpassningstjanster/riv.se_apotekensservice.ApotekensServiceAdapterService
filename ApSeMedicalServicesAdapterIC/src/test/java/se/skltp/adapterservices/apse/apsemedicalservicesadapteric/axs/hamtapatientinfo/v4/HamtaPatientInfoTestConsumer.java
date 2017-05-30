@@ -30,9 +30,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.ApplicationException;
-import se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.HamtaPatientInfoResponderInterface;
-import se.riv.inera.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.SystemException;
+import se.riv.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.ApplicationException;
+import se.riv.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.HamtaPatientInfoResponderInterface;
+import se.riv.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21.SystemException;
 import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v4.HamtaPatientInfoRequestType;
 import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v4.HamtaPatientInfoResponseType;
 

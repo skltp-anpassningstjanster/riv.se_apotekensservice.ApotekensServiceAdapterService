@@ -26,15 +26,12 @@ import org.apache.cxf.bus.spring.SpringBusFactory;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.soitoolkit.commons.mule.util.RecursiveResourceBundle;
-import org.w3c.addressing.v1.AttributedURIType;
-
-import se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp20.LFUtskriftResponderInterface;
+import se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp21.LFUtskriftResponderInterface;
 import se.riv.se.apotekensservice.lf.lfutskriftresponder.v1.LFUtskriftRequestType;
 import se.riv.se.apotekensservice.lf.lfutskriftresponder.v1.LFUtskriftResponseType;
-import se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp20.SystemException;
+import se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp21.SystemException;
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp20.ApplicationException;
+import se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp21.ApplicationException;
 
 import static se.skltp.adapterservices.apse.apsemedicalservicesadapteric.ApSeMedicalServicesAdapterICMuleServer.getAddress;
 
@@ -61,24 +58,16 @@ public class LFUtskriftTestConsumer {
 
 	
 
-	public LFUtskriftResponseType citicenRequest(LFUtskriftRequestType request, String to, ArgosHeaderType argosHeader)
+	public LFUtskriftResponseType citicenRequest(LFUtskriftRequestType request, String logicalAddress, ArgosHeaderType argosHeader)
 			throws SystemException, ApplicationException {
 
-		AttributedURIType logicalAddress = createLogicalAddress(to);
 		return _service.lfUtskrift(request, logicalAddress, argosHeader);
 	}
 
-	public LFUtskriftResponseType organizationRequest(LFUtskriftRequestType request, String to,
+	public LFUtskriftResponseType organizationRequest(LFUtskriftRequestType request, String logicalAddress,
 			ArgosHeaderType argosHeader) throws SystemException, ApplicationException {
 
-		AttributedURIType logicalAddress = createLogicalAddress(to);
 		return _service.lfUtskrift(request, logicalAddress, argosHeader);
-	}
-
-	private AttributedURIType createLogicalAddress(String logicalAddress) {
-		AttributedURIType logicalAddressType = new AttributedURIType();
-		logicalAddressType.setValue(logicalAddress);
-		return logicalAddressType;
 	}
 	
 	public static void main(String[] args) throws Exception {
@@ -94,7 +83,7 @@ public class LFUtskriftTestConsumer {
 		log.debug("Calling sample-soap-service with id = {}", id);
 		LFUtskriftRequestType request = new LFUtskriftRequestType();
 		request.setForskrivarkod(id);
-		return _service.lfUtskrift(request, createLogicalAddress("TEST"), null);
+		return _service.lfUtskrift(request, "TEST", null);
 	}
 
 }

@@ -35,10 +35,10 @@
 		</composite-source>
 		
 		<cxf:proxy-service
-			namespace="urn:riv:inera:se.apotekensservice:lf:AterkallaSamtyckeWebb:1:rivtabp20"
+			namespace="urn:riv:se.apotekensservice:lf:AterkallaSamtyckeWebb:1:rivtabp21"
 			payload="envelope" 
 			service="AterkallaSamtyckeWebbResponderService"
-			wsdlLocation="classpath:/TD_APSE_LF_4_0/interactions/AterkallaSamtyckeWebbInteraction/AterkallaSamtyckeWebbInteraction_1.0_rivtabp20.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_LF_5_0_RC1/interactions/AterkallaSamtyckeWebbInteraction/AterkallaSamtyckeWebbInteraction_1.0_rivtabp21.wsdl" />
 		
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
@@ -73,10 +73,10 @@
 		</composite-source>
 
 		<cxf:proxy-service
-			namespace="urn:riv:inera:se.apotekensservice:lf:AterkallaSamtyckeWebb:1:rivtabp20"
+			namespace="urn:riv:se.apotekensservice:lf:AterkallaSamtyckeWebb:1:rivtabp21"
 			payload="envelope" 
 			service="AterkallaSamtyckeWebbResponderService"
-			wsdlLocation="classpath:/TD_APSE_LF_4_0/interactions/AterkallaSamtyckeWebbInteraction/AterkallaSamtyckeWebbInteraction_1.0_rivtabp20.wsdl" />
+			wsdlLocation="classpath:/TD_APSE_LF_5_0_RC1/interactions/AterkallaSamtyckeWebbInteraction/AterkallaSamtyckeWebbInteraction_1.0_rivtabp21.wsdl" />
 			
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />

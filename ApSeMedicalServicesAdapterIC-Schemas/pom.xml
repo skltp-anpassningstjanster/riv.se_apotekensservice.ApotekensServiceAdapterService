@@ -81,8 +81,6 @@
                   <wsdl>${schema.path}/TD_APSE_AXS_5_0/interactions/UppdateraSamtyckeInteraction/UppdateraSamtyckeInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
-                    <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v4</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:axs:UppdateraSamtyckeResponder:4=se.riv.se.apotekensservice.axs.uppdaterasamtyckeresponder.v4</extraarg>
@@ -423,86 +421,63 @@
               <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
               <wsdlOptions>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/AterkallaSamtyckeVardsystemInteraction/AterkallaSamtyckeVardsystemInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_LF_5_0_RC1/interactions/AterkallaSamtyckeVardsystemInteraction/AterkallaSamtyckeVardsystemInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:AterkallaSamtyckeVardsystemResponder:1=se.riv.se.apotekensservice.lf.aterkallasamtyckevardsystemresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:AterkallaSamtyckeVardsystem:1:rivtabp20=se.riv.inera.se.apotekensservice.lf.aterkallasamtyckevardsystem.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:AterkallaSamtyckeVardsystem:1:rivtabp21=se.riv.inera.se.apotekensservice.lf.aterkallasamtyckevardsystem.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/AterkallaSamtyckeWebbInteraction/AterkallaSamtyckeWebbInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_LF_5_0_RC1/interactions/AterkallaSamtyckeWebbInteraction/AterkallaSamtyckeWebbInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:AterkallaSamtyckeWebbResponder:1=se.riv.se.apotekensservice.lf.aterkallasamtyckewebbresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:AterkallaSamtyckeWebb:1:rivtabp20=se.riv.inera.se.apotekensservice.lf.aterkallasamtyckewebb.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:AterkallaSamtyckeWebb:1:rivtabp21=se.riv.inera.se.apotekensservice.lf.aterkallasamtyckewebb.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/KontrolleraForskrivarbehorighetInteraction/KontrolleraForskrivarbehorighetInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_LF_5_0_RC1/interactions/KontrolleraForskrivarbehorighetInteraction/KontrolleraForskrivarbehorighetInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:KontrolleraForskrivarbehorighetResponder:1=se.riv.se.apotekensservice.lf.kontrolleraforskrivarbehorighetresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:KontrolleraForskrivarbehorighet:1:rivtabp20=se.riv.inera.se.apotekensservice.lf.kontrolleraforskrivarbehorighet.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:KontrolleraForskrivarbehorighet:1:rivtabp21=se.riv.inera.se.apotekensservice.lf.kontrolleraforskrivarbehorighet.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/KontrolleraSamtyckeInteraction/KontrolleraSamtyckeInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_LF_5_0_RC1/interactions/KontrolleraSamtyckeInteraction/KontrolleraSamtyckeInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:KontrolleraSamtyckeResponder:1=se.riv.se.apotekensservice.lf.kontrollerasamtyckeresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:KontrolleraSamtycke:1:rivtabp20=se.riv.inera.se.apotekensservice.lf.kontrollerasamtycke.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:KontrolleraSamtycke:1:rivtabp21=se.riv.inera.se.apotekensservice.lf.kontrollerasamtycke.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/KontrolleraSamtyckeVardsystemInteraction/KontrolleraSamtyckeVardsystemInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_LF_5_0_RC1/interactions/KontrolleraSamtyckeVardsystemInteraction/KontrolleraSamtyckeVardsystemInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:KontrolleraSamtyckeVardsystemResponder:1=se.riv.se.apotekensservice.lf.kontrollerasamtyckevardsystemresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:KontrolleraSamtyckeVardsystem:1:rivtabp20=se.riv.inera.se.apotekensservice.lf.kontrollerasamtyckevardsystem.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:KontrolleraSamtyckeVardsystem:1:rivtabp21=se.riv.inera.se.apotekensservice.lf.kontrollerasamtyckevardsystem.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/LasLFForskrivareInteraction/LasLFForskrivareInteraction_4.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_LF_5_0_RC1/interactions/LasLFForskrivareInteraction/LasLFForskrivareInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
-                    <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4=se.riv.se.apotekensservice.lf.laslfforskrivareresponder.v4</extraarg>
-                    <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:LasLFForskrivare:4:rivtabp21=se.riv.inera.se.apotekensservice.lf.laslfforskrivare.v4.rivtabp21</extraarg>
-                  </extraargs>
-                </wsdloption>
-                <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/LasLFForskrivareInteraction/LasLFForskrivareInteraction_4.0_rivtabp21.wsdl</wsdl>
-                  <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
@@ -516,7 +491,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/LasLFPrivatpersonInteraction/LasLFPrivatpersonInteraction_4.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_LF_5_0_RC1/interactions/LasLFPrivatpersonInteraction/LasLFPrivatpersonInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -531,77 +506,53 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/LasLFPrivatpersonPDFInteraction/LasLFPrivatpersonPDFInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_LF_5_0_RC1/interactions/LasLFPrivatpersonPDFInteraction/LasLFPrivatpersonPDFInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:LasLFPrivatpersonPDFResponder:1=se.riv.se.apotekensservice.lf.laslfprivatpersonpdfresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:LasLFPrivatpersonPDF:1:rivtabp20=se.riv.inera.se.apotekensservice.lf.laslfprivatpersonpdf.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:LasLFPrivatpersonPDF:1:rivtabp21=se.riv.inera.se.apotekensservice.lf.laslfprivatpersonpdf.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/LasLFVardsystemInteraction/LasLFVardsystemInteraction_4.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_LF_5_0_RC1/interactions/LasLFVardsystemInteraction/LasLFVardsystemInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4=se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:lf:LasLFVardsystem:4:rivtabp20=se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v4.rivtabp20</extraarg>
-                  </extraargs>
-                </wsdloption>
-				
-				
-                <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/LasLFVardsystemInteraction/LasLFVardsystemInteraction_4.0_rivtabp21.wsdl</wsdl>
-                  <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
-                    <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
-                    <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4=se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v4</extraarg>
-                    <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:lf:LasLFVardsystem:4:rivtabp21=se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21</extraarg>
-					<extraarg>-p</extraarg>
-					<extraarg>urn:riv:se.apotekensservice:lf:4=se.riv.se.apotekensservice.lf.v4</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:LasLFVardsystem:4:rivtabp21=se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v4.rivtabp21</extraarg>
 					<extraarg>-p</extraarg>
 					<extraarg>urn:riv:se.apotekensservice:lf:5=se.riv.se.apotekensservice.lf.v5</extraarg>
-                 </extraargs>
+                  </extraargs>
                 </wsdloption>
-				
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_LF_5_0_RC1/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:LFUtskriftResponder:1=se.riv.se.apotekensservice.lf.lfutskriftresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:LFUtskrift:1:rivtabp20=se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:LFUtskrift:1:rivtabp21=se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/RegistreraSamtyckeVardsystemInteraction/RegistreraSamtyckeVardsystemInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_LF_5_0_RC1/interactions/RegistreraSamtyckeVardsystemInteraction/RegistreraSamtyckeVardsystemInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:RegistreraSamtyckeVardsystemResponder:1=se.riv.se.apotekensservice.lf.registrerasamtyckevardsystemresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:RegistreraSamtyckeVardsystem:1:rivtabp20=se.riv.inera.se.apotekensservice.lf.registrerasamtyckevardsystem.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:RegistreraSamtyckeVardsystem:1:rivtabp21=se.riv.inera.se.apotekensservice.lf.registrerasamtyckevardsystem.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_LF_4_0/interactions/RegistreraSamtyckeWebbInteraction/RegistreraSamtyckeWebbInteraction_1.0_rivtabp20.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_LF_5_0_RC1/interactions/RegistreraSamtyckeWebbInteraction/RegistreraSamtyckeWebbInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
@@ -610,7 +561,7 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:RegistreraSamtyckeWebbResponder:1=se.riv.se.apotekensservice.lf.registrerasamtyckewebbresponder.v1</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:inera:se.apotekensservice:lf:RegistreraSamtyckeWebb:1:rivtabp20=se.riv.inera.se.apotekensservice.lf.registrerasamtyckewebb.v1.rivtabp20</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:RegistreraSamtyckeWebb:1:rivtabp21=se.riv.inera.se.apotekensservice.lf.registrerasamtyckewebb.v1.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
               </wsdlOptions>
@@ -647,8 +598,6 @@
 	                  <wsdl>${schema.path}/TD_APSE_OR_5_0/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_5.0_rivtabp21.wsdl</wsdl>
 	                  <extraargs>
 	                    <extraarg>-p</extraarg>
-	                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
-	                    <extraarg>-p</extraarg>
 	                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
 	                    <extraarg>-p</extraarg>
 	                    <extraarg>urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5=se.riv.se.apotekensservice.or.hamtaordinationerprivatpersonresponder.v5</extraarg>
@@ -680,8 +629,6 @@
                 <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_OR_5_0/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_5.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>
@@ -752,15 +699,11 @@
                     <extraarg>urn:riv:inera:se.apotekensservice:or:HamtaIckeAktuellaOrdinationerFoddatum:1:rivtabp20=se.riv.inera.se.apotekensservice.or.hamtaickeaktuellaordinationerfoddatum.v1.rivtabp20</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:1=se.riv.se.apotekensservice.or.v1</extraarg>
-                    <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
                   </extraargs>
                 </wsdloption>        
                 <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_OR_5_0/interactions/HamtaIckeAktuellaOrdinationerInteraction/HamtaIckeAktuellaOrdinationerInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
-                    <extraarg>-p</extraarg>
-                    <extraarg>http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
                     <extraarg>-p</extraarg>

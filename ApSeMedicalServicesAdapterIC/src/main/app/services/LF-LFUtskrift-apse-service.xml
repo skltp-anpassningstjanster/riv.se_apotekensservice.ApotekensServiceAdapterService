@@ -38,10 +38,10 @@ version="EE-3.4.1">
         </composite-source>
         
 		<cxf:proxy-service
-			namespace="urn:riv:inera:se.apotekensservice:lf:LFUtskrift:1:rivtabp20"
+			namespace="urn:riv:se.apotekensservice:lf:LFUtskrift:1:rivtabp21"
 			service="LFUtskriftResponderService"
 			payload="envelope"
-			wsdlLocation="classpath:/TD_APSE_LF_4_0/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp20.wsdl" doc:name="SOAP"/>	
+			wsdlLocation="classpath:/TD_APSE_LF_5_0_RC1/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp21.wsdl" doc:name="SOAP"/>	
 		 
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
@@ -79,10 +79,10 @@ version="EE-3.4.1">
         </composite-source>	
 
 		<cxf:proxy-service
-			namespace="urn:riv:inera:se.apotekensservice:lf:LFUtskrift:1:rivtabp20"
+			namespace="urn:riv:se.apotekensservice:lf:LFUtskrift:1:rivtabp21"
 			service="LFUtskriftResponderService"
 			payload="envelope"
-			wsdlLocation="classpath:/TD_APSE_LF_4_0/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp20.wsdl" doc:name="SOAP"/>	
+			wsdlLocation="classpath:/TD_APSE_LF_5_0_RC1/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp21.wsdl" doc:name="SOAP"/>	
 		 
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />

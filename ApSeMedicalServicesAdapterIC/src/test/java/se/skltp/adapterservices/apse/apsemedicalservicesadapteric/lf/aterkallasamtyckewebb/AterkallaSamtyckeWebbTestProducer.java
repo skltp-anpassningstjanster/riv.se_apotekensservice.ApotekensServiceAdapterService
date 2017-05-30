@@ -27,9 +27,9 @@ import javax.jws.WebResult;
 import org.w3c.addressing.v1.AttributedURIType;
 
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.lf.aterkallasamtyckewebb.v1.rivtabp20.ApplicationException;
-import se.riv.inera.se.apotekensservice.lf.aterkallasamtyckewebb.v1.rivtabp20.AterkallaSamtyckeWebbResponderInterface;
-import se.riv.inera.se.apotekensservice.lf.aterkallasamtyckewebb.v1.rivtabp20.SystemException;
+import se.riv.inera.se.apotekensservice.lf.aterkallasamtyckewebb.v1.rivtabp21.ApplicationException;
+import se.riv.inera.se.apotekensservice.lf.aterkallasamtyckewebb.v1.rivtabp21.AterkallaSamtyckeWebbResponderInterface;
+import se.riv.inera.se.apotekensservice.lf.aterkallasamtyckewebb.v1.rivtabp21.SystemException;
 import se.riv.se.apotekensservice.lf.aterkallasamtyckewebbresponder.v1.AterkallaSamtyckeWebbRequestType;
 import se.riv.se.apotekensservice.lf.aterkallasamtyckewebbresponder.v1.AterkallaSamtyckeWebbResponseType;
 
@@ -39,14 +39,11 @@ public class AterkallaSamtyckeWebbTestProducer implements AterkallaSamtyckeWebbR
 	@Override
 	@WebResult(name = "AterkallaSamtyckeWebbResponse", targetNamespace = "urn:riv:se.apotekensservice:lf:AterkallaSamtyckeWebbResponder:1", partName = "parameters")
 	@WebMethod(operationName = "AterkallaSamtyckeWebb", action = "urn:riv:se.apotekensservice:lf:AterkallaSamtyckeWebbResponder:1:AterkallaSamtyckeWebb")
-	public AterkallaSamtyckeWebbResponseType aterkallaSamtyckeWebb(
-			@WebParam(partName = "parameters", name = "AterkallaSamtyckeWebb", targetNamespace = "urn:riv:se.apotekensservice:lf:AterkallaSamtyckeWebbResponder:1") AterkallaSamtyckeWebbRequestType parameters,
-			@WebParam(partName = "LogicalAddress", name = "To", targetNamespace = "http://www.w3.org/2005/08/addressing", header = true) AttributedURIType logicalAddress,
-			@WebParam(partName = "ArgosHeader", name = "ArgosHeader", targetNamespace = "urn:riv:inera.se.apotekensservice:argos:1", header = true) ArgosHeaderType argosHeader)
-			throws SystemException, ApplicationException {
+	public AterkallaSamtyckeWebbResponseType aterkallaSamtyckeWebb(AterkallaSamtyckeWebbRequestType parameters,
+			String logicalAddress, ArgosHeaderType argosHeader) throws SystemException, ApplicationException {
 		// TODO Auto-generated method stub
-		
 		AterkallaSamtyckeWebbResponseType response = new AterkallaSamtyckeWebbResponseType();
+		response.setSamtycke(1);
 		return response;
 		
 	}

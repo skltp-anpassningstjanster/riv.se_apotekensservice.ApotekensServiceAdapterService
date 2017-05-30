@@ -26,18 +26,14 @@ import java.net.URL;
 
 import org.apache.cxf.bus.spring.SpringBusFactory;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21.ApplicationException;
-import se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21.LasLFVardsystemResponderInterface;
-import se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21.SystemException;
+import se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v4.rivtabp21.ApplicationException;
+import se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v4.rivtabp21.LasLFVardsystemResponderInterface;
+import se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v4.rivtabp21.SystemException;
 import se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v4.LasLFVardsystemRequestType;
 import se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v4.LasLFVardsystemResponseType;
 
 public class LasLFVardsystemTestConsumer {
-
-	private static final Logger log = LoggerFactory.getLogger(LasLFVardsystemTestConsumer.class);
 
 	private LasLFVardsystemResponderInterface _service = null;
 
@@ -56,7 +52,8 @@ public class LasLFVardsystemTestConsumer {
 		_service = (LasLFVardsystemResponderInterface) proxyFactory.create();
 	}
 
-	public LasLFVardsystemResponseType requestIncludingCompleteArgosInformation(String socialSecurityNumber, String to) throws SystemException, ApplicationException
+	public LasLFVardsystemResponseType requestIncludingCompleteArgosInformation(String socialSecurityNumber, String to) 
+			throws SystemException, ApplicationException
 	{
 		ArgosHeaderType argosHeader = createOrganizationArgosHeader();
 		String logicalAddress = to;

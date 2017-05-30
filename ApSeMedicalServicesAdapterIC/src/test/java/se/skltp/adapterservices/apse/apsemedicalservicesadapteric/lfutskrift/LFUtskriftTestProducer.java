@@ -22,30 +22,26 @@ package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.lfutskrift;
 
 import javax.jws.WebService;
 
-import org.w3c.addressing.v1.AttributedURIType;
-
 import riv.se_apotekensservice.lf._1.PatientResponse;
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp20.ApplicationException;
-import se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp20.LFUtskriftResponderInterface;
-import se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp20.SystemException;
+import se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp21.ApplicationException;
+import se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp21.LFUtskriftResponderInterface;
+import se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp21.SystemException;
 import se.riv.se.apotekensservice.lf.lfutskriftresponder.v1.LFUtskriftRequestType;
 import se.riv.se.apotekensservice.lf.lfutskriftresponder.v1.LFUtskriftResponseType;
 
 @WebService(serviceName = "LFUtskriftResponderService", 
-			endpointInterface = "se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp20.LFUtskriftResponderInterface", 
-			portName = "LFUtskriftResponderPort", targetNamespace = "urn:riv:inera:se.apotekensservice:lf:LFUtskrift:1:rivtabp20", 
-			wsdlLocation = "TD_APSE_LF_4_0/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp20.wsdl")
+			endpointInterface = "se.riv.inera.se.apotekensservice.lf.lfutskrift.v1.rivtabp21.LFUtskriftResponderInterface", 
+			portName = "LFUtskriftResponderPort", targetNamespace = "urn:riv:se.apotekensservice:lf:LFUtskrift:1:rivtabp21", 
+			wsdlLocation = "TD_APSE_LF_5_0_RC1/interactions/LFUtskriftInteraction/LFUtskriftInteraction_1.0_rivtabp21.wsdl")
 public class LFUtskriftTestProducer implements LFUtskriftResponderInterface {
 	
 	public static final String CITIZENREQUEST = "188803099368";
 	public static final String ORGANIZATIONREQUEST = "191704109279";
 
 	@Override
-	public LFUtskriftResponseType lfUtskrift(LFUtskriftRequestType parameters,
-			AttributedURIType logicalAddress, ArgosHeaderType argosHeader)
-			throws SystemException, ApplicationException {
-		
+	public LFUtskriftResponseType lfUtskrift(LFUtskriftRequestType parameters, String logicalAddress,
+			ArgosHeaderType argosHeader) throws ApplicationException, SystemException {
 		/*
 		 * ArgosHeader is removed by TicketMachine and can not be accessed by
 		 * the producer. TODO: Is there any way we can verify that this is a

@@ -25,13 +25,12 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21.ApplicationException;
-import se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21.LasLFVardsystemResponderInterface;
-import se.riv.se.apotekensservice.lf.LasLFVardsystem.v4.rivtabp21.SystemException;
+import se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v4.rivtabp21.ApplicationException;
+import se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v4.rivtabp21.LasLFVardsystemResponderInterface;
+import se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v4.rivtabp21.SystemException;
 import se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v4.LasLFVardsystemRequestType;
 import se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v4.LasLFVardsystemResponseType;
 import se.riv.se.apotekensservice.lf.v5.PatientResponse;
-
 
 public class LasLFVardsystemTestProducer implements LasLFVardsystemResponderInterface {
 
