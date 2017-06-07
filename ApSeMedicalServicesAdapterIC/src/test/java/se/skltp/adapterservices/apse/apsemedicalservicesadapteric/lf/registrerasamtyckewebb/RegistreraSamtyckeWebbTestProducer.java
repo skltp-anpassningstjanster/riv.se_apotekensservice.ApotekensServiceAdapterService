@@ -21,10 +21,7 @@
 package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.lf.registrerasamtyckewebb;
 
 import javax.jws.WebMethod;
-import javax.jws.WebParam;
 import javax.jws.WebResult;
-
-import org.w3c.addressing.v1.AttributedURIType;
 
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
 import se.riv.inera.se.apotekensservice.lf.registrerasamtyckewebb.v1.rivtabp21.ApplicationException;

@@ -37,6 +37,7 @@ import se.riv.se.apotekensservice.or.forlangordinationvardresponder.v5.ForlangOr
 
 public class ForlangOrdinationVardTestConsumer {
 
+	@SuppressWarnings("unused")
 	private static final Logger log = LoggerFactory.getLogger(ForlangOrdinationVardTestConsumer.class);
 
 	private ForlangOrdinationVardResponderInterface _service = null;

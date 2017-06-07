@@ -18,7 +18,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
-package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.or.hamtaaktuellaordinationer;
+package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.or.hamtaaktuellaordinationer.v4;
 
 import java.net.URL;
 
@@ -26,14 +26,12 @@ import org.apache.cxf.bus.spring.SpringBusFactory;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.addressing.v1.AttributedURIType;
-
 import se.riv.inera.se.apotekensservice.argos.v1.ArgosHeaderType;
-import se.riv.inera.se.apotekensservice.or.hamtaaktuellaordinationer.v1.rivtabp20.ApplicationException;
-import se.riv.inera.se.apotekensservice.or.hamtaaktuellaordinationer.v1.rivtabp20.HamtaAktuellaOrdinationerResponderInterface;
-import se.riv.inera.se.apotekensservice.or.hamtaaktuellaordinationer.v1.rivtabp20.SystemException;
-import se.riv.se.apotekensservice.or.hamtaaktuellaordinationerresponder.v1.HamtaAktuellaOrdinationerRequestType;
-import se.riv.se.apotekensservice.or.hamtaaktuellaordinationerresponder.v1.HamtaAktuellaOrdinationerResponseType;
+import se.riv.se.apotekensservice.or.hamtaaktuellaordinationer.v4.rivtabp21.ApplicationException;
+import se.riv.se.apotekensservice.or.hamtaaktuellaordinationer.v4.rivtabp21.HamtaAktuellaOrdinationerResponderInterface;
+import se.riv.se.apotekensservice.or.hamtaaktuellaordinationer.v4.rivtabp21.SystemException;
+import se.riv.se.apotekensservice.or.hamtaaktuellaordinationerresponder.v4.HamtaAktuellaOrdinationerRequestType;
+import se.riv.se.apotekensservice.or.hamtaaktuellaordinationerresponder.v4.HamtaAktuellaOrdinationerResponseType;
 import se.skltp.adapterservices.apse.apsemedicalservicesadapteric.lfutskrift.LFUtskriftTestConsumer;
 
 public class HamtaAllaAktuellaOrdinationerTestConsumer {
@@ -59,9 +57,8 @@ public class HamtaAllaAktuellaOrdinationerTestConsumer {
 	}
 
 	public HamtaAktuellaOrdinationerResponseType requestIncludingCompleteArgosInformation(String socialSecurityNumber,
-			String to) throws ApplicationException, SystemException {
+			String logicalAddress) throws ApplicationException, SystemException {
 		ArgosHeaderType argosHeader = createCompleteArgosHeader();
-		AttributedURIType logicalAddress = createLogicalAddress(to);
 		HamtaAktuellaOrdinationerRequestType requestSocialSecurityNumber = createSocialSecurityNumberRequest(socialSecurityNumber);
 		return _service.hamtaAktuellaOrdinationer(requestSocialSecurityNumber, logicalAddress, argosHeader);
 	}
@@ -70,12 +67,6 @@ public class HamtaAllaAktuellaOrdinationerTestConsumer {
 		HamtaAktuellaOrdinationerRequestType aktuellaOrdinationerRequest = new HamtaAktuellaOrdinationerRequestType();
 		aktuellaOrdinationerRequest.setPersonnummer(socialSecurityNumber);
 		return aktuellaOrdinationerRequest;
-	}
-
-	private AttributedURIType createLogicalAddress(String logicalAddress) {
-		AttributedURIType logicalAddressType = new AttributedURIType();
-		logicalAddressType.setValue(logicalAddress);
-		return logicalAddressType;
 	}
 
 	private ArgosHeaderType createCompleteArgosHeader() {

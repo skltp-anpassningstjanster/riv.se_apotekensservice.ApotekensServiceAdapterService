@@ -38,6 +38,7 @@ import se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v4.HamtaPatientI
 
 public class HamtaPatientInfoTestConsumer {
 
+	@SuppressWarnings("unused")
 	private static final Logger log = LoggerFactory.getLogger(HamtaPatientInfoTestConsumer.class);
 
 	private HamtaPatientInfoResponderInterface _service = null;
