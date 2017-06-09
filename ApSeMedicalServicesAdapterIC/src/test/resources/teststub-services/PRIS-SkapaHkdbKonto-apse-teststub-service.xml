@@ -21,7 +21,7 @@
 	
 	<simple-service 
 		name="ApotekenService-pris-SkapaHkdbKonto-teststub"
-        address="${inbound.endpoint.apotekensservice.pris.SkapaHkdbKonto.teststub}" 
+        address="${inbound.endpoint.apotekensservice.pris.SkapaHkdbKonto.v4.teststub}" 
         transformer-refs="logReqIn"
         responseTransformer-refs="logRespOut"
         type="jax-ws"

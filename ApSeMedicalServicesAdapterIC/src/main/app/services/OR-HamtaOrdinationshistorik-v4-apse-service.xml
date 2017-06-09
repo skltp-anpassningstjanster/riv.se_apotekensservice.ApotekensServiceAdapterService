@@ -53,7 +53,7 @@
 		
 	</flow>
 	
-	<flow name="Bridged-ApotekenService-HamtaOrdinationshistorik-env2">
+	<flow name="Bridged-ApotekenService-HamtaOrdinationshistorik-v4-env2">
 
 		<composite-source>
 		<http:inbound-endpoint address="${inbound.endpoint.http.env2.apotekensservice.or.HamtaOrdinationshistorik}"

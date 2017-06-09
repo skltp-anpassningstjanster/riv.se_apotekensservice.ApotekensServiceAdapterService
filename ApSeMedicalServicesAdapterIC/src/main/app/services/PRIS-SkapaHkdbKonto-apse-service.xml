@@ -18,16 +18,16 @@
 	<!-- Name of this file is mandatory and may not be changed. -->
 
 	
-	<flow name="Bridged-ApotekenService-SkapaHkdbKonto">
+	<flow name="Bridged-ApotekenService-SkapaHkdbKonto-v4">
 
 		<composite-source>
-		<http:inbound-endpoint address="${inbound.endpoint.http.apotekensservice.pris.SkapaHkdbKonto}"
+		<http:inbound-endpoint address="${inbound.endpoint.http.apotekensservice.pris.SkapaHkdbKonto.v4}"
 			connector-ref="soitoolkit-http-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
 			transformer-refs="create-correlation-id logReqIn">
 		</http:inbound-endpoint>
-		<https:inbound-endpoint address="${inbound.endpoint.https.apotekensservice.pris.SkapaHkdbKonto}"
+		<https:inbound-endpoint address="${inbound.endpoint.https.apotekensservice.pris.SkapaHkdbKonto.v4}"
 			connector-ref="soitoolkit-https-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
@@ -37,7 +37,7 @@
 		</composite-source>
 		
 		<cxf:proxy-service
-			namespace="urn:riv:inera:se.apotekensservice:pris:SkapaHkdbKonto:1:rivtabp21"
+			namespace="urn:riv:se.apotekensservice:pris:SkapaHkdbKonto:4:rivtabp21"
 			payload="envelope" 
 			service="SkapaHkdbKontoResponderService"
 			wsdlLocation="classpath:/TD_APSE_PRIS_2_0_RC1/interactions/SkapaHkdbKontoInteraction/SkapaHkdbKontoInteraction_4.0_rivtabp21.wsdl" />
@@ -46,7 +46,7 @@
 		<transformer ref="ArgosHeaderToSamlTicket" />
 		
 		<https:outbound-endpoint connector-ref="soitoolkit-https-connector"
-			address="${outbound.endpoint.apotekensservice.pris.SkapaHkdbKonto}"
+			address="${outbound.endpoint.apotekensservice.pris.SkapaHkdbKonto.v4}"
 			exchange-pattern="request-response" 
 			responseTimeout="${SERVICE_TIMEOUT_MS}"
 			transformer-refs="addContentTypeXmlUtf8 logReqOut" 
@@ -60,13 +60,13 @@
 	<flow name="Bridged-ApotekenService-SkapaHkdbKonto-env2">
 
 		<composite-source>
-		<http:inbound-endpoint address="${inbound.endpoint.http.env2.apotekensservice.pris.SkapaHkdbKonto}"
+		<http:inbound-endpoint address="${inbound.endpoint.http.env2.apotekensservice.pris.SkapaHkdbKonto.v4}"
 			connector-ref="soitoolkit-http-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
 			transformer-refs="create-correlation-id logReqIn">
 		</http:inbound-endpoint>
-		<https:inbound-endpoint address="${inbound.endpoint.https.env2.apotekensservice.pris.SkapaHkdbKonto}"
+		<https:inbound-endpoint address="${inbound.endpoint.https.env2.apotekensservice.pris.SkapaHkdbKonto.v4}"
 			connector-ref="soitoolkit-https-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
@@ -75,7 +75,7 @@
 		</composite-source>
 
 		<cxf:proxy-service
-			namespace="urn:riv:inera:se.apotekensservice:pris:SkapaHkdbKonto:1:rivtabp21"
+			namespace="urn:riv:se.apotekensservice:pris:SkapaHkdbKonto:4:rivtabp21"
 			payload="envelope" 
 			service="SkapaHkdbKontoResponderService"
 			wsdlLocation="classpath:/TD_APSE_PRIS_2_0_RC1/interactions/SkapaHkdbKontoInteraction/SkapaHkdbKontoInteraction_4.0_rivtabp21.wsdl" />
@@ -84,7 +84,7 @@
 		<transformer ref="ArgosHeaderToSamlTicket" />
 		
 		<https:outbound-endpoint connector-ref="soitoolkit-https-connector"
-			address="${outbound.endpoint.env2.apotekensservice.pris.SkapaHkdbKonto}"
+			address="${outbound.endpoint.env2.apotekensservice.pris.SkapaHkdbKonto.v4}"
 			exchange-pattern="request-response" 
 			responseTimeout="${SERVICE_TIMEOUT_MS}"
 			transformer-refs="addContentTypeXmlUtf8 logReqOut" 

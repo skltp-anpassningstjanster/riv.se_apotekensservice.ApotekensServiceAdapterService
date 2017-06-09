@@ -526,6 +526,8 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:LasLFVardsystem:4:rivtabp21=se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v4.rivtabp21</extraarg>
 					<extraarg>-p</extraarg>
+					<extraarg>urn:riv:se.apotekensservice:lf:4=se.riv.se.apotekensservice.lf.v4</extraarg>
+					<extraarg>-p</extraarg>
 					<extraarg>urn:riv:se.apotekensservice:lf:5=se.riv.se.apotekensservice.lf.v5</extraarg>
                   </extraargs>
                 </wsdloption>
