@@ -18,13 +18,13 @@
 	<flow name="Bridged-ApotekenService-HamtaOrdinationshistorik-v4">
 
 		<composite-source>
-		<http:inbound-endpoint address="${inbound.endpoint.http.apotekensservice.or.HamtaOrdinationshistorik}"
+		<http:inbound-endpoint address="${inbound.endpoint.http.apotekensservice.or.HamtaOrdinationshistorik.v4}"
 			connector-ref="soitoolkit-http-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
 			transformer-refs="create-correlation-id logReqIn">
 		</http:inbound-endpoint>
-		<https:inbound-endpoint address="${inbound.endpoint.https.apotekensservice.or.HamtaOrdinationshistorik}"
+		<https:inbound-endpoint address="${inbound.endpoint.https.apotekensservice.or.HamtaOrdinationshistorik.v4}"
 			connector-ref="soitoolkit-https-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
@@ -42,7 +42,7 @@
 		<transformer ref="ArgosHeaderToSamlTicket" />
 		
 		<https:outbound-endpoint connector-ref="soitoolkit-https-connector"
-			address="${outbound.endpoint.apotekensservice.or.HamtaOrdinationshistorik}"
+			address="${outbound.endpoint.apotekensservice.or.HamtaOrdinationshistorik.v4}"
 			exchange-pattern="request-response" 
 			responseTimeout="${SERVICE_TIMEOUT_MS}"
 			transformer-refs="addContentTypeXmlUtf8 logReqOut" 
@@ -56,13 +56,13 @@
 	<flow name="Bridged-ApotekenService-HamtaOrdinationshistorik-v4-env2">
 
 		<composite-source>
-		<http:inbound-endpoint address="${inbound.endpoint.http.env2.apotekensservice.or.HamtaOrdinationshistorik}"
+		<http:inbound-endpoint address="${inbound.endpoint.http.env2.apotekensservice.or.HamtaOrdinationshistorik.v4}"
 			connector-ref="soitoolkit-http-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
 			transformer-refs="create-correlation-id logReqIn">
 		</http:inbound-endpoint>
-		<https:inbound-endpoint address="${inbound.endpoint.https.env2.apotekensservice.or.HamtaOrdinationshistorik}"
+		<https:inbound-endpoint address="${inbound.endpoint.https.env2.apotekensservice.or.HamtaOrdinationshistorik.v4}"
 			connector-ref="soitoolkit-https-connector" 
 			exchange-pattern="request-response"
 			responseTransformer-refs="logRespOut"
@@ -80,7 +80,7 @@
 		<transformer ref="ArgosHeaderToSamlTicket" />
 		
 		<https:outbound-endpoint connector-ref="soitoolkit-https-connector"
-			address="${outbound.endpoint.env2.apotekensservice.or.HamtaOrdinationshistorik}"
+			address="${outbound.endpoint.env2.apotekensservice.or.HamtaOrdinationshistorik.v4}"
 			exchange-pattern="request-response" 
 			responseTimeout="${SERVICE_TIMEOUT_MS}"
 			transformer-refs="addContentTypeXmlUtf8 logReqOut" 

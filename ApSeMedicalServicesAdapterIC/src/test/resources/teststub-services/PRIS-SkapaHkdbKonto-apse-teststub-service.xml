@@ -25,7 +25,7 @@
         transformer-refs="logReqIn"
         responseTransformer-refs="logRespOut"
         type="jax-ws"
-        component-class="se.skltp.adapterservices.apse.apsemedicalservicesadapteric.pris.hamtahkdbkonto.SkapaHkdbKontoTestproducer">
+        component-class="se.skltp.adapterservices.apse.apsemedicalservicesadapteric.pris.skapahkdbkonto.SkapaHkdbKontoTestproducer">
     </simple-service>
 
 </mule>

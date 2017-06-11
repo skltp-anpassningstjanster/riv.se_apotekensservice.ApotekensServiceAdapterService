@@ -4,7 +4,6 @@ import se.riv.inera.se.apotekensservice.pris.skapahkdbkonto.v4.rivtabp21.SkapaHk
 import se.riv.se.apotekensservice.pris.skapahkdbkontoresponder.v4.SkapaHkdbKontoRequestType;
 import se.riv.se.apotekensservice.pris.skapahkdbkontoresponder.v4.SkapaHkdbKontoResponseType;
 
-
 public class SkapaHkdbKontoTestproducer implements SkapaHkdbKontoResponderInterface {
 
 	@Override
