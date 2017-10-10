@@ -32,7 +32,7 @@
               <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
               <wsdlOptions>
            		<wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_AXS_6_0_RC1/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_6.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_AXS_6_0/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_6.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -67,7 +67,7 @@
                   </extraargs>
                 </wsdloption>                
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_AXS_6_0_RC1/interactions/HamtaPatientInfoInteraction/HamtaPatientInfoInteraction_5.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_AXS_6_0/interactions/HamtaPatientInfoInteraction/HamtaPatientInfoInteraction_5.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -78,7 +78,7 @@
                   </extraargs>
                 </wsdloption>                
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_AXS_6_0_RC1/interactions/UppdateraSamtyckeInteraction/UppdateraSamtyckeInteraction_4.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_AXS_6_0/interactions/UppdateraSamtyckeInteraction/UppdateraSamtyckeInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v4</extraarg>
@@ -580,7 +580,7 @@
               <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
               <wsdlOptions>
 	              <wsdloption>
-	                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/SkrivUtMinaSparadeReceptInteraction/SkrivUtMinaSparadeReceptInteraction_1.1_rivtabp21.wsdl</wsdl>
+	                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/SkrivUtMinaSparadeReceptInteraction/SkrivUtMinaSparadeReceptInteraction_1.1_rivtabp21.wsdl</wsdl>
 	                  <extraargs>
 	                    <extraarg>-p</extraarg>
 	                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -620,7 +620,7 @@
 	                  </extraargs>
 	                </wsdloption>
  	                <wsdloption>
-	                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_6.0_rivtabp21.wsdl</wsdl>
+	                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_6.0_rivtabp21.wsdl</wsdl>
 	                  <extraargs>
 	                    <extraarg>-p</extraarg>
 	                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -641,7 +641,7 @@
 	                  </extraargs>
 	                </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/AvregistreraDosunderlagInteraction/AvregistreraDosunderlagInteraction_1.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/AvregistreraDosunderlagInteraction/AvregistreraDosunderlagInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -675,7 +675,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_6.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_6.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -694,7 +694,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/HamtaAktuellaOrdinationerFoddatumInteraction/HamtaAktuellaOrdinationerFoddatumInteraction_1.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/HamtaAktuellaOrdinationerFoddatumInteraction/HamtaAktuellaOrdinationerFoddatumInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -728,7 +728,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/HamtaAktuellaOrdinationerInteraction/HamtaAktuellaOrdinationerInteraction_4.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/HamtaAktuellaOrdinationerInteraction/HamtaAktuellaOrdinationerInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -747,7 +747,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/HamtaGallandeOrdinationsversionInteraction/HamtaGallandeOrdinationsversionInteraction_1.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/HamtaGallandeOrdinationsversionInteraction/HamtaGallandeOrdinationsversionInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -766,7 +766,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/HamtaIckeAktuellaOrdinationerFoddatumInteraction/HamtaIckeAktuellaOrdinationerFoddatumInteraction_1.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/HamtaIckeAktuellaOrdinationerFoddatumInteraction/HamtaIckeAktuellaOrdinationerFoddatumInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -800,7 +800,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/HamtaIckeAktuellaOrdinationerInteraction/HamtaIckeAktuellaOrdinationerInteraction_5.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/HamtaIckeAktuellaOrdinationerInteraction/HamtaIckeAktuellaOrdinationerInteraction_5.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -834,7 +834,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/HamtaOrdinationshistorikInteraction/HamtaOrdinationshistorikInteraction_4.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/HamtaOrdinationshistorikInteraction/HamtaOrdinationshistorikInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -868,7 +868,7 @@
                   </extraargs>
                 </wsdloption>
 				<wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/KorrigeraOrdinationVardInteraction/KorrigeraOrdinationVardInteraction_6.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/KorrigeraOrdinationVardInteraction/KorrigeraOrdinationVardInteraction_6.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -881,7 +881,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/MakuleraOrdinationVardInteraction/MakuleraOrdinationVardInteraction_4.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/MakuleraOrdinationVardInteraction/MakuleraOrdinationVardInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -900,7 +900,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1\interactions\SattUtOrdinationVardInteraction/SattUtOrdinationVardInteraction_4.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0\interactions\SattUtOrdinationVardInteraction/SattUtOrdinationVardInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -919,7 +919,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/SkapaDosunderlagVardInteraction/SkapaDosunderlagVardInteraction_1.2_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/SkapaDosunderlagVardInteraction/SkapaDosunderlagVardInteraction_1.2_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -955,7 +955,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/SkapaOrdinationVardInteraction/SkapaOrdinationVardInteraction_6.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/SkapaOrdinationVardInteraction/SkapaOrdinationVardInteraction_6.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
@@ -974,7 +974,7 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
-                  <wsdl>${schema.path}/TD_APSE_OR_6_0_RC1/interactions/SkrivUtDosReceptInteraction/SkrivUtDosReceptInteraction_1.0_rivtabp21.wsdl</wsdl>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/SkrivUtDosReceptInteraction/SkrivUtDosReceptInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>

@@ -3,3 +3,7 @@
 .settings
 .studio
 target
+
+# IntelliJ
+.idea
+*.iml

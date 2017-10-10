@@ -40,7 +40,7 @@ import se.riv.se.apotekensservice.or.v6.OrdinationslistaResponse;
 @WebService(serviceName = "HamtaAktuellaOrdinationerResponderService", 
 endpointInterface = "se.riv.se.apotekensservice.or.hamtaaktuellaordinationer.v4.rivtabp21.HamtaAktuellaOrdinationerResponderInterface", 
 portName = "HamtaAktuellaOrdinationerResponderPort", targetNamespace = "urn:riv:se.apotekensservice:or:HamtaAktuellaOrdinationer:4:rivtabp21", 
-wsdlLocation = "TD_APSE_OR_6_0_RC1/interactions/HamtaAktuellaOrdinationerInteraction/HamtaAktuellaOrdinationerInteraction_4.0_rivtabp21.wsdl")
+wsdlLocation = "TD_APSE_OR_6_0/interactions/HamtaAktuellaOrdinationerInteraction/HamtaAktuellaOrdinationerInteraction_4.0_rivtabp21.wsdl")
 public class HamtaAllaAktuellaOrdinationerTestProducer implements HamtaAktuellaOrdinationerResponderInterface {
 
 	@Override
