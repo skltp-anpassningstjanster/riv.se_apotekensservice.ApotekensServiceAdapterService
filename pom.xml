@@ -56,10 +56,9 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 					<version>1.10.b1</version>
 					<configuration>
 						<properties>
-							<year>2013</year>
-							<copyright>Center for eHalsa i samverkan (CeHis).
-							&lt;http://cehis.se/&gt;</copyright>
-							<product>SKLTP</product>
+							<year>2014</year>
+							<copyright>Inera AB, &lt;http://inera.se/&gt;</copyright>
+                            <product>SKLTP</product>
 						</properties>
 						<strictCheck>true</strictCheck>
 						<basedir>${basedir}</basedir>
