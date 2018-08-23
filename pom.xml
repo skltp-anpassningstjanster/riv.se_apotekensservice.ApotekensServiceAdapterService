@@ -15,7 +15,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 	<parent>
 		<groupId>se.skltp.commons</groupId>
 		<artifactId>skltp-commons-mule-parent</artifactId>
-		<version>2.0.3-RC2</version>
+		<version>2.0.3</version>
 	</parent>
 
 	<groupId>se.skltp.adapterservices.se.apotekensservice</groupId>
@@ -90,7 +90,6 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 						<configuration>
 								<autoVersionSubmodules>true</autoVersionSubmodules>
 								<tagNameFormat>v@{project.version}</tagNameFormat>
-								<pushChanges>true</pushChanges>
 								<localCheckout>true</localCheckout>
 								<useReleaseProfile>false</useReleaseProfile>
 						</configuration>
