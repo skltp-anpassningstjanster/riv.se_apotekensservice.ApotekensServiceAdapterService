@@ -69,7 +69,7 @@ public class SokDosmottagareIntegrationTest extends AbstractTestCase {
 	@Override
 	protected String getConfigResources() {
 		return "soitoolkit-mule-jms-connector-activemq-embedded.xml," + "ApSeMedicalServicesAdapterIC-common.xml,"
-				+ "services/EXPO-SokDosmottagare-apse-service.xml,"
+				+ "services/EXPO-SokDosMottagare-apse-service.xml,"
 				+ "teststub-services/EXPO-SokDosmottagare-apse-teststub-service.xml";
 	}
 
