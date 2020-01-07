@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>ApSeMedicalServicesAdapterIC-Schemas</artifactId>
-	<packaging>jar</packaging>
-	<name>${project.artifactId}</name>
-	
-	<parent>
-		<groupId>se.skltp.adapterservices.se.apotekensservice</groupId>
-		<artifactId>ApSeMedicalServicesAdapter</artifactId>
-		<version>2.0.7-SNAPSHOT</version>
-	</parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>ApSeMedicalServicesAdapterIC-Schemas</artifactId>
+  <packaging>jar</packaging>
+  <name>${project.artifactId}</name>
 
-	<properties>
-		<!-- Properties for generating code from XML Schemas (JAXB) -->
-		<schema.path>${basedir}/src/main/resources/schemas</schema.path>
-	</properties>
+  <parent>
+    <groupId>se.skltp.adapterservices.se.apotekensservice</groupId>
+    <artifactId>ApSeMedicalServicesAdapter</artifactId>
+    <version>2.0.7-SNAPSHOT</version>
+  </parent>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>${cxf.version}</version>
-				<executions>
-				
-		<execution>
+  <properties>
+    <!-- Properties for generating code from XML Schemas (JAXB) -->
+    <schema.path>${basedir}/src/main/resources/schemas</schema.path>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-codegen-plugin</artifactId>
+        <version>${cxf.version}</version>
+        <executions>
+
+          <execution>
             <id>generate-sources-td-axs-apotekensservice</id>
             <phase>generate-sources</phase>
             <configuration>
               <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
               <wsdlOptions>
-           		<wsdloption>
+                <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_AXS_6_0/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_6.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
@@ -42,7 +42,7 @@
                     <extraarg>urn:riv:se.apotekensservice:axs:HamtaKundInfo:6:rivtabp21=se.riv.se.apotekensservice.axs.hamtakundinfo.v6.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
-				<wsdloption>
+                <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_AXS_5_0/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_5.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
@@ -51,10 +51,10 @@
                     <extraarg>urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5=se.riv.se.apotekensservice.axs.hamtakundinforesponder.v5</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:axs:HamtaKundInfo:5:rivtabp21=se.riv.se.apotekensservice.axs.hamtakundinfo.v5.rivtabp21</extraarg>
-					<extraarg>-p</extraarg>
-					<extraarg>urn:riv:se.apotekensservice:axs:4=se.riv.se.apotekensservice.axs.v4</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:axs:4=se.riv.se.apotekensservice.axs.v4</extraarg>
                   </extraargs>
-                </wsdloption>             
+                </wsdloption>
                 <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_AXS_5_0/interactions/HamtaPatientInfoInteraction/HamtaPatientInfoInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
@@ -65,7 +65,7 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:axs:HamtaPatientInfo:4:rivtabp21=se.riv.se.apotekensservice.axs.hamtapatientinfo.v4.rivtabp21</extraarg>
                   </extraargs>
-                </wsdloption>                
+                </wsdloption>
                 <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_AXS_6_0/interactions/HamtaPatientInfoInteraction/HamtaPatientInfoInteraction_5.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
@@ -76,7 +76,18 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:axs:HamtaPatientInfo:5:rivtabp21=se.riv.se.apotekensservice.axs.hamtapatientinfo.v5.rivtabp21</extraarg>
                   </extraargs>
-                </wsdloption>                
+                </wsdloption>
+                <wsdloption>
+                  <wsdl>${schema.path}/TD_APSE_AXS_7_0/interactions/HamtaPatientInfoInteraction/HamtaPatientInfoInteraction_6.0_rivtabp21.wsdl</wsdl>
+                  <extraargs>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:axs:HamtaPatientInfoResponder:6=se.riv.se.apotekensservice.axs.hamtapatientinforesponder.v6</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:axs:HamtaPatientInfo:6=se.riv.se.apotekensservice.axs.hamtapatientinfo.v6.rivtabp21</extraarg>
+                  </extraargs>
+                </wsdloption>
                 <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_AXS_6_0/interactions/UppdateraSamtyckeInteraction/UppdateraSamtyckeInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
@@ -88,14 +99,14 @@
                     <extraarg>urn:riv:se.apotekensservice:axs:UppdateraSamtycke:4:rivtabp21=se.riv.inera.se.apotekensservice.axs.uppdaterasamtycke.v4.rivtabp21</extraarg>
                   </extraargs>
                 </wsdloption>
-                
+
               </wsdlOptions>
             </configuration>
             <goals>
               <goal>wsdl2java</goal>
             </goals>
           </execution>
-          
+
           <execution>
             <id>generate-sources-td-expo-apotekensservice</id>
             <phase>generate-sources</phase>
@@ -218,7 +229,7 @@
               <goal>wsdl2java</goal>
             </goals>
           </execution>
-          
+
           <execution>
             <id>generate-sources-td-folk-apotekensservice</id>
             <phase>generate-sources</phase>
@@ -413,7 +424,7 @@
               <goal>wsdl2java</goal>
             </goals>
           </execution>
-          
+
           <execution>
             <id>generate-sources-td-lf-apotekensservice</id>
             <phase>generate-sources</phase>
@@ -484,10 +495,10 @@
                     <extraarg>urn:riv:se.apotekensservice:lf:LasLFForskrivareResponder:4=se.riv.se.apotekensservice.lf.laslfforskrivareresponder.v4</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:LasLFForskrivare:4:rivtabp21=se.riv.se.apotekensservice.lf.laslfforskrivare.v4.rivtabp21</extraarg>
-					<extraarg>-p</extraarg>
-					<extraarg>urn:riv:se.apotekensservice:lf:4=se.riv.se.apotekensservice.lf.v4</extraarg>
-					<extraarg>-p</extraarg>
-					<extraarg>urn:riv:se.apotekensservice:lf:5=se.riv.se.apotekensservice.lf.v5</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:4=se.riv.se.apotekensservice.lf.v4</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:5=se.riv.se.apotekensservice.lf.v5</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
@@ -499,10 +510,10 @@
                     <extraarg>urn:riv:se.apotekensservice:lf:LasLFPrivatpersonResponder:4=se.riv.se.apotekensservice.lf.laslfprivatpersonresponder.v4</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:LasLFPrivatperson:4:rivtabp21=se.riv.se.apotekensservice.lf.laslfprivatperson.v4.rivtabp21</extraarg>
-					<extraarg>-p</extraarg>
-					<extraarg>urn:riv:se.apotekensservice:lf:4=se.riv.se.apotekensservice.lf.v4</extraarg>
-					<extraarg>-p</extraarg>
-					<extraarg>urn:riv:se.apotekensservice:lf:5=se.riv.se.apotekensservice.lf.v5</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:4=se.riv.se.apotekensservice.lf.v4</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:5=se.riv.se.apotekensservice.lf.v5</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
@@ -525,10 +536,10 @@
                     <extraarg>urn:riv:se.apotekensservice:lf:LasLFVardsystemResponder:4=se.riv.se.apotekensservice.lf.laslfvardsystemresponder.v4</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:lf:LasLFVardsystem:4:rivtabp21=se.riv.inera.se.apotekensservice.lf.laslfvardsystem.v4.rivtabp21</extraarg>
-					<extraarg>-p</extraarg>
-					<extraarg>urn:riv:se.apotekensservice:lf:4=se.riv.se.apotekensservice.lf.v4</extraarg>
-					<extraarg>-p</extraarg>
-					<extraarg>urn:riv:se.apotekensservice:lf:5=se.riv.se.apotekensservice.lf.v5</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:4=se.riv.se.apotekensservice.lf.v4</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:lf:5=se.riv.se.apotekensservice.lf.v5</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
@@ -572,74 +583,74 @@
               <goal>wsdl2java</goal>
             </goals>
           </execution>
-          
-           <execution>
+
+          <execution>
             <id>generate-sources-td-or-apotekensservice</id>
             <phase>generate-sources</phase>
             <configuration>
               <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
               <wsdlOptions>
-	              <wsdloption>
-	                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/SkrivUtMinaSparadeReceptInteraction/SkrivUtMinaSparadeReceptInteraction_1.1_rivtabp21.wsdl</wsdl>
-	                  <extraargs>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeReceptResponder:1=se.riv.se.apotekensservice.or.skrivutminasparadereceptresponder.v1</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:itintegration:registry:1=se.riv.itintegration.registry.v1</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeRecept:1:rivtabp21=se.riv.se.apotekensservice.or.skrivutminasparaderecept.v1.rivtabp21</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:1=se.riv.se.apotekensservice.or.v1</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:5=se.riv.se.apotekensservice.or.v5</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:6=se.riv.se.apotekensservice.or.v6</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeReceptResponder:1:ext:1=riv.se.apotekensservice.or.SkrivUtMinaSparadeReceptResponder.v1.ext.v1</extraarg>
-	                  </extraargs>
-	                </wsdloption>	
-	                <wsdloption>
-	                  <wsdl>${schema.path}/TD_APSE_OR_5_0/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_5.0_rivtabp21.wsdl</wsdl>
-	                  <extraargs>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5=se.riv.se.apotekensservice.or.hamtaordinationerprivatpersonresponder.v5</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:itintegration:registry:1=se.riv.itintegration.registry.v1</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatperson:5:rivtabp21=se.riv.se.apotekensservice.or.hamtaordinationerprivatperson.v5.rivtabp21</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:5=se.riv.se.apotekensservice.or.v5</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
-	                  </extraargs>
-	                </wsdloption>
- 	                <wsdloption>
-	                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_6.0_rivtabp21.wsdl</wsdl>
-	                  <extraargs>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5=se.riv.se.apotekensservice.or.hamtaordinationerprivatpersonresponder.v6</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:itintegration:registry:1=se.riv.itintegration.registry.v1</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatperson:6:rivtabp21=se.riv.se.apotekensservice.or.hamtaordinationerprivatperson.v6.rivtabp21</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:1=se.riv.se.apotekensservice.or.v1</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:5=se.riv.se.apotekensservice.or.v5</extraarg>
-	                    <extraarg>-p</extraarg>
-	                    <extraarg>urn:riv:se.apotekensservice:or:6=se.riv.se.apotekensservice.or.v6</extraarg>
-	                  </extraargs>
-	                </wsdloption>
+                <wsdloption>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/SkrivUtMinaSparadeReceptInteraction/SkrivUtMinaSparadeReceptInteraction_1.1_rivtabp21.wsdl</wsdl>
+                  <extraargs>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeReceptResponder:1=se.riv.se.apotekensservice.or.skrivutminasparadereceptresponder.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:itintegration:registry:1=se.riv.itintegration.registry.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeRecept:1:rivtabp21=se.riv.se.apotekensservice.or.skrivutminasparaderecept.v1.rivtabp21</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:1=se.riv.se.apotekensservice.or.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:5=se.riv.se.apotekensservice.or.v5</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:6=se.riv.se.apotekensservice.or.v6</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:SkrivUtMinaSparadeReceptResponder:1:ext:1=riv.se.apotekensservice.or.SkrivUtMinaSparadeReceptResponder.v1.ext.v1</extraarg>
+                  </extraargs>
+                </wsdloption>
+                <wsdloption>
+                  <wsdl>${schema.path}/TD_APSE_OR_5_0/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_5.0_rivtabp21.wsdl</wsdl>
+                  <extraargs>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5=se.riv.se.apotekensservice.or.hamtaordinationerprivatpersonresponder.v5</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:itintegration:registry:1=se.riv.itintegration.registry.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatperson:5:rivtabp21=se.riv.se.apotekensservice.or.hamtaordinationerprivatperson.v5.rivtabp21</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:5=se.riv.se.apotekensservice.or.v5</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
+                  </extraargs>
+                </wsdloption>
+                <wsdloption>
+                  <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_6.0_rivtabp21.wsdl</wsdl>
+                  <extraargs>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5=se.riv.se.apotekensservice.or.hamtaordinationerprivatpersonresponder.v6</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:itintegration:registry:1=se.riv.itintegration.registry.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatperson:6:rivtabp21=se.riv.se.apotekensservice.or.hamtaordinationerprivatperson.v6.rivtabp21</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:1=se.riv.se.apotekensservice.or.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:5=se.riv.se.apotekensservice.or.v5</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:6=se.riv.se.apotekensservice.or.v6</extraarg>
+                  </extraargs>
+                </wsdloption>
                 <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/AvregistreraDosunderlagInteraction/AvregistreraDosunderlagInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
@@ -747,6 +758,27 @@
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
+                  <wsdl>${schema.path}/TD_APSE_OR_7_0/interactions/HamtaAktuellaOrdinationerInteraction/HamtaAktuellaOrdinationerInteraction_5.2_rivtabp21.wsdl</wsdl>
+                  <extraargs>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:HamtaAktuellaOrdinationerResponder:5=se.riv.se.apotekensservice.or.hamtaaktuellaordinationerresponder.v5</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:HamtaAktuellaOrdinationer:5=se.riv.se.apotekensservice.or.hamtaaktuellaordinationer.v5</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:1=se.riv.se.apotekensservice.or.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:5=se.riv.se.apotekensservice.or.v5</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:6=se.riv.se.apotekensservice.or.v6</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:7=se.riv.se.apotekensservice.or.v7</extraarg>
+                  </extraargs>
+                </wsdloption>
+                <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/HamtaGallandeOrdinationsversionInteraction/HamtaGallandeOrdinationsversionInteraction_1.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
@@ -783,7 +815,7 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:6=se.riv.se.apotekensservice.or.v6</extraarg>
                   </extraargs>
-                </wsdloption>        
+                </wsdloption>
                 <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_OR_5_0/interactions/HamtaIckeAktuellaOrdinationerInteraction/HamtaIckeAktuellaOrdinationerInteraction_4.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
@@ -816,6 +848,27 @@
                     <extraarg>urn:riv:se.apotekensservice:or:5=se.riv.se.apotekensservice.or.v5</extraarg>
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:6=se.riv.se.apotekensservice.or.v6</extraarg>
+                  </extraargs>
+                </wsdloption>
+                <wsdloption>
+                  <wsdl>${schema.path}/TD_APSE_OR_7_0/interactions/HamtaIckeAktuellaOrdinationerInteraction/HamtaIckeAktuellaOrdinationerInteraction_6.2_rivtabp21.wsdl</wsdl>
+                  <extraargs>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:inera.se.apotekensservice:argos:1=se.riv.inera.se.apotekensservice.argos.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationerResponder:6=se.riv.se.apotekensservice.or.hamtaickeaktuellaordinationerresponder.v6</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationer:6=se.riv.se.apotekensservice.or.hamtaickeaktuellaordinationer.v6</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:1=se.riv.se.apotekensservice.or.v1</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:5=se.riv.se.apotekensservice.or.v5</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:6=se.riv.se.apotekensservice.or.v6</extraarg>
+                    <extraarg>-p</extraarg>
+                    <extraarg>urn:riv:se.apotekensservice:or:7=se.riv.se.apotekensservice.or.v7</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
@@ -852,7 +905,7 @@
                     <extraarg>urn:riv:se.apotekensservice:or:6=se.riv.se.apotekensservice.or.v6</extraarg>
                   </extraargs>
                 </wsdloption>
-				<wsdloption>
+                <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_OR_5_0/interactions/KorrigeraOrdinationVardInteraction/KorrigeraOrdinationVardInteraction_5.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
@@ -862,12 +915,12 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:KorrigeraOrdinationVard:5:rivtabp21=se.riv.se.apotekensservice.or.korrigeraordinationvard.v5.rivtabp21</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>  
+                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:or:5=se.riv.se.apotekensservice.or.v5</extraarg>                    
+                    <extraarg>urn:riv:se.apotekensservice:or:5=se.riv.se.apotekensservice.or.v5</extraarg>
                   </extraargs>
                 </wsdloption>
-				<wsdloption>
+                <wsdloption>
                   <wsdl>${schema.path}/TD_APSE_OR_6_0/interactions/KorrigeraOrdinationVardInteraction/KorrigeraOrdinationVardInteraction_6.0_rivtabp21.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-p</extraarg>
@@ -877,7 +930,7 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:KorrigeraOrdinationVard:6:rivtabp21=se.riv.se.apotekensservice.or.korrigeraordinationvard.v6.rivtabp21</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:or:6=se.riv.se.apotekensservice.or.v6</extraarg>                    
+                    <extraarg>urn:riv:se.apotekensservice:or:6=se.riv.se.apotekensservice.or.v6</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
@@ -951,7 +1004,7 @@
                     <extraarg>-p</extraarg>
                     <extraarg>urn:riv:se.apotekensservice:or:5=se.riv.se.apotekensservice.or.v5</extraarg>
                     <extraarg>-p</extraarg>
-                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>                    
+                    <extraarg>urn:riv:se.apotekensservice:or:4=se.riv.se.apotekensservice.or.v4</extraarg>
                   </extraargs>
                 </wsdloption>
                 <wsdloption>
@@ -998,7 +1051,7 @@
               <goal>wsdl2java</goal>
             </goals>
           </execution>
-          
+
           <execution>
             <id>generate-sources-td-pris-apotekensservice</id>
             <phase>generate-sources</phase>
@@ -1127,23 +1180,23 @@
               <goal>wsdl2java</goal>
             </goals>
           </execution>
-		</executions>
-		</plugin>
-		<plugin>
-			<artifactId>maven-compiler-plugin</artifactId>
-			<configuration>
-				<source>1.6</source>
-				<target>1.6</target>
-        		<encoding>${project.build.sourceEncoding}</encoding>
-			</configuration>
-		</plugin> 
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
 
-		</plugins>
-		<resources>
-			<resource>
-				<directory>${schema.path}</directory>
-			</resource>
-		</resources>
-	</build>
+    </plugins>
+    <resources>
+      <resource>
+        <directory>${schema.path}</directory>
+      </resource>
+    </resources>
+  </build>
 
 </project>

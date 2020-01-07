@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:riv:se.apotekensservice:or:7:ext:1"
+           targetNamespace="urn:riv:se.apotekensservice:or:7:ext:1"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.2">
+
+    <xs:complexType name="Extension1Type">
+        <xs:sequence>
+
+            <xs:element name="pappersUttagAnvandareId" type="AnvandareIdType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Användar-id för farmaceut eller apotekspersonal som angett på pappersreceptet
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="pappersUttagApoteksId" type="GlnKodType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Apoteks-id som angett på pappersreceptet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="AnvandareIdType">
+        <xs:annotation>
+            <xs:documentation>Unikt användarid i anropande system.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="GlnKodType">
+        <xs:annotation>
+            <xs:documentation>GLN-kod</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="13"/>
+            <xs:maxLength value="13"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Extension2Type">
+        <xs:sequence>
+
+            <xs:element name="utlamnandebegransningKod" type="UtlamnandebegransningKodType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Kod som anger om produkten får utlämnas från apotek endast om den har förskrivits av en läkare med viss specialistkompetens.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="utlamnandebegransningKlartext" type="UtlamnandebegransningKlartextType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Anger om produkten får utlämnas från apotek endast om den har förskrivits av en läkare med viss specialistkompetens.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="UtlamnandebegransningKodType">
+        <xs:annotation>
+            <xs:documentation>Kod som anger utlämnande.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="8"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="UtlamnandebegransningKlartextType">
+        <xs:annotation>
+            <xs:documentation>Betydelse av utlämnandekod.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="300"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Extension3Type">
+        <xs:sequence>
+            <xs:element name="sparradUppgiftKod" type="SparradUppgiftKodType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Kod för spärrad uppgift i receptet.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="sparradUppgiftKlartext" type="SparradUppgiftKlartextType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Klartext för spärrad uppgift i receptet.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="SparradUppgiftKodType">
+        <xs:annotation>
+            <xs:documentation>Kod för spärrad uppgift i receptet.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="9"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SparradUppgiftKlartextType">
+        <xs:annotation>
+            <xs:documentation>Klartext för spärrad uppgift i receptet.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="300"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="ExtensionType">
+        <xs:sequence>
+            <xs:any namespace="##any"
+                    processContents="lax"
+                    minOccurs="0"
+                    maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

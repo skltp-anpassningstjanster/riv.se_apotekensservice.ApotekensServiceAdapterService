@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:riv:se.apotekensservice:axs:HamtaPatientInfoResponder:6"
+           xmlns:axs4="urn:riv:se.apotekensservice:axs:4"
+		   xmlns:axs="urn:riv:se.apotekensservice:axs:5"
+           targetNamespace="urn:riv:se.apotekensservice:axs:HamtaPatientInfoResponder:6"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="6.0">
+
+    <xs:import namespace="urn:riv:se.apotekensservice:axs:5" schemaLocation="../../core_components/se.apotekensservice_axs_5.0.xsd"/>
+    <xs:import namespace="urn:riv:se.apotekensservice:axs:4" schemaLocation="../../core_components/se.apotekensservice_axs_4.0.xsd"/>
+
+    <!-- Globala element: Metod parametrar -->
+    <xs:element name="HamtaPatientInfo" type="HamtaPatientInfoRequestType"/>
+    <xs:element name="HamtaPatientInfoResponse" type="HamtaPatientInfoResponseType"/>
+
+    <!-- Fel -->
+    <xs:element name="ApplicationException" type="axs4:ApplicationException"/>
+    <xs:element name="SystemException" type="axs4:SystemException"/>
+
+    <xs:complexType name="HamtaPatientInfoRequestType">
+        <xs:sequence>
+            <xs:element name="personnummer" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Giltigt personnummer för patient.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="HamtaPatientInfoResponseType">
+        <xs:sequence>
+            <xs:element name="apotek" type="axs4:ApoteksinformationResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Ev. DOS-apotek som kunden är kopplad till. Om anrop mot underliggande system
+                        (FOLK, OR eller EXPO) misslyckas så lämnas fältet tomt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="dosproducent" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>GLN-kod för eventuell dosproducent.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="dosunderlagStatus" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Status om underlaget är godkänt, registrerat eller avregistrerat.
+
+                        500 = Ej godkänt.
+                        <para>510 = Godkänt.</para>
+                        <para>520 = Avregistrerat.</para></xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="finnsOrdination" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Markering som anger om det finns aktuella recept för
+                        patienten i RDH.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="patientInformation" type="axs:PatientInformationResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Patientinformation från FOLK.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="ExtensionType">
+        <xs:sequence>
+            <xs:any namespace="##any"
+                    processContents="lax"
+                    minOccurs="0"
+                    maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

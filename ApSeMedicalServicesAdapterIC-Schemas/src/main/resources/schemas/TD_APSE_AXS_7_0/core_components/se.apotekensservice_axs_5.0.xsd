@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:doc="urn:riv:se.apotekensservice:axs:1"
+		   xmlns="urn:riv:se.apotekensservice:axs:5"
+           targetNamespace="urn:riv:se.apotekensservice:axs:5"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="5.0">
+
+  <xs:import namespace="urn:riv:se.apotekensservice:axs:4" schemaLocation="se.apotekensservice_axs_4.0.xsd"/>
+  <xs:import namespace="urn:riv:se.apotekensservice:axs:1" schemaLocation="se.apotekensservice_axs_1.0.xsd"/>  
+	
+	<xs:annotation>
+        <xs:documentation>
+            Beskrivning: Meddelandetyper som är gemensamma för axs.
+            Revisioner: 2015-11-25, version 5.0
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:complexType name="KundinformationResponse">
+        <xs:sequence>
+            <xs:element name="lkKod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Län och kommun där personen är folkbokförd.
+
+                        Har formatet LLKK
+                        LL - Län, 2 tecken
+                        KK - Kommun, 2 tecken</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="redNamn" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Redigerat namn</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="samtycke" type="SamtyckeResponse" nillable="false" />
+
+            <xs:element name="statusKod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>StatusKod - status på personen i FOLK.
+                        Mappat från träffkoder i FOLK.
+
+                        0=Person finns i FOLK.
+                        1=Person finns ej i FOLK, underliggande system är ej tillgängligt.
+                        2=Person finns ej.
+                        3=Person sekretesskyddad.
+                        4=Person är avliden.
+                        5=Träffkod okänd.
+                        6=Testperson.
+
+                        <para>Vissa av dessa statuskoder innebär att det inte finns någon personinformation i svaret.</para></xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="traffkod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Träffkod - status på personen i FOLK.
+                        Kommer att utgå och ersättas av statusKod.
+
+                        <para>92 - ok, träff i Spar</para>
+                        <para>93 - Felaktigt personnummer eller personen finns inte i Spar</para>
+                        <para>20 - Nyupplagd person</para>
+                        <para>23 - Teknisk insättning</para>
+                        <para>24 - Personnummerändring</para>
+                        <para>26 - Upphävd sekretess</para>
+                        <para>40 - Omregistrering/utbyte av befintlig personpost</para>
+                        <para>50 - Ändring av befintlig personpost</para>
+                        <para>71 - Avliden</para>
+                        <para>72 - Avregistrerad</para>
+                        <para>73 - Teknisk avregistrering</para>
+                        <para>74 - Personnummerändring</para>
+                        <para>76 - Sekretesskyddad</para>
+                        <para>81 - Ändring av dödsdatum</para>
+                        <para>03 - Personen finns inte i FOLK. Spar är inte tillgängligt.</para>
+                        <para>01 - Apotekens Service påhittade träffkod för testperson.</para>
+
+                        <para>Vissa av dessa träffkoder innebär att det inte finns någon personinformation i svaret.</para></xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SamtyckeResponse">
+        <xs:sequence>
+            <xs:element name="dosSamtycke" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation><para>false - Kunden (privatpersonen) samtycker inte till att spara recept på sitt personnummer för dosapotek.</para>
+                        <para>true - Kunden (privatpersonen) samtycker till att spara recept på sitt personnummer för dosapotek.</para>
+                        <para>Null - kunden (privatpersonen) har inte tillfrågats/tagit ställning. Detta är enbart vid utdata.</para></xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="dosSamtyckeDatum" type="xs:dateTime" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Datum för senaste ändring av dos-samtycke</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ees" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Flagga för registrerat eessamtycke.
+                        <para>False - Om kunden sagt nej till att vara med i EES.</para>
+                        <para>True  - Kunden har samtyckt till att vara med i EES.</para>
+                        <para>Null  - kunden har inte tillfrågats/tagit ställning.</para></xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="eesSamtyckeDatum" type="xs:dateTime" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Datum för senaste ändring av EES-samtycke</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="hkdb" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Flagga för registrerat samtycke.
+                        I indata är det endast möjligt att ange false och endast om inget värde finns registrerat.
+                        Samtycke uppdateras genom att skapa eller ta bort konto i HKDB.
+                        <para>False - Om kunden sagt nej till att vara med i HKDB.</para>
+                        <para>True  - Kunden har samtyckt till att vara med i HKDB.</para>
+                        <para>Null  - kunden har inte tillfrågats/tagit ställning.</para></xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="hkdbSamtyckeDatum" type="xs:dateTime" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Datum för senaste ändring av HKDB-samtycke</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="rr" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation><para>false - Om kunden inte lämnat samtycke till att spara sina recept i RR.</para>
+                        <para>true - Kunden har samtyckt till att vara med i RR.</para>
+                        <para>Null - kunden har inte tillfrågats/tagit ställning. Detta är enbart vid utdata.</para></xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="rrSamtyckeDatum" type="xs:dateTime" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Datum för senaste ändring av RR-samtycke</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="rrd" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation><para>false - Kunden (privatpersonen) samtycker inte till att spara djurrecept på sitt personnummer i RR för djur.</para>
+                        <para>true - Kunden (privatpersonen) samtycker till att spara djurrecept på sitt personnummer i RR för djur.</para>
+                        <para>Null - kunden (privatpersonen) har inte tillfrågats/tagit ställning. Detta är enbart vid utdata.</para></xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="rrdSamtyckeDatum" type="xs:dateTime" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Datum för senaste ändring av RRD-samtycke</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="PatientInformationResponse">
+        <xs:sequence>
+            <xs:element name="lkKod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Län och kommun där personen är folkbokförd.
+
+                        Har formatet LLKK
+                        LL - Län, 2 tecken
+                        KK - Kommun, 2 tecken</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="omradeskod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Det område där personen är folkbokförd</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="redNamn" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Redigerat namn</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="samtycke" type="SamtyckeResponse" nillable="false" />
+
+            <xs:element name="statusKod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>StatusKod - status på personen i FOLK.
+                        Mappat från träffkoder i FOLK.
+
+                        <para>0=Person finns i FOLK.</para>
+                        <para>1=Person finns ej i FOLK, underliggande system är ej tillgängligt.</para>
+                        <para>2=Person finns ej.</para>
+                        <para>3=Person sekretesskyddad.</para>
+                        <para>4=Person är avliden.</para>
+                        <para>5=Träffkod okänd.</para>
+                        <para>6=Testperson.</para>
+
+                        <para>Vissa av dessa statuskoder innebär att det inte finns någon personinformation i svaret.</para></xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ExtensionType">
+        <xs:sequence>
+            <xs:any namespace="##any"
+                    processContents="lax"
+                    minOccurs="0"
+                    maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

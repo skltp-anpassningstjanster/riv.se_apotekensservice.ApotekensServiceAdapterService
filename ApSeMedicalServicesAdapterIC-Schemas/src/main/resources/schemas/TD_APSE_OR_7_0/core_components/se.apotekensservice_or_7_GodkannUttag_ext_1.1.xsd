@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:riv:se.apotekensservice:or:GodkannUttagResponder:7:ext:1"
+           xmlns:or="urn:riv:se.apotekensservice:or:7"
+           targetNamespace="urn:riv:se.apotekensservice:or:GodkannUttagResponder:7:ext:1"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0">
+
+    <xs:import namespace="urn:riv:se.apotekensservice:or:7" schemaLocation="./se.apotekensservice_or_7.0.xsd"/>
+
+    <xs:complexType name="Extension1Type">
+        <xs:sequence>
+
+            <xs:element name="godkannandeAnvandareDosaktor" type="GodkannandeAnvandareDosaktorRequest" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Information om godkännande användare. Används endast om anropande apotek är dosapotek</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GodkannandeAnvandareDosaktorRequest">
+        <xs:sequence>
+
+            <xs:element name="godkannandeAnvandareYrkeskod" type="or:YrkeskodType" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Yrkeskod för godkännande användare på dosapotek</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="godkannandeAnvandareEfternamn" type="or:EfternamnType" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Användarens förnamn.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="godkannandeAnvandareFornamn" type="or:FornamnType" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Användarens efternamn.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="godkannandeAnvandareLegitimationskod" type="or:LegitimationskodType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Användarens befattningskod enligt HSA.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="godkannandeAnvandareGrupplegitimationskod" type="or:LegitimationskodType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Användarens 6-ställiga grupplegitimationskod. Obligatorisk för Apotekselev, receptarieelev, Teknikerelev och Europeisk farmaceut.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+
+    <xs:complexType name="ExtensionType">
+        <xs:sequence>
+            <xs:any namespace="##any"
+                    processContents="lax"
+                    minOccurs="0"
+                    maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:doc="urn:riv:se.apotekensservice:or:1"
+           xmlns:or4="urn:riv:se.apotekensservice:or:4"
+           xmlns:or5="urn:riv:se.apotekensservice:or:5"
+           xmlns="urn:riv:se.apotekensservice:or:6"
+           targetNamespace="urn:riv:se.apotekensservice:or:6"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="6.0">
+
+    <xs:import namespace="urn:riv:se.apotekensservice:or:5" schemaLocation="se.apotekensservice_or_5.0.xsd"/>
+	<xs:import namespace="urn:riv:se.apotekensservice:or:1" schemaLocation="se.apotekensservice_or_1.0.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation>
+            Beskrivning: Meddelandetyper som är gemensamma för or.
+            Revisioner:  2015-10-30, version 6.0
+        </xs:documentation>
+    </xs:annotation>
+
+
+    <xs:complexType name="OrdinationslistaResponse">
+        <xs:sequence>
+            <xs:element name="dispenseradordinationLista" type="DispenseradOrdinationResponse" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Lista med dispenserade ordinationer.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="dosunderlag" type="or4:DosunderlagResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Dospatients dosunderlag.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="helforpackningsordinationLista" type="HelforpackningsordinationResponse" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Lista med helförpackningsordinationer.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="personnummer" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Patientens personnummer.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="underlagsversion" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Version på Ordinationslista. Används för att verifiera att klientsystemet har rätt underlag vid uppdateringar.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OrdinationslistaKortInfoResponse">
+        <xs:sequence>
+            <xs:element name="dispenseradordinationLista" type="DispenseradOrdinationResponse" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Lista med dispenserade ordinationer.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="dosunderlag" type="or4:DosunderlagResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Dospatients dosunderlag.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="helforpackningsordinationLista" type="HelforpackningsordinationResponse" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Lista med helförpackningsordinationer.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ordinationkortinfoLista" type="OrdinationKortInfoResponse" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Lista med kortinformation.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="personnummer" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Patientens personnummer.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="underlagsversion" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Version på Ordinationslista. Används för att verifiera att klientsystemet har rätt underlag vid uppdateringar.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OrdinationKortInfoResponse">
+        <xs:sequence>
+            <xs:element name="forandring" type="ForandringResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Information om eventuell historikskapande händelse (förändring).
+
+                        Endast en typ av historikskapande-information (makluering eller förändring) kan förekomma.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="makulering" type="MakuleringResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Information om eventuell historikskapande händelse (makulering).
+
+                        Endast en typ av historikskapande-information (makluering eller förändring) kan förekomma.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="nplPackId" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>NplPackId.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ordinationsid" type="xs:long" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Ordinationens unika id.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ordinationstidpunkt" type="xs:dateTime" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Datum och eventuell tid för ordinationens utfärdande.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="sistaGiltighetsdag" type="xs:dateTime" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Ordinationens sista giltighetsdag.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="status" type="xs:int" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Ordinationens tillståndsstatus.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="varunummer" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Varunummer.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="DispenseradOrdinationResponse">
+        <xs:sequence>
+            <xs:element name="affResultat" type="or4:AFFResultatResponse" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Information om aff-fel för ordinationen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="akut" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Markering att ordinationen är akut.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="apoteketsKommentar" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Farmaceutens kommentar på ordinationen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="artikelinformation" type="or4:ArtikelinformationResponse" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Information om artikeln som ordinerats.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="behandlingsinformation" type="or4:BehandlingsinformationResponse" nillable="false" />
+
+            <xs:element name="dispenseringsregler" type="or4:DispenseringsreglerResponse" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Dispenseringsregler</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="doseringsschema" type="or4:DoseringsschemaResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Information om intag. Valfritt för stående, obligatorisk dispenserad ordination, får ej anges för vid behov.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="forandring" type="ForandringResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Information om eventuell historikskapande händelse (förändring).
+
+                        Endast en typ av historikskapande-information (makluering, förändring eller utsättning) kan förekomma.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="forskrivarKommentar" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Förskrivarens kommentar till apoteket.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="harForandrats" type="xs:boolean" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Markering om ordinationen har ändrats
+                        av förskrivare eller farmaceut.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="historisktOrdinationsId" type="xs:long" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Hänvisning till en eventuell historisk post av ordinationen. Alla historiska poster har tillståndsstatus Historik (211). En historisk post skapas exempelvis vid korrigering.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="korrigerbar" type="xs:boolean" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Markering om ordinationen är korrigerbar.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="leveransMeddelande" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Leveransinformation om ordinationen skickas till ett ombud.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="makulering" type="MakuleringResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Information om eventuell historikskapande händelse (makluering).
+
+                        Endast en typ av historikskapande-information (makluering, förändring eller utsättning) kan förekomma.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="notatOrdination" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Förskrivarens notat kopplat till en specifik ordination.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ordinationsId" type="xs:long" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Ordinationens unika id som sätts av Apotekens Service.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ordinationsinformation" type="OrdinationsinformationResponse" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Kompletterande information om ordinationen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ordinationsstatus" type="OrdinationsstatusResponse" nillable="false" />
+
+            <xs:element name="ordinationstyp" type="or5:char" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Typ av ordination.
+                        Anges enbart på ordinationer till dospatient.
+
+                        B = Helförpackning vid behov
+                        S = Helförpackning stående
+                        D = Dispenserad ordination</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="radnummerNEF" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Unikt id för en rad i en receptsamling som skickas in via NEF. Radnumret är en kombination av rad inom receptsamlingen och eventuellt flerval. Id:t sätts av vårdsystemet.
+
+                        Radnummer utan flerval:  1,2,...n
+                        Radnummer med flerval: 1-1, 1-2, 1-n</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="senastDispenseratUttag" type="or4:SenastDispenseratUttagResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Senast dispenseratuttag</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="tidigareOrdinationsId" type="xs:long" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Koppling till föregående ordination vid ordinationsförändringar. Ordinationerna behandlas som olika, fristående ordinationer. Används exempelvis vid förlängningar eller för att koppla ihop en ordination som skrivits ut på receptoriginal och registrerats in i OR igen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="utsattning" type="UtsattningResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Information om eventuell historikskapande händelse (utsättning).
+
+                        Endast en typ av historikskapande-information (makluering, förändring eller utsättning) kan förekomma. Utsättning innehållande enbart utsättningstidpunkt kan dock förekomma i kombination med annat historikskapande objekt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="HelforpackningsordinationResponse">
+        <xs:sequence>
+            <xs:element name="affResultat" type="or4:AFFResultatResponse" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Information om aff-fel för ordinationen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="apoteketsKommentar" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Farmaceutens kommentar på ordinationen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="artikelinformation" type="or4:ArtikelinformationResponse" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Information om artikeln som ordinerats.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="behandlingsinformation" type="or4:BehandlingsinformationResponse" nillable="false" />
+
+            <xs:element name="doseringsschema" type="or4:DoseringsschemaResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Information om intag. Valfritt för stående, obligatorisk dispenserad ordination, får ej anges för vid behov.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="forandring" type="ForandringResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Information om eventuell historikskapande händelse (förändring).
+
+                        Endast en typ av historikskapande-information (makluering, förändring eller utsättning) kan förekomma.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="forskrivarKommentar" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Förskrivarens kommentar till apoteket.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="harForandrats" type="xs:boolean" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Markering om ordinationen har ändrats
+                        av förskrivare eller farmaceut.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="helforpackningsregler" type="or4:HelforpackningsreglerResponse" nillable="false" />
+
+            <xs:element name="historisktOrdinationsId" type="xs:long" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Hänvisning till en eventuell historisk post av ordinationen. Alla historiska poster har tillståndsstatus Historik (211). En historisk post skapas exempelvis vid korrigering.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="korrigerbar" type="xs:boolean" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Markering om ordinationen är korrigerbar.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="leveransMeddelande" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Leveransinformation om ordinationen skickas till ett ombud.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="makulering" type="MakuleringResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Information om eventuell historikskapande händelse (makluering).
+
+                        Endast en typ av historikskapande-information (makluering, förändring eller utsättning) kan förekomma.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="mangdinformation" type="or4:MangdinformationResponse" nillable="false" />
+
+            <xs:element name="notatOrdination" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Förskrivarens notat kopplat till en specifik ordination.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ordinationsId" type="xs:long" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Ordinationens unika id som sätts av Apotekens Service.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ordinationsinformation" type="OrdinationsinformationResponse" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Kompletterande information om ordinationen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ordinationsstatus" type="OrdinationsstatusResponse" nillable="false" />
+
+            <xs:element name="ordinationstyp" type="or5:char" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Typ av ordination.
+                        Anges enbart på ordinationer till dospatient.
+
+                        B = Helförpackning vid behov
+                        S = Helförpackning stående
+                        D = Dispenserad ordination</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="radnummerNEF" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Unikt id för en rad i en receptsamling som skickas in via NEF. Radnumret är en kombination av rad inom receptsamlingen och eventuellt flerval. Id:t sätts av vårdsystemet.
+
+                        Radnummer utan flerval:  1,2,...n
+                        Radnummer med flerval: 1-1, 1-2, 1-n</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="senasteHelforpackningsuttag" type="or4:SenasteHelforpackningsuttagResponse" minOccurs="0" />
+
+            <xs:element name="tidigareOrdinationsId" type="xs:long" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Koppling till föregående ordination vid ordinationsförändringar. Ordinationerna behandlas som olika, fristående ordinationer. Används exempelvis vid förlängningar eller för att koppla ihop en ordination som skrivits ut på receptoriginal och registrerats in i OR igen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="utsattning" type="UtsattningResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Information om eventuell historikskapande händelse (utsättning).
+
+                        Endast en typ av historikskapande-information (makluering, förändring eller utsättning) kan förekomma. Utsättning innehållande enbart utsättningstidpunkt kan dock förekomma i kombination med annat historikskapande objekt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="OrdinationsinformationResponse">
+        <xs:sequence>
+            <xs:element name="apotekspersonal" type="ApotekspersonalResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Den som godkänt ordinationen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="lagringstidpunkt" type="xs:dateTime" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Datum och tid då ordinationen skapades i OR.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="mottagandeApotek" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Apoteks-id (GLN) vid direktadressering av ordinationer.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ordinationstidpunkt" type="xs:dateTime" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Datum och eventuell tid för ordinationens utfärdande.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ordinator" type="or4:OrdinatorResponse" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Den ordinatör som utfärdat ordinationen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="originalformat" type="xs:int" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Originalhandlingens ursprung.
+
+                        0 = Pappersordination
+                        1 = Telefonordination
+                        2 = E-recept (NEF)
+                        (3 = Faxordination patient)
+                        4 = Faxordination
+                        5 = E-ordination
+                        6 = Utskrivet från OR
+                        7 = Utskriven E-ordination.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="originalordinationsId" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Unikt id för en ordination. Dock ej unikt för e-recept som tillhör receptsamling.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="patient" type="or4:PatientResponse" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Den patient som ordinationen gäller för.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="registrerandeApotekspersonal" type="or4:RegistrerandeApotekspersonalResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Den som registrerat ordinationen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="testindikator" type="xs:int" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Markering om ordinationen är äkta,
+                        för test eller för utbildning.
+
+                        1 = Äkta
+                        2 = Test
+                        3 = Utbildning</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ForandringResponse">
+        <xs:sequence>
+            <xs:element name="apotekspersonal" type="ApotekspersonalResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Apotekspersonal.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="forandrandeOrdinator" type="ForandrandeOrdinatorResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Förandrande Ordinatör.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="administrator" type="AdministratorResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Administratör.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="kommentar" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Kommentar vid förändring, utsättning eller makulering av ordination.
+                        Obligatorisk parameter utom vid makulering med orsakskod annan än 4.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="tidpunkt" type="xs:dateTime" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Datum och tidpunkt då ny historikpost skapades.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="typ" type="or5:char" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Anger vilken typ som avses. M =Makulering, U = Utsättning, K = Korrigerad, S = Spärrad, O = Utskrivet original.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MakuleringResponse">
+        <xs:sequence>
+            <xs:element name="apotekspersonal" type="ApotekspersonalResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Apotekspersonal.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="forandrandeOrdinator" type="ForandrandeOrdinatorResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Förandrande Ordinatör.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="administrator" type="AdministratorResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Administratör.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="kommentar" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Kommentar vid förändring, utsättning eller makulering av ordination.
+                        Obligatorisk parameter utom vid makulering med orsakskod annan än 4.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="orsakskod" type="xs:int" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Orsakskod som strukturerat beskriver orsak till makulering.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="orsakskodKlartext" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Orsakskoder vid makulering: 1 = Fel patient. 2 = Fel läkemedel/vara/ styrka/ändamål. Patienten informerad. 3 = Utsatt lm/Inaktuell medicinering. Patienten informerad. Gäller ej dospatienter då utsättning skall användas. 4 = Annan orsak. Patienten informerad.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="paUppdragAv" type="or4:char" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Uppgift om vem som har gett i uppdrag att genomföra makulering. P = Patient, F = Förskrivare.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="samtyckeMakulering" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Inhämtat samtycke från patient. Obligatorisk parameter då förskrivare makulerar recept om orsakskod = 2, 3 eller 4.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="tidpunkt" type="xs:dateTime" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Datum och tidpunkt då ny historikpost skapades.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="typ" type="or4:char" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Anger vilken typ som avses. M =Makulering, U = Utsättning, K = Korrigerad, S = Spärrad, O = Utskrivet original.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="UtsattningResponse">
+        <xs:sequence>
+            <xs:element name="apotekspersonal" type="ApotekspersonalResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Apotekspersonal.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="forandrandeOrdinator" type="ForandrandeOrdinatorResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Förandrande Ordinatör.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="administrator" type="AdministratorResponse" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Administratör.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="kommentar" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Kommentar vid förändring, utsättning eller makulering av ordination.
+                        Obligatorisk parameter utom vid makulering med orsakskod annan än 4.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="tidpunkt" type="xs:dateTime" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Datum och tidpunkt då ny historikpost skapades.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="typ" type="or5:char" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Anger vilken typ som avses. M =Makulering, U = Utsättning, K = Korrigerad, S = Spärrad, O = Utskrivet original.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="utsattningstidpunkt" type="xs:dateTime" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Datum när patienten skall avsluta intag.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="ApotekspersonalResponse">
+        <xs:sequence>
+            <xs:element name="anvandarId" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Användar-id för farmaceut (legitimationskod) eller apotekspersonal (för- och efternamn) som uppdaterar en ordination.
+
+                        Användar-id är en övergångslösning fram tills alla apoteksaktörer har övergått till ORG-gränssnittet.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="apoteksId" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Apoteks-id är en unik kod som definierar ett specifikt
+                        apotek tillhörande en specifik juridisk ägare.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="befattningskod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Användarens befattningskod enligt HSA.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="efternamn" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Användarens efternamn. Obligatorisk för förskrivare.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="fornamn" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Användarens förnamn. Obligatorisk för förskrivare.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="legitimationskod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Förskrivares 7-ställiga förskrivarkod alternativt legitimerad användares 6-ställiga
+                        legitimationskod enligt Socialstyrelsen. Obligatorisk för gruppförskrivare (ej läkare) och för farmaceuter.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="yrkeskod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Användarens yrkeskod som definierar vilken typ
+                        av legitimation som användaren innehar. Obligatorisk för förskrivare.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ForandrandeOrdinatorResponse">
+        <xs:sequence>
+            <xs:element name="arbetsplatskod" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Unik kod för identifiering av förskrivarens
+                        arbetsplats vid ordinationstillfället.
+
+                        Saknar förskrivare ordinarie arbetsplats anges
+                        en grupparbetsplatskod. Arbetsplatskoden anges för att
+                        styra ekonomiska transaktioner vid ordinationer inom förmånen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="befattningskod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Användarens befattningskod enligt HSA.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="efternamn" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Användarens efternamn. Obligatorisk för förskrivare.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="fornamn" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Användarens förnamn. Obligatorisk för förskrivare.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="forskrivarkod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Förskrivarens individuella 7-ställiga legitimationskod eller förskrivarens gruppförskrivarkod då individuell kod saknas.
+
+                        Gruppförskrivarkod används då förskrivaren saknar individuell förskrivarkod men har via sin roll erhållit förskrivningsrätt. Kan exempelvis vara en AT-läkare eller förskrivare med förordnande.
+
+                        Förskrivarkoden definieras av Socialstyrelsen och gruppförskrivarkoden definieras av Apotekens Service.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="legitimationskod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Förskrivares 7-ställiga förskrivarkod alternativt legitimerad användares 6-ställiga
+                        legitimationskod enligt Socialstyrelsen. Obligatorisk för gruppförskrivare (ej läkare) och för farmaceuter.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="yrkeskod" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Användarens yrkeskod som definierar vilken typ
+                        av legitimation som användaren innehar. Obligatorisk för förskrivare.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AdministratorResponse">
+        <xs:sequence>
+
+            <xs:element name="fornamn" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Administratörens förnamn.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="efternamn" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Administratörens efternamn.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="anvandarId" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Användar-id för administratören, eller id för databasjobbet, som uppdaterar en ordination.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="arbetsplats" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Unik kod för identifiering av administratörens arbetsplats.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OrdinationsstatusResponse">
+        <xs:sequence>
+            <xs:element name="radversion" type="xs:long" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Ordinationens versionsnummer för intern versionshantering av en ordination. Ny radversion av ordinationen skapas vid varje uttag.
+                        Returneras alltid men kan vara utan värde.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="status" type="xs:int" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Status för dosunderlag, ordination eller uttag.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="tidpunkt" type="xs:dateTime" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>Datum och tid då dosunderlag, ordination eller uttag senast förändrades.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="ExtensionType">
+        <xs:sequence>
+            <xs:any namespace="##any"
+                    processContents="lax"
+                    minOccurs="0"
+                    maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

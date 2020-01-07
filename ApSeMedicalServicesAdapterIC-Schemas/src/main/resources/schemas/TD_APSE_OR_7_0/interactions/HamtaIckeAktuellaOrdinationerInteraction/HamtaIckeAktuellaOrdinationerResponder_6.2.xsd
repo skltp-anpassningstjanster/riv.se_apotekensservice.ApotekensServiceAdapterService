@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationerResponder:6"
+  xmlns:or="urn:riv:se.apotekensservice:or:7"
+  targetNamespace="urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationerResponder:6"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  version="6.1">
+
+  <xs:import namespace="urn:riv:se.apotekensservice:or:7"
+    schemaLocation="../../core_components/se.apotekensservice_or_7.0.xsd"/>
+
+  <!-- Globala element: Metod parametrar -->
+  <xs:element name="HamtaIckeAktuellaOrdinationer" type="HamtaIckeAktuellaOrdinationerRequestType"/>
+  <xs:element name="HamtaIckeAktuellaOrdinationerResponse"
+    type="HamtaIckeAktuellaOrdinationerResponseType"/>
+
+  <!-- Fel -->
+  <xs:element name="ApplicationException" type="or:ApplicationException"/>
+  <xs:element name="SystemException" type="or:SystemException"/>
+
+  <xs:complexType name="HamtaIckeAktuellaOrdinationerRequestType">
+    <xs:sequence>
+      <xs:element name="fromDatum" type="xs:dateTime" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Från och med datum för perioden som ska visas.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="personnummer" type="or:PersonnummerType" nillable="false">
+        <xs:annotation>
+          <xs:documentation>Giltigt personnummer för patient.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ordinationsId" type="or:OrdinationsIdType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>OrdinationsId. Anges om bara en ordination ska returneras.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="grupplegitimationskod" type="or:LegitimationskodType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Användarens 6-ställiga grupplegitimationskod. Obligatorisk för
+            Apotekselev, receptarieelev, Teknikerelev och Europeisk farmaceut.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="gruppforskrivarkod" type="or:ForskrivarkodType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Gruppförskrivarkod används då förskrivaren saknar individuell
+            förskrivarkod men har via sin roll erhållit förskrivningsrätt. Kan exempelvis vara en
+            AT-läkare eller förskrivare med förordnande.
+            Förskrivarkoden definieras av Socialstyrelsen och gruppförskrivarkoden definieras av
+            eHälsomyndigheten.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="HamtaIckeAktuellaOrdinationerResponseType">
+    <xs:sequence>
+      <xs:element name="apoteksInformationLista" type="or:ApoteksinformationResponse" minOccurs="0"
+        maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Lista med apotek därifrån förändringar eller skapande utförts på/av
+            ordinationerna.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="arbetsplatsInfoLista" type="or:ArbetsplatsInfoResponse" minOccurs="0"
+        maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Lista med arbetsplatser därifrån förändringar utförts på
+            ordinationerna.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="artikelLista" type="or:ArtikelResponse" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Lista med artikelinformation för de varor som ingår i ordinationerna.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="forskrivarInfoLista" type="or:ForskrivarinfoResponse" minOccurs="0"
+        maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Lista med förskrivare som gjort förändringar i ordinationerna.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="ordinationKortInfolista" type="or:OrdinationslistaKortInfoResponse"
+        nillable="false">
+        <xs:annotation>
+          <xs:documentation>Ordinationslista</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="extension" type="ExtensionType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ExtensionType">
+    <xs:sequence>
+      <xs:any namespace="##any"
+        processContents="lax"
+        minOccurs="0"
+        maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
