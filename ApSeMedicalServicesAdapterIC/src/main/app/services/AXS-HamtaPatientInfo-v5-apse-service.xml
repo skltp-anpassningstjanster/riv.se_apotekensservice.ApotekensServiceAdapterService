@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mule 
+<mule
 	xmlns="http://www.mulesoft.org/schema/mule/core"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:spring="http://www.springframework.org/schema/beans"
@@ -16,85 +16,85 @@
 	">
 
 	<flow name="Bridged-ApotekenService-HamtaPatientInfo.v5">
-	
+
 		<composite-source>
 
-		<http:inbound-endpoint address="${inbound.endpoint.http.apotekensservice.axs.HamtaPatientInfo.v5}"
-			connector-ref="soitoolkit-http-connector" 
-			exchange-pattern="request-response"
-			responseTransformer-refs="logRespOut"
-			transformer-refs="create-correlation-id logReqIn">
-		</http:inbound-endpoint>
-		<https:inbound-endpoint address="${inbound.endpoint.https.apotekensservice.axs.HamtaPatientInfo.v5}"
-			connector-ref="soitoolkit-https-connector" 
-			exchange-pattern="request-response"
-			responseTransformer-refs="logRespOut"
-			transformer-refs="create-correlation-id logReqIn">
-		</https:inbound-endpoint>
-		
+			<http:inbound-endpoint address="${inbound.endpoint.http.apotekensservice.axs.HamtaPatientInfo.v5}"
+				connector-ref="soitoolkit-http-connector"
+				exchange-pattern="request-response"
+				responseTransformer-refs="logRespOut"
+				transformer-refs="create-correlation-id logReqIn">
+			</http:inbound-endpoint>
+			<https:inbound-endpoint address="${inbound.endpoint.https.apotekensservice.axs.HamtaPatientInfo.v5}"
+				connector-ref="soitoolkit-https-connector"
+				exchange-pattern="request-response"
+				responseTransformer-refs="logRespOut"
+				transformer-refs="create-correlation-id logReqIn">
+			</https:inbound-endpoint>
+
 		</composite-source>
 
 
 		<cxf:proxy-service
 			namespace="urn:riv:se.apotekensservice:axs:HamtaPatientInfo:5:rivtabp21"
-			payload="envelope" 
+			payload="envelope"
 			service="HamtaPatientInfoResponderService"
 			wsdlLocation="classpath:/TD_APSE_AXS_6_0/interactions/HamtaPatientInfoInteraction/HamtaPatientInfoInteraction_5.0_rivtabp21.wsdl" />
-			
+
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
-		
-			
+
+
 		<https:outbound-endpoint connector-ref="soitoolkit-https-connector"
 			address="${outbound.endpoint.apotekensservice.axs.HamtaPatientInfo.v5}"
-			exchange-pattern="request-response" 
+			exchange-pattern="request-response"
 			responseTimeout="${SERVICE_TIMEOUT_MS}"
-			transformer-refs="addContentTypeXmlUtf8 logReqOut" 
+			transformer-refs="addContentTypeXmlUtf8 logReqOut"
 			responseTransformer-refs="IgnoreExceptionPayloads logRespIn">
 		</https:outbound-endpoint>
-		
+
 		<custom-exception-strategy class="org.soitoolkit.commons.mule.error.ServiceExceptionStrategy"/>
-		
+
 	</flow>
-	
-		<flow name="Bridged-ApotekenService-HamtaPatientInfo.v5-env2">
+
+	<flow name="Bridged-ApotekenService-HamtaPatientInfo.v5-env2">
 
 		<composite-source>
-		<http:inbound-endpoint address="${inbound.endpoint.http.env2.apotekensservice.axs.HamtaPatientInfo.v5}"
-			connector-ref="soitoolkit-http-connector" 
-			exchange-pattern="request-response"
-			responseTransformer-refs="logRespOut"
-			transformer-refs="create-correlation-id logReqIn">
-		</http:inbound-endpoint>
-		<https:inbound-endpoint address="${inbound.endpoint.https.env2.apotekensservice.axs.HamtaPatientInfo.v5}"
-			connector-ref="soitoolkit-https-connector" 
-			exchange-pattern="request-response"
-			responseTransformer-refs="logRespOut"
-			transformer-refs="create-correlation-id logReqIn">
-		</https:inbound-endpoint>
+			<http:inbound-endpoint address="${inbound.endpoint.http.env2.apotekensservice.axs.HamtaPatientInfo.v5}"
+				connector-ref="soitoolkit-http-connector"
+				exchange-pattern="request-response"
+				responseTransformer-refs="logRespOut"
+				transformer-refs="create-correlation-id logReqIn">
+			</http:inbound-endpoint>
+			<https:inbound-endpoint address="${inbound.endpoint.https.env2.apotekensservice.axs.HamtaPatientInfo.v5}"
+				connector-ref="soitoolkit-https-connector"
+				exchange-pattern="request-response"
+				responseTransformer-refs="logRespOut"
+				transformer-refs="create-correlation-id logReqIn">
+			</https:inbound-endpoint>
 		</composite-source>
 
 
 
 		<cxf:proxy-service
 			namespace="urn:riv:se.apotekensservice:axs:HamtaPatientInfo:5:rivtabp21"
-			payload="envelope" 
+			payload="envelope"
 			service="HamtaPatientInfoResponderService"
 			wsdlLocation="classpath:/TD_APSE_AXS_6_0/interactions/HamtaPatientInfoInteraction/HamtaPatientInfoInteraction_5.0_rivtabp21.wsdl" />
-			
+
 		<transformer ref="XmlToXSR" />
 		<transformer ref="ArgosHeaderToSamlTicket" />
-			
+
 		<https:outbound-endpoint connector-ref="soitoolkit-https-connector"
 			address="${outbound.endpoint.env2.apotekensservice.axs.HamtaPatientInfo.v5}"
-			exchange-pattern="request-response" 
+			exchange-pattern="request-response"
 			responseTimeout="${SERVICE_TIMEOUT_MS}"
-			transformer-refs="addContentTypeXmlUtf8 logReqOut" 
+			transformer-refs="addContentTypeXmlUtf8 logReqOut"
 			responseTransformer-refs="IgnoreExceptionPayloads logRespIn">
 		</https:outbound-endpoint>
-		
+
 		<custom-exception-strategy class="org.soitoolkit.commons.mule.error.ServiceExceptionStrategy"/>
-		
+
 	</flow>
 
 
