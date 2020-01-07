@@ -60,7 +60,7 @@ public class HamtaPatientInfoIntegrationTest extends AbstractTestCase {
     // TODO: Fix lazy init of JMS connection et al so that we can create
     // jmsutil in the declaration
     // (The embedded ActiveMQ queue manager is not yet started by Mule when
-    // jmsutil is delcared...)
+    // jmsutil is declared...)
     if (jmsUtil == null) jmsUtil = new ActiveMqJmsTestUtil();
 
     // Clear queues used for error handling
