@@ -5,7 +5,7 @@
   targetNamespace="urn:riv:se.apotekensservice:or:HamtaIckeAktuellaOrdinationerResponder:6"
   elementFormDefault="qualified"
   attributeFormDefault="unqualified"
-  version="6.1">
+  version="6.2">
 
   <xs:import namespace="urn:riv:se.apotekensservice:or:7"
     schemaLocation="../../core_components/se.apotekensservice_or_7.0.xsd"/>

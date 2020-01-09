@@ -17,13 +17,12 @@
 		http://www.mulesoft.org/schema/mule/http      http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 		http://www.mulesoft.org/schema/mule/https     http://www.mulesoft.org/schema/mule/https/current/mule-https.xsd
 		http://www.mulesoft.org/schema/mule/xml       http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
-		http://www.mulesoft.org/schema/mule/xml       http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
 	">
 
   <!-- Name of this file is mandatory and may not be changed. -->
 
   <simple-service
-    name="ApotekenService-HamtaIckeAktuellaOrdinationer-TicketTransformer-v6-teststub"
+    name="ApotekenService-HamtaIckeAktuellaOrdinationer-v6-teststub"
     address="${inbound.endpoint.apotekensservice.or.HamtaIckeAktuellaOrdinationer.v6.teststub}"
     transformer-refs="logReqIn"
     responseTransformer-refs="logRespOut"
