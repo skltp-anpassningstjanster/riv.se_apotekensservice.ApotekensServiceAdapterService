@@ -7,3 +7,4 @@ target
 # IntelliJ
 .idea
 *.iml
+/ApSeMedicalServicesAdapterIC/src/main/java/se/skltp/adapterservices/monitoring/PingForconfigurationService.java.bak

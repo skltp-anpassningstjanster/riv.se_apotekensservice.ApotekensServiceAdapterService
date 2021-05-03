@@ -48,18 +48,20 @@ import se.skltp.adapterservices.apse.apsemedicalservicesadapteric.ticket.TicketM
 @Log4j2
 public class SamlTicketTransformer {
 
-    private final XMLInputFactory xmlInputFactory;
-    private final XMLOutputFactory xmlOutputFactory;
-    private final byte[] inputBody;
+    private final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
+    private final XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
+    //private final byte[] inputBody;
     
-    public SamlTicketTransformer(byte[] inputBodyParam)
+/*    public SamlTicketTransformer(byte[] inputBodyParam)
     {
-        xmlInputFactory = XMLInputFactory.newInstance();
-        xmlOutputFactory = XMLOutputFactory.newInstance();
         inputBody = inputBodyParam;
     }
+*/
+    /*SamlTicketTransformer() {
+        //inputBody = null;
+    }*/
 
-    private XMLEventReader getInputXmlEventReader() throws XMLStreamException {
+    private XMLEventReader getInputXmlEventReader(byte[] inputBody) throws XMLStreamException {
         return xmlInputFactory.createXMLEventReader(new ByteArrayInputStream(inputBody));
     }
     
@@ -72,18 +74,18 @@ public class SamlTicketTransformer {
         }
         
     }
-    
-    public String transform() throws Exception {
+        
+    public String transform(byte[] inputBodyParam) throws Exception {
         log.info("Saml ticket transformer executing");
         
         ArgosHeaderHelper argosUtil = new ArgosHeaderHelper();
 
-        ArgosHeader argosHeader = argosUtil.extractArgosHeader(getInputXmlEventReader());
+        ArgosHeader argosHeader = argosUtil.extractArgosHeader(getInputXmlEventReader(inputBodyParam));
 
         try {
             XMLEventReader samlTicketXER = createSamlTicketFromArgosHeader(argosHeader);
             
-            XMLEventReader inputRequestXER = getInputXmlEventReader();
+            XMLEventReader inputRequestXER = getInputXmlEventReader(inputBodyParam);
             OutputXmlWriterWrapper updatedRequestXER = new OutputXmlWriterWrapper();
 
             addSamlTicketToOriginalRequest(inputRequestXER, samlTicketXER, updatedRequestXER.writer);

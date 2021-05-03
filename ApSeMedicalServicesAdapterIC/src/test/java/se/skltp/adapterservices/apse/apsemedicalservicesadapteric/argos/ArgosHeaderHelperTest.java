@@ -32,11 +32,6 @@ import javax.xml.stream.XMLStreamReader;
 
 import org.junit.Test;
 import org.mockito.Mockito;
-import org.mule.api.MuleMessage;
-import org.mule.module.xml.stax.ReversibleXMLStreamReader;
-
-import se.skltp.adapterservices.apse.apsemedicalservicesadapteric.argos.ArgosHeader;
-import se.skltp.adapterservices.apse.apsemedicalservicesadapteric.argos.ArgosHeaderHelper;
 
 public class ArgosHeaderHelperTest {
 
@@ -70,10 +65,9 @@ public class ArgosHeaderHelperTest {
 
     @Test
     public void testEmptyArgosHeaderIsCreatedWhenNoInfoIsProvided() throws UnsupportedEncodingException, XMLStreamException {
-		ArgosHeader expectedArgosHeader = null;
 		String personnummer = "196308212817";
 
-		MuleMessage muleMessageBasedOnArgosHeader = createMockedMuleMessage(expectedArgosHeader, personnummer);
+		XMLEventReader muleMessageBasedOnArgosHeader = xmlInputFactory.createXMLEventReader(new StringReader(getXmlPayload(null, personnummer)));
 		ArgosHeader actualArgosHeader = new ArgosHeaderHelper().extractArgosHeader(muleMessageBasedOnArgosHeader);
 	
 		assertArgosHeaderIsEmpty(actualArgosHeader);
@@ -84,7 +78,7 @@ public class ArgosHeaderHelperTest {
 		ArgosHeader expectedArgosHeader = createExpectedArgosHeader();
 		String personnummer = "196308212817";
 
-		MuleMessage muleMessageBasedOnArgosHeader = createMockedMuleMessage(expectedArgosHeader, personnummer);
+		XMLEventReader muleMessageBasedOnArgosHeader = xmlInputFactory.createXMLEventReader(new StringReader(getXmlPayload(expectedArgosHeader, personnummer)));
 		ArgosHeader actualArgosHeader = new ArgosHeaderHelper().extractArgosHeader(muleMessageBasedOnArgosHeader);
 	
 		assertCompleteArgosHeader(expectedArgosHeader, actualArgosHeader);
@@ -175,57 +169,41 @@ public class ArgosHeaderHelperTest {
 	return expectedArgosHeader;
     }
 
-    private MuleMessage createMockedMuleMessage(ArgosHeader expectedArgosHeader, String personnummer)
-	    throws XMLStreamException, UnsupportedEncodingException {
-
-	String xml = getXmlPayload(expectedArgosHeader, personnummer);
-
-	XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(new StringReader(xml));
-
-	ReversibleXMLStreamReader reversibleXMLStreamReader = new ReversibleXMLStreamReader(xmlStreamReader);
-
-	MuleMessage msg = Mockito.mock(MuleMessage.class);
-    Mockito.when(msg.getPayload()).thenReturn(reversibleXMLStreamReader);
-	
-	return msg;
-    }
-
 	private String getXmlPayload(ArgosHeader expectedArgosHeader, String personnummer) {
-		String muleMessage = "<?xml version='1.0' encoding='UTF-8'?>"
-			+ "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:urn=\"urn:riv:inera.se.apotekensservice:argos:1\" xmlns:add=\"http://www.w3.org/2005/08/addressing\" xmlns:urn1=\"urn:riv:se.apotekensservice:or:HamtaAktuellaOrdinationerResponder:1\">"
-			+ "<soapenv:Header>" + "<add:To>1234567</add:To>" + "</soapenv:Header>" + "<soapenv:Body>"
-			+ "<urn1:HamtaAktuellaOrdinationer>" + "<urn1:personnummer>" + personnummer + "</urn1:personnummer>"
-			+ "</urn1:HamtaAktuellaOrdinationer>" + "</soapenv:Body>" + "</soapenv:Envelope>";
-
 		if (expectedArgosHeader != null) {
-		    muleMessage = "<?xml version='1.0' encoding='UTF-8'?>"
-			    + "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:urn=\"urn:riv:inera.se.apotekensservice:argos:1\" xmlns:add=\"http://www.w3.org/2005/08/addressing\" xmlns:urn1=\"urn:riv:se.apotekensservice:or:HamtaAktuellaOrdinationerResponder:1\">"
-			    + "<soapenv:Header>" + "<urn:ArgosHeader>"
-			    + "<urn:yrkesgrupp>" + expectedArgosHeader.getYrkesgrupp() + "</urn:yrkesgrupp>"
-			    + "<urn:forskrivarkod>" + expectedArgosHeader.getForskrivarkod() + "</urn:forskrivarkod>"
-			    + "<urn:legitimationskod>" + expectedArgosHeader.getLegitimationskod() + "</urn:legitimationskod>"
-			    + "<urn:fornamn>" + expectedArgosHeader.getFornamn() + "</urn:fornamn>"
-			    + "<urn:efternamn>" + expectedArgosHeader.getEfternamn() + "</urn:efternamn>"
-			    + "<urn:befattningskod>" + expectedArgosHeader.getBefattningskod() + "</urn:befattningskod>"
-			    + "<urn:arbetsplatskod>" + expectedArgosHeader.getArbetsplatskod() + "</urn:arbetsplatskod>"
-			    + "<urn:arbetsplatsnamn>" + expectedArgosHeader.getArbetsplatsnamn() + "</urn:arbetsplatsnamn>"
-			    + "<urn:postort>" + expectedArgosHeader.getPostort() + "</urn:postort>"
-			    + "<urn:postadress>" + expectedArgosHeader.getPostadress() + "</urn:postadress>"
-			    + "<urn:postnummer>" + expectedArgosHeader.getPostnummer() + "</urn:postnummer>"
-			    + "<urn:telefonnummer>" + expectedArgosHeader.getTelefonnummer() + "</urn:telefonnummer>"
-			    + "<urn:requestId>" + expectedArgosHeader.getRequestId() + "</urn:requestId>"
-			    + "<urn:rollnamn>" + expectedArgosHeader.getRollnamn() + "</urn:rollnamn>"
-			    + "<urn:directoryID>" + expectedArgosHeader.getDirectoryID() + "</urn:directoryID>"
-			    + "<urn:hsaID>" + expectedArgosHeader.getHsaID() + "</urn:hsaID>"
-			    + "<urn:katalog>" + expectedArgosHeader.getKatalog() + "</urn:katalog>"
-			    + "<urn:organisationsnummer>" + expectedArgosHeader.getOrganisationsnummer() + "</urn:organisationsnummer>"
-			    + "<urn:systemnamn>" + expectedArgosHeader.getSystemnamn() + "</urn:systemnamn>"
-			    + "<urn:systemversion>" + expectedArgosHeader.getSystemversion() + "</urn:systemversion>"
-			    + "<urn:systemIp>" + expectedArgosHeader.getSystemIp() + "</urn:systemIp>" + "</urn:ArgosHeader>"
-			    + "<add:To>1234567</add:To>" + "</soapenv:Header>" + "<soapenv:Body>"
-			    + "<urn1:HamtaAktuellaOrdinationer>" + "<urn1:personnummer>" + personnummer + "</urn1:personnummer>"
-			    + "</urn1:HamtaAktuellaOrdinationer>" + "</soapenv:Body>" + "</soapenv:Envelope>";
+		    return "<?xml version='1.0' encoding='UTF-8'?>"
+					+ "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:urn=\"urn:riv:inera.se.apotekensservice:argos:1\" xmlns:add=\"http://www.w3.org/2005/08/addressing\" xmlns:urn1=\"urn:riv:se.apotekensservice:or:HamtaAktuellaOrdinationerResponder:1\">"
+					+ "<soapenv:Header>" + "<urn:ArgosHeader>"
+					+ "<urn:yrkesgrupp>" + expectedArgosHeader.getYrkesgrupp() + "</urn:yrkesgrupp>"
+					+ "<urn:forskrivarkod>" + expectedArgosHeader.getForskrivarkod() + "</urn:forskrivarkod>"
+					+ "<urn:legitimationskod>" + expectedArgosHeader.getLegitimationskod() + "</urn:legitimationskod>"
+					+ "<urn:fornamn>" + expectedArgosHeader.getFornamn() + "</urn:fornamn>"
+					+ "<urn:efternamn>" + expectedArgosHeader.getEfternamn() + "</urn:efternamn>"
+					+ "<urn:befattningskod>" + expectedArgosHeader.getBefattningskod() + "</urn:befattningskod>"
+					+ "<urn:arbetsplatskod>" + expectedArgosHeader.getArbetsplatskod() + "</urn:arbetsplatskod>"
+					+ "<urn:arbetsplatsnamn>" + expectedArgosHeader.getArbetsplatsnamn() + "</urn:arbetsplatsnamn>"
+					+ "<urn:postort>" + expectedArgosHeader.getPostort() + "</urn:postort>"
+					+ "<urn:postadress>" + expectedArgosHeader.getPostadress() + "</urn:postadress>"
+					+ "<urn:postnummer>" + expectedArgosHeader.getPostnummer() + "</urn:postnummer>"
+					+ "<urn:telefonnummer>" + expectedArgosHeader.getTelefonnummer() + "</urn:telefonnummer>"
+					+ "<urn:requestId>" + expectedArgosHeader.getRequestId() + "</urn:requestId>"
+					+ "<urn:rollnamn>" + expectedArgosHeader.getRollnamn() + "</urn:rollnamn>"
+					+ "<urn:directoryID>" + expectedArgosHeader.getDirectoryID() + "</urn:directoryID>"
+					+ "<urn:hsaID>" + expectedArgosHeader.getHsaID() + "</urn:hsaID>"
+					+ "<urn:katalog>" + expectedArgosHeader.getKatalog() + "</urn:katalog>"
+					+ "<urn:organisationsnummer>" + expectedArgosHeader.getOrganisationsnummer() + "</urn:organisationsnummer>"
+					+ "<urn:systemnamn>" + expectedArgosHeader.getSystemnamn() + "</urn:systemnamn>"
+					+ "<urn:systemversion>" + expectedArgosHeader.getSystemversion() + "</urn:systemversion>"
+					+ "<urn:systemIp>" + expectedArgosHeader.getSystemIp() + "</urn:systemIp>" + "</urn:ArgosHeader>"
+					+ "<add:To>1234567</add:To>" + "</soapenv:Header>" + "<soapenv:Body>"
+					+ "<urn1:HamtaAktuellaOrdinationer>" + "<urn1:personnummer>" + personnummer + "</urn1:personnummer>"
+					+ "</urn1:HamtaAktuellaOrdinationer>" + "</soapenv:Body>" + "</soapenv:Envelope>";
+		} else {
+			return "<?xml version='1.0' encoding='UTF-8'?>"
+					+ "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:urn=\"urn:riv:inera.se.apotekensservice:argos:1\" xmlns:add=\"http://www.w3.org/2005/08/addressing\" xmlns:urn1=\"urn:riv:se.apotekensservice:or:HamtaAktuellaOrdinationerResponder:1\">"
+					+ "<soapenv:Header>" + "<add:To>1234567</add:To>" + "</soapenv:Header>" + "<soapenv:Body>"
+					+ "<urn1:HamtaAktuellaOrdinationer>" + "<urn1:personnummer>" + personnummer + "</urn1:personnummer>"
+					+ "</urn1:HamtaAktuellaOrdinationer>" + "</soapenv:Body>" + "</soapenv:Envelope>";
 		}
-		return muleMessage;
 	}
 }
