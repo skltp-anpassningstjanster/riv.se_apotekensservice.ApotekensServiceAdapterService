@@ -3,12 +3,6 @@ jdk = tool name: 'Java_8_221', type: 'jdk'
    env.JAVA_HOME = "${jdk}"
    def mvnHome
    catchError {
-      stage('Preparation') { // for display purposes
-         // Get some code from a GitHub repository
-         // git 'https://github.com/skltp/vp.git'
-         git branch: 'feature_camel_adoptation', url: 'https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git'
-      
-      }
       stage('Build') {
         // Run the maven build
         configFileProvider([configFile(fileId: 'ae5eda6d-e166-4b43-a78c-ed67ed10cac0', variable: 'MAVEN_SETTINGS')]) {
