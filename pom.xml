@@ -1,67 +1,35 @@
-<?xml version="1.0"?>
-<!--
-DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOING!
-[soi-toolkit.gen.version=0.6.1-M4]
-[soi-toolkit.gen.type=services]
-[soi-toolkit.gen.createDate=2014-02-12T18:42:23.242+01:00]
-[soi-toolkit.gen.artifactId=ApSeMedicalServicesAdapterIC]
--->
-<!-- This is the System-level Maven POM. Usage: Define all truly common things
-for the system here. For example: versions of third-party dependencies used
-throughout the system. -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>se.skltp.adapterservices.se.apotekensservice</groupId>
-    <artifactId>ApSeMedicalServicesAdapter</artifactId>
+    <groupId>se.skltp.adapterservices.apse</groupId>
+    <artifactId>apse-parent-camel</artifactId>
+    <name>apse-parent-camel</name>
     <version>3.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>${project.artifactId}</name>
-
-<parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.3.3.RELEASE</version>
-    <relativePath /> <!-- lookup parent from repository -->
-  </parent>
-
-    <scm>
-        <url>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService</url>
-        <connection>scm:git:https://github.com:443/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git</connection>
-        <developerConnection>scm:git:https://github.com:443/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
+    <description>SKLTP APSE Adapter byggt med Camel och Spring Boot</description>
 
     <properties>
-        
-        <camel-version>3.7.1</camel-version>
-        <camel.version>${camel-version}</camel.version>
-        <skip.starting.camel.context>false</skip.starting.camel.context>
-        <javax.servlet.api.version>4.0.1</javax.servlet.api.version>
-        <fabric8-maven-plugin-version>4.4.1</fabric8-maven-plugin-version>
-        <kafka-avro-serializer-version>5.2.2</kafka-avro-serializer-version>
-        <reactor-version>3.2.16.RELEASE</reactor-version>
-        <lmax_disruptor-version>3.3.6</lmax_disruptor-version>
-      
-
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring.boot-version>2.5.0</spring.boot-version>
         <lmax_disruptor-version>3.3.6</lmax_disruptor-version>
+        <camel.version>3.7.4</camel.version>
         <javax.servlet-api-version>4.0.1</javax.servlet-api-version>
+        <netty.version>4.1.63.Final</netty.version>
 
         <takdatahandler.version>1.0.1</takdatahandler.version>
 
         <maven.javadoc.skip>true</maven.javadoc.skip>
 
         <argLine.leak>-D_</argLine.leak> <!-- Overridden when 'leak' profile is active -->
-        
-        <spring-boot-version>2.3.3.RELEASE</spring-boot-version>
-        <spring.boot-version>${spring-boot-version}</spring.boot-version>
-    
+
         <!-- ************************-->
         <!-- Sonar/Reporting settings -->
         <!-- ************************-->
@@ -76,10 +44,10 @@ throughout the system. -->
         <sonar.language>java</sonar.language>
         <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-        <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/report/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/report/target/site/jacoco-aggregate/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
         <sonar.coverage.exclusions>
-            **/se/skl/tp/vp/config/*,
-            **/se/skl/tp/vp/constants/*
+            **/se/skl/vp/constants/*
         </sonar.coverage.exclusions>
 
     </properties>
@@ -97,48 +65,45 @@ throughout the system. -->
         </snapshotRepository>
     </distributionManagement>
 
+    <scm>
+        <url>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService</url>
+        <connection>
+            scm:git:https://github.com:443/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService
+        </connection>
+        <developerConnection>
+            scm:git:https://github.com:443/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService
+        </developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <modules>
-        <module>ApSeMedicalServicesAdapterIC</module>
+      <module>ApSeMedicalServicesAdapterIC</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
 
-            <dependency>
-                <groupId>se.skltp.vp</groupId>
-                <artifactId>utility</artifactId>
-            </dependency>
             <!-- Spring Boot BOM -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot-version}</version>
+                <version>${spring.boot-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <!-- Camel BOM -->
-            
-            <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-spring-boot-dependencies -->
             <dependency>
-                <groupId>org.apache.camel</groupId>
+                <groupId>org.apache.camel.springboot</groupId>
                 <artifactId>camel-spring-boot-dependencies</artifactId>
-                <version>3.0.0-M4</version>
-                <type>pom</type>
-                <scope>provided</scope>
-            </dependency>
-
-            <!-- dependency>
-                <groupId>org.apache.camel</groupId>
-                <artifactId>camel-spring-boot-dependencies</artifactId>
-                <version>${camel-version}</version>
+                <version>${camel.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency -->
+            </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
-                <version>${spring-boot-version}</version>
+                <version>${spring.boot-version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.springframework.boot</groupId>
@@ -149,27 +114,27 @@ throughout the system. -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-undertow</artifactId>
-                <version>${spring-boot-version}</version>
+                <version>${spring.boot-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-actuator</artifactId>
-                <version>${spring-boot-version}</version>
+                <version>${spring.boot-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-configuration-processor</artifactId>
-                <version>${spring-boot-version}</version>
+                <version>${spring.boot-version}</version>
             </dependency>
 
             <!-- Camel -->
             <dependency>
-                <groupId>org.apache.camel</groupId>
+                <groupId>org.apache.camel.springboot</groupId>
                 <artifactId>camel-spring-boot-starter</artifactId>
                 <version>${camel.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.apache.camel</groupId>
+                <groupId>org.apache.camel.springboot</groupId>
                 <artifactId>camel-spring-boot</artifactId>
                 <version>${camel.version}</version>
             </dependency>
@@ -189,9 +154,16 @@ throughout the system. -->
                 <version>${camel.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.apache.camel</groupId>
-                <artifactId>camel-netty4-http-starter</artifactId>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-netty-http-starter</artifactId>
                 <version>${camel.version}</version>
+            </dependency>
+
+            <!--Netty-->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
             </dependency>
 
             <!--hawt.io-->
@@ -205,7 +177,7 @@ throughout the system. -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
-                <version>${spring-boot-version}</version>
+                <version>${spring.boot-version}</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
@@ -259,14 +231,6 @@ throughout the system. -->
 
     <build>
         <plugins>
-            <!--<plugin>-->
-            <!--<groupId>org.apache.maven.plugins</groupId>-->
-            <!--<artifactId>maven-compiler-plugin</artifactId>-->
-            <!--<configuration>-->
-            <!--<source>${java.version}</source>-->
-            <!--<target>${java.version}</target>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
@@ -285,7 +249,7 @@ throughout the system. -->
                 <version>${camel.version}</version>
                 <!-- allows to fail if not all routes are fully covered during testing -->
                 <configuration>
-                    <failOnError>true</failOnError>
+
                 </configuration>
             </plugin>
 
@@ -352,7 +316,9 @@ throughout the system. -->
         <profile>
             <id>leak</id>
             <properties>
-                <argLine.leak>-Dio.netty.leakDetectionLevel=paranoid -Dio.netty.leakDetection.maxRecords=32 -Dio.netty.leakDetection.targetRecords=10 -Dspring.profiles.active=leak</argLine.leak>
+                <argLine.leak>-Dio.netty.leakDetectionLevel=paranoid -Dio.netty.leakDetection.maxRecords=32
+                    -Dio.netty.leakDetection.targetRecords=10 -Dspring.profiles.active=leak
+                </argLine.leak>
             </properties>
         </profile>
         <profile>
@@ -364,7 +330,7 @@ throughout the system. -->
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
-                            <argLine>${surefireArgLine}</argLine>
+                            <!-- argLine>${surefireArgLine}</argLine -->
                         </configuration>
                     </plugin>
 
@@ -386,7 +352,7 @@ throughout the system. -->
                             </execution>
                         </executions>
                         <configuration>
-                            <argLine>${failsafeArgLine}</argLine>
+                            <!-- argLine>${failsafeArgLine}</argLine -->
                         </configuration>
                     </plugin>
 

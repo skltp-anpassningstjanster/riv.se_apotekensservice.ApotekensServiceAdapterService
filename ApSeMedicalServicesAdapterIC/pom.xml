@@ -1,41 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>se.skltp.adapterservices.se.apotekensservice</groupId>
-		<artifactId>ApSeMedicalServicesAdapter</artifactId>
-		<version>3.0.0-SNAPSHOT</version>
-	</parent>
-	
+    <parent>
+        <groupId>se.skltp.adapterservices.apse</groupId>
+        <artifactId>apse-parent-camel</artifactId>
+        <version>3.0.0-SNAPSHOT</version>
+    </parent>
+
     <artifactId>ApSeMedicalServicesAdapterIC</artifactId>
-    <packaging>jar</packaging>
-    <name>${project.artifactId}</name>
+    <name>ApSeMedicalServicesAdapterIC</name>
+    <description>Adapter för ApSe byggt med Camel och Spring Boot</description>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- Spring Boot BOM -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.boot-version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!-- Camel BOM -->
-            <dependency>
-                <groupId>org.apache.camel.springboot</groupId>
-                <artifactId>camel-spring-boot-bom</artifactId>
-                <version>${camel-version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
-
         <!-- Spring Boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -45,6 +24,10 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-tomcat</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -53,8 +36,19 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <artifactId>spring-boot-actuator</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
 
         <!-- Camel -->
         <dependency>
@@ -64,6 +58,14 @@
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-stream-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-management</artifactId>
         </dependency>
 
         <!-- test -->
@@ -77,28 +79,21 @@
             <artifactId>camel-test-spring-junit5</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-ext-jdk16</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
-            <artifactId>camel-netty-http-starter</artifactId>   
-        </dependency>
-
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.10.10</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
+            <artifactId>camel-netty-http-starter</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.apache.camel</groupId>
-            <artifactId>camel-http</artifactId>
+            <artifactId>camel-stax</artifactId>
         </dependency>
-
 
         <!-- logging -->
         <dependency>
@@ -110,12 +105,51 @@
             <groupId>com.lmax</groupId>
             <artifactId>disruptor</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
-            <type>jar</type>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.hawt</groupId>
+            <artifactId>hawtio-springboot</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-jaas</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.xmlunit</groupId>
+            <artifactId>xmlunit-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.xmlunit</groupId>
+            <artifactId>xmlunit-matchers</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- xml document -->
+        <dependency>
+            <groupId>org.dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>2.1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-wsdl</artifactId>
+        </dependency>
+
+        <!-- Inera -->
         <dependency>
             <groupId>se.skltp.adapterservices.se.apotekensservice</groupId>
             <artifactId>TicketMachine</artifactId>
@@ -123,16 +157,25 @@
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <type>jar</type>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-http</artifactId>
+            <version>${camel.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-test-spring</artifactId>
+            <version>${camel.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot-version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -143,4 +186,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

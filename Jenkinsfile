@@ -13,7 +13,7 @@ jdk = tool name: 'Java_8_221', type: 'jdk'
 		  }
         }
       }
-   } 
+   }
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
       archiveArtifacts '**/target/*.jar'

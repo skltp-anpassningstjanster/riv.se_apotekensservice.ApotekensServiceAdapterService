@@ -29,9 +29,12 @@ class EndpointResolverProcessor implements Processor {
         
         String reqInteractionName = exchange.getProperty(SamlHeaderFromArgosProcessor.SERVICECONTRACT_NAMESPACE, String.class);
         String service = exchange.getProperty("InboundService", String.class);
-            
         String outboundUrl = endpointConfig.getOutbound().get(service).get(reqInteractionName);
-        exchange.setProperty("outbound_url", outboundUrl);
+        if (outboundUrl == null) {
+
+        } else {
+            exchange.setProperty("outbound_url", outboundUrl);
+        }
     }
     
 }

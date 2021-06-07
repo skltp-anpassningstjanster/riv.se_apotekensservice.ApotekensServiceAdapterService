@@ -18,12 +18,12 @@ import org.springframework.context.annotation.Configuration;
 @NoArgsConstructor
 @Configuration
 @EnableConfigurationProperties
-@ConfigurationProperties(prefix = "endpoint")
+@ConfigurationProperties(prefix = "apse.endpoint")
 public class EndpointConfig {
 
     Map<String, Map<String, String>> outbound;
     Map<String, String> inbound;
-    
+
     public void logSettings() {
         if (outbound != null) {
             outbound.forEach((key, val) -> {
