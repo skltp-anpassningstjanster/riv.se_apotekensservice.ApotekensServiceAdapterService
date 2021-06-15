@@ -9,8 +9,8 @@ import java.lang.management.MemoryUsage;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.springframework.boot.configurationprocessor.json.JSONException;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
+import org.json.JSONException;
+import org.json.JSONObject;
 import sun.misc.SharedSecrets;
 import sun.misc.VM;
 

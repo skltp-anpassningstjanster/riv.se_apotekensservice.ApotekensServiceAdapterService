@@ -52,29 +52,7 @@
 
     </properties>
 
-    <distributionManagement>
-        <repository>
-            <id>release-nexus</id>
-            <name>Release Nexus</name>
-            <url>${releases-nexus-url}</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshot-nexus</id>
-            <name>Snapshot Nexus</name>
-            <url>${snapshot-nexus-url}</url>
-        </snapshotRepository>
-    </distributionManagement>
 
-    <scm>
-        <url>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService</url>
-        <connection>
-            scm:git:https://github.com:443/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService
-        </connection>
-        <developerConnection>
-            scm:git:https://github.com:443/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService
-        </developerConnection>
-        <tag>HEAD</tag>
-    </scm>
 
     <modules>
       <module>ApSeMedicalServicesAdapterIC</module>

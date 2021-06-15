@@ -17,6 +17,7 @@
 package se.skltp.adapterservices.apse;
 
 import org.apache.camel.LoggingLevel;
+import org.apache.camel.ShutdownRunningTask;
 import org.apache.camel.component.http.HttpComponent;
 import org.apache.http.conn.ssl.DefaultHostnameVerifier;
 import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
@@ -74,6 +75,7 @@ public class ApSeRouter extends RouteBuilder {
         endpointConfig.getInbound().forEach((service, consumerUrl) -> {
             log.info("setting up inbound consumer " + consumerUrl);
             fromF(NETTY_HTTP_FROM, consumerUrl)
+                    .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
                     .routeId(service + " flow")
                     .setProperty("InboundService", simple(service))
                     .to("direct:transform");
@@ -81,6 +83,7 @@ public class ApSeRouter extends RouteBuilder {
 
         from("direct:transform").routeId("transform header")
                 .log("received connection")
+                .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
                 .process(samlHeaderFromArgosProcessor)
                 .process(resolveEndpoint)
                 .removeHeader(Exchange.HTTP_URI)

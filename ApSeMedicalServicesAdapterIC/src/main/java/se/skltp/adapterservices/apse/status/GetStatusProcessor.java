@@ -154,7 +154,7 @@ public class GetStatusProcessor implements Processor {
                 if (!name.get().equals("")){
                     endpointMap.put("outbound", endpointConfig.getOutbound().get(name.get()));
                 } else if (endpoint.equals(statusUrl)) {
-                    endpointMap.put("name", "Get ApSe adapter status");
+                    endpointMap.put("name", "ApSe adapter status");
                 }
                 endpoints.put(name.get(), endpointMap);
             }
