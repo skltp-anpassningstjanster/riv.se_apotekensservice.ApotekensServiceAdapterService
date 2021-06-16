@@ -7,7 +7,7 @@ pipeline  {
         MAVEN_DOCKER_IMAGE = 'maven:3.6-jdk-8'
     }
     properties ([[$class: 'JiraProjectProperty'], 
-        parameters([
+        parameters ([
             string (
                 name: 'CONFIG_FILE_ID', 
                 defaultValue: 'byggReleaseConfig', 
@@ -25,15 +25,15 @@ pipeline  {
                 trim: true), 
             string (
                 name: 'RELEASE_VERSION',
-                description: 'Ange release-version. Lämna tomt för att använda maven-release-plugin:s standardbeteende.'
+                description: 'Ange release-version. Lämna tomt för att använda maven-release-plugin:s standardbeteende.',
                 trim: true),
             string (
                 name: 'DEVELOPMENT_VERSION',
-                description: 'Ange nästa development-version. Lämna tomt för att använda maven-release-plugin:s standardbeteende.'
+                description: 'Ange nästa development-version. Lämna tomt för att använda maven-release-plugin:s standardbeteende.',
                 trim: true),
             boolean (
                 name: 'DRY_RUN',
-                description: 'Kryssa i rutan för att undvika att checka in eller modifiera git-repot.'
+                description: 'Kryssa i rutan för att undvika att checka in eller modifiera git-repot.',
                 defaultValue: false),
             gitParameter (
                 branch: '', 
