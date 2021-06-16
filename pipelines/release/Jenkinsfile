@@ -48,7 +48,7 @@ pipeline  {
                 type: 'PT_BRANCH_TAG'),
             [$class: 'JobLocalConfiguration', changeReasonComment: ''], 
             pipelineTriggers ([pollSCM('H * * * *')])
-        ]
+        ])
     )
     stages  {
         stage ('Preparation')  {
