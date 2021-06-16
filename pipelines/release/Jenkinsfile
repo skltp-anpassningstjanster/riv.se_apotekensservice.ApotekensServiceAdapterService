@@ -31,7 +31,7 @@ pipeline  {
                 name: 'DEVELOPMENT_VERSION',
                 description: 'Ange nästa development-version. Lämna tomt för att använda maven-release-plugin:s standardbeteende.',
                 trim: true),
-            boolean (
+            booleanParam (
                 name: 'DRY_RUN',
                 description: 'Kryssa i rutan för att undvika att checka in eller modifiera git-repot.',
                 defaultValue: false),
