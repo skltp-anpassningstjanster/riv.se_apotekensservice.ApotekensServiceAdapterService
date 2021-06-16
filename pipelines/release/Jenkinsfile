@@ -6,7 +6,7 @@ pipeline  {
         JAVA_HOME = "${JDK_PATH}"
         MAVEN_DOCKER_IMAGE = 'maven:3.6-jdk-8'
     }
-    properties ([[$class: 'JiraProjectProperty'], 
+    options ([[$class: 'JiraProjectProperty'], 
         parameters ([
             string (
                 name: 'CONFIG_FILE_ID', 
