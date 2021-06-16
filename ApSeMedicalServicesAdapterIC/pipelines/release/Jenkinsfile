@@ -8,34 +8,34 @@ pipeline  {
     }
     properties ([[$class: 'JiraProjectProperty'], 
         parameters([
-            string(
+            string (
                 name: 'CONFIG_FILE_ID', 
                 defaultValue: 'byggReleaseConfig', 
                 description: '', 
                 trim: true), 
-            string(
+            string (
                 name: 'GIT_USER_NAME', 
                 defaultValue: 'skltp-build', 
                 description: 'Ange användarnamn som ska användas för push till git-repot', 
                 trim: true), 
-            string(
+            string (
                 name: 'GIT_USER_EMAIL',
                 defaultValue: 'jenkins@ine-dib-build1.in1.sth.basefarm.net', 
                 description: 'Ange epost som ska användas för push till git-repot', 
                 trim: true), 
-            string(
+            string (
                 name: 'RELEASE_VERSION',
                 description: 'Ange release-version. Lämna tomt för att använda maven-release-plugin:s standardbeteende.'
                 trim: true),
-            string(
+            string (
                 name: 'DEVELOPMENT_VERSION',
                 description: 'Ange nästa development-version. Lämna tomt för att använda maven-release-plugin:s standardbeteende.'
                 trim: true),
-            boolean(
+            boolean (
                 name: 'DRY_RUN',
                 description: 'Kryssa i rutan för att undvika att checka in eller modifiera git-repot.'
                 defaultValue: false),
-            gitParameter(
+            gitParameter (
                 branch: '', 
                 branchFilter: '.*', 
                 defaultValue: 'release/3.0.0-RC0', 
@@ -51,14 +51,14 @@ pipeline  {
         ]
     )
     stages  {
-        stage('Preparation')  {
+        stage ('Preparation')  {
             steps {
                 sh "git config user.name ${params.GIT_USER_NAME}"
                 sh "git config user.email ${params.GIT_USER_EMAIL}"
             }
         }
 
-        stage('Build') {
+        stage ('Build') {
             agent {
                 docker {
                     image "${MAVEN_DOCKER_IMAGE}"
@@ -67,20 +67,20 @@ pipeline  {
                 }
             }
             steps {
-                configFileProvider([configFile(fileId: "${params.CONFIG_FILE_ID}", variable: 'MAVEN_SETTINGS')]) {
+                configFileProvider ([configFile(fileId: "${params.CONFIG_FILE_ID}", variable: 'MAVEN_SETTINGS')]) {
                     sh 'mvn --global-settings ${MAVEN_SETTINGS} clean install'
                 }
             }   
         }
 
-        stage('Results')  {
+        stage ('Results')  {
             steps {
                 junit '**/target/surefire-reports/TEST-*.xml'
                 archiveArtifacts '**/target/*.jar'
             }
         }
 
-        stage('Release')  {
+        stage ('Release')  {
             agent {
                 docker {
                     image "${MAVEN_DOCKER_IMAGE}"
@@ -89,7 +89,7 @@ pipeline  {
                 }
             }
             steps {
-                configFileProvider([configFile(fileId: "${params.CONFIG_FILE_ID}", variable: 'MAVEN_SETTINGS')]) {
+                configFileProvider ([configFile(fileId: "${params.CONFIG_FILE_ID}", variable: 'MAVEN_SETTINGS')]) {
                     sh "mvn -B --global-settings ${MAVEN_SETTINGS} -DdevelopmentVersion=${params.DEVELOPMENT_VERSION} -DreleaseVersion=${params.RELEASE_VERSION} -DtagNameFormat=v@{project.version} -Dresume=false -DskipTests -Darguments=-DskipTests -Pskltp -DdryRun=${params.DRY_RUN} release:prepare -DpushChanges=true  release:perform -Darguments=-Dmaven.javadoc.skip=true"
                 }
             }
@@ -98,7 +98,7 @@ pipeline  {
 
     post  {
         cleanup  {
-            cleanWs()
+            cleanWs ()
         }
     }
 }
