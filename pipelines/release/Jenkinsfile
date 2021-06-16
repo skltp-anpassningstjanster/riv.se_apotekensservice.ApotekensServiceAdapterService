@@ -12,6 +12,17 @@ pipeline  {
                 script {
                     properties ([
                         parameters ([
+                            gitParameter (
+                                branch: '', 
+                                branchFilter: '.*', 
+                                defaultValue: 'origin/release/3.0.0-RC0', 
+                                description: '''Välj en specifik branch eller commit-hash att checka ut från git. OBS! Lightweight checkout-rutan får inte vara ikryssad om commit-hash används (se Pipeline-steget).''', 
+                                name: 'CHECKOUT', 
+                                quickFilterEnabled: false, 
+                                selectedValue: 'NONE', 
+                                sortMode: 'NONE', 
+                                tagFilter: '*', 
+                                type: 'PT_BRANCH_TAG'),
                             string (
                                 name: 'CONFIG_FILE_ID', 
                                 defaultValue: 'byggReleaseConfig', 
@@ -38,18 +49,7 @@ pipeline  {
                             booleanParam (
                                 name: 'DRY_RUN',
                                 description: 'Kryssa i rutan för att undvika att checka in eller modifiera git-repot.',
-                                defaultValue: false),
-                            gitParameter (
-                                branch: '', 
-                                branchFilter: '.*', 
-                                defaultValue: 'release/3.0.0-RC0', 
-                                description: '''Välj en specifik branch eller commit-hash att checka ut från git. OBS! Lightweight checkout-rutan får inte vara ikryssad om commit-hash används (se Pipeline-steget).''', 
-                                name: 'CHECKOUT', 
-                                quickFilterEnabled: false, 
-                                selectedValue: 'NONE', 
-                                sortMode: 'NONE', 
-                                tagFilter: '*', 
-                                type: 'PT_BRANCH_TAG'),
+                                defaultValue: false)
                         ]),
                         pipelineTriggers ([ 
                             pollSCM ('H * * * *')
