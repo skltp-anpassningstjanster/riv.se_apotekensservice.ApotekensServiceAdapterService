@@ -52,7 +52,7 @@ pipeline  {
                                 defaultValue: false)
                         ]),
                         pipelineTriggers ([ 
-                            pollSCM ('H * * * *')
+                            pollSCM ('')
                         ])
                     ])
                 }
