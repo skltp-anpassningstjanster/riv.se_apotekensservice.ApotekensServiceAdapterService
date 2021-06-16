@@ -10,7 +10,7 @@ pipeline  {
         stage ("Prepare properties") {
             steps {
                 script {
-                    properties ({
+                    properties ([
                         parameters ([
                             string (
                                 name: 'CONFIG_FILE_ID', 
