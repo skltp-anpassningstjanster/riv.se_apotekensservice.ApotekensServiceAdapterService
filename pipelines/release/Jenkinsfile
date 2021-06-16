@@ -10,7 +10,7 @@ pipeline  {
         stage ("Prepare properties") {
             steps {
                 script {
-                    properties (
+                    properties ({
                         parameters ([
                             string (
                                 name: 'CONFIG_FILE_ID', 
@@ -50,7 +50,9 @@ pipeline  {
                                 sortMode: 'NONE', 
                                 tagFilter: '*', 
                                 type: 'PT_BRANCH_TAG'),
-                            pipelineTriggers ([pollSCM('H * * * *')])
+                        ]),
+                        pipelineTriggers ([ 
+                            pollSCM ('H * * * *')
                         ])
                     ])
                 }
