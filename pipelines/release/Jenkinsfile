@@ -47,8 +47,9 @@ pipeline  {
                         ])
                     ])
                 }
-                sh "git config user.name ${params.GIT_USER_NAME}"
-                sh "git config user.email ${params.GIT_USER_EMAIL}"
+//                sh "git config user.name ${params.GIT_USER_NAME}"
+//                sh "git config user.email ${params.GIT_USER_EMAIL}"
+                sh "git remote set-url origin git remote set-url --push origin git@github.com:skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git"
             }
         }
         stage ('Build') {
@@ -60,8 +61,10 @@ pipeline  {
                 }
             }
             steps {
-                withMaven(globalMavenSettingsConfig: 'MavenGlobalSettings', mavenLocalRepo: '.m2repo', mavenSettingsConfig: "${params.CONFIG_FILE_ID}") {
-                    sh 'mvn clean install'
+                sshagent(['skltp-build']) {
+                    withMaven(globalMavenSettingsConfig: 'MavenGlobalSettings', mavenLocalRepo: '.m2repo', mavenSettingsConfig: "${params.CONFIG_FILE_ID}") {
+                        sh 'mvn clean install'
+                    }
                 }
             }   
         }
@@ -82,8 +85,10 @@ pipeline  {
                 }
             }
             steps {
-                withMaven(globalMavenSettingsConfig: 'MavenGlobalSettings', mavenLocalRepo: '.m2repo', mavenSettingsConfig: "${params.CONFIG_FILE_ID}") {
-                    sh "mvn -B -DdevelopmentVersion=${params.DEVELOPMENT_VERSION} -DreleaseVersion=${params.RELEASE_VERSION} -DtagNameFormat=v@{project.version} -Dresume=false -DskipTests -Darguments=-DskipTests -Pskltp -DdryRun=${params.DRY_RUN} release:prepare -DpushChanges=true  release:perform -Darguments=-Dmaven.javadoc.skip=true"
+                sshagent(['skltp-build']) {
+                    withMaven(globalMavenSettingsConfig: 'MavenGlobalSettings', mavenLocalRepo: '.m2repo', mavenSettingsConfig: "${params.CONFIG_FILE_ID}") {
+                        sh "mvn -B -DdevelopmentVersion=${params.DEVELOPMENT_VERSION} -DreleaseVersion=${params.RELEASE_VERSION} -DtagNameFormat=v@{project.version} -Dresume=false -DskipTests -Darguments=-DskipTests -Pskltp -DdryRun=${params.DRY_RUN} release:prepare -DpushChanges=true  release:perform -Darguments=-Dmaven.javadoc.skip=true"
+                    }
                 }
             }
         }
