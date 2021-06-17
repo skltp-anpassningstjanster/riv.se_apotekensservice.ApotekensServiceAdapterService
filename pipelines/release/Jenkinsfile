@@ -15,7 +15,7 @@ pipeline  {
                             gitParameter (
                                 branch: '', 
                                 branchFilter: '.*', 
-                                defaultValue: 'origin/release/3.0.0-RC0', 
+                                defaultValue: 'origin/release/3.0.0-RC1', 
                                 description: '''Välj en specifik branch eller commit-hash att checka ut från git. OBS! Lightweight checkout-rutan får inte vara ikryssad om commit-hash används (se Pipeline-steget).''', 
                                 name: 'CHECKOUT', 
                                 quickFilterEnabled: false, 
@@ -23,6 +23,11 @@ pipeline  {
                                 sortMode: 'NONE', 
                                 tagFilter: '*', 
                                 type: 'PT_BRANCH_TAG'),
+                            string (
+                                name: 'CHECKOUT', 
+                                defaultValue: 'release/3.0.0-RC1', 
+                                description: '''Välj en specifik branch eller commit-hash att checka ut från git. OBS! Lightweight checkout-rutan får inte vara ikryssad om commit-hash används (se Pipeline-steget).''', 
+                                trim: true), 
                             string (
                                 name: 'CONFIG_FILE_ID', 
                                 defaultValue: 'byggReleaseConfig', 
@@ -50,9 +55,6 @@ pipeline  {
                                 name: 'DRY_RUN',
                                 description: 'Kryssa i rutan för att undvika att checka in eller modifiera git-repot.',
                                 defaultValue: false)
-                        ]),
-                        pipelineTriggers ([ 
-                            pollSCM ('')
                         ])
                     ])
                 }
