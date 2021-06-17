@@ -6,86 +6,87 @@ pipeline  {
         JAVA_HOME = "${JDK_PATH}"
         MAVEN_DOCKER_IMAGE = 'maven:3.6-jdk-8'
     }
-    stages  {
-        stage ("Prepare properties") {
-            steps {
-                script {
-                    properties ([
-                        parameters ([
-                            string (
-                                name: 'CHECKOUT', 
-                                defaultValue: 'release/3.0.0', 
-                                description: '''Välj en specifik branch eller commit-hash att checka ut från git. OBS! Lightweight checkout-rutan får inte vara ikryssad om commit-hash används (se Pipeline-steget).''', 
-                                trim: true), 
-                            string (
-                                name: 'CONFIG_FILE_ID', 
-                                defaultValue: 'byggReleaseConfig', 
-                                description: '', 
-                                trim: true), 
-                            string (
-                                name: 'GIT_USER_NAME', 
-                                defaultValue: 'skltp-build', 
-                                description: 'Ange användarnamn som ska användas för push till git-repot', 
-                                trim: true), 
-                            string (
-                                name: 'GIT_USER_EMAIL',
-                                defaultValue: 'jenkins@ine-dib-build1.in1.sth.basefarm.net', 
-                                description: 'Ange epost som ska användas för push till git-repot', 
-                                trim: true), 
-                            string (
-                                name: 'RELEASE_VERSION',
-                                description: 'Ange release-version. Lämna tomt för att använda maven-release-plugin:s standardbeteende.',
-                                trim: true),
-                            string (
-                                name: 'DEVELOPMENT_VERSION',
-                                description: 'Ange nästa development-version. Lämna tomt för att använda maven-release-plugin:s standardbeteende.',
-                                trim: true),
-                            booleanParam (
-                                name: 'DRY_RUN',
-                                description: 'Kryssa i rutan för att undvika att checka in eller modifiera git-repot.',
-                                defaultValue: false)
+    sshagent(['skltp-build']) {
+        stages  {
+            stage ("Prepare properties") {
+                steps {
+                    script {
+                        properties ([
+                            parameters ([
+                                string (
+                                    name: 'CHECKOUT', 
+                                    defaultValue: 'release/3.0.0', 
+                                    description: '''Välj en specifik branch eller commit-hash att checka ut från git. OBS! Lightweight checkout-rutan får inte vara ikryssad om commit-hash används (se Pipeline-steget).''', 
+                                    trim: true), 
+                                string (
+                                    name: 'CONFIG_FILE_ID', 
+                                    defaultValue: 'byggReleaseConfig', 
+                                    description: '', 
+                                    trim: true), 
+                                string (
+                                    name: 'GIT_USER_NAME', 
+                                    defaultValue: 'skltp-build', 
+                                    description: 'Ange användarnamn som ska användas för push till git-repot', 
+                                    trim: true), 
+                                string (
+                                    name: 'GIT_USER_EMAIL',
+                                    defaultValue: 'jenkins@ine-dib-build1.in1.sth.basefarm.net', 
+                                    description: 'Ange epost som ska användas för push till git-repot', 
+                                    trim: true), 
+                                string (
+                                    name: 'RELEASE_VERSION',
+                                    description: 'Ange release-version. Lämna tomt för att använda maven-release-plugin:s standardbeteende.',
+                                    trim: true),
+                                string (
+                                    name: 'DEVELOPMENT_VERSION',
+                                    description: 'Ange nästa development-version. Lämna tomt för att använda maven-release-plugin:s standardbeteende.',
+                                    trim: true),
+                                booleanParam (
+                                    name: 'DRY_RUN',
+                                    description: 'Kryssa i rutan för att undvika att checka in eller modifiera git-repot.',
+                                    defaultValue: false)
+                            ])
                         ])
-                    ])
-                }
-//                sh "git config user.name ${params.GIT_USER_NAME}"
-//                sh "git config user.email ${params.GIT_USER_EMAIL}"
-                sh "git remote set-url --push origin git@github.com:skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git"
-            }
-        }
-        stage ('Build') {
-            agent {
-                docker {
-                    image "${MAVEN_DOCKER_IMAGE}"
-                    args "-v ${JDK_PATH}:${JDK_PATH}"
-                    reuseNode true
+                    }
                 }
             }
-            steps {
-                sshagent(['skltp-build']) {
+            stage ('git') {
+                git branch: "${params.checkout}", 
+                    url: 'git@github.com:skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git',
+                    changelog: true, 
+                    poll: false 
+            }
+            stage ('Build') {
+                agent {
+                    docker {
+                        image "${MAVEN_DOCKER_IMAGE}"
+                        args "-v ${JDK_PATH}:${JDK_PATH}"
+                        reuseNode true
+                    }
+                }
+                steps {
                     withMaven(globalMavenSettingsConfig: 'MavenGlobalSettings', mavenLocalRepo: '.m2repo', mavenSettingsConfig: "${params.CONFIG_FILE_ID}") {
                         sh 'mvn clean install'
                     }
-                }
-            }   
-        }
-
-        stage ('Results')  {
-            steps {
-                //junit '**/target/surefire-reports/TEST-*.xml'
-                archiveArtifacts '**/target/*.jar'
+                }   
             }
-        }
 
-        stage ('Release')  {
-            agent {
-                docker {
-                    image "${MAVEN_DOCKER_IMAGE}"
-                    args "-v ${JDK_PATH}:${JDK_PATH}"
-                    reuseNode true
+            stage ('Results')  {
+                steps {
+                    //junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts '**/target/*.jar'
                 }
             }
-            steps {
-                sshagent(['skltp-build']) {
+
+            stage ('Release')  {
+                agent {
+                    docker {
+                        image "${MAVEN_DOCKER_IMAGE}"
+                        args "-v ${JDK_PATH}:${JDK_PATH}"
+                        reuseNode true
+                    }
+                }
+                steps {
                     withMaven(globalMavenSettingsConfig: 'MavenGlobalSettings', mavenLocalRepo: '.m2repo', mavenSettingsConfig: "${params.CONFIG_FILE_ID}") {
                         sh "mvn -B -DdevelopmentVersion=${params.DEVELOPMENT_VERSION} -DreleaseVersion=${params.RELEASE_VERSION} -DtagNameFormat=v@{project.version} -Dresume=false -DskipTests -Darguments=-DskipTests -Pskltp -DdryRun=${params.DRY_RUN} release:prepare -DpushChanges=true  release:perform -Darguments=-Dmaven.javadoc.skip=true"
                     }
