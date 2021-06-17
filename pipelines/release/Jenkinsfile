@@ -51,12 +51,13 @@ pipeline  {
         }
         stage ('git') {
             steps {
-                sshagent(['skltp-build']) { withEnv(['GIT_SSH_COMMAND=git -p 443']) {
-                    git branch: "${params.checkout}", 
-                        url: 'git@github.com:skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git',
+                 { 
+                    git branch: 'release/3.0.0', 
                         changelog: true, 
-                        poll: false 
-                }}
+                        credentialsId: 'skltp-github-user', 
+                        poll: true, 
+                        url: 'https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git'
+                }
             }
         }
         stage ('Build') {
