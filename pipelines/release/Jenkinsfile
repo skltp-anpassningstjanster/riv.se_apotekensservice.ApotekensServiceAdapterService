@@ -51,13 +51,11 @@ pipeline  {
         }
         stage ('git') {
             steps {
-                 { 
                     git branch: 'release/3.0.0', 
                         changelog: true, 
                         credentialsId: 'skltp-github-user', 
                         poll: true, 
                         url: 'https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git'
-                }
             }
         }
         stage ('Build') {
