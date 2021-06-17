@@ -49,7 +49,7 @@ pipeline  {
                 }
 //                sh "git config user.name ${params.GIT_USER_NAME}"
 //                sh "git config user.email ${params.GIT_USER_EMAIL}"
-                sh "git remote set-url origin git remote set-url --push origin git@github.com:skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git"
+                sh "git remote set-url --push origin git@github.com:skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git"
             }
         }
         stage ('Build') {
