@@ -60,10 +60,8 @@ pipeline  {
                 }
             }
             steps {
-                configFileProvider ([configFile(fileId: "${params.CONFIG_FILE_ID}", variable: 'MAVEN_SETTINGS')]) {
-                    dir ("ApSeMedicalServicesAdapterIC") {
-                        sh 'mvn --global-settings ${MAVEN_SETTINGS} clean install'
-                    }
+                withMaven(globalMavenSettingsConfig: 'MavenGlobalSettings', mavenLocalRepo: '.m2repo', mavenSettingsConfig: "${params.CONFIG_FILE_ID}") {
+                    sh 'mvn clean install'
                 }
             }   
         }
@@ -84,10 +82,8 @@ pipeline  {
                 }
             }
             steps {
-                configFileProvider ([configFile(fileId: "${params.CONFIG_FILE_ID}", variable: 'MAVEN_SETTINGS')]) {
-                    dir ("ApSeMedicalServicesAdapterIC") {
-                        sh "mvn -B --global-settings ${MAVEN_SETTINGS} -DdevelopmentVersion=${params.DEVELOPMENT_VERSION} -DreleaseVersion=${params.RELEASE_VERSION} -DtagNameFormat=v@{project.version} -Dresume=false -DskipTests -Darguments=-DskipTests -Pskltp -DdryRun=${params.DRY_RUN} release:prepare -DpushChanges=true  release:perform -Darguments=-Dmaven.javadoc.skip=true"
-                    }
+                withMaven(globalMavenSettingsConfig: 'MavenGlobalSettings', mavenLocalRepo: '.m2repo', mavenSettingsConfig: "${params.CONFIG_FILE_ID}") {
+                    sh "mvn -B -DdevelopmentVersion=${params.DEVELOPMENT_VERSION} -DreleaseVersion=${params.RELEASE_VERSION} -DtagNameFormat=v@{project.version} -Dresume=false -DskipTests -Darguments=-DskipTests -Pskltp -DdryRun=${params.DRY_RUN} release:prepare -DpushChanges=true  release:perform -Darguments=-Dmaven.javadoc.skip=true"
                 }
             }
         }
