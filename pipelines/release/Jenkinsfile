@@ -51,7 +51,7 @@ pipeline  {
         }
         stage ('git') {
             steps {
-                sshagent(['skltp-build']) { withEnv(['GIT_SSH_COMMAND="git -p 443']) {
+                sshagent(['skltp-build']) { withEnv(['GIT_SSH_COMMAND=git -p 443']) {
                     git branch: "${params.checkout}", 
                         url: 'git@github.com:skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git',
                         changelog: true, 
