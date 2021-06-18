@@ -7,7 +7,7 @@ pipeline  {
         MAVEN_DOCKER_IMAGE = 'maven:3.6-jdk-8'
     }
     stages  {
-        stage ("Prepare properties") {
+        stage ("Prepare properties and git") {
             steps {
                 script {
                     properties ([
@@ -47,15 +47,13 @@ pipeline  {
                         ])
                     ])
                 }
-            }
-        }
-        stage ('git') {
-            steps {
-                    git branch: 'release/3.0.0', 
-                        changelog: true, 
-                        credentialsId: 'skltp-github-user', 
-                        poll: true, 
-                        url: 'https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git'
+                sh "git config user.name ${params.GIT_USER_NAME}"
+                sh "git config user.email ${params.GIT_USER_EMAIL}"
+                git branch: 'release/3.0.0', 
+                    changelog: true, 
+                    credentialsId: 'skltp-github-user', 
+                    poll: true, 
+                    url: 'https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git'
             }
         }
         stage ('Build') {
@@ -87,13 +85,11 @@ pipeline  {
                     args "-v ${JDK_PATH}:${JDK_PATH}"
                     reuseNode true
                 }
-            }
+            }      
             steps {
-                sshagent(['skltp-build']) { withEnv(['GIT_SSH_COMMAND="git -p 443']) {
-                    withMaven(globalMavenSettingsConfig: 'ae5eda6d-e166-4b43-a78c-ed67ed10cac0', mavenLocalRepo: '.m2repo', mavenSettingsConfig: "${params.CONFIG_FILE_ID}") {
-                        sh "mvn -B -DdevelopmentVersion=${params.DEVELOPMENT_VERSION} -DreleaseVersion=${params.RELEASE_VERSION} -DtagNameFormat=v@{project.version} -Dresume=false -DskipTests -Darguments=-DskipTests -Pskltp -DdryRun=${params.DRY_RUN} release:prepare -DpushChanges=true  release:perform -Darguments=-Dmaven.javadoc.skip=true"
-                    }
-                }}
+                configFileProvider([configFile(fileId: "${params.CONFIG_FILE_ID}", variable: 'MAVEN_SETTINGS')]) {
+                    sh "mvn -B --global-settings ${MAVEN_SETTINGS} -DdevelopmentVersion=${params.DEVELOPMENT_VERSION} -DreleaseVersion=${params.RELEASE_VERSION} -DtagNameFormat=v@{project.version} -Dresume=false -DskipTests -Darguments=-DskipTests -Pskltp -DdryRun=${params.DRY_RUN} release:prepare -DpushChanges=true  release:perform -Darguments=-Dmaven.javadoc.skip=true"
+                }
             }
         }
     }
