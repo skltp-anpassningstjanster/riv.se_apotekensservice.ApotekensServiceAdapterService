@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>se.skltp.adapterservices.apse</groupId>
-    <version>3.0.0-RC1</version>
+    <version>3.0.0-RC2-SNAPSHOT</version>
     <artifactId>apse-adapter-camel</artifactId>
     <name>apse-adapter</name>
     <description>Adapter för ApSe byggt med Camel och Spring Boot</description>
@@ -542,7 +542,7 @@
         <url>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git</url>
         <connection>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git</connection>
         <developerConnection>scm:git:https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git</developerConnection>
-        <tag>v3.0.0-RC1</tag>
+        <tag>HEAD</tag>
     </scm>
     <distributionManagement>
         <repository>
