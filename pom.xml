@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
+    <!--
+    project TODOs
+    TODO: kör junit-tester
+    TODO: kör testscripts (soapui)
+    TODO: bygg med jenkins
+    TODO: hawtio
+    TODO: log format
+
+    -->
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>se.skltp.adapterservices.apse</groupId>
@@ -26,7 +36,6 @@
 
         <maven.javadoc.skip>true</maven.javadoc.skip>
 
-        <argLine.leak>-D_</argLine.leak> <!-- Overridden when 'leak' profile is active -->
 
         <!-- ************************-->
         <!-- Sonar/Reporting settings -->
@@ -382,15 +391,6 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-                <configuration>
-                    <argLine>${argLine.leak}</argLine>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
@@ -404,7 +404,6 @@
                     <!--Make failsafe and spring-boot repackage play nice together
                     https://github.com/spring-projects/spring-boot/issues/6254-->
                     <classesDirectory>${project.build.outputDirectory}</classesDirectory>
-                    <argLine>${argLine.leak}</argLine>
                 </configuration>
                 <executions>
                     <execution>
@@ -441,14 +440,6 @@
     </build>
 
     <profiles>
-        <profile>
-            <id>leak</id>
-            <properties>
-                <argLine.leak>-Dio.netty.leakDetectionLevel=paranoid -Dio.netty.leakDetection.maxRecords=32
-                    -Dio.netty.leakDetection.targetRecords=10 -Dspring.profiles.active=leak
-                </argLine.leak>
-            </properties>
-        </profile>
         <profile>
             <id>test-coverage</id>
             <build>

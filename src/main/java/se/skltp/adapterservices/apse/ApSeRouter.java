@@ -27,7 +27,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import se.skltp.adapterservices.apse.config.EndpointConfig;
 import se.skltp.adapterservices.apse.config.SecurityProperties;
+import se.skltp.adapterservices.apse.constants.ExchangeProperties;
 import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
+import se.skltp.adapterservices.apse.logging.MessageInfoLogger;
+
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLPeerUnverifiedException;
@@ -46,6 +49,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class ApSeRouter extends RouteBuilder {
 
     public static final String NETTY_HTTP_FROM = "netty-http:%s?matchOnUriPrefix=true";
+    public static final String LOG_RESP_OUT_METHOD = "logRespOut(*)";
+
 
     @Autowired
     SamlHeaderFromArgosProcessor samlHeaderFromArgosProcessor;
@@ -77,10 +82,12 @@ public class ApSeRouter extends RouteBuilder {
                     .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
                     .routeId(service + " flow")
                     .setProperty("InboundService", simple(service))
-                    .to("direct:transform");
+                    .to("direct:transform")
+                    .bean(MessageInfoLogger.class, LOG_RESP_OUT_METHOD);
         });
 
         from("direct:transform").routeId("transform header")
+                .setProperty(ExchangeProperties.EXCHANGE_CREATED,  simple("${date:exchangeCreated}"))
                 .log("received connection")
                 .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
                 .process(samlHeaderFromArgosProcessor)

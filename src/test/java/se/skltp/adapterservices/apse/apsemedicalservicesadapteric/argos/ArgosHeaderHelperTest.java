@@ -26,7 +26,6 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import java.io.StringReader;
-import java.io.UnsupportedEncodingException;
 
 import static org.junit.Assert.*;
 
@@ -61,7 +60,7 @@ public class ArgosHeaderHelperTest {
     }
 
     @Test
-    public void testEmptyArgosHeaderIsCreatedWhenNoInfoIsProvided() throws UnsupportedEncodingException, XMLStreamException {
+    public void testEmptyArgosHeaderIsCreatedWhenNoInfoIsProvided() throws XMLStreamException {
 		String personnummer = "196308212817";
 
 		XMLEventReader muleMessageBasedOnArgosHeader = xmlInputFactory.createXMLEventReader(new StringReader(getXmlPayload(null, personnummer)));
@@ -71,7 +70,7 @@ public class ArgosHeaderHelperTest {
     }
 
     @Test
-    public void testExtractArgosHeaderWithAllInformation() throws UnsupportedEncodingException, XMLStreamException {
+    public void testExtractArgosHeaderWithAllInformation() throws XMLStreamException {
 		ArgosHeader expectedArgosHeader = createExpectedArgosHeader();
 		String personnummer = "196308212817";
 
@@ -158,12 +157,13 @@ public class ArgosHeaderHelperTest {
 	String systemversion = "1.0";
 	String systemIp = "192.0.0.1";
 
-	ArgosHeader expectedArgosHeader = new ArgosHeader(forskrivarkod, legitimationskod, fornamn, efternamn,
-		yrkesgrupp, befattningskod, arbetsplatskod, arbetsplatsnamn, postort, postadress, postnummer,
-		telefonnummer, requestId, rollnamn, directoryID, hsaID, katalog, organisationsnummer, systemnamn,
-		systemversion, systemIp);
-
-	return expectedArgosHeader;
+	return new ArgosHeader(
+			forskrivarkod, legitimationskod, fornamn, efternamn,
+			yrkesgrupp, befattningskod, arbetsplatskod, arbetsplatsnamn,
+			postort, postadress, postnummer, telefonnummer, requestId,
+			rollnamn, directoryID, hsaID, katalog, organisationsnummer,
+			systemnamn, systemversion, systemIp
+		);
     }
 
 	private String getXmlPayload(ArgosHeader expectedArgosHeader, String personnummer) {
