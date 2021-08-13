@@ -7,11 +7,12 @@ package se.skltp.adapterservices.apse.utils;
 
 
 import lombok.Data;
+import lombok.extern.log4j.Log4j2;
 
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
-
+@Log4j2
 public class PayloadInfoParser {
 
   public static final String RIVTABP_21 = "rivtabp21";
@@ -30,7 +31,8 @@ public class PayloadInfoParser {
 
     while (reader.hasNext()) {
       if(reader.isStartElement()){
-          String local = reader.getLocalName();
+        String local = reader.getLocalName();
+        log.debug(local);
 
           if (bodyFound) {
             // We have found the element we need in the Header and Body, i.e. we
@@ -53,7 +55,9 @@ public class PayloadInfoParser {
           }
 
       }
-      reader.next();
+      if (reader.hasNext()) {
+          reader.next();
+      }
     }
 
     return payloadInfo;

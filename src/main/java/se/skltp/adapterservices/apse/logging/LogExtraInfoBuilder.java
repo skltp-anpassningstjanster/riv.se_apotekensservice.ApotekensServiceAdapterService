@@ -62,7 +62,12 @@ public class LogExtraInfoBuilder {
 
     extraInfo.put(HEADERS, getHeadersAsString(exchange.getIn().getHeaders()));
 
-    extraInfo.put(TIME_ELAPSED, getElapsedTime(exchange).toString());
+    Long elapsed = getElapsedTime(exchange);
+    if (elapsed != null) {
+      extraInfo.put(TIME_ELAPSED, elapsed.toString());
+    } else {
+      extraInfo.put(TIME_ELAPSED, "null");
+    }
 
     extraInfo.putNotNull(VAGVAL_TRACE, exchange.getProperty(ExchangeProperties.VAGVAL_TRACE, String.class));
     extraInfo.putNotNull(ANROPSBEHORIGHET_TRACE, exchange.getProperty(ExchangeProperties.ANROPSBEHORIGHET_TRACE, String.class));

@@ -49,7 +49,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class ApSeRouter extends RouteBuilder {
 
     public static final String NETTY_HTTP_FROM = "netty-http:%s?matchOnUriPrefix=true";
+
+    public static final String LOG_ERROR_METHOD = "logError(*,${exception.stacktrace})";
     public static final String LOG_RESP_OUT_METHOD = "logRespOut(*)";
+    public static final String LOG_REQ_IN_METHOD = "logReqIn(*)";
+    public static final String LOG_REQ_OUT_METHOD = "logReqOut(*)";
+    public static final String LOG_RESP_IN_METHOD = "logRespIn(*)";
 
 
     @Autowired
@@ -68,13 +73,18 @@ public class ApSeRouter extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-
+        log.debug("Configuring routes for ApSe");
         if (endpointConfig.getInbound() == null) {
             log.error("no inbound values, check configuration.");
             System.exit(-404);
         }
 
         resolveHostnameVerifier();
+
+        onException(Exception.class)
+                .bean(MessageInfoLogger.class, LOG_ERROR_METHOD)
+                .handled(false);
+
 
         endpointConfig.getInbound().forEach((service, consumerUrl) -> {
             log.info("setting up inbound consumer " + consumerUrl);
@@ -83,19 +93,21 @@ public class ApSeRouter extends RouteBuilder {
                     .routeId(service + " flow")
                     .setProperty("InboundService", simple(service))
                     .to("direct:transform")
-                    .bean(MessageInfoLogger.class, LOG_RESP_OUT_METHOD);
+                    ;
         });
 
         from("direct:transform").routeId("transform header")
                 .setProperty(ExchangeProperties.EXCHANGE_CREATED,  simple("${date:exchangeCreated}"))
                 .log("received connection")
                 .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
+                .bean(MessageInfoLogger.class, LOG_REQ_IN_METHOD)
                 .process(samlHeaderFromArgosProcessor)
                 .process(resolveEndpoint)
                 .removeHeader(Exchange.HTTP_URI)
-                .log(LoggingLevel.INFO, "executing request for \"${exchangeProperty[servicecontract_namespace]}\" on url: ${exchangeProperty[outbound_url]}")
-                .toD("${exchangeProperty[outbound_url]}?sslContextParameters=#outgoingSSLContextParameters");
-        
+                //.bean(MessageInfoLogger.class, LOG_REQ_OUT_METHOD)
+                //.log(LoggingLevel.INFO, "executing request for \"${exchangeProperty[servicecontract_namespace]}\" on url: ${exchangeProperty[outbound_url]}")
+                .toD("${exchangeProperty[outbound_url]}?sslContextParameters=#outgoingSSLContextParameters")
+                ;//.bean(MessageInfoLogger.class, LOG_RESP_IN_METHOD);
     }
 
     private void resolveHostnameVerifier() {

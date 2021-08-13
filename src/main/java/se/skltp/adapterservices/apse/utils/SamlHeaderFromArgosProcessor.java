@@ -44,6 +44,10 @@ public class SamlHeaderFromArgosProcessor implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
         String in = exchange.getIn().getBody(String.class);
+        if (in.length() < 1)
+        {
+            throw new Exception("Empty payload");
+        }
         byte[] bodyBytes = in.getBytes("UTF-8");
 
         extractPropertiesFromBody(bodyBytes, exchange);
