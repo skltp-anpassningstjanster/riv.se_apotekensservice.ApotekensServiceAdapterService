@@ -18,15 +18,12 @@ import javax.xml.stream.XMLStreamException;
 import java.io.ByteArrayInputStream;
 
 /**
- *
  * @author jonmat
  */
 @Service
 @Log4j2
 public class SamlHeaderFromArgosProcessor implements Processor {
 
-    private final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-    private final XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
     public static final String SENDER_ID = "senderid";
     public static final String SENDER_IP_ADRESS = "senderIpAdress";
     public static final String OUT_ORIGINAL_SERVICE_CONSUMER_HSA_ID = "originalServiceconsumerHsaidOut";
@@ -40,12 +37,13 @@ public class SamlHeaderFromArgosProcessor implements Processor {
     public static final String ORIGINAL_REQUEST_ENCODING = "OriginalRequestEncoding";
     public static final String HTTP_URL_IN = "HttpUrlIn";
     public static final String HTTP_URL_OUT = "HttpUrlOut";
+    private final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
+    private final XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
 
     @Override
     public void process(Exchange exchange) throws Exception {
         String in = exchange.getIn().getBody(String.class);
-        if (in.length() < 1)
-        {
+        if (in.length() < 1) {
             throw new Exception("Empty payload");
         }
         byte[] bodyBytes = in.getBytes("UTF-8");

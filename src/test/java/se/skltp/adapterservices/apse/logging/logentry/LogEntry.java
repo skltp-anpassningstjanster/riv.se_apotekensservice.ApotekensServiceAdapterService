@@ -1,7 +1,8 @@
 package se.skltp.adapterservices.apse.logging.logentry;
 
-import java.util.Map;
 import lombok.Data;
+
+import java.util.Map;
 
 @Data
 public class LogEntry {

@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="b07e445f-99dd-4b99-b386-75e91f5eab5b" activeEnvironment="Default" name="ApSeMedicalServicesAdapter_v5" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a057f2a9-00fd-463b-92c6-a51989ce5f26" wsaVersion="NONE" name="HamtaKundInfoResponderBinding" type="wsdl" bindingName="{urn:riv:se.apotekensservice:axs:HamtaKundInfo:5:rivtabp21}HamtaKundInfoResponderBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_AXS_5_0/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_5.0_rivtabp21.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_AXS_5_0/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_5.0_rivtabp21.wsdl"><con:part><con:url>file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_AXS_5_0/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_5.0_rivtabp21.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:riv:se.apotekensservice:axs:HamtaKundInfo:5:rivtabp21" name="HamtaKundInfoInteraction" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:itr="urn:riv:itintegration:registry:1" xmlns:argos="urn:riv:inera.se.apotekensservice:argos:1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns="urn:riv:se.apotekensservice:axs:HamtaKundInfo:5:rivtabp21" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:spdr="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5">
+<con:soapui-project xmlns:con="http://eviware.com/soapui/config" id="b07e445f-99dd-4b99-b386-75e91f5eab5b"
+                    activeEnvironment="Default" name="ApSeMedicalServicesAdapter_v5" resourceRoot=""
+                    soapui-version="5.3.0"
+                    abortOnError="false" runType="SEQUENTIAL">
+    <con:settings/>
+    <con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:WsdlInterface"
+                   id="a057f2a9-00fd-463b-92c6-a51989ce5f26"
+                   wsaVersion="NONE" name="HamtaKundInfoResponderBinding"
+                   type="wsdl"
+                   bindingName="{urn:riv:se.apotekensservice:axs:HamtaKundInfo:5:rivtabp21}HamtaKundInfoResponderBinding"
+                   soapVersion="1_1"
+                   anonymous="optional"
+                   definition="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_AXS_5_0/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_5.0_rivtabp21.wsdl">
+        <con:settings/>
+        <con:definitionCache type="TEXT"
+                             rootPart="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_AXS_5_0/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_5.0_rivtabp21.wsdl">
+            <con:part>
+                <con:url>
+                    file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_AXS_5_0/interactions/HamtaKundInfoInteraction/HamtaKundInfoInteraction_5.0_rivtabp21.wsdl
+                </con:url>
+                <con:content><![CDATA[<wsdl:definitions targetNamespace="urn:riv:se.apotekensservice:axs:HamtaKundInfo:5:rivtabp21" name="HamtaKundInfoInteraction" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:itr="urn:riv:itintegration:registry:1" xmlns:argos="urn:riv:inera.se.apotekensservice:argos:1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns="urn:riv:se.apotekensservice:axs:HamtaKundInfo:5:rivtabp21" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:spdr="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5">
   <xs:annotation>
     <xs:documentation>Beskrivning: Tjänstekontraktet som avser att konkretisera tillämpningen av RIV.
             Revisioner: 2014-06-03 Version 5.0
@@ -66,7 +86,14 @@
       <soap:address location="http://temp.uri/"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_AXS_5_0\interactions\HamtaKundInfoInteraction\HamtaKundInfoResponder_5.0.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5" version="5.0" xmlns="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:axs="urn:riv:se.apotekensservice:axs:4">
+</wsdl:definitions>]]></con:content>
+                <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_AXS_5_0\interactions\HamtaKundInfoInteraction\HamtaKundInfoResponder_5.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5" version="5.0" xmlns="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:axs="urn:riv:se.apotekensservice:axs:4">
   <xs:import schemaLocation="../../core_components/se.apotekensservice_axs_4.0.xsd" namespace="urn:riv:se.apotekensservice:axs:4"/>
   <xs:element name="HamtaKundInfo" type="HamtaKundInfoRequestType"/>
   <xs:element name="HamtaKundInfoResponse" type="HamtaKundInfoResponseType"/>
@@ -131,7 +158,14 @@
       <xs:any minOccurs="0" namespace="##other" maxOccurs="unbounded" processContents="lax"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_AXS_5_0\core_components\se.apotekensservice_axs_4.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:axs:4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:axs:4">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_AXS_5_0\core_components\se.apotekensservice_axs_4.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:axs:4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:axs:4">
   <xs:annotation>
     <xs:documentation>Beskrivning: Meddelandetyper som är gemensamma för axs.
             Revisioner: 2013-03-28, version 4.0</xs:documentation>
@@ -585,7 +619,14 @@
       <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_AXS_5_0\core_components\itintegration_registry_1.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:itintegration:registry:1" elementFormDefault="qualified" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_AXS_5_0\core_components\itintegration_registry_1.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:itintegration:registry:1" elementFormDefault="qualified" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>Beskrivning: 	Grundläggande informationsobjekt för domänen itintegration:registry (adressering av tjänster)
 			
@@ -616,7 +657,14 @@
   <xs:simpleType name="HsaIdType">
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_AXS_5_0\core_components\ArgosHeader_1.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:inera.se.apotekensservice:argos:1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:tns="urn:riv:inera.se.apotekensservice:argos:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_AXS_5_0\core_components\ArgosHeader_1.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:inera.se.apotekensservice:argos:1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:tns="urn:riv:inera.se.apotekensservice:argos:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="ArgosHeader" type="tns:ArgosHeaderType"/>
   <xs:complexType name="ArgosHeaderType">
     <xs:sequence>
@@ -643,7 +691,23 @@
       <xs:any processContents="lax" maxOccurs="unbounded" namespace="##other" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaKundInfo/5/rivtabp21</con:endpoint></con:endpoints><con:operation id="f6ffa14d-06a5-4fe9-b787-b3321234016d" isOneWay="false" action="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5:HamtaKundInfo" name="HamtaKundInfo" bindingOperationName="HamtaKundInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3a9897a4-62af-464d-ac32-d3fafb1ea4c8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaKundInfo/5/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:axs:4">\r
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+        </con:definitionCache>
+        <con:endpoints>
+            <con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaKundInfo/5/rivtabp21</con:endpoint>
+        </con:endpoints>
+        <con:operation id="f6ffa14d-06a5-4fe9-b787-b3321234016d" isOneWay="false"
+                       action="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5:HamtaKundInfo"
+                       name="HamtaKundInfo" bindingOperationName="HamtaKundInfo" type="Request-Response" inputName=""
+                       receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+            <con:settings/>
+            <con:call id="3a9897a4-62af-464d-ac32-d3fafb1ea4c8" name="Request 1">
+                <con:settings/>
+                <con:encoding>UTF-8</con:encoding>
+                <con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaKundInfo/5/rivtabp21</con:endpoint>
+                <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:axs:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -702,7 +766,29 @@
          <!--You may enter ANY elements at this point-->\r
       </urn2:HamtaKundInfo>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5:HamtaKundInfo"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="1fd65521-3101-41fc-b8ba-308cbb6a5a61" wsaVersion="NONE" name="ForlangOrdinationVardResponderBinding" type="wsdl" bindingName="{urn:riv:se.apotekensservice:or:ForlangOrdinationVard:5:rivtabp21}ForlangOrdinationVardResponderBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_5.0_rivtabp21.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_5.0_rivtabp21.wsdl"><con:part><con:url>file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_5.0_rivtabp21.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:riv:se.apotekensservice:or:ForlangOrdinationVard:5:rivtabp21" name="ForlangOrdinationVardInteraction" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:itr="urn:riv:itintegration:registry:1" xmlns:argos="urn:riv:inera.se.apotekensservice:argos:1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns="urn:riv:se.apotekensservice:or:ForlangOrdinationVard:5:rivtabp21" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:spdr="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5">
+</soapenv:Envelope>]]></con:request>
+                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                <con:wsaConfig mustUnderstand="NONE" version="200508"
+                               action="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5:HamtaKundInfo"/>
+            </con:call>
+        </con:operation>
+    </con:interface>
+    <con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:WsdlInterface"
+                   id="1fd65521-3101-41fc-b8ba-308cbb6a5a61"
+                   wsaVersion="NONE" name="ForlangOrdinationVardResponderBinding"
+                   type="wsdl"
+                   bindingName="{urn:riv:se.apotekensservice:or:ForlangOrdinationVard:5:rivtabp21}ForlangOrdinationVardResponderBinding"
+                   soapVersion="1_1"
+                   anonymous="optional"
+                   definition="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_5.0_rivtabp21.wsdl">
+        <con:settings/>
+        <con:definitionCache type="TEXT"
+                             rootPart="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_5.0_rivtabp21.wsdl">
+            <con:part>
+                <con:url>
+                    file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/ForlangOrdinationVardInteraction/ForlangOrdinationVardInteraction_5.0_rivtabp21.wsdl
+                </con:url>
+                <con:content><![CDATA[<wsdl:definitions targetNamespace="urn:riv:se.apotekensservice:or:ForlangOrdinationVard:5:rivtabp21" name="ForlangOrdinationVardInteraction" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:itr="urn:riv:itintegration:registry:1" xmlns:argos="urn:riv:inera.se.apotekensservice:argos:1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns="urn:riv:se.apotekensservice:or:ForlangOrdinationVard:5:rivtabp21" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:spdr="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5">
   <xs:annotation>
     <xs:documentation>Beskrivning: Tjänstekontraktet som avser att konkretisera tillämpningen av RIV.
             Revisioner: 2014-04-07 Version 5.0
@@ -769,7 +855,14 @@
       <soap:address location="http://temp.uri/"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\interactions\ForlangOrdinationVardInteraction\ForlangOrdinationVardResponder_5.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5" xmlns:or="urn:riv:se.apotekensservice:or:5" xmlns:or4="urn:riv:se.apotekensservice:or:4">
+</wsdl:definitions>]]></con:content>
+                <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\interactions\ForlangOrdinationVardInteraction\ForlangOrdinationVardResponder_5.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5" xmlns:or="urn:riv:se.apotekensservice:or:5" xmlns:or4="urn:riv:se.apotekensservice:or:4">
   <xs:import namespace="urn:riv:se.apotekensservice:or:5" schemaLocation="../../core_components/se.apotekensservice_or_5.0.xsd"/>
   <xs:import namespace="urn:riv:se.apotekensservice:or:4" schemaLocation="../../core_components/se.apotekensservice_or_4.0.xsd"/>
   <!--Globala element: Metod parametrar-->
@@ -869,7 +962,14 @@ Returneras ej som utparameter ifall utsättningen avvisas.</xs:documentation>
       <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_5.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:or4="urn:riv:se.apotekensservice:or:4" xmlns="urn:riv:se.apotekensservice:or:5">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_5.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:or4="urn:riv:se.apotekensservice:or:4" xmlns="urn:riv:se.apotekensservice:or:5">
   <xs:import namespace="urn:riv:se.apotekensservice:or:4" schemaLocation="se.apotekensservice_or_4.0.xsd"/>
   <xs:annotation>
     <xs:documentation>Beskrivning: Meddelandetyper som är gemensamma för or.
@@ -1468,7 +1568,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:length value="1"/>
     </xs:restriction>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_4.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:4">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_4.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:4">
   <xs:annotation>
     <xs:documentation>Beskrivning: Meddelandetyper som är gemensamma för or.
             Revisioner: 2013-28-03, version 4.0</xs:documentation>
@@ -4892,7 +4999,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:length value="1"/>
     </xs:restriction>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\itintegration_registry_1.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:itintegration:registry:1" elementFormDefault="qualified" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\itintegration_registry_1.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:itintegration:registry:1" elementFormDefault="qualified" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>Beskrivning: 	Grundläggande informationsobjekt för domänen itintegration:registry (adressering av tjänster)
 			
@@ -4923,7 +5037,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
   <xs:simpleType name="HsaIdType">
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\ArgosHeader_1.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:inera.se.apotekensservice:argos:1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:tns="urn:riv:inera.se.apotekensservice:argos:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\ArgosHeader_1.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:inera.se.apotekensservice:argos:1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:tns="urn:riv:inera.se.apotekensservice:argos:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="ArgosHeader" type="tns:ArgosHeaderType"/>
   <xs:complexType name="ArgosHeaderType">
     <xs:sequence>
@@ -4951,7 +5072,25 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:any processContents="lax" maxOccurs="unbounded" namespace="##other" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/ForlangOrdinationerVardResponder/V5</con:endpoint></con:endpoints><con:operation id="51e97528-e769-48de-b60e-4a905a22c880" isOneWay="false" action="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5:ForlangOrdinationVard" name="ForlangOrdinationVard" bindingOperationName="ForlangOrdinationVard" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="53b850d3-f262-4661-9581-b2be3acfdd7d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/ForlangOrdinationerVardResponder/V5</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+        </con:definitionCache>
+        <con:endpoints>
+            <con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/ForlangOrdinationerVardResponder/V5
+            </con:endpoint>
+        </con:endpoints>
+        <con:operation id="51e97528-e769-48de-b60e-4a905a22c880" isOneWay="false"
+                       action="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5:ForlangOrdinationVard"
+                       name="ForlangOrdinationVard" bindingOperationName="ForlangOrdinationVard" type="Request-Response"
+                       inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+            <con:settings/>
+            <con:call id="53b850d3-f262-4661-9581-b2be3acfdd7d" name="Request 1">
+                <con:settings/>
+                <con:encoding>UTF-8</con:encoding>
+                <con:endpoint>${#Project#serviceEndpoint}/${#Project#servicePath}/ForlangOrdinationerVardResponder/V5
+                </con:endpoint>
+                <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -5036,7 +5175,29 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:ForlangOrdinationVard>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5:ForlangOrdinationVard"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="5cb59fb8-0be8-4ba4-a2a3-0db8f271781e" wsaVersion="NONE" name="HamtaOrdinationerPrivatpersonResponderBinding" type="wsdl" bindingName="{urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatperson:5:rivtabp21}HamtaOrdinationerPrivatpersonResponderBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_5.0_rivtabp21.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_5.0_rivtabp21.wsdl"><con:part><con:url>file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_5.0_rivtabp21.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatperson:5:rivtabp21" name="HamtaOrdinationerPrivatpersonInteraction" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:itr="urn:riv:itintegration:registry:1" xmlns:argos="urn:riv:inera.se.apotekensservice:argos:1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatperson:5:rivtabp21" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:spdr="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5">
+</soapenv:Envelope>]]></con:request>
+                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                <con:wsaConfig mustUnderstand="NONE" version="200508"
+                               action="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5:ForlangOrdinationVard"/>
+            </con:call>
+        </con:operation>
+    </con:interface>
+    <con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:WsdlInterface"
+                   id="5cb59fb8-0be8-4ba4-a2a3-0db8f271781e"
+                   wsaVersion="NONE" name="HamtaOrdinationerPrivatpersonResponderBinding"
+                   type="wsdl"
+                   bindingName="{urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatperson:5:rivtabp21}HamtaOrdinationerPrivatpersonResponderBinding"
+                   soapVersion="1_1"
+                   anonymous="optional"
+                   definition="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_5.0_rivtabp21.wsdl">
+        <con:settings/>
+        <con:definitionCache type="TEXT"
+                             rootPart="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_5.0_rivtabp21.wsdl">
+            <con:part>
+                <con:url>
+                    file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/HamtaOrdinationerPrivatpersonInteraction/HamtaOrdinationerPrivatpersonInteraction_5.0_rivtabp21.wsdl
+                </con:url>
+                <con:content><![CDATA[<wsdl:definitions targetNamespace="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatperson:5:rivtabp21" name="HamtaOrdinationerPrivatpersonInteraction" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:itr="urn:riv:itintegration:registry:1" xmlns:argos="urn:riv:inera.se.apotekensservice:argos:1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatperson:5:rivtabp21" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:spdr="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5">
   <xs:annotation>
     <xs:documentation>Beskrivning: Tjänstekontraktet som avser att konkretisera tillämpningen av RIV.
             Revisioner: 2014-09-22 Version 5.0
@@ -5103,7 +5264,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <soap:address location="http://temp.uri/"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\interactions\HamtaOrdinationerPrivatpersonInteraction\HamtaOrdinationerPrivatpersonResponder_5.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5" xmlns:or="urn:riv:se.apotekensservice:or:5" xmlns:or4="urn:riv:se.apotekensservice:or:4">
+</wsdl:definitions>]]></con:content>
+                <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\interactions\HamtaOrdinationerPrivatpersonInteraction\HamtaOrdinationerPrivatpersonResponder_5.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5" xmlns:or="urn:riv:se.apotekensservice:or:5" xmlns:or4="urn:riv:se.apotekensservice:or:4">
   <xs:import namespace="urn:riv:se.apotekensservice:or:5" schemaLocation="../../core_components/se.apotekensservice_or_5.0.xsd"/>
   <!--Globala element: Metod parametrar-->
   <xs:element name="HamtaOrdinationerPrivatperson" type="HamtaOrdinationerPrivatpersonRequestType"/>
@@ -5171,7 +5339,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_5.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:or4="urn:riv:se.apotekensservice:or:4" xmlns="urn:riv:se.apotekensservice:or:5">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_5.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:or4="urn:riv:se.apotekensservice:or:4" xmlns="urn:riv:se.apotekensservice:or:5">
   <xs:import namespace="urn:riv:se.apotekensservice:or:4" schemaLocation="se.apotekensservice_or_4.0.xsd"/>
   <xs:annotation>
     <xs:documentation>Beskrivning: Meddelandetyper som är gemensamma för or.
@@ -5770,7 +5945,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:length value="1"/>
     </xs:restriction>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_4.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:4">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_4.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:4">
   <xs:annotation>
     <xs:documentation>Beskrivning: Meddelandetyper som är gemensamma för or.
             Revisioner: 2013-28-03, version 4.0</xs:documentation>
@@ -9194,7 +9376,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:length value="1"/>
     </xs:restriction>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\itintegration_registry_1.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:itintegration:registry:1" elementFormDefault="qualified" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\itintegration_registry_1.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:itintegration:registry:1" elementFormDefault="qualified" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>Beskrivning: 	Grundläggande informationsobjekt för domänen itintegration:registry (adressering av tjänster)
 			
@@ -9225,7 +9414,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
   <xs:simpleType name="HsaIdType">
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\ArgosHeader_1.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:inera.se.apotekensservice:argos:1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:tns="urn:riv:inera.se.apotekensservice:argos:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\ArgosHeader_1.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:inera.se.apotekensservice:argos:1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:tns="urn:riv:inera.se.apotekensservice:argos:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="ArgosHeader" type="tns:ArgosHeaderType"/>
   <xs:complexType name="ArgosHeaderType">
     <xs:sequence>
@@ -9253,7 +9449,24 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:any processContents="lax" maxOccurs="unbounded" namespace="##other" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaOrdinationerPrivatperson/5/rivtabp21</con:endpoint></con:endpoints><con:operation id="b4304551-b134-431a-b803-30553bb30499" isOneWay="false" action="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5:HamtaOrdinationerPrivatperson" name="HamtaOrdinationerPrivatperson" bindingOperationName="HamtaOrdinationerPrivatperson" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7d7669fd-e02b-4b71-ad9c-95a076b0c869" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaOrdinationerPrivatperson/5/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5">\r
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+        </con:definitionCache>
+        <con:endpoints>
+            <con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaOrdinationerPrivatperson/5/rivtabp21</con:endpoint>
+        </con:endpoints>
+        <con:operation id="b4304551-b134-431a-b803-30553bb30499" isOneWay="false"
+                       action="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5:HamtaOrdinationerPrivatperson"
+                       name="HamtaOrdinationerPrivatperson" bindingOperationName="HamtaOrdinationerPrivatperson"
+                       type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"
+                       anonymous="optional">
+            <con:settings/>
+            <con:call id="7d7669fd-e02b-4b71-ad9c-95a076b0c869" name="Request 1">
+                <con:settings/>
+                <con:encoding>UTF-8</con:encoding>
+                <con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaOrdinationerPrivatperson/5/rivtabp21</con:endpoint>
+                <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -9311,7 +9524,29 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:HamtaOrdinationerPrivatperson>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5:HamtaOrdinationerPrivatperson"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="b9219985-f007-4086-b301-f46b52ae9807" wsaVersion="NONE" name="KorrigeraOrdinationVardResponderBinding" type="wsdl" bindingName="{urn:riv:se.apotekensservice:or:KorrigeraOrdinationVard:5:rivtabp21}KorrigeraOrdinationVardResponderBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/KorrigeraOrdinationVardInteraction/KorrigeraOrdinationVardInteraction_5.0_rivtabp21.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/KorrigeraOrdinationVardInteraction/KorrigeraOrdinationVardInteraction_5.0_rivtabp21.wsdl"><con:part><con:url>file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/KorrigeraOrdinationVardInteraction/KorrigeraOrdinationVardInteraction_5.0_rivtabp21.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVard:5:rivtabp21" name="KorrigeraOrdinationVardInteraction" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:itr="urn:riv:itintegration:registry:1" xmlns:argos="urn:riv:inera.se.apotekensservice:argos:1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVard:5:rivtabp21" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:spdr="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5">
+</soapenv:Envelope>]]></con:request>
+                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                <con:wsaConfig mustUnderstand="NONE" version="200508"
+                               action="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5:HamtaOrdinationerPrivatperson"/>
+            </con:call>
+        </con:operation>
+    </con:interface>
+    <con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:WsdlInterface"
+                   id="b9219985-f007-4086-b301-f46b52ae9807"
+                   wsaVersion="NONE" name="KorrigeraOrdinationVardResponderBinding"
+                   type="wsdl"
+                   bindingName="{urn:riv:se.apotekensservice:or:KorrigeraOrdinationVard:5:rivtabp21}KorrigeraOrdinationVardResponderBinding"
+                   soapVersion="1_1"
+                   anonymous="optional"
+                   definition="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/KorrigeraOrdinationVardInteraction/KorrigeraOrdinationVardInteraction_5.0_rivtabp21.wsdl">
+        <con:settings/>
+        <con:definitionCache type="TEXT"
+                             rootPart="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/KorrigeraOrdinationVardInteraction/KorrigeraOrdinationVardInteraction_5.0_rivtabp21.wsdl">
+            <con:part>
+                <con:url>
+                    file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/KorrigeraOrdinationVardInteraction/KorrigeraOrdinationVardInteraction_5.0_rivtabp21.wsdl
+                </con:url>
+                <con:content><![CDATA[<wsdl:definitions targetNamespace="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVard:5:rivtabp21" name="KorrigeraOrdinationVardInteraction" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:itr="urn:riv:itintegration:registry:1" xmlns:argos="urn:riv:inera.se.apotekensservice:argos:1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVard:5:rivtabp21" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:spdr="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5">
   <xs:annotation>
     <xs:documentation>Beskrivning: Tjänstekontraktet som avser att konkretisera tillämpningen av RIV.
             Revisioner: 2014-04-09 Version 5.0
@@ -9378,7 +9613,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <soap:address location="http://temp.uri/"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\interactions\KorrigeraOrdinationVardInteraction\KorrigeraOrdinationVardResponder_5.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5" xmlns:or4="urn:riv:se.apotekensservice:or:4" xmlns:or="urn:riv:se.apotekensservice:or:5">
+</wsdl:definitions>]]></con:content>
+                <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\interactions\KorrigeraOrdinationVardInteraction\KorrigeraOrdinationVardResponder_5.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5" xmlns:or4="urn:riv:se.apotekensservice:or:4" xmlns:or="urn:riv:se.apotekensservice:or:5">
   <xs:import namespace="urn:riv:se.apotekensservice:or:5" schemaLocation="../../core_components/se.apotekensservice_or_5.0.xsd"/>
   <xs:import namespace="urn:riv:se.apotekensservice:or:4" schemaLocation="../../core_components/se.apotekensservice_or_4.0.xsd"/>
   <!--Globala element: Metod parametrar-->
@@ -9540,7 +9782,14 @@ Gäller endast för helförpackningsordination.</xs:documentation>
       <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_5.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:or4="urn:riv:se.apotekensservice:or:4" xmlns="urn:riv:se.apotekensservice:or:5">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_5.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:or4="urn:riv:se.apotekensservice:or:4" xmlns="urn:riv:se.apotekensservice:or:5">
   <xs:import namespace="urn:riv:se.apotekensservice:or:4" schemaLocation="se.apotekensservice_or_4.0.xsd"/>
   <xs:annotation>
     <xs:documentation>Beskrivning: Meddelandetyper som är gemensamma för or.
@@ -10139,7 +10388,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:length value="1"/>
     </xs:restriction>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_4.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:4">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_4.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:4">
   <xs:annotation>
     <xs:documentation>Beskrivning: Meddelandetyper som är gemensamma för or.
             Revisioner: 2013-28-03, version 4.0</xs:documentation>
@@ -13563,7 +13819,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:length value="1"/>
     </xs:restriction>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\itintegration_registry_1.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:itintegration:registry:1" elementFormDefault="qualified" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\itintegration_registry_1.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:itintegration:registry:1" elementFormDefault="qualified" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>Beskrivning: 	Grundläggande informationsobjekt för domänen itintegration:registry (adressering av tjänster)
 			
@@ -13594,7 +13857,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
   <xs:simpleType name="HsaIdType">
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\ArgosHeader_1.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:inera.se.apotekensservice:argos:1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:tns="urn:riv:inera.se.apotekensservice:argos:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\ArgosHeader_1.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:inera.se.apotekensservice:argos:1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:tns="urn:riv:inera.se.apotekensservice:argos:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="ArgosHeader" type="tns:ArgosHeaderType"/>
   <xs:complexType name="ArgosHeaderType">
     <xs:sequence>
@@ -13622,7 +13892,24 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:any processContents="lax" maxOccurs="unbounded" namespace="##other" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#TestSuite#serviceEndpoint}/vp/KorrigeraOrdinationVard/5/rivtabp21</con:endpoint></con:endpoints><con:operation id="d22d44ff-5553-408e-943a-5b03d8435785" isOneWay="false" action="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5:KorrigeraOrdinationVard" name="KorrigeraOrdinationVard" bindingOperationName="KorrigeraOrdinationVard" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cec6ffb0-d9c0-42bf-8fee-851ae1e0a6c1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/KorrigeraOrdinationVard/5/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+        </con:definitionCache>
+        <con:endpoints>
+            <con:endpoint>${#TestSuite#serviceEndpoint}/vp/KorrigeraOrdinationVard/5/rivtabp21</con:endpoint>
+        </con:endpoints>
+        <con:operation id="d22d44ff-5553-408e-943a-5b03d8435785" isOneWay="false"
+                       action="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5:KorrigeraOrdinationVard"
+                       name="KorrigeraOrdinationVard" bindingOperationName="KorrigeraOrdinationVard"
+                       type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"
+                       anonymous="optional">
+            <con:settings/>
+            <con:call id="cec6ffb0-d9c0-42bf-8fee-851ae1e0a6c1" name="Request 1">
+                <con:settings/>
+                <con:encoding>UTF-8</con:encoding>
+                <con:endpoint>${#TestSuite#serviceEndpoint}/vp/KorrigeraOrdinationVard/5/rivtabp21</con:endpoint>
+                <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -13736,7 +14023,29 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:KorrigeraOrdinationVard>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5:KorrigeraOrdinationVard"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="3ad85021-0345-4055-ab9a-421847cdedd7" wsaVersion="NONE" name="SkapaOrdinationVardResponderBinding" type="wsdl" bindingName="{urn:riv:se.apotekensservice:or:SkapaOrdinationVard:5:rivtabp21}SkapaOrdinationVardResponderBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/SkapaOrdinationVardInteraction/SkapaOrdinationVardInteraction_5.0_rivtabp21.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/SkapaOrdinationVardInteraction/SkapaOrdinationVardInteraction_5.0_rivtabp21.wsdl"><con:part><con:url>file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/SkapaOrdinationVardInteraction/SkapaOrdinationVardInteraction_5.0_rivtabp21.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:riv:se.apotekensservice:or:SkapaOrdinationVard:5:rivtabp21" name="SkapaOrdinationVardInteraction" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:itr="urn:riv:itintegration:registry:1" xmlns:argos="urn:riv:inera.se.apotekensservice:argos:1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns="urn:riv:se.apotekensservice:or:SkapaOrdinationVard:5:rivtabp21" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:spdr="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5">
+</soapenv:Envelope>]]></con:request>
+                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                <con:wsaConfig mustUnderstand="NONE" version="200508"
+                               action="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5:KorrigeraOrdinationVard"/>
+            </con:call>
+        </con:operation>
+    </con:interface>
+    <con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:WsdlInterface"
+                   id="3ad85021-0345-4055-ab9a-421847cdedd7"
+                   wsaVersion="NONE" name="SkapaOrdinationVardResponderBinding"
+                   type="wsdl"
+                   bindingName="{urn:riv:se.apotekensservice:or:SkapaOrdinationVard:5:rivtabp21}SkapaOrdinationVardResponderBinding"
+                   soapVersion="1_1"
+                   anonymous="optional"
+                   definition="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/SkapaOrdinationVardInteraction/SkapaOrdinationVardInteraction_5.0_rivtabp21.wsdl">
+        <con:settings/>
+        <con:definitionCache type="TEXT"
+                             rootPart="file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/SkapaOrdinationVardInteraction/SkapaOrdinationVardInteraction_5.0_rivtabp21.wsdl">
+            <con:part>
+                <con:url>
+                    file:/C:/ntjp/skltp-anp/apse/code/apse/ApSeMedicalServicesAdapterIC-Schemas/src/main/resources/schemas/TD_APSE_OR_5_0_RC1/interactions/SkapaOrdinationVardInteraction/SkapaOrdinationVardInteraction_5.0_rivtabp21.wsdl
+                </con:url>
+                <con:content><![CDATA[<wsdl:definitions targetNamespace="urn:riv:se.apotekensservice:or:SkapaOrdinationVard:5:rivtabp21" name="SkapaOrdinationVardInteraction" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:itr="urn:riv:itintegration:registry:1" xmlns:argos="urn:riv:inera.se.apotekensservice:argos:1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns="urn:riv:se.apotekensservice:or:SkapaOrdinationVard:5:rivtabp21" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:spdr="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5">
   <xs:annotation>
     <xs:documentation>Beskrivning: Tjänstekontraktet som avser att konkretisera tillämpningen av RIV.
             Revisioner: 2014-04-07 Version 5.0
@@ -13803,7 +14112,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <soap:address location="http://temp.uri/"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\interactions\SkapaOrdinationVardInteraction\SkapaOrdinationVardResponder_5.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5" xmlns:or="urn:riv:se.apotekensservice:or:5" xmlns:or4="urn:riv:se.apotekensservice:or:4">
+</wsdl:definitions>]]></con:content>
+                <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\interactions\SkapaOrdinationVardInteraction\SkapaOrdinationVardResponder_5.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5" xmlns:or="urn:riv:se.apotekensservice:or:5" xmlns:or4="urn:riv:se.apotekensservice:or:4">
   <xs:import namespace="urn:riv:se.apotekensservice:or:5" schemaLocation="../../core_components/se.apotekensservice_or_5.0.xsd"/>
   <xs:import namespace="urn:riv:se.apotekensservice:or:4" schemaLocation="../../core_components/se.apotekensservice_or_4.0.xsd"/>
   <!--Globala element: Metod parametrar-->
@@ -13870,7 +14186,14 @@ Obligatorisk parameter om ordinationen tillhör patient med dosunderlag.</xs:doc
       <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_5.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:or4="urn:riv:se.apotekensservice:or:4" xmlns="urn:riv:se.apotekensservice:or:5">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_5.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:5" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:or4="urn:riv:se.apotekensservice:or:4" xmlns="urn:riv:se.apotekensservice:or:5">
   <xs:import namespace="urn:riv:se.apotekensservice:or:4" schemaLocation="se.apotekensservice_or_4.0.xsd"/>
   <xs:annotation>
     <xs:documentation>Beskrivning: Meddelandetyper som är gemensamma för or.
@@ -14469,7 +14792,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:length value="1"/>
     </xs:restriction>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_4.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:4">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\se.apotekensservice_or_4.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:se.apotekensservice:or:4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:se.apotekensservice:or:4">
   <xs:annotation>
     <xs:documentation>Beskrivning: Meddelandetyper som är gemensamma för or.
             Revisioner: 2013-28-03, version 4.0</xs:documentation>
@@ -17893,7 +18223,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:length value="1"/>
     </xs:restriction>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\itintegration_registry_1.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:itintegration:registry:1" elementFormDefault="qualified" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\itintegration_registry_1.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:itintegration:registry:1" elementFormDefault="qualified" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>Beskrivning: 	Grundläggande informationsobjekt för domänen itintegration:registry (adressering av tjänster)
 			
@@ -17924,7 +18261,14 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
   <xs:simpleType name="HsaIdType">
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\ArgosHeader_1.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:inera.se.apotekensservice:argos:1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:tns="urn:riv:inera.se.apotekensservice:argos:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+            <con:part>
+                <con:url>
+                    file:\C:\ntjp\skltp-anp\apse\code\apse\ApSeMedicalServicesAdapterIC-Schemas\src\main\resources\schemas\TD_APSE_OR_5_0_RC1\core_components\ArgosHeader_1.0.xsd
+                </con:url>
+                <con:content><![CDATA[<xs:schema targetNamespace="urn:riv:inera.se.apotekensservice:argos:1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:tns="urn:riv:inera.se.apotekensservice:argos:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="ArgosHeader" type="tns:ArgosHeaderType"/>
   <xs:complexType name="ArgosHeaderType">
     <xs:sequence>
@@ -17952,7 +18296,23 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
       <xs:any processContents="lax" maxOccurs="unbounded" namespace="##other" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#TestSuite#serviceEndpoint}/vp/SkapaOrdinationVard/5/rivtabp21</con:endpoint></con:endpoints><con:operation id="4e81a4b6-2ccc-458b-83af-ae9d7bc67724" isOneWay="false" action="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5:SkapaOrdinationVard" name="SkapaOrdinationVard" bindingOperationName="SkapaOrdinationVard" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="caac1c44-7016-4859-9c65-63e4c2096ec4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/SkapaOrdinationVard/5/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:5" xmlns:urn4="urn:riv:se.apotekensservice:or:4">\r
+</xs:schema>]]></con:content>
+                <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+            </con:part>
+        </con:definitionCache>
+        <con:endpoints>
+            <con:endpoint>${#TestSuite#serviceEndpoint}/vp/SkapaOrdinationVard/5/rivtabp21</con:endpoint>
+        </con:endpoints>
+        <con:operation id="4e81a4b6-2ccc-458b-83af-ae9d7bc67724" isOneWay="false"
+                       action="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5:SkapaOrdinationVard"
+                       name="SkapaOrdinationVard" bindingOperationName="SkapaOrdinationVard" type="Request-Response"
+                       inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+            <con:settings/>
+            <con:call id="caac1c44-7016-4859-9c65-63e4c2096ec4" name="Request 1">
+                <con:settings/>
+                <con:encoding>UTF-8</con:encoding>
+                <con:endpoint>${#TestSuite#serviceEndpoint}/vp/SkapaOrdinationVard/5/rivtabp21</con:endpoint>
+                <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:5" xmlns:urn4="urn:riv:se.apotekensservice:or:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -18263,7 +18623,33 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:SkapaOrdinationVard>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5:SkapaOrdinationVard"/></con:call></con:operation></con:interface><con:testSuite id="1f259584-2074-4d3c-9bfd-51c4a76a71f8" name="TestSuite ApSe v5 - Dev"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="5bd6c6c5-7f3c-4278-9702-e1ba87261f09" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - AXS" searchProperties="true"><con:settings/><con:testStep type="request" id="40bbbc2a-0aa5-4f95-98fd-e6c4a791268d" name="HamtaKundInfo"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaKundInfoResponderBinding</con:interface><con:operation>HamtaKundInfo</con:operation><con:request name="HamtaKundInfo" id="a93a141d-8b1b-4f1f-8f03-c367ae105090"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ine-dit-app03.sth.basefarm.net:11005/tjanstebryggan/ext8/HamtaKundInfoResponder/V5</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:axs:4">\r
+</soapenv:Envelope>]]></con:request>
+                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                <con:wsaConfig mustUnderstand="NONE" version="200508"
+                               action="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5:SkapaOrdinationVard"/>
+            </con:call>
+        </con:operation>
+    </con:interface>
+    <con:testSuite id="1f259584-2074-4d3c-9bfd-51c4a76a71f8" name="TestSuite ApSe v5 - Dev">
+        <con:settings/>
+        <con:runType>SEQUENTIAL</con:runType>
+        <con:testCase id="5bd6c6c5-7f3c-4278-9702-e1ba87261f09" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="TestCase - AXS" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="request" id="40bbbc2a-0aa5-4f95-98fd-e6c4a791268d" name="HamtaKundInfo">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>HamtaKundInfoResponderBinding</con:interface>
+                    <con:operation>HamtaKundInfo</con:operation>
+                    <con:request name="HamtaKundInfo" id="a93a141d-8b1b-4f1f-8f03-c367ae105090">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>
+                            http://ine-dit-app03.sth.basefarm.net:11005/tjanstebryggan/ext8/HamtaKundInfoResponder/V5
+                        </con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:axs:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -18322,7 +18708,44 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:HamtaKundInfo>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="aa34102f-0fd2-45f5-be26-89476fb61b3b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c3194131-147e-4271-909a-f550d738461d" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="e6331360-bbd4-4a47-a77a-2bf2e2a10a5a" name="Not SOAP Fault"/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5:HamtaKundInfo" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="SOAP Request" id="2ee2884a-ec1c-4fee-b7a9-aeca16fae918"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaKundInfoResponderBinding</con:interface><con:operation>HamtaKundInfo</con:operation><con:request name="SOAP Request" id="8ae7a6f4-665e-43bc-985c-67a2760f91b4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ine-dit-app03.sth.basefarm.net:11005/tjanstebryggan/ext8/HamtaKundInfoResponder/V5</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:axs:4">\r
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="aa34102f-0fd2-45f5-be26-89476fb61b3b"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Schema Compliance" id="c3194131-147e-4271-909a-f550d738461d"
+                                       name="Schema Compliance" disabled="true">
+                            <con:configuration>
+                                <definition/>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:assertion type="SOAP Fault Assertion" id="e6331360-bbd4-4a47-a77a-2bf2e2a10a5a"
+                                       name="Not SOAP Fault"/>
+                        <con:credentials>
+                            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+                            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig action="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5:HamtaKundInfo"
+                                       mustUnderstand="NONE" version="200508"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="request" name="SOAP Request" id="2ee2884a-ec1c-4fee-b7a9-aeca16fae918">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>HamtaKundInfoResponderBinding</con:interface>
+                    <con:operation>HamtaKundInfo</con:operation>
+                    <con:request name="SOAP Request" id="8ae7a6f4-665e-43bc-985c-67a2760f91b4">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>
+                            http://ine-dit-app03.sth.basefarm.net:11005/tjanstebryggan/ext8/HamtaKundInfoResponder/V5
+                        </con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:axs:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader/>\r
       <urn1:LogicalAddress>?</urn1:LogicalAddress>\r
@@ -18337,7 +18760,39 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <urn2:personnummer>?</urn2:personnummer>\r
       </urn2:HamtaKundInfo>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a396f0e9-9031-419e-9d44-0802db682564"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="cc4775d0-6a8a-4322-9a86-de4fb55d63ef" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - OR" searchProperties="true"><con:settings/><con:testStep type="request" id="c2fe1076-eceb-4655-8360-22ed03748611" name="KorrigeraOrdinationVard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KorrigeraOrdinationVardResponderBinding</con:interface><con:operation>KorrigeraOrdinationVard</con:operation><con:request name="KorrigeraOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="97cff660-0a2a-40b5-a614-4264ada6395f"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/KorrigeraOrdinationVardResponder/V5</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="a396f0e9-9031-419e-9d44-0802db682564"/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="cc4775d0-6a8a-4322-9a86-de4fb55d63ef" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="TestCase - OR" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="request" id="c2fe1076-eceb-4655-8360-22ed03748611" name="KorrigeraOrdinationVard">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>KorrigeraOrdinationVardResponderBinding</con:interface>
+                    <con:operation>KorrigeraOrdinationVard</con:operation>
+                    <con:request name="KorrigeraOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore=""
+                                 useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""
+                                 id="97cff660-0a2a-40b5-a614-4264ada6395f">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>
+                            ${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/KorrigeraOrdinationVardResponder/V5
+                        </con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -18451,7 +18906,44 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:KorrigeraOrdinationVard>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="e031f0c7-27d0-4064-be0c-4003c1f86cff" name="SOAP Response"/><con:assertion type="Schema Compliance" id="aab5d34f-274d-447d-985b-bc18ec67efd1" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="c917812f-fe3f-4e22-bd9b-0682ba30a8c3" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5:KorrigeraOrdinationVard"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="311b55a8-4711-49f2-8f4d-adeba2198484" name="SkapaOrdinationVard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SkapaOrdinationVardResponderBinding</con:interface><con:operation>SkapaOrdinationVard</con:operation><con:request name="SkapaOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="dbba35e9-e981-4c98-b749-b38c313b30bc"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/SkapaOrdinationVardResponder/V5</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:5" xmlns:urn4="urn:riv:se.apotekensservice:or:4">\r
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="e031f0c7-27d0-4064-be0c-4003c1f86cff"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Schema Compliance" id="aab5d34f-274d-447d-985b-bc18ec67efd1"
+                                       name="Schema Compliance" disabled="true">
+                            <con:configuration>
+                                <definition/>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:assertion type="SOAP Fault Assertion" id="c917812f-fe3f-4e22-bd9b-0682ba30a8c3"
+                                       name="Not SOAP Fault"/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5:KorrigeraOrdinationVard"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="request" id="311b55a8-4711-49f2-8f4d-adeba2198484" name="SkapaOrdinationVard">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>SkapaOrdinationVardResponderBinding</con:interface>
+                    <con:operation>SkapaOrdinationVard</con:operation>
+                    <con:request name="SkapaOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore=""
+                                 useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""
+                                 id="dbba35e9-e981-4c98-b749-b38c313b30bc">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>
+                            ${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/SkapaOrdinationVardResponder/V5
+                        </con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:5" xmlns:urn4="urn:riv:se.apotekensservice:or:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -18762,7 +19254,44 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:SkapaOrdinationVard>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b7056a5d-e70c-4d68-ad74-0a4bbf76b7c2" name="SOAP Response"/><con:assertion type="Schema Compliance" id="66422a14-6fec-4e0f-a15a-ddba104c53eb" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="72e1075b-22d2-47cb-9bdb-4d95968e87e0" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5:SkapaOrdinationVard"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="d48b6d0d-cfe4-4747-b7ff-2a5bdb5e88fc" name="HamtaOrdinationerPrivatperson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaOrdinationerPrivatpersonResponderBinding</con:interface><con:operation>HamtaOrdinationerPrivatperson</con:operation><con:request name="HamtaOrdinationerPrivatperson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="65fa2371-0a2e-497c-9a4b-b86be4da3a35"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/HamtaOrdinationerPrivatpersonResponder/V5</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5">\r
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="b7056a5d-e70c-4d68-ad74-0a4bbf76b7c2"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Schema Compliance" id="66422a14-6fec-4e0f-a15a-ddba104c53eb"
+                                       name="Schema Compliance" disabled="true">
+                            <con:configuration>
+                                <definition/>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:assertion type="SOAP Fault Assertion" id="72e1075b-22d2-47cb-9bdb-4d95968e87e0"
+                                       name="Not SOAP Fault"/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5:SkapaOrdinationVard"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="request" id="d48b6d0d-cfe4-4747-b7ff-2a5bdb5e88fc" name="HamtaOrdinationerPrivatperson">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>HamtaOrdinationerPrivatpersonResponderBinding</con:interface>
+                    <con:operation>HamtaOrdinationerPrivatperson</con:operation>
+                    <con:request name="HamtaOrdinationerPrivatperson" outgoingWss="" incomingWss="" timeout=""
+                                 sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false"
+                                 wssPasswordType="" id="65fa2371-0a2e-497c-9a4b-b86be4da3a35">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>
+                            ${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/HamtaOrdinationerPrivatpersonResponder/V5
+                        </con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -18820,7 +19349,44 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:HamtaOrdinationerPrivatperson>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b9c8ee52-d134-48a0-9335-a93b3e5d01b5" name="SOAP Response"/><con:assertion type="Schema Compliance" id="9fe5985b-a226-4103-80d6-e72619ece9b4" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="6afccd9b-d489-4460-90cc-ad594c62a3b4" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5:HamtaOrdinationerPrivatperson"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="a03dbca4-07ff-4ff3-85f3-0164faef21e9" name="ForlangOrdinationVard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ForlangOrdinationVardResponderBinding</con:interface><con:operation>ForlangOrdinationVard</con:operation><con:request name="ForlangOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="bf7b506c-2a31-4008-b814-e3c668bf2476"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/ForlangOrdinationVardResponder/V5</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="b9c8ee52-d134-48a0-9335-a93b3e5d01b5"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Schema Compliance" id="9fe5985b-a226-4103-80d6-e72619ece9b4"
+                                       name="Schema Compliance" disabled="true">
+                            <con:configuration>
+                                <definition/>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:assertion type="SOAP Fault Assertion" id="6afccd9b-d489-4460-90cc-ad594c62a3b4"
+                                       name="Not SOAP Fault"/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5:HamtaOrdinationerPrivatperson"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="request" id="a03dbca4-07ff-4ff3-85f3-0164faef21e9" name="ForlangOrdinationVard">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>ForlangOrdinationVardResponderBinding</con:interface>
+                    <con:operation>ForlangOrdinationVard</con:operation>
+                    <con:request name="ForlangOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore=""
+                                 useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""
+                                 id="bf7b506c-2a31-4008-b814-e3c668bf2476">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>
+                            ${#TestSuite#serviceEndpoint}/anp/apsemedicalservicesadapter/teststub/se/apotekensservice/ForlangOrdinationVardResponder/V5
+                        </con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -18905,7 +19471,55 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:ForlangOrdinationVard>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="088ca6f5-1e70-4d01-ae23-ae4b3cc7cfef" name="SOAP Response"/><con:assertion type="Schema Compliance" id="74a0240f-6ef6-41b3-b2ed-6b91bb918606" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="29c9ba9b-184b-4c50-845e-3c59814e8388" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5:ForlangOrdinationVard"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>serviceEndpoint</con:name><con:value>https://ine-dit-app03.sth.basefarm.net:15005</con:value></con:property></con:properties></con:testSuite><con:testSuite id="6d2c0ed3-bd56-4c62-a17a-4a1326cbd180" name="TestSuite ApSe v5 - Test/QA"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="98fa7334-2fa2-4cd9-abd2-fb1776300dc0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - AXS" searchProperties="true"><con:settings/><con:testStep type="request" id="a88c8f66-d5e4-490c-a738-6b9fb441d94e" name="HamtaKundInfo"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaKundInfoResponderBinding</con:interface><con:operation>HamtaKundInfo</con:operation><con:request name="HamtaKundInfo" id="a93a141d-8b1b-4f1f-8f03-c367ae105090"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaKundInfo/6/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:6" xmlns:urn3="urn:riv:se.apotekensservice:axs:5">\r
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="088ca6f5-1e70-4d01-ae23-ae4b3cc7cfef"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Schema Compliance" id="74a0240f-6ef6-41b3-b2ed-6b91bb918606"
+                                       name="Schema Compliance" disabled="true">
+                            <con:configuration>
+                                <definition/>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:assertion type="SOAP Fault Assertion" id="29c9ba9b-184b-4c50-845e-3c59814e8388"
+                                       name="Not SOAP Fault"/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5:ForlangOrdinationVard"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:properties>
+            <con:property>
+                <con:name>serviceEndpoint</con:name>
+                <con:value>https://ine-dit-app03.sth.basefarm.net:15005</con:value>
+            </con:property>
+        </con:properties>
+    </con:testSuite>
+    <con:testSuite id="6d2c0ed3-bd56-4c62-a17a-4a1326cbd180" name="TestSuite ApSe v5 - Test/QA">
+        <con:settings/>
+        <con:runType>SEQUENTIAL</con:runType>
+        <con:testCase id="98fa7334-2fa2-4cd9-abd2-fb1776300dc0" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="TestCase - AXS" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="request" id="a88c8f66-d5e4-490c-a738-6b9fb441d94e" name="HamtaKundInfo">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>HamtaKundInfoResponderBinding</con:interface>
+                    <con:operation>HamtaKundInfo</con:operation>
+                    <con:request name="HamtaKundInfo" id="a93a141d-8b1b-4f1f-8f03-c367ae105090">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>${#TestSuite#serviceEndpoint}/vp/HamtaKundInfo/6/rivtabp21</con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:6" xmlns:urn3="urn:riv:se.apotekensservice:axs:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -18962,7 +19576,51 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
   <p:personnummer>191212121212</p:personnummer>
 </p:HamtaKundInfo>
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="aa34102f-0fd2-45f5-be26-89476fb61b3b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c3194131-147e-4271-909a-f550d738461d" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="e6331360-bbd4-4a47-a77a-2bf2e2a10a5a" name="Not SOAP Fault"/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5:HamtaKundInfo" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a770c3a0-33ec-4203-8bc6-e9eabd572c17" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase - OR" searchProperties="true"><con:settings/><con:testStep type="request" id="ac6e8e1f-bffe-49b0-b6df-3049a77a35ba" name="KorrigeraOrdinationVard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KorrigeraOrdinationVardResponderBinding</con:interface><con:operation>KorrigeraOrdinationVard</con:operation><con:request name="KorrigeraOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="97cff660-0a2a-40b5-a614-4264ada6395f"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/se.apotekensservice/or/KorrigeraOrdinationVard/5/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="aa34102f-0fd2-45f5-be26-89476fb61b3b"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Schema Compliance" id="c3194131-147e-4271-909a-f550d738461d"
+                                       name="Schema Compliance" disabled="true">
+                            <con:configuration>
+                                <definition/>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:assertion type="SOAP Fault Assertion" id="e6331360-bbd4-4a47-a77a-2bf2e2a10a5a"
+                                       name="Not SOAP Fault"/>
+                        <con:credentials>
+                            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+                            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig action="urn:riv:se.apotekensservice:axs:HamtaKundInfoResponder:5:HamtaKundInfo"
+                                       mustUnderstand="NONE" version="200508"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="a770c3a0-33ec-4203-8bc6-e9eabd572c17" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="TestCase - OR" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="request" id="ac6e8e1f-bffe-49b0-b6df-3049a77a35ba" name="KorrigeraOrdinationVard">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>KorrigeraOrdinationVardResponderBinding</con:interface>
+                    <con:operation>KorrigeraOrdinationVard</con:operation>
+                    <con:request name="KorrigeraOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore=""
+                                 useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""
+                                 id="97cff660-0a2a-40b5-a614-4264ada6395f">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>
+                            ${#TestSuite#serviceEndpoint}/vp/se.apotekensservice/or/KorrigeraOrdinationVard/5/rivtabp21
+                        </con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -19076,7 +19734,44 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:KorrigeraOrdinationVard>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="e031f0c7-27d0-4064-be0c-4003c1f86cff" name="SOAP Response"/><con:assertion type="Schema Compliance" id="aab5d34f-274d-447d-985b-bc18ec67efd1" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="c917812f-fe3f-4e22-bd9b-0682ba30a8c3" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5:KorrigeraOrdinationVard"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="700690b1-3ae2-4434-81da-3789af820819" name="SkapaOrdinationVard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SkapaOrdinationVardResponderBinding</con:interface><con:operation>SkapaOrdinationVard</con:operation><con:request name="SkapaOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="dbba35e9-e981-4c98-b749-b38c313b30bc"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/se.apotekensservice/or/SkapaOrdinationVard/5/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:5" xmlns:urn4="urn:riv:se.apotekensservice:or:4">\r
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="e031f0c7-27d0-4064-be0c-4003c1f86cff"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Schema Compliance" id="aab5d34f-274d-447d-985b-bc18ec67efd1"
+                                       name="Schema Compliance" disabled="true">
+                            <con:configuration>
+                                <definition/>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:assertion type="SOAP Fault Assertion" id="c917812f-fe3f-4e22-bd9b-0682ba30a8c3"
+                                       name="Not SOAP Fault"/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="urn:riv:se.apotekensservice:or:KorrigeraOrdinationVardResponder:5:KorrigeraOrdinationVard"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="request" id="700690b1-3ae2-4434-81da-3789af820819" name="SkapaOrdinationVard">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>SkapaOrdinationVardResponderBinding</con:interface>
+                    <con:operation>SkapaOrdinationVard</con:operation>
+                    <con:request name="SkapaOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore=""
+                                 useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""
+                                 id="dbba35e9-e981-4c98-b749-b38c313b30bc">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>
+                            ${#TestSuite#serviceEndpoint}/vp/se.apotekensservice/or/SkapaOrdinationVard/5/rivtabp21
+                        </con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:5" xmlns:urn4="urn:riv:se.apotekensservice:or:4">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -19387,7 +20082,44 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:SkapaOrdinationVard>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b7056a5d-e70c-4d68-ad74-0a4bbf76b7c2" name="SOAP Response"/><con:assertion type="Schema Compliance" id="66422a14-6fec-4e0f-a15a-ddba104c53eb" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="72e1075b-22d2-47cb-9bdb-4d95968e87e0" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5:SkapaOrdinationVard"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="892d090f-1bf8-49b4-b780-0d5a46463424" name="HamtaOrdinationerPrivatperson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HamtaOrdinationerPrivatpersonResponderBinding</con:interface><con:operation>HamtaOrdinationerPrivatperson</con:operation><con:request name="HamtaOrdinationerPrivatperson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="65fa2371-0a2e-497c-9a4b-b86be4da3a35"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/se.apotekensservice/or/HamtaOrdinationerPrivatperson/5/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5">\r
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="b7056a5d-e70c-4d68-ad74-0a4bbf76b7c2"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Schema Compliance" id="66422a14-6fec-4e0f-a15a-ddba104c53eb"
+                                       name="Schema Compliance" disabled="true">
+                            <con:configuration>
+                                <definition/>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:assertion type="SOAP Fault Assertion" id="72e1075b-22d2-47cb-9bdb-4d95968e87e0"
+                                       name="Not SOAP Fault"/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="urn:riv:se.apotekensservice:or:SkapaOrdinationVardResponder:5:SkapaOrdinationVard"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="request" id="892d090f-1bf8-49b4-b780-0d5a46463424" name="HamtaOrdinationerPrivatperson">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>HamtaOrdinationerPrivatpersonResponderBinding</con:interface>
+                    <con:operation>HamtaOrdinationerPrivatperson</con:operation>
+                    <con:request name="HamtaOrdinationerPrivatperson" outgoingWss="" incomingWss="" timeout=""
+                                 sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false"
+                                 wssPasswordType="" id="65fa2371-0a2e-497c-9a4b-b86be4da3a35">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>
+                            ${#TestSuite#serviceEndpoint}/vp/se.apotekensservice/or/HamtaOrdinationerPrivatperson/5/rivtabp21
+                        </con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -19445,7 +20177,44 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:HamtaOrdinationerPrivatperson>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b9c8ee52-d134-48a0-9335-a93b3e5d01b5" name="SOAP Response"/><con:assertion type="Schema Compliance" id="9fe5985b-a226-4103-80d6-e72619ece9b4" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="6afccd9b-d489-4460-90cc-ad594c62a3b4" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5:HamtaOrdinationerPrivatperson"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="525cff25-60ae-4568-8c20-15ab746f7253" name="ForlangOrdinationVard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ForlangOrdinationVardResponderBinding</con:interface><con:operation>ForlangOrdinationVard</con:operation><con:request name="ForlangOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="bf7b506c-2a31-4008-b814-e3c668bf2476"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#serviceEndpoint}/vp/se.apotekensservice/or/ForlangOrdinationVard/5/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="b9c8ee52-d134-48a0-9335-a93b3e5d01b5"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Schema Compliance" id="9fe5985b-a226-4103-80d6-e72619ece9b4"
+                                       name="Schema Compliance" disabled="true">
+                            <con:configuration>
+                                <definition/>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:assertion type="SOAP Fault Assertion" id="6afccd9b-d489-4460-90cc-ad594c62a3b4"
+                                       name="Not SOAP Fault"/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="urn:riv:se.apotekensservice:or:HamtaOrdinationerPrivatpersonResponder:5:HamtaOrdinationerPrivatperson"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="request" id="525cff25-60ae-4568-8c20-15ab746f7253" name="ForlangOrdinationVard">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>ForlangOrdinationVardResponderBinding</con:interface>
+                    <con:operation>ForlangOrdinationVard</con:operation>
+                    <con:request name="ForlangOrdinationVard" outgoingWss="" incomingWss="" timeout="" sslKeystore=""
+                                 useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""
+                                 id="bf7b506c-2a31-4008-b814-e3c668bf2476">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>
+                            ${#TestSuite#serviceEndpoint}/vp/se.apotekensservice/or/ForlangOrdinationVard/5/rivtabp21
+                        </con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:inera.se.apotekensservice:argos:1" xmlns:urn1="urn:riv:itintegration:registry:1" xmlns:urn2="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5" xmlns:urn3="urn:riv:se.apotekensservice:or:4" xmlns:urn4="urn:riv:se.apotekensservice:or:5">\r
    <soapenv:Header>\r
       <urn:ArgosHeader>\r
          <!--Optional:-->\r
@@ -19530,4 +20299,57 @@ Gäller ej dospatienter då de har samtyckt via dossamtycket.</xs:documentation>
          <!--You may enter ANY elements at this point-->\r
       </urn2:ForlangOrdinationVard>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="088ca6f5-1e70-4d01-ae23-ae4b3cc7cfef" name="SOAP Response"/><con:assertion type="Schema Compliance" id="74a0240f-6ef6-41b3-b2ed-6b91bb918606" name="Schema Compliance" disabled="true"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="29c9ba9b-184b-4c50-845e-3c59814e8388" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5:ForlangOrdinationVard"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>serviceEndpoint</con:name><con:value>https://qa.esb.ntjp.se:443</con:value></con:property><con:property><con:name>serviceEndpoint - test</con:name><con:value>https://test.esb.ntjp.se:443</con:value></con:property><con:property><con:name>serviceEndpoint - qa</con:name><con:value>https://qa.esb.ntjp.se:443</con:value></con:property></con:properties></con:testSuite><con:properties><con:property><con:name>serviceEndpoint</con:name><con:value>https://ine-dit-app03.sth.basefarm.net:15005</con:value></con:property><con:property><con:name>servicePath</con:name><con:value>anp/apsemedicalservicesadapter/teststub/se/apotekensservice</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="088ca6f5-1e70-4d01-ae23-ae4b3cc7cfef"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Schema Compliance" id="74a0240f-6ef6-41b3-b2ed-6b91bb918606"
+                                       name="Schema Compliance" disabled="true">
+                            <con:configuration>
+                                <definition/>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:assertion type="SOAP Fault Assertion" id="29c9ba9b-184b-4c50-845e-3c59814e8388"
+                                       name="Not SOAP Fault"/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="urn:riv:se.apotekensservice:or:ForlangOrdinationVardResponder:5:ForlangOrdinationVard"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:properties>
+            <con:property>
+                <con:name>serviceEndpoint</con:name>
+                <con:value>https://qa.esb.ntjp.se:443</con:value>
+            </con:property>
+            <con:property>
+                <con:name>serviceEndpoint - test</con:name>
+                <con:value>https://test.esb.ntjp.se:443</con:value>
+            </con:property>
+            <con:property>
+                <con:name>serviceEndpoint - qa</con:name>
+                <con:value>https://qa.esb.ntjp.se:443</con:value>
+            </con:property>
+        </con:properties>
+    </con:testSuite>
+    <con:properties>
+        <con:property>
+            <con:name>serviceEndpoint</con:name>
+            <con:value>https://ine-dit-app03.sth.basefarm.net:15005</con:value>
+        </con:property>
+        <con:property>
+            <con:name>servicePath</con:name>
+            <con:value>anp/apsemedicalservicesadapter/teststub/se/apotekensservice</con:value>
+        </con:property>
+    </con:properties>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer/>
+    <con:oAuth1ProfileContainer/>
+    <con:sensitiveInformation/>
+</con:soapui-project>

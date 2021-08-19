@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class LogMessageType {
-  protected String message;
-  protected LogMessageExceptionType exception;
+    protected String message;
+    protected LogMessageExceptionType exception;
 }

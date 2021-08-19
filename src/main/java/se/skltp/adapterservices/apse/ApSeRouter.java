@@ -28,9 +28,8 @@ import org.springframework.stereotype.Component;
 import se.skltp.adapterservices.apse.config.EndpointConfig;
 import se.skltp.adapterservices.apse.config.SecurityProperties;
 import se.skltp.adapterservices.apse.constants.ExchangeProperties;
-import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
 import se.skltp.adapterservices.apse.logging.MessageInfoLogger;
-
+import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLPeerUnverifiedException;
@@ -88,63 +87,66 @@ public class ApSeRouter extends RouteBuilder {
 
         endpointConfig.getInbound().forEach((service, consumerUrl) -> {
             log.info("setting up inbound consumer " + consumerUrl);
+            org.apache.camel.ExchangeProperties ep;
+
             fromF(NETTY_HTTP_FROM, consumerUrl)
                     .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
-                    .routeId(service + " flow")
+                    .routeId(service)
                     .setProperty("InboundService", simple(service))
                     .to("direct:transform")
-                    ;
+            ;
         });
 
         from("direct:transform").routeId("transform header")
-                .setProperty(ExchangeProperties.EXCHANGE_CREATED,  simple("${date:exchangeCreated}"))
+                .setProperty(ExchangeProperties.EXCHANGE_CREATED, simple("${date:exchangeCreated}"))
                 .log("received connection")
                 .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
+                .streamCaching()
                 .bean(MessageInfoLogger.class, LOG_REQ_IN_METHOD)
                 .process(samlHeaderFromArgosProcessor)
                 .process(resolveEndpoint)
                 .removeHeader(Exchange.HTTP_URI)
-                //.bean(MessageInfoLogger.class, LOG_REQ_OUT_METHOD)
-                //.log(LoggingLevel.INFO, "executing request for \"${exchangeProperty[servicecontract_namespace]}\" on url: ${exchangeProperty[outbound_url]}")
+                .bean(MessageInfoLogger.class, LOG_REQ_OUT_METHOD)
+                .log(LoggingLevel.INFO, "executing request for \"${exchangeProperty[servicecontract_namespace]}\" on url: ${exchangeProperty[outbound_url]}")
                 .toD("${exchangeProperty[outbound_url]}?sslContextParameters=#outgoingSSLContextParameters")
-                ;//.bean(MessageInfoLogger.class, LOG_RESP_IN_METHOD);
+                .bean(MessageInfoLogger.class, LOG_RESP_IN_METHOD);
     }
 
     private void resolveHostnameVerifier() {
         getContext().getComponent("https", HttpComponent.class)
-            .setX509HostnameVerifier(new HostnameVerifier() {
+                .setX509HostnameVerifier(new HostnameVerifier() {
 
-                @Override
-                public boolean verify(String hostname, SSLSession session) {
-                    AtomicBoolean returnValue = new AtomicBoolean(false);
-                    DefaultHostnameVerifier defaultHostnameVerifier = new DefaultHostnameVerifier();
-                    boolean defaultVerifyResponse = defaultHostnameVerifier.verify(hostname, session);
-                    if (defaultVerifyResponse) {
-                        returnValue.set(true);
-                    }else{
-                        X509Certificate[] pc;
-                        String subj = "----";
-                        try {
-                            pc = session.getPeerCertificateChain();
-                            subj = pc[0].getSubjectDN().getName();
-                        } catch (SSLPeerUnverifiedException e) {
-                            e.printStackTrace();
-                        }
-                        log.warn(String.format("Hostname verification failed, the host \"%s\" presented a certificate with subject: \"%s\"", subj, hostname, subj));
-                        if (securityProperties.getStore().getConsumer().getHostNameVerifySkipList() != null) {
-                            securityProperties.getStore().getConsumer().getHostNameVerifySkipList().forEach(
-                                    skipMe -> {
-                                        if (skipMe.equals(hostname)) {
-                                            log.error("Despite a failed host name verification the host was accepted. this should not be allowed outside a development environment");
-                                            returnValue.set(true);
-                                        }
-                                    }
-                            );
-                        }
-                    }
-                    return returnValue.get();
-                }
-            }
-        );
+                                             @Override
+                                             public boolean verify(String hostname, SSLSession session) {
+                                                 AtomicBoolean returnValue = new AtomicBoolean(false);
+                                                 DefaultHostnameVerifier defaultHostnameVerifier = new DefaultHostnameVerifier();
+                                                 boolean defaultVerifyResponse = defaultHostnameVerifier.verify(hostname, session);
+                                                 if (defaultVerifyResponse) {
+                                                     returnValue.set(true);
+                                                 } else {
+                                                     X509Certificate[] pc;
+                                                     String subj = "----";
+                                                     try {
+                                                         pc = session.getPeerCertificateChain();
+                                                         subj = pc[0].getSubjectDN().getName();
+                                                     } catch (SSLPeerUnverifiedException e) {
+                                                         e.printStackTrace();
+                                                     }
+                                                     log.warn(String.format("Hostname verification failed, the host \"%s\" presented a certificate with subject: \"%s\"", subj, hostname, subj));
+                                                     if (securityProperties.getStore().getConsumer().getHostNameVerifySkipList() != null) {
+                                                         securityProperties.getStore().getConsumer().getHostNameVerifySkipList().forEach(
+                                                                 skipMe -> {
+                                                                     if (skipMe.equals(hostname)) {
+                                                                         log.error("Despite a failed host name verification the host was accepted. this should not be allowed outside a development environment");
+                                                                         returnValue.set(true);
+                                                                     }
+                                                                 }
+                                                         );
+                                                     }
+                                                 }
+                                                 return returnValue.get();
+                                             }
+                                         }
+                );
     }
 }

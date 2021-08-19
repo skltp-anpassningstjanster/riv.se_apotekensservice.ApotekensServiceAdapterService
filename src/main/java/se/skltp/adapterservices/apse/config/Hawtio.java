@@ -2,14 +2,15 @@ package se.skltp.adapterservices.apse.config;
 
 import io.hawt.config.ConfigFacade;
 import io.hawt.web.auth.AuthenticationConfiguration;
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import se.skltp.adapterservices.apse.constants.PropertyConstants;
+
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 @Log4j2
 @Configuration

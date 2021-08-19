@@ -1,18 +1,18 @@
 /**
  * Copyright (c) 2014 Inera AB, <http://inera.se/>
- *
+ * <p>
  * This file is part of SKLTP.
- *
+ * <p>
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
  * Software Foundation; either version 2.1 of the License, or (at your option)
  * any later version.
- *
+ * <p>
  * This library is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Publi
  * c License
  * along with this library; if not, write to the Free Software Foundation, Inc.,
@@ -34,26 +34,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.StringReader;
 
 @Log4j2
-public class SamlTicketTransformerTest  {
+public class SamlTicketTransformerTest {
 
+    public static final CharSequence EXPECTED_NAMESPACE = "<wsse:Security xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">";
     static final XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
     static final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-    public static final CharSequence EXPECTED_NAMESPACE = "<wsse:Security xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">";
-
-    static class Holder {
-
-        private Object value = null;
-
-        public void setValue(Object value) {
-            this.value = value;
-        }
-
-        public Object getValue() {
-            return value;
-        }
-    }
     static final Holder mockPayloadHolder = new Holder();
-
     private static final String PAYLOAD = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:urn=\"urn:riv:inera.se.apotekensservice:argos:1\" xmlns:add=\"http://www.w3.org/2005/08/addressing\" xmlns:urn1=\"urn:riv:se.apotekensservice:or:HamtaAktuellaOrdinationerResponder:1\">"
             + "<soapenv:Header>"
             + "<urn:ArgosHeader>"
@@ -107,12 +93,12 @@ public class SamlTicketTransformerTest  {
     @Test
     public void testSamlTicketReplacesArgosHeader() throws Exception {
 
-		String msgIncludingSaml = new SamlTicketTransformer().transform(PAYLOAD.getBytes("UTF-8"));
-		
-		
-		Assert.assertTrue(msgIncludingSaml.contains(EXPECTED_NAMESPACE));
-		Assert.assertFalse(msgIncludingSaml.contains("<urn:ArgosHeader"));
-	    }
+        String msgIncludingSaml = new SamlTicketTransformer().transform(PAYLOAD.getBytes("UTF-8"));
+
+
+        Assert.assertTrue(msgIncludingSaml.contains(EXPECTED_NAMESPACE));
+        Assert.assertFalse(msgIncludingSaml.contains("<urn:ArgosHeader"));
+    }
 
     private ArgosHeader getArgosHeader() {
 
@@ -141,5 +127,18 @@ public class SamlTicketTransformerTest  {
         return new ArgosHeader(forskrivarkod, legitimationskod, fornamn, efternamn, yrkesgrupp, befattningskod,
                 arbetsplatskod, arbetsplatsnamn, postort, postadress, postnummer, telefonnummer, requestId, rollnamn,
                 directoryID, hsaID, katalog, organisationsnummer, systemnamn, systemversion, systemIp);
+    }
+
+    static class Holder {
+
+        private Object value = null;
+
+        public Object getValue() {
+            return value;
+        }
+
+        public void setValue(Object value) {
+            this.value = value;
+        }
     }
 }

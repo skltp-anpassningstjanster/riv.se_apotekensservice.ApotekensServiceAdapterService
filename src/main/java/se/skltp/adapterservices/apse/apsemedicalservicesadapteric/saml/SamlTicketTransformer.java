@@ -1,18 +1,18 @@
 /**
  * Copyright (c) 2014 Inera AB, <http://inera.se/>
- *
+ * <p>
  * This file is part of SKLTP.
- *
+ * <p>
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
  * Software Foundation; either version 2.1 of the License, or (at your option)
  * any later version.
- *
+ * <p>
  * This library is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with this library; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
@@ -36,7 +36,6 @@ import java.io.StringReader;
 /**
  * Transformer is responsible to add a SAML ticket to the incoming request,
  * based on Argos header information.
- *
  */
 @Log4j2
 public class SamlTicketTransformer {
@@ -57,27 +56,17 @@ public class SamlTicketTransformer {
     private XMLEventReader getInputXmlEventReader(byte[] inputBody) throws XMLStreamException {
         return xmlInputFactory.createXMLEventReader(new ByteArrayInputStream(inputBody));
     }
-    
-    private class OutputXmlWriterWrapper {
-        ByteArrayOutputStream os;
-        XMLEventWriter writer;
-        public OutputXmlWriterWrapper() throws XMLStreamException {
-            this.os = new ByteArrayOutputStream();
-            this.writer = xmlOutputFactory.createXMLEventWriter(os);
-        }
-        
-    }
-        
+
     public String transform(byte[] inputBodyParam) throws Exception {
         log.info("Saml ticket transformer executing");
-        
+
         ArgosHeaderHelper argosUtil = new ArgosHeaderHelper();
 
         ArgosHeader argosHeader = argosUtil.extractArgosHeader(getInputXmlEventReader(inputBodyParam));
 
         try {
             XMLEventReader samlTicketXER = createSamlTicketFromArgosHeader(argosHeader);
-            
+
             XMLEventReader inputRequestXER = getInputXmlEventReader(inputBodyParam);
             OutputXmlWriterWrapper updatedRequestXER = new OutputXmlWriterWrapper();
 
@@ -92,7 +81,6 @@ public class SamlTicketTransformer {
 
     XMLEventReader createSamlTicketFromArgosHeader(ArgosHeader argosHeader) throws TicketMachineException, XMLStreamException, FactoryConfigurationError {
         String samlTicketStr = new TicketMachine().produceSamlTicket(argosHeader);
-        log.debug("Created saml ticket: \n" + samlTicketStr);
 
         StringReader stringReader = new StringReader(samlTicketStr);
         XMLEventReader samlTicket = XMLInputFactory.newInstance().createXMLEventReader(stringReader);
@@ -163,5 +151,16 @@ public class SamlTicketTransformer {
 
     private boolean isArgosElement(final EndElement se) {
         return se.getName().getLocalPart().equals("ArgosHeader");
+    }
+
+    private class OutputXmlWriterWrapper {
+        ByteArrayOutputStream os;
+        XMLEventWriter writer;
+
+        public OutputXmlWriterWrapper() throws XMLStreamException {
+            this.os = new ByteArrayOutputStream();
+            this.writer = xmlOutputFactory.createXMLEventWriter(os);
+        }
+
     }
 }

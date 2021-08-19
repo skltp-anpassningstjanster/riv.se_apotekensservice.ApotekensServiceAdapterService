@@ -7,86 +7,57 @@ package se.skltp.adapterservices.apse.utils;
 
 
 import lombok.Data;
-import lombok.extern.log4j.Log4j2;
 
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
-@Log4j2
 public class PayloadInfoParser {
 
-  public static final String RIVTABP_21 = "rivtabp21";
-  public static final String RIVTABP_20 = "rivtabp20";
+    public static final String RIVTABP_21 = "rivtabp21";
+    public static final String RIVTABP_20 = "rivtabp20";
 
-  // Static utility
-  private PayloadInfoParser() {
-  }
-
-  public static PayloadInfo extractInfoFromPayload(final XMLStreamReader reader) throws XMLStreamException {
-    PayloadInfo payloadInfo = new PayloadInfo();
-    payloadInfo.setEncoding(reader.getEncoding());
-
-    boolean headerFound = false;
-    boolean bodyFound = false;
-
-    while (reader.hasNext()) {
-      if(reader.isStartElement()){
-        String local = reader.getLocalName();
-        log.debug(local);
-
-          if (bodyFound) {
-            // We have found the element we need in the Header and Body, i.e. we
-            // are done. Let's bail out!
-            payloadInfo.setServiceContractNamespace(reader.getNamespaceURI());
-            return payloadInfo;
-          }
-
-          //Body found, next element is the service interaction e.g GetSubjectOfCareSchedule
-          if (local.equals("Body")) {
-            bodyFound = true;
-          }
-
-          if (local.equals("Header")) {
-            headerFound = true;
-          }
-
-          if (headerFound) {
-            readHeader(reader, payloadInfo, local);
-          }
-
-      }
-      if (reader.hasNext()) {
-          reader.next();
-      }
+    // Static utility
+    private PayloadInfoParser() {
     }
 
-    return payloadInfo;
-  }
+    public static PayloadInfo extractInfoFromPayload(final XMLStreamReader reader) throws XMLStreamException {
+        PayloadInfo payloadInfo = new PayloadInfo();
+        payloadInfo.setEncoding(reader.getEncoding());
 
-  private static void readHeader(XMLStreamReader reader, PayloadInfo payloadInfo, String local) throws XMLStreamException {
-    if (local.equals("To")) {
-      payloadInfo.setRivVersion(RIVTABP_20);
-      payloadInfo.setReceiverId(getReceiver(reader));
-    } else if (local.equals("LogicalAddress")) {
-      payloadInfo.setRivVersion(RIVTABP_21);
-      payloadInfo.setReceiverId(getReceiver(reader));
+        while (reader.hasNext()) {
+            if (reader.isStartElement()) {
+                String local = reader.getLocalName();
+                reader.next();
+                switch (local) {
+                    case "Header": {
+                        String rivtabp = local.equals("LogicalAddress") ? RIVTABP_21 : (local.equals("To") ? RIVTABP_20 : null);
+                        if (rivtabp != null) {
+                            payloadInfo.setRivVersion(rivtabp);
+                            reader.next();
+                            if (!reader.isEndElement() && !reader.isWhiteSpace()) {
+                                payloadInfo.setReceiverId(reader.getText());
+                            }
+                        }
+                    }
+                    break;
+                    case "Body": {
+                        // We have found the element we need in the Header and Body, i.e. we
+                        // are done. Let's bail out!
+                        payloadInfo.setServiceContractNamespace(reader.getNamespaceURI());
+                        return payloadInfo;
+                    }
+                }
+            }
+        }
+        return payloadInfo;
     }
-  }
 
-  private static String getReceiver(XMLStreamReader reader) throws XMLStreamException {
-    reader.next();
-    if (!reader.isEndElement() && !reader.isWhiteSpace()) {
-      return reader.getText();
+
+    @Data
+    public static class PayloadInfo {
+        String encoding;
+        String receiverId;
+        String rivVersion;
+        String serviceContractNamespace;
     }
-    return null;
-  }
-
-  @Data
-  public static class PayloadInfo {
-    String encoding;
-    String receiverId;
-    String rivVersion;
-    String serviceContractNamespace;
-  }
-
 }

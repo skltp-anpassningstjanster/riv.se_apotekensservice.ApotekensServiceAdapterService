@@ -1,4 +1,5 @@
 package se.skltp.adapterservices.apse.logging.logentry;
+
 import lombok.Data;
 
 @Data

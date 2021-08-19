@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class LogMessageExceptionType {
-  protected String exceptionClass;
-  protected String exceptionMessage;
-  protected String stackTrace;
+    protected String exceptionClass;
+    protected String exceptionMessage;
+    protected String stackTrace;
 
 
 }

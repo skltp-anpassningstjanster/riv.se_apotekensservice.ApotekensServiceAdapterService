@@ -11,7 +11,6 @@ import org.apache.camel.Processor;
 import org.springframework.stereotype.Service;
 
 /**
- *
  * @author jonmat
  */
 @Service
@@ -20,7 +19,7 @@ public class ConvertArgosHeaderToSamlProcessor implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
         log.info("ConvertArgosHeaderToSamlProcessor.process()");
-        
+
         exchange.getIn().setBody("<samlData></samlData>");
     }
 }

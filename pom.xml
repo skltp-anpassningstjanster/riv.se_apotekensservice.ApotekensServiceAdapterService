@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <!--
-    project TODOs
-    TODO: kör junit-tester
-    TODO: kör testscripts (soapui)
-    TODO: bygg med jenkins
-    TODO: hawtio
-    TODO: log format
-
-    -->
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -207,7 +199,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 
 
     <dependencies>
@@ -530,9 +521,14 @@
         </profile>
     </profiles>
     <scm>
-        <url>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git</url>
-        <connection>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git</connection>
-        <developerConnection>scm:git:https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git</developerConnection>
+        <url>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git
+        </url>
+        <connection>
+            https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git
+        </connection>
+        <developerConnection>
+            scm:git:https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.ApotekensServiceAdapterService.git
+        </developerConnection>
         <tag>HEAD</tag>
     </scm>
     <distributionManagement>

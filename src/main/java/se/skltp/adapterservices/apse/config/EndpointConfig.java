@@ -28,13 +28,13 @@ public class EndpointConfig {
     public void logSettings() {
         if (outbound != null) {
             outbound.forEach((key, val) -> {
-                log.info("###  service: " + key );
-                val.forEach((k,v) -> { 
+                log.info("###  service: " + key);
+                val.forEach((k, v) -> {
                     log.info("###     interaction" + key + ", url: " + val);
                 });
                 log.info("##############");
             });
         }
     }
-    
+
 }

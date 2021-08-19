@@ -5,11 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.nio.file.FileSystems;
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-public class SSLContextParametersConfig  {
+public class SSLContextParametersConfig {
 
     public static final String DELIMITER = ",";
 
@@ -20,6 +21,7 @@ public class SSLContextParametersConfig  {
     public SSLContextParameters incomingSSLContextParameters() {
         KeyStoreParameters ksp = new KeyStoreParameters();
         KeyManagersParameters kmp = new KeyManagersParameters();
+        FileSystems.getDefault().getPath("logs", "access.log");
         ksp.setResource(securityProperties.getStore().getLocation() + securityProperties.getStore().getProducer().getFile());
         ksp.setPassword(securityProperties.getStore().getProducer().getPassword());
 
@@ -61,8 +63,8 @@ public class SSLContextParametersConfig  {
     private SecureSocketProtocolsParameters createSecureProtocolParameters(String allowedProtocolsString) {
         SecureSocketProtocolsParameters secureSocketProtocolsParameters = new SecureSocketProtocolsParameters();
         List<String> allowedProtocols = new ArrayList<>();
-        for (String protocol: allowedProtocolsString.split(DELIMITER)) {
-            if(!protocol.trim().isEmpty()){
+        for (String protocol : allowedProtocolsString.split(DELIMITER)) {
+            if (!protocol.trim().isEmpty()) {
                 allowedProtocols.add(protocol);
             }
         }

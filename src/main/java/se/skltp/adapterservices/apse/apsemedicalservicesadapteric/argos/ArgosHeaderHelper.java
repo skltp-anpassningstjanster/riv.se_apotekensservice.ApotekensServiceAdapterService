@@ -1,18 +1,18 @@
 /**
  * Copyright (c) 2014 Inera AB, <http://inera.se/>
- *
+ * <p>
  * This file is part of SKLTP.
- *
+ * <p>
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
  * Software Foundation; either version 2.1 of the License, or (at your option)
  * any later version.
- *
+ * <p>
  * This library is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with this library; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
@@ -85,8 +85,8 @@ public class ArgosHeaderHelper {
 
     /**
      * Extract ArgosHeader from the message.If no argos information is found an
- empty ArgosHeader is returned.The cursor in the mule message is reset
- after argos header is extracted.
+     * empty ArgosHeader is returned.The cursor in the mule message is reset
+     * after argos header is extracted.
      *
      * @param bodyEventReader
      * @return The ArgosHeader filled with information from message
@@ -131,7 +131,7 @@ public class ArgosHeaderHelper {
     }
 
     private void extractNextValue(final XMLEvent startEvent, final XMLEventReader originalRequestEvents,
-            ArgosHeader argosHeader) throws XMLStreamException {
+                                  ArgosHeader argosHeader) throws XMLStreamException {
 
         StartElement startElement = startEvent.asStartElement();
         String xmlElement = startElement.getName().getLocalPart();

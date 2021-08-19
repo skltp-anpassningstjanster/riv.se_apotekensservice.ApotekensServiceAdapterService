@@ -14,7 +14,6 @@ import se.skltp.adapterservices.apse.config.EndpointConfig;
 import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
 
 /**
- *
  * @author jonmat
  */
 @Service
@@ -23,10 +22,10 @@ class EndpointResolverProcessor implements Processor {
 
     @Autowired
     EndpointConfig endpointConfig;
-    
+
     @Override
     public void process(Exchange exchange) throws Exception {
-        
+
         String reqInteractionName = exchange.getProperty(SamlHeaderFromArgosProcessor.SERVICECONTRACT_NAMESPACE, String.class);
         String service = exchange.getProperty("InboundService", String.class);
         String outboundUrl = endpointConfig.getOutbound().get(service).get(reqInteractionName);
@@ -36,5 +35,5 @@ class EndpointResolverProcessor implements Processor {
             exchange.setProperty("outbound_url", outboundUrl);
         }
     }
-    
+
 }

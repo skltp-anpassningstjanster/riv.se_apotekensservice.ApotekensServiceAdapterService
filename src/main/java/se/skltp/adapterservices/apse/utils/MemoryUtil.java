@@ -16,11 +16,11 @@ import java.util.Map;
 
 public class MemoryUtil {
 
+    private static final MemoryMXBean mbean = ManagementFactory.getMemoryMXBean();
+
+
     private MemoryUtil() {
     }
-
-
-    private static final MemoryMXBean mbean = ManagementFactory.getMemoryMXBean();
 
     public static String getMemoryUsed() {
         return bytesReadable(SharedSecrets.getJavaNioAccess().getDirectBufferPool().getMemoryUsed());

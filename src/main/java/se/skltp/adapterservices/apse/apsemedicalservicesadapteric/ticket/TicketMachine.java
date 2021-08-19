@@ -38,12 +38,15 @@ public class TicketMachine {
     private static ArgosTicket argosSamlTicketMachine;
 
     /**
-     * For testing the ticketmachine with e.g a mock
+     * Only when rollnamn contains exact string PRIVATPERSON the argosheader
+     * should be used for creating a citizen ticket. Described in Jira https://skl-tp.atlassian.net/browse/SKLTP-341.
      *
-     * @param argosTicketMachine
+     * @param argosHeader
+     * @return true if valid for citizen ticket
      */
-    void setArgosTicketMachine(ArgosTicket argosTicketMachine) {
-        argosSamlTicketMachine = argosTicketMachine;
+    static boolean isTicketForCitizen(final ArgosHeader argosHeader) {
+        return argosHeader != null && argosHeader.getRollnamn() != null
+                && argosHeader.getRollnamn().contains(PRIVATPERSON);
     }
 
     private ArgosTicket getArgosTicketMachine() {
@@ -54,10 +57,18 @@ public class TicketMachine {
     }
 
     /**
+     * For testing the ticketmachine with e.g a mock
+     *
+     * @param argosTicketMachine
+     */
+    void setArgosTicketMachine(ArgosTicket argosTicketMachine) {
+        argosSamlTicketMachine = argosTicketMachine;
+    }
+
+    /**
      * Get a SAML ticket based on ArgosHeader information.
      *
-     * @param argosHeader
-     *            The information used when generating the SAML ticket.
+     * @param argosHeader The information used when generating the SAML ticket.
      * @return A String representation of the SAML ticket in ws security format.
      * @throws TicketMachineException
      */
@@ -79,18 +90,6 @@ public class TicketMachine {
         } finally {
             log.info("Exiting produce saml ticket");
         }
-    }
-
-    /**
-     * Only when rollnamn contains exact string PRIVATPERSON the argosheader
-     * should be used for creating a citizen ticket. Described in Jira https://skl-tp.atlassian.net/browse/SKLTP-341.
-     *
-     * @param argosHeader
-     * @return true if valid for citizen ticket
-     */
-    static boolean isTicketForCitizen(final ArgosHeader argosHeader) {
-        return argosHeader != null && argosHeader.getRollnamn() != null
-                && argosHeader.getRollnamn().contains(PRIVATPERSON);
     }
 
     private String createOrganizationTicket(ArgosHeader argosHeader) {
@@ -150,8 +149,7 @@ public class TicketMachine {
     /**
      * Apply ws security information to saml ticket.
      *
-     * @param samlTicket
-     *            The ticket to apply ws security to
+     * @param samlTicket The ticket to apply ws security to
      * @return The samlTicket including ws security information
      */
     String applyWsSecurityToSamlTicket(String samlTicket) {

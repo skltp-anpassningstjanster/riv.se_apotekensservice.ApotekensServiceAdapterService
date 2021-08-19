@@ -39,18 +39,14 @@ public class GetStatusProcessor implements Processor {
     public static final String KEY_VM_MAX_DIRECT_MEMORY = "MaxDirectMemory";
     public static final String KEY_NETTY_DIRECT_MEMORY = "NettyDirectMemory";
     public static final String KEY_ENDPOINTS = "Endpoints";
-
-    @Value("${apse.status.url}")
-    private String statusUrl;
-
-    @Autowired
-    private CamelContext camelContext;
-
-    @Autowired
-    private EndpointConfig endpointConfig;
-
     @Autowired
     BuildProperties buildProperties;
+    @Value("${apse.status.url}")
+    private String statusUrl;
+    @Autowired
+    private CamelContext camelContext;
+    @Autowired
+    private EndpointConfig endpointConfig;
 
     @Override
     public void process(Exchange exchange) {
@@ -138,15 +134,15 @@ public class GetStatusProcessor implements Processor {
             String endpoint = route.getEndpoint().getEndpointKey();
             if (endpoint.startsWith("http")) {
                 AtomicReference<String> name = new AtomicReference<>("");
-                endpointConfig.getInbound().forEach( (k, v) -> {
-                        if (v.equals(endpoint)){
-                            name.set(k);
+                endpointConfig.getInbound().forEach((k, v) -> {
+                            if (v.equals(endpoint)) {
+                                name.set(k);
+                            }
                         }
-                    }
                 );
                 Map<String, Object> endpointMap = new ListOrderedMap();
                 endpointMap.put("url", endpoint);
-                if (!name.get().equals("")){
+                if (!name.get().equals("")) {
                     endpointMap.put("outbound", endpointConfig.getOutbound().get(name.get()));
                 } else if (endpoint.equals(statusUrl)) {
                     endpointMap.put("name", "ApSe adapter status");
