@@ -99,7 +99,7 @@ public class ApSeRouter extends RouteBuilder {
 
         from("direct:transform").routeId("transform header")
                 .setProperty(ExchangeProperties.EXCHANGE_CREATED, simple("${date:exchangeCreated}"))
-                .log("received connection")
+                .log(LoggingLevel.DEBUG, "received connection")
                 .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
                 .streamCaching()
                 .bean(MessageInfoLogger.class, LOG_REQ_IN_METHOD)
@@ -109,7 +109,8 @@ public class ApSeRouter extends RouteBuilder {
                 .bean(MessageInfoLogger.class, LOG_REQ_OUT_METHOD)
                 .log(LoggingLevel.INFO, "executing request for \"${exchangeProperty[servicecontract_namespace]}\" on url: ${exchangeProperty[outbound_url]}")
                 .toD("${exchangeProperty[outbound_url]}?sslContextParameters=#outgoingSSLContextParameters")
-                .bean(MessageInfoLogger.class, LOG_RESP_IN_METHOD);
+                .bean(MessageInfoLogger.class, LOG_RESP_IN_METHOD)
+        ;
     }
 
     private void resolveHostnameVerifier() {

@@ -18,7 +18,7 @@ import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
  */
 @Service
 @Log4j2
-class EndpointResolverProcessor implements Processor {
+public class EndpointResolverProcessor implements Processor {
 
     @Autowired
     EndpointConfig endpointConfig;
