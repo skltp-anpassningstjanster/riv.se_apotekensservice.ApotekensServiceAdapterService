@@ -27,6 +27,7 @@ import org.apache.http.conn.ssl.DefaultHostnameVerifier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import se.skltp.adapterservices.apse.config.EndpointConfig;
+import se.skltp.adapterservices.apse.config.HttpHeaderFilterProperties;
 import se.skltp.adapterservices.apse.config.SecurityProperties;
 import se.skltp.adapterservices.apse.constants.ExchangeProperties;
 import se.skltp.adapterservices.apse.logging.MessageInfoLogger;
@@ -70,6 +71,9 @@ public class ApSeRouter extends RouteBuilder {
 
     @Autowired
     SecurityProperties sslConfig;
+
+    @Autowired
+    private HttpHeaderFilterProperties headerFilter;
 
     String soapFault = "<?xml version = '1.0' encoding = 'UTF-8'?>\n" +
             "<SOAP-ENV:Envelope\n" +
@@ -117,6 +121,7 @@ public class ApSeRouter extends RouteBuilder {
                     public void process(Exchange exchange) throws Exception {
                         Throwable caused = exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Throwable.class);
                         String msg = caused.getMessage();
+                        msg += "\n" + caused.getClass().toString();
                         exchange.getIn().setBody(String.format(soapFault, "Server", msg));
                     }})
                 .handled(true);
@@ -134,7 +139,7 @@ public class ApSeRouter extends RouteBuilder {
             ;
         });
 
-        from("direct:transform").routeId("transform header")
+        from("direct:transform").routeId("se.skltp.adapterservices")
                 .setProperty(ExchangeProperties.EXCHANGE_CREATED, simple("${date:exchangeCreated}"))
                 .log(LoggingLevel.DEBUG, "received connection")
                 .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
@@ -142,9 +147,9 @@ public class ApSeRouter extends RouteBuilder {
                 .bean(MessageInfoLogger.class, LOG_REQ_IN_METHOD)
                 .process(samlHeaderFromArgosProcessor)
                 .process(resolveEndpoint)
-                .removeHeader(Exchange.HTTP_URI)
+                .removeHeaders(headerFilter.getRequestHeadersToRemove(), headerFilter.getRequestHeadersToKeep())
                 .bean(MessageInfoLogger.class, LOG_REQ_OUT_METHOD)
-                .log(LoggingLevel.INFO, "executing request for \"${exchangeProperty[servicecontract_namespace]}\" on url: ${exchangeProperty[outbound_url]}")
+                .log(LoggingLevel.DEBUG, "executing request for \"${exchangeProperty[servicecontract_namespace]}\" on url: ${exchangeProperty[outbound_url]}")
                 .toD("${exchangeProperty[outbound_url]}?sslContextParameters=#outgoingSSLContextParameters")
                 .bean(MessageInfoLogger.class, LOG_RESP_IN_METHOD)
         ;
