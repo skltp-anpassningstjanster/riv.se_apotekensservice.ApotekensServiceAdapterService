@@ -129,6 +129,12 @@
                 <version>${camel.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+
             <!--Netty-->
             <dependency>
                 <groupId>io.netty</groupId>
@@ -141,6 +147,16 @@
                 <groupId>io.hawt</groupId>
                 <artifactId>hawtio-springboot</artifactId>
                 <version>2.6.0</version>
+            </dependency>
+
+            <!-- logging -->
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>log4j2</groupId>
+                <artifactId>log4j2</artifactId>
             </dependency>
 
             <!-- test -->

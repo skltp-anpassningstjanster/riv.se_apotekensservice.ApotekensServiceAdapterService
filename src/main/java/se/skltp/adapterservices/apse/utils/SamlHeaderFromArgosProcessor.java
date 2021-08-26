@@ -24,6 +24,12 @@ import java.io.ByteArrayInputStream;
 @Log4j2
 public class SamlHeaderFromArgosProcessor implements Processor {
 
+    public class PayloadExcepption extends Exception{
+        public PayloadExcepption(String message) {
+            super(message);
+        }
+    };
+
     public static final String SENDER_ID = "senderid";
     public static final String SENDER_IP_ADRESS = "senderIpAdress";
     public static final String OUT_ORIGINAL_SERVICE_CONSUMER_HSA_ID = "originalServiceconsumerHsaidOut";
@@ -44,7 +50,7 @@ public class SamlHeaderFromArgosProcessor implements Processor {
     public void process(Exchange exchange) throws Exception {
         String in = exchange.getIn().getBody(String.class);
         if (in.length() < 1) {
-            throw new Exception("Empty payload");
+            throw new PayloadExcepption("The message payload was empty");
         }
         byte[] bodyBytes = in.getBytes("UTF-8");
 
