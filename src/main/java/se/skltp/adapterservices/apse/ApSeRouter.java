@@ -17,10 +17,7 @@
 package se.skltp.adapterservices.apse;
 
 import lombok.extern.log4j.Log4j2;
-import org.apache.camel.Exchange;
-import org.apache.camel.LoggingLevel;
-import org.apache.camel.Processor;
-import org.apache.camel.ShutdownRunningTask;
+import org.apache.camel.*;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.http.HttpComponent;
 import org.apache.http.conn.ssl.DefaultHostnameVerifier;
@@ -29,7 +26,8 @@ import org.springframework.stereotype.Component;
 import se.skltp.adapterservices.apse.config.EndpointConfig;
 import se.skltp.adapterservices.apse.config.HttpHeaderFilterProperties;
 import se.skltp.adapterservices.apse.config.SecurityProperties;
-import se.skltp.adapterservices.apse.constants.ExchangeProperties;
+import se.skltp.adapterservices.apse.constants.ApseExchangeProperties;
+import se.skltp.adapterservices.apse.errorhandling.HandleProducerExceptionProcessor;
 import se.skltp.adapterservices.apse.logging.MessageInfoLogger;
 import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
 
@@ -75,7 +73,7 @@ public class ApSeRouter extends RouteBuilder {
     @Autowired
     private HttpHeaderFilterProperties headerFilter;
 
-    String soapFault = "<?xml version = '1.0' encoding = 'UTF-8'?>\n" +
+    private static  final String soapFault = "<?xml version = '1.0' encoding = 'UTF-8'?>\n" +
             "<SOAP-ENV:Envelope\n" +
             "   xmlns:SOAP-ENV = \"http://schemas.xmlsoap.org/soap/envelope/\"\n" +
             "   xmlns:xsi = \"http://www.w3.org/1999/XMLSchema-instance\"\n" +
@@ -91,6 +89,8 @@ public class ApSeRouter extends RouteBuilder {
             "   </SOAP-ENV:Body>\n" +
             "</SOAP-ENV:Envelope>";
 
+    @Autowired
+    private HandleProducerExceptionProcessor handleProducerExceptionProcessor;
 
 
     @Override
@@ -114,17 +114,11 @@ public class ApSeRouter extends RouteBuilder {
                     }})
                 .handled(true);
 
-        onException(Exception.class)
-                .bean(MessageInfoLogger.class, LOG_ERROR_METHOD)
-                .process(new Processor() {
-                    @Override
-                    public void process(Exchange exchange) throws Exception {
-                        Throwable caused = exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Throwable.class);
-                        String msg = caused.getMessage();
-                        msg += "\n" + caused.getClass().toString();
-                        exchange.getIn().setBody(String.format(soapFault, "Server", msg));
-                    }})
-                .handled(true);
+        onException(Throwable.class)
+                .process(handleProducerExceptionProcessor)
+                .handled(true)
+                .bean(MessageInfoLogger.class, LOG_ERROR_METHOD);
+
 
 
         endpointConfig.getInbound().forEach((service, consumerUrl) -> {
@@ -139,8 +133,8 @@ public class ApSeRouter extends RouteBuilder {
             ;
         });
 
-        from("direct:transform").routeId("se.skltp.adapterservices")
-                .setProperty(ExchangeProperties.EXCHANGE_CREATED, simple("${date:exchangeCreated}"))
+        from("direct:transform").routeId("se.skltp.adapterservices.apse.messageTransform")
+                .setProperty(ApseExchangeProperties.EXCHANGE_CREATED, simple("${date:exchangeCreated}"))
                 .log(LoggingLevel.DEBUG, "received connection")
                 .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
                 .streamCaching()
@@ -150,7 +144,11 @@ public class ApSeRouter extends RouteBuilder {
                 .removeHeaders(headerFilter.getRequestHeadersToRemove(), headerFilter.getRequestHeadersToKeep())
                 .bean(MessageInfoLogger.class, LOG_REQ_OUT_METHOD)
                 .log(LoggingLevel.DEBUG, "executing request for \"${exchangeProperty[servicecontract_namespace]}\" on url: ${exchangeProperty[outbound_url]}")
-                .toD("${exchangeProperty[outbound_url]}?sslContextParameters=#outgoingSSLContextParameters")
+                .choice().when(exchangeProperty("outbound_url").startsWith("https"))
+                        .toD("${exchangeProperty[outbound_url]}?sslContextParameters=#outgoingSSLContextParameters")
+                    .otherwise()
+                        .toD("${exchangeProperty[outbound_url]}")
+                .end()
                 .bean(MessageInfoLogger.class, LOG_RESP_IN_METHOD)
         ;
     }

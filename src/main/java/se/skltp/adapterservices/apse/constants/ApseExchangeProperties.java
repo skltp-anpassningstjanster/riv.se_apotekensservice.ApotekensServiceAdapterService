@@ -1,6 +1,6 @@
 package se.skltp.adapterservices.apse.constants;
 
-public class ExchangeProperties {
+public class ApseExchangeProperties {
 
     public static final String VAGVAL = "vagval";
     public static final String VAGVAL_HOST = "vagvalHost";
@@ -29,7 +29,7 @@ public class ExchangeProperties {
     public static final String VP_X_FORWARDED_PORT = "httpXForwardedPort";
     public static final String EXCHANGE_CREATED = "exchangeCreated";
 
-    private ExchangeProperties() {
+    private ApseExchangeProperties() {
         //To hide implicit public constructor. Sonar suggestion.
     }
 

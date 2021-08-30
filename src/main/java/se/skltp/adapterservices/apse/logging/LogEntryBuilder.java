@@ -1,7 +1,7 @@
 package se.skltp.adapterservices.apse.logging;
 
 import org.apache.camel.Exchange;
-import se.skltp.adapterservices.apse.constants.ExchangeProperties;
+import se.skltp.adapterservices.apse.constants.ApseExchangeProperties;
 import se.skltp.adapterservices.apse.logging.logentry.*;
 
 import java.util.Map;
@@ -59,7 +59,7 @@ public class LogEntryBuilder {
 
         if (exchange != null) {
             serviceImplementation = exchange.getFromRouteId();
-            String endpointURI = exchange.getProperty(ExchangeProperties.HTTP_URL_IN, String.class);
+            String endpointURI = exchange.getProperty(ApseExchangeProperties.HTTP_URL_IN, String.class);
             endpoint = (endpointURI == null) ? "" : endpointURI;
 
         }
@@ -77,7 +77,7 @@ public class LogEntryBuilder {
         String componentId = "";
 
         if (exchange != null) {
-            businessCorrelationId = exchange.getProperty(ExchangeProperties.SKLTP_CORRELATION_ID, "", String.class);
+            businessCorrelationId = exchange.getProperty(ApseExchangeProperties.SKLTP_CORRELATION_ID, "", String.class);
             messageId = exchange.getMessage().getMessageId();
 
             // The context name is set in property "camel.springboot.name"
