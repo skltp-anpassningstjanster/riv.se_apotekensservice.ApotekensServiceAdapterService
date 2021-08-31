@@ -24,6 +24,10 @@ public class ExceptionHandling {
     }
 
     public int getHttpStatus(String key, int defaultValue) {
-        return httpStatus.getOrDefault(key, 500);
+        if (httpStatus != null) {
+            return httpStatus.getOrDefault(key, defaultValue);
+        } else {
+            return defaultValue;
+        }
     }
 }
