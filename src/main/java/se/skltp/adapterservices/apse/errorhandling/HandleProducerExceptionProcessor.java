@@ -8,6 +8,8 @@ import org.apache.camel.http.base.HttpOperationFailedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.skltp.adapterservices.apse.config.ExceptionHandling;
+import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
+
 import java.util.Collections;
 
 
@@ -21,7 +23,7 @@ public class HandleProducerExceptionProcessor implements Processor {
     @Autowired
     ExceptionHandling exceptionHandling;
 
-    private static  final String soapFault = "<?xml version = '1.0' encoding = 'UTF-8'?>\n" +
+    private static final String soapFault = "<?xml version = '1.0' encoding = 'UTF-8'?>\n" +
             "<SOAP-ENV:Envelope\n" +
             "   xmlns:SOAP-ENV = \"http://schemas.xmlsoap.org/soap/envelope/\"\n" +
             "   xmlns:xsi = \"http://www.w3.org/1999/XMLSchema-instance\"\n" +
@@ -40,16 +42,18 @@ public class HandleProducerExceptionProcessor implements Processor {
     private String createServerSoapFault(String faultString) {
         return String.format(soapFault, "Server", faultString);
     }
+
     private String createClientSoapFault(String faultString) {
         return String.format(soapFault, "Client", faultString);
     }
 
 
     private static final String vp009msg = "VP009 Error connecting to service producer at address %s. %s";
+
     @Override
     public void process(Exchange exchange) throws Exception {
         Message in = exchange.getIn();
-        Throwable cause =  exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Exception.class);
+        Throwable cause = exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Exception.class);
 
         String faultString = String.format(vp009msg, exchange.getProperty("outbound_url", String.class), cause);
         if (cause instanceof HttpOperationFailedException) {
@@ -64,9 +68,12 @@ public class HandleProducerExceptionProcessor implements Processor {
                 in.setBody(createServerSoapFault(faultString));
                 in.setHeader(Exchange.HTTP_RESPONSE_CODE, exceptionHandling.getHttpStatus("serverFault"));
             }
+        } else if (cause instanceof SamlHeaderFromArgosProcessor.PayloadExcepption) {
+            in.setBody(createServerSoapFault(cause.toString()));
+            in.setHeader(Exchange.HTTP_RESPONSE_CODE, exceptionHandling.getHttpStatus("clientFault"));
         } else {
             in.setBody(createServerSoapFault(faultString));
-            in.setHeader(Exchange.HTTP_RESPONSE_CODE, exceptionHandling.getHttpStatus("clientFault"));
+            in.setHeader(Exchange.HTTP_RESPONSE_CODE, exceptionHandling.getHttpStatus("IOFault"));
         }
     }
 }

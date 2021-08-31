@@ -73,22 +73,6 @@ public class ApSeRouter extends RouteBuilder {
     @Autowired
     private HttpHeaderFilterProperties headerFilter;
 
-    private static  final String soapFault = "<?xml version = '1.0' encoding = 'UTF-8'?>\n" +
-            "<SOAP-ENV:Envelope\n" +
-            "   xmlns:SOAP-ENV = \"http://schemas.xmlsoap.org/soap/envelope/\"\n" +
-            "   xmlns:xsi = \"http://www.w3.org/1999/XMLSchema-instance\"\n" +
-            "   xmlns:xsd = \"http://www.w3.org/1999/XMLSchema\">\n" +
-            "\n" +
-            "   <SOAP-ENV:Body>\n" +
-            "      <SOAP-ENV:Fault>\n" +
-            "         <faultcode xsi:type = \"xsd:string\">SOAP-ENV:%s</faultcode>\n" +
-            "         <faultstring xsi:type = \"xsd:string\">\n" +
-            "            %s" +
-            "         </faultstring>\n" +
-            "      </SOAP-ENV:Fault>\n" +
-            "   </SOAP-ENV:Body>\n" +
-            "</SOAP-ENV:Envelope>";
-
     @Autowired
     private HandleProducerExceptionProcessor handleProducerExceptionProcessor;
 
@@ -102,17 +86,6 @@ public class ApSeRouter extends RouteBuilder {
         }
 
         resolveHostnameVerifier();
-
-        onException(SamlHeaderFromArgosProcessor.PayloadExcepption.class)
-                .bean(MessageInfoLogger.class, LOG_ERROR_METHOD)
-                .process(new Processor() {
-                    @Override
-                    public void process(Exchange exchange) throws Exception {
-                        Throwable caused = exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Throwable.class);
-                        String msg = caused.getMessage();
-                        exchange.getIn().setBody(String.format(soapFault, "Client", msg));
-                    }})
-                .handled(true);
 
         onException(Throwable.class)
                 .process(handleProducerExceptionProcessor)
