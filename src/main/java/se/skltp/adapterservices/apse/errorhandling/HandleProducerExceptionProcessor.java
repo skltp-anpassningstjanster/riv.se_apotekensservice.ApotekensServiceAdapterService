@@ -1,6 +1,8 @@
 package se.skltp.adapterservices.apse.errorhandling;
 
 import io.netty.handler.timeout.ReadTimeoutException;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
@@ -8,7 +10,11 @@ import org.apache.camel.Processor;
 import org.apache.camel.component.netty.http.NettyHttpOperationFailedException;
 import org.apache.camel.http.base.HttpOperationFailedException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
+import se.skltp.adapterservices.apse.config.ExceptionHandling;
 import se.skltp.adapterservices.apse.constants.ApseExchangeProperties;
 
 import javax.net.ssl.SSLHandshakeException;
@@ -23,6 +29,9 @@ public class HandleProducerExceptionProcessor implements Processor {
 
     private static final String SOAP_XMLNS = "http://schemas.xmlsoap.org/soap/envelope/";
     private static final Integer HTTP_STATUS_500 = 500;
+
+    @Autowired
+    ExceptionHandling exceptionHandling;
 
     private static  final String soapFault = "<?xml version = '1.0' encoding = 'UTF-8'?>\n" +
             "<SOAP-ENV:Envelope\n" +
@@ -58,18 +67,18 @@ public class HandleProducerExceptionProcessor implements Processor {
         if (cause instanceof HttpOperationFailedException) {
             HttpOperationFailedException causeOperationFailed = (HttpOperationFailedException) cause;
             int statusCode = causeOperationFailed.getStatusCode();
-            if (statusCode >= 500) {
+            if (statusCode >= 500 || (statusCode >= 200 && statusCode <= 220)) {
                 in.removeHeaders(".*");
                 in.setHeaders(Collections.unmodifiableMap(causeOperationFailed.getResponseHeaders()));
-                in.setHeader(Exchange.HTTP_RESPONSE_CODE, statusCode);
+                in.setHeader(Exchange.HTTP_RESPONSE_CODE, exceptionHandling.getHttpStatus("passthrough", statusCode));
                 in.setBody(causeOperationFailed.getResponseBody());
             } else {
                 in.setBody(createServerSoapFault(faultString));
-                in.setHeader(Exchange.HTTP_RESPONSE_CODE, 500);
+                in.setHeader(Exchange.HTTP_RESPONSE_CODE, exceptionHandling.getHttpStatus("serverFault"));
             }
         } else {
             in.setBody(createServerSoapFault(faultString));
-            in.setHeader(Exchange.HTTP_RESPONSE_CODE, 500);
+            in.setHeader(Exchange.HTTP_RESPONSE_CODE, exceptionHandling.getHttpStatus("clientFault"));
         }
     }
 }
