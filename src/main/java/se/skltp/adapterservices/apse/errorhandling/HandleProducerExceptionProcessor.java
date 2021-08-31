@@ -1,25 +1,13 @@
 package se.skltp.adapterservices.apse.errorhandling;
 
-import io.netty.handler.timeout.ReadTimeoutException;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
 import org.apache.camel.Processor;
-import org.apache.camel.component.netty.http.NettyHttpOperationFailedException;
 import org.apache.camel.http.base.HttpOperationFailedException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 import se.skltp.adapterservices.apse.config.ExceptionHandling;
-import se.skltp.adapterservices.apse.constants.ApseExchangeProperties;
-
-import javax.net.ssl.SSLHandshakeException;
-import java.io.IOException;
-import java.security.cert.PKIXCertPathBuilderResult;
 import java.util.Collections;
 
 
