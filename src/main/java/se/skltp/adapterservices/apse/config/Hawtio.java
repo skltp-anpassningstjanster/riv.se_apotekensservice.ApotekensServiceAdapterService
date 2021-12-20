@@ -6,7 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import se.skltp.adapterservices.apse.constants.PropertyConstants;
+import se.skltp.camel.utils.constants.PropertyConstants;
 
 import java.io.File;
 import java.net.MalformedURLException;

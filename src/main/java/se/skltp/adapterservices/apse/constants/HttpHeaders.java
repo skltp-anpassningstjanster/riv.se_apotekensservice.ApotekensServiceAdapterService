@@ -57,6 +57,15 @@ public class HttpHeaders {
     public static final String HEADER_CONTENT_TYPE = "Content-Type";
     public static final String SOAP_ACTION = "SOAPAction";
 
+    public static final String X_RIVTA_ROUTING_HISTORY = "x-rivta-routing-history";
+
+    public static final String X_FORWARDED_FOR = "X-Forwarded-for";
+    public static final String X_FORWARDED_HOST = "X-Forwarded-Host";
+    public static final String X_FORWARDED_PORT = "X-Forwarded-Port";
+    public static final String X_FORWARDED_PROTO = "X-Forwarded-Proto";
+
+
+
     private HttpHeaders() {
         //To hide implicit public constructor. Sonar suggestion.
     }

@@ -17,6 +17,12 @@ public class PayloadInfoParser {
     public static final String RIVTABP_21 = "rivtabp21";
     public static final String RIVTABP_20 = "rivtabp20";
 
+    public static class PayloadExcepption extends Exception{
+        public PayloadExcepption(String message) {
+            super(message);
+        }
+    };
+
     // Static utility
     private PayloadInfoParser() {
     }
@@ -60,21 +66,19 @@ public class PayloadInfoParser {
     }
 
     private static void readHeader(XMLStreamReader reader, PayloadInfo payloadInfo, String local) throws XMLStreamException {
-        if (local.equals("To")) {
-            payloadInfo.setRivVersion(RIVTABP_20);
-            payloadInfo.setReceiverId(getReceiver(reader));
-        } else if (local.equals("LogicalAddress")) {
-            payloadInfo.setRivVersion(RIVTABP_21);
-            payloadInfo.setReceiverId(getReceiver(reader));
+        switch (local) {
+            case "To" :
+                payloadInfo.setRivVersion(RIVTABP_20);
+                break;
+            case "LogicalAdress":
+                payloadInfo.setRivVersion(RIVTABP_21);
+                break;
         }
-    }
-
-    private static String getReceiver(XMLStreamReader reader) throws XMLStreamException {
         reader.next();
+
         if (!reader.isEndElement() && !reader.isWhiteSpace()) {
-            return reader.getText();
+            payloadInfo.setReceiverId(reader.getText());
         }
-        return null;
     }
 
     @Data

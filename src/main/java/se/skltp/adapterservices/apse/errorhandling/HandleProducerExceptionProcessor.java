@@ -8,9 +8,11 @@ import org.apache.camel.http.base.HttpOperationFailedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.skltp.adapterservices.apse.config.ExceptionHandling;
-import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
+import se.skltp.adapterservices.apse.utils.PayloadInfoParser;
 
 import java.util.Collections;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 @Service
@@ -28,7 +30,6 @@ public class HandleProducerExceptionProcessor implements Processor {
             "   xmlns:SOAP-ENV = \"http://schemas.xmlsoap.org/soap/envelope/\"\n" +
             "   xmlns:xsi = \"http://www.w3.org/1999/XMLSchema-instance\"\n" +
             "   xmlns:xsd = \"http://www.w3.org/1999/XMLSchema\">\n" +
-            "\n" +
             "   <SOAP-ENV:Body>\n" +
             "      <SOAP-ENV:Fault>\n" +
             "         <faultcode xsi:type = \"xsd:string\">SOAP-ENV:%s</faultcode>\n" +
@@ -39,16 +40,35 @@ public class HandleProducerExceptionProcessor implements Processor {
             "   </SOAP-ENV:Body>\n" +
             "</SOAP-ENV:Envelope>";
 
-    private String createServerSoapFault(String faultString) {
-        return String.format(soapFault, "Server", faultString);
+    private enum faultType {
+        SERVER("Server"),
+        CLIENT("Client");
+        String type;
+        @Override
+        public String toString() { return type; }
+        faultType(String type){ this.type=type; }
     }
 
-    private String createClientSoapFault(String faultString) {
-        return String.format(soapFault, "Client", faultString);
+    private String getFaultstring(String responseBody) {
+
+        Matcher m = faultstringRePattern.matcher(responseBody);
+        if (m.find()) {
+            return m.group(1);
+        }
+        return null;
     }
 
+    private static void setFaultBody(Exchange exchange, faultType type, String faultString, String body) {
+        if (body == null) {
+            body = String.format(soapFault, type, faultString);
+        }
+        exchange.getIn().setBody(body);
+        exchange.setProperty("soapFault", faultString);
+    }
 
     private static final String vp009msg = "VP009 Error connecting to service producer at address %s. %s";
+
+    private static final Pattern faultstringRePattern = Pattern.compile("<[^:^ ]*:?faultstring[^>]*>([^<]*)</");
 
     @Override
     public void process(Exchange exchange) throws Exception {
@@ -62,17 +82,18 @@ public class HandleProducerExceptionProcessor implements Processor {
             if (statusCode >= 500 || (statusCode >= 200 && statusCode <= 220)) {
                 in.removeHeaders(".*");
                 in.setHeaders(Collections.unmodifiableMap(causeOperationFailed.getResponseHeaders()));
+                String responseBody = causeOperationFailed.getResponseBody();
+                setFaultBody(exchange, faultType.SERVER, getFaultstring(responseBody), responseBody);
                 in.setHeader(Exchange.HTTP_RESPONSE_CODE, exceptionHandling.getHttpStatus("passthrough", statusCode));
-                in.setBody(causeOperationFailed.getResponseBody());
             } else {
-                in.setBody(createServerSoapFault(faultString));
+                setFaultBody(exchange, faultType.SERVER, faultString, null);
                 in.setHeader(Exchange.HTTP_RESPONSE_CODE, exceptionHandling.getHttpStatus("serverFault"));
             }
-        } else if (cause instanceof SamlHeaderFromArgosProcessor.PayloadExcepption) {
-            in.setBody(createServerSoapFault(cause.toString()));
+        } else if (cause instanceof PayloadInfoParser.PayloadExcepption) {
+            setFaultBody(exchange, faultType.CLIENT, faultString, null);
             in.setHeader(Exchange.HTTP_RESPONSE_CODE, exceptionHandling.getHttpStatus("clientFault"));
         } else {
-            in.setBody(createServerSoapFault(faultString));
+            setFaultBody(exchange, faultType.CLIENT, faultString, null);
             in.setHeader(Exchange.HTTP_RESPONSE_CODE, exceptionHandling.getHttpStatus("IOFault"));
         }
     }

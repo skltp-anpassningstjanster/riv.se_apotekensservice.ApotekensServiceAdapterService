@@ -31,6 +31,7 @@ public class ApSeCamelApplication {
      * A main method to start this application.
      */
     public static void main(String[] args) {
+
         SpringApplication.run(ApSeCamelApplication.class, args);
     }
 

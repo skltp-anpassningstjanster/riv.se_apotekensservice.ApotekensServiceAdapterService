@@ -2,7 +2,7 @@ package se.skltp.adapterservices.apse.logging;
 
 import io.netty.handler.codec.http.HttpHeaderNames;
 import org.apache.camel.Exchange;
-import se.skltp.adapterservices.apse.constants.ApseExchangeProperties;
+import se.skltp.camel.utils.constants.TjpExchangeProperties;
 import se.skltp.adapterservices.apse.constants.HttpHeaders;
 
 import java.util.*;
@@ -12,14 +12,14 @@ import static se.skltp.adapterservices.apse.constants.HttpHeaders.CERTIFICATE_FR
 
 public class LogExtraInfoBuilder {
 
-    public static final String SENDER_ID = ApseExchangeProperties.SENDER_ID;
-    public static final String RECEIVER_ID = ApseExchangeProperties.RECEIVER_ID;
-    public static final String RIV_VERSION = ApseExchangeProperties.RIV_VERSION;
-    public static final String SERVICECONTRACT_NAMESPACE = ApseExchangeProperties.SERVICECONTRACT_NAMESPACE;
+    public static final String SENDER_ID = TjpExchangeProperties.SENDER_ID;
+    public static final String RECEIVER_ID = TjpExchangeProperties.RECEIVER_ID;
+    public static final String RIV_VERSION = TjpExchangeProperties.RIV_VERSION;
+    public static final String SERVICECONTRACT_NAMESPACE = TjpExchangeProperties.SERVICECONTRACT_NAMESPACE;
     public static final String WSDL_NAMESPACE = "wsdl_namespace";
-    public static final String SENDER_IP_ADRESS = ApseExchangeProperties.SENDER_IP_ADRESS;
-    public static final String VAGVAL_TRACE = ApseExchangeProperties.VAGVAL_TRACE;
-    public static final String ANROPSBEHORIGHET_TRACE = ApseExchangeProperties.ANROPSBEHORIGHET_TRACE;
+    public static final String SENDER_IP_ADRESS = TjpExchangeProperties.SENDER_IP_ADRESS;
+    public static final String VAGVAL_TRACE = TjpExchangeProperties.VAGVAL_TRACE;
+    public static final String ANROPSBEHORIGHET_TRACE = TjpExchangeProperties.ANROPSBEHORIGHET_TRACE;
     public static final String OUT_ORIGINAL_SERVICE_CONSUMER_HSA_ID = "originalServiceconsumerHsaid";
     public static final String IN_ORIGINAL_SERVICE_CONSUMER_HSA_ID = "originalServiceconsumerHsaid_in";
     public static final String TIME_ELAPSED = "time.elapsed";
@@ -28,9 +28,9 @@ public class LogExtraInfoBuilder {
     public static final String HEADERS = "Headers";
     public static final String ENDPOINT_URL = "endpoint_url";
     public static final String SOURCE = "source";
-    public static final String VP_X_FORWARDED_HOST = ApseExchangeProperties.VP_X_FORWARDED_HOST;
-    public static final String VP_X_FORWARDED_PROTO = ApseExchangeProperties.VP_X_FORWARDED_PROTO;
-    public static final String VP_X_FORWARDED_PORT = ApseExchangeProperties.VP_X_FORWARDED_PORT;
+    public static final String TjP_X_FORWARDED_HOST = TjpExchangeProperties.TjP_X_FORWARDED_HOST;
+    public static final String TjP_X_FORWARDED_PROTO = TjpExchangeProperties.TjP_X_FORWARDED_PROTO;
+    public static final String TjP_X_FORWARDED_PORT = TjpExchangeProperties.TjP_X_FORWARDED_PORT;
 
     protected static final List<String> HEADERS_TO_FILTER = Arrays.asList(CERTIFICATE_FROM_REVERSE_PROXY, "x-fk-auth-cert");
     protected static final String FILTERED_TEXT = "<filtered>";
@@ -43,16 +43,14 @@ public class LogExtraInfoBuilder {
     public static Map<String, String> createExtraInfo(Exchange exchange) {
         ExtraInfoMap<String, String> extraInfo = new ExtraInfoMap<>();
 
-        extraInfo.put(SENDER_ID, exchange.getProperty(ApseExchangeProperties.SENDER_ID, String.class));
-        extraInfo.put(RECEIVER_ID, exchange.getProperty(ApseExchangeProperties.RECEIVER_ID, String.class));
-        extraInfo.put(OUT_ORIGINAL_SERVICE_CONSUMER_HSA_ID,
-                exchange.getProperty(ApseExchangeProperties.OUT_ORIGINAL_SERVICE_CONSUMER_HSA_ID, String.class));
-        extraInfo.putNotEmpty(IN_ORIGINAL_SERVICE_CONSUMER_HSA_ID,
-                nullValue2Blank(exchange.getProperty(ApseExchangeProperties.IN_ORIGINAL_SERVICE_CONSUMER_HSA_ID, String.class)));
-        extraInfo.put(SENDER_IP_ADRESS, exchange.getProperty(ApseExchangeProperties.SENDER_IP_ADRESS, String.class));
+        extraInfo.put(SENDER_ID, exchange.getProperty(TjpExchangeProperties.SENDER_ID, String.class));
+        extraInfo.put(RECEIVER_ID, exchange.getProperty(TjpExchangeProperties.RECEIVER_ID, String.class));
+        extraInfo.put(OUT_ORIGINAL_SERVICE_CONSUMER_HSA_ID, exchange.getProperty(TjpExchangeProperties.OUT_ORIGINAL_SERVICE_CONSUMER_HSA_ID, String.class));
+        extraInfo.putNotEmpty(IN_ORIGINAL_SERVICE_CONSUMER_HSA_ID, nullValue2Blank(exchange.getProperty(TjpExchangeProperties.IN_ORIGINAL_SERVICE_CONSUMER_HSA_ID, String.class)));
+        extraInfo.put(SENDER_IP_ADRESS, exchange.getProperty(TjpExchangeProperties.SENDER_IP_ADRESS, String.class));
 
-        String serviceContractNS = exchange.getProperty(ApseExchangeProperties.SERVICECONTRACT_NAMESPACE, String.class);
-        String rivVersion = exchange.getProperty(ApseExchangeProperties.RIV_VERSION, String.class);
+        String serviceContractNS = exchange.getProperty(TjpExchangeProperties.SERVICECONTRACT_NAMESPACE, String.class);
+        String rivVersion = exchange.getProperty(TjpExchangeProperties.RIV_VERSION, String.class);
         extraInfo.put(SERVICECONTRACT_NAMESPACE, serviceContractNS);
         extraInfo.put(RIV_VERSION, rivVersion);
         extraInfo.put(WSDL_NAMESPACE, createWsdlNamespace(serviceContractNS, rivVersion));
@@ -66,9 +64,9 @@ public class LogExtraInfoBuilder {
             extraInfo.put(TIME_ELAPSED, "null");
         }
 
-        extraInfo.putNotNull(VAGVAL_TRACE, exchange.getProperty(ApseExchangeProperties.VAGVAL_TRACE, String.class));
-        extraInfo.putNotNull(ANROPSBEHORIGHET_TRACE, exchange.getProperty(ApseExchangeProperties.ANROPSBEHORIGHET_TRACE, String.class));
-        extraInfo.putNotNull(ENDPOINT_URL, exchange.getProperty(ApseExchangeProperties.VAGVAL, String.class));
+        extraInfo.putNotNull(VAGVAL_TRACE, exchange.getProperty(TjpExchangeProperties.VAGVAL_TRACE, String.class));
+        extraInfo.putNotNull(ANROPSBEHORIGHET_TRACE, exchange.getProperty(TjpExchangeProperties.ANROPSBEHORIGHET_TRACE, String.class));
+        extraInfo.putNotNull(ENDPOINT_URL, exchange.getProperty(TjpExchangeProperties.VAGVAL, String.class));
 
         String timeProducer = exchange.getIn().getHeader(HttpHeaders.X_SKLTP_PRODUCER_RESPONSETIME, String.class);
         extraInfo.putNotNull(TIME_PRODUCER, timeProducer);
@@ -78,7 +76,7 @@ public class LogExtraInfoBuilder {
 
         addHttpForwardHeaders(exchange, extraInfo);
 
-        final Boolean isError = exchange.getProperty(ApseExchangeProperties.SESSION_ERROR, Boolean.class);
+        final Boolean isError = exchange.getProperty(TjpExchangeProperties.SESSION_ERROR, Boolean.class);
         if (isError != null && isError) {
             addErrorInfo(exchange, extraInfo);
         }
@@ -88,20 +86,20 @@ public class LogExtraInfoBuilder {
     private static void addHttpForwardHeaders(Exchange exchange, ExtraInfoMap<String, String> extraInfo) {
         // Following should be logged only once
 
-        String httpXForwardedProto = exchange.getProperty(ApseExchangeProperties.VP_X_FORWARDED_PROTO, String.class);
+        String httpXForwardedProto = exchange.getProperty(TjpExchangeProperties.TjP_X_FORWARDED_PROTO, String.class);
         if (httpXForwardedProto != null) {
-            extraInfo.put(VP_X_FORWARDED_PROTO, httpXForwardedProto);
-            exchange.removeProperty(ApseExchangeProperties.VP_X_FORWARDED_PROTO);
+            extraInfo.put(TjP_X_FORWARDED_PROTO, httpXForwardedProto);
+            exchange.removeProperty(TjpExchangeProperties.TjP_X_FORWARDED_PROTO);
         }
-        String httpXForwardedHost = exchange.getProperty(ApseExchangeProperties.VP_X_FORWARDED_HOST, String.class);
+        String httpXForwardedHost = exchange.getProperty(TjpExchangeProperties.TjP_X_FORWARDED_HOST, String.class);
         if (httpXForwardedHost != null) {
-            extraInfo.put(VP_X_FORWARDED_HOST, httpXForwardedHost);
-            exchange.removeProperty(ApseExchangeProperties.VP_X_FORWARDED_HOST);
+            extraInfo.put(TjP_X_FORWARDED_HOST, httpXForwardedHost);
+            exchange.removeProperty(TjpExchangeProperties.TjP_X_FORWARDED_HOST);
         }
-        String httpXForwardedPort = exchange.getProperty(ApseExchangeProperties.VP_X_FORWARDED_PORT, String.class);
+        String httpXForwardedPort = exchange.getProperty(TjpExchangeProperties.TjP_X_FORWARDED_PORT, String.class);
         if (httpXForwardedPort != null) {
-            extraInfo.put(VP_X_FORWARDED_PORT, httpXForwardedPort);
-            exchange.removeProperty(ApseExchangeProperties.VP_X_FORWARDED_PORT);
+            extraInfo.put(TjP_X_FORWARDED_PORT, httpXForwardedPort);
+            exchange.removeProperty(TjpExchangeProperties.TjP_X_FORWARDED_PORT);
         }
     }
 
@@ -119,25 +117,21 @@ public class LogExtraInfoBuilder {
     }
 
     private static Long getElapsedTime(Exchange exchange) {
-        Date created = exchange.getProperty(ApseExchangeProperties.EXCHANGE_CREATED, Date.class);
-        if (created != null) {
-            return new Date().getTime() - created.getTime();
-        }
-        return null;
+        return new Date().getTime() - exchange.getCreated();
     }
 
     private static void addErrorInfo(Exchange exchange, ExtraInfoMap<String, String> extraInfo) {
         Exception exception = exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Exception.class);
         String errorDescription = exception != null ? exception.getMessage() : "";
         String technicalDescription = exception != null ? exception.toString() : "";
-        String errorCode = exchange.getProperty(ApseExchangeProperties.SESSION_ERROR_CODE, String.class);
-        String htmlStatus = exchange.getProperty(ApseExchangeProperties.SESSION_HTML_STATUS, String.class);
+        String errorCode = exchange.getProperty(TjpExchangeProperties.SESSION_ERROR_CODE, String.class);
+        String htmlStatus = exchange.getProperty(TjpExchangeProperties.SESSION_HTML_STATUS, String.class);
 
-        extraInfo.put(ApseExchangeProperties.SESSION_ERROR, "true");
-        extraInfo.put(ApseExchangeProperties.SESSION_ERROR_DESCRIPTION, nullValue2Blank(errorDescription));
-        extraInfo.put(ApseExchangeProperties.SESSION_ERROR_TECHNICAL_DESCRIPTION, nullValue2Blank(technicalDescription));
-        extraInfo.put(ApseExchangeProperties.SESSION_ERROR_CODE, nullValue2Blank(errorCode));
-        extraInfo.putNotEmpty(ApseExchangeProperties.SESSION_HTML_STATUS, htmlStatus);
+        extraInfo.put(TjpExchangeProperties.SESSION_ERROR, "true");
+        extraInfo.put(TjpExchangeProperties.SESSION_ERROR_DESCRIPTION, nullValue2Blank(errorDescription));
+        extraInfo.put(TjpExchangeProperties.SESSION_ERROR_TECHNICAL_DESCRIPTION, nullValue2Blank(technicalDescription));
+        extraInfo.put(TjpExchangeProperties.SESSION_ERROR_CODE, nullValue2Blank(errorCode));
+        extraInfo.putNotEmpty(TjpExchangeProperties.SESSION_HTML_STATUS, htmlStatus);
 
     }
 

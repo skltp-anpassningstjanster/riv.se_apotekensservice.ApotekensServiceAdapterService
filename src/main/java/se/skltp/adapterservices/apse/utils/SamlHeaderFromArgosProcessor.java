@@ -10,12 +10,6 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.springframework.stereotype.Service;
 import se.skltp.adapterservices.apse.apsemedicalservicesadapteric.saml.SamlTicketTransformer;
-import se.skltp.adapterservices.apse.utils.PayloadInfoParser.PayloadInfo;
-
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLOutputFactory;
-import javax.xml.stream.XMLStreamException;
-import java.io.ByteArrayInputStream;
 
 /**
  * @author jonmat
@@ -23,12 +17,6 @@ import java.io.ByteArrayInputStream;
 @Service
 @Log4j2
 public class SamlHeaderFromArgosProcessor implements Processor {
-
-    public class PayloadExcepption extends Exception{
-        public PayloadExcepption(String message) {
-            super(message);
-        }
-    };
 
     public static final String SENDER_ID = "senderid";
     public static final String SENDER_IP_ADRESS = "senderIpAdress";
@@ -43,29 +31,13 @@ public class SamlHeaderFromArgosProcessor implements Processor {
     public static final String ORIGINAL_REQUEST_ENCODING = "OriginalRequestEncoding";
     public static final String HTTP_URL_IN = "HttpUrlIn";
     public static final String HTTP_URL_OUT = "HttpUrlOut";
-    private final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-    private final XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
 
     @Override
     public void process(Exchange exchange) throws Exception {
-        String in = exchange.getIn().getBody(String.class);
-        if (in.length() < 1) {
-            throw new PayloadExcepption("The message payload was empty");
-        }
-        byte[] bodyBytes = in.getBytes("UTF-8");
-
-        extractPropertiesFromBody(bodyBytes, exchange);
+        byte[] bodyBytes = exchange.getIn().getBody(String.class).getBytes("UTF-8");
 
         String transformed;
         transformed = (new SamlTicketTransformer()).transform(bodyBytes);
         exchange.getIn().setBody(transformed);
-    }
-
-    private void extractPropertiesFromBody(byte[] bodyBytes, Exchange exchange) throws XMLStreamException {
-        PayloadInfo payloadInfo = PayloadInfoParser.extractInfoFromPayload(xmlInputFactory.createXMLStreamReader(new ByteArrayInputStream(bodyBytes)));
-        exchange.setProperty(SERVICECONTRACT_NAMESPACE, payloadInfo.getServiceContractNamespace().replaceFirst(".*apotekensservice", "apotekensservice").replace(':', '.'));
-        exchange.setProperty(RECEIVER_ID, payloadInfo.getReceiverId());
-        exchange.setProperty(RIV_VERSION, payloadInfo.getRivVersion());
-        exchange.setProperty(XML_REQUEST_ENCODING, payloadInfo.getEncoding());
     }
 }

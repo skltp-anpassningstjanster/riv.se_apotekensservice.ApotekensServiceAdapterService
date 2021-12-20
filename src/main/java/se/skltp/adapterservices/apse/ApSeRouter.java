@@ -20,21 +20,26 @@ import lombok.extern.log4j.Log4j2;
 import org.apache.camel.*;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.http.HttpComponent;
+import org.apache.camel.http.base.HttpOperationFailedException;
 import org.apache.http.conn.ssl.DefaultHostnameVerifier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import se.skltp.adapterservices.apse.config.EndpointConfig;
 import se.skltp.adapterservices.apse.config.HttpHeaderFilterProperties;
 import se.skltp.adapterservices.apse.config.SecurityProperties;
-import se.skltp.adapterservices.apse.constants.ApseExchangeProperties;
 import se.skltp.adapterservices.apse.errorhandling.HandleProducerExceptionProcessor;
 import se.skltp.adapterservices.apse.logging.MessageInfoLogger;
+import se.skltp.adapterservices.apse.utils.PayloadInfoParser;
+import se.skltp.adapterservices.apse.utils.ExtractPropertiesFromMessageProcessor;
 import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSession;
 import javax.security.cert.X509Certificate;
+import java.io.File;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -58,6 +63,7 @@ public class ApSeRouter extends RouteBuilder {
 
     @Autowired
     SamlHeaderFromArgosProcessor samlHeaderFromArgosProcessor;
+
     @Autowired
     EndpointResolverProcessor resolveEndpoint;
 
@@ -68,17 +74,17 @@ public class ApSeRouter extends RouteBuilder {
     EndpointConfig endpointConfig;
 
     @Autowired
-    SecurityProperties sslConfig;
+    HttpHeaderFilterProperties headerFilter;
 
     @Autowired
-    private HttpHeaderFilterProperties headerFilter;
+    HandleProducerExceptionProcessor handleProducerExceptionProcessor;
 
     @Autowired
-    private HandleProducerExceptionProcessor handleProducerExceptionProcessor;
-
+    ExtractPropertiesFromMessageProcessor extractPropertiesFromMessage;
 
     @Override
     public void configure() throws Exception {
+        logClassPath();
         log.debug("Configuring routes for ApSe");
         if (endpointConfig.getInbound() == null) {
             log.error("no inbound values, check configuration.");
@@ -87,16 +93,21 @@ public class ApSeRouter extends RouteBuilder {
 
         resolveHostnameVerifier();
 
+        onException(HttpOperationFailedException.class)
+                .process(handleProducerExceptionProcessor)
+                .handled(true)
+                .bean(MessageInfoLogger.class, LOG_RESP_OUT_METHOD);
+        onException(PayloadInfoParser.PayloadExcepption.class)
+                .process(handleProducerExceptionProcessor)
+                .handled(true)
+                .bean(MessageInfoLogger.class, LOG_RESP_OUT_METHOD);
         onException(Throwable.class)
                 .process(handleProducerExceptionProcessor)
                 .handled(true)
                 .bean(MessageInfoLogger.class, LOG_ERROR_METHOD);
 
-
-
         endpointConfig.getInbound().forEach((service, consumerUrl) -> {
             log.info("setting up inbound consumer " + consumerUrl);
-            org.apache.camel.ExchangeProperties ep;
 
             fromF(NETTY_HTTP_FROM, consumerUrl)
                     .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
@@ -107,10 +118,10 @@ public class ApSeRouter extends RouteBuilder {
         });
 
         from("direct:transform").routeId("se.skltp.adapterservices.apse.messageTransform")
-                .setProperty(ApseExchangeProperties.EXCHANGE_CREATED, simple("${date:exchangeCreated}"))
                 .log(LoggingLevel.DEBUG, "received connection")
                 .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
                 .streamCaching()
+                .process(extractPropertiesFromMessage)
                 .bean(MessageInfoLogger.class, LOG_REQ_IN_METHOD)
                 .process(samlHeaderFromArgosProcessor)
                 .process(resolveEndpoint)
@@ -122,7 +133,7 @@ public class ApSeRouter extends RouteBuilder {
                     .otherwise()
                         .toD("${exchangeProperty[outbound_url]}")
                 .end()
-                .bean(MessageInfoLogger.class, LOG_RESP_IN_METHOD)
+                .bean(MessageInfoLogger.class, LOG_RESP_OUT_METHOD)
         ;
     }
 
@@ -162,5 +173,13 @@ public class ApSeRouter extends RouteBuilder {
                                              }
                                          }
                 );
+    }
+    private void logClassPath() {
+        if (log.isDebugEnabled()) {
+            String classpath = System.getProperty("java.class.path");
+            String[] classpathEntries = classpath.split(File.pathSeparator);
+            String outp = "classpath: \n      - " + String.join("\n      - ", classpathEntries);
+            log.debug(outp);
+        }
     }
 }

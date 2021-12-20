@@ -1,8 +1,8 @@
 package se.skltp.adapterservices.apse.logging;
 
 import org.apache.camel.Exchange;
-import se.skltp.adapterservices.apse.constants.ApseExchangeProperties;
 import se.skltp.adapterservices.apse.logging.logentry.*;
+import se.skltp.camel.utils.constants.TjpExchangeProperties;
 
 import java.util.Map;
 
@@ -29,6 +29,11 @@ public class LogEntryBuilder {
         Map<String, String> extraInfo = LogExtraInfoBuilder.createExtraInfo(exchange);
         logEntry.setExtraInfo(extraInfo);
 
+        String soapFault = exchange.getProperty("soapFault", String.class);
+        if (soapFault != null) {
+            logEntry.getExtraInfo().put("soapFault", soapFault);
+        }
+
         return logEntry;
     }
 
@@ -39,8 +44,8 @@ public class LogEntryBuilder {
         }
 
         LogMessageExceptionType lme = new LogMessageExceptionType();
-        lme.setExceptionClass(throwable.getClass().getName());
-        lme.setExceptionMessage(throwable.getMessage());
+        lme.setExceptionClass("throwable.getClass().getName()");
+        lme.setExceptionMessage("throwable.getMessage()");
         lme.setStackTrace(stackTrace);
 
         return lme;
@@ -59,7 +64,7 @@ public class LogEntryBuilder {
 
         if (exchange != null) {
             serviceImplementation = exchange.getFromRouteId();
-            String endpointURI = exchange.getProperty(ApseExchangeProperties.HTTP_URL_IN, String.class);
+            String endpointURI = exchange.getProperty(TjpExchangeProperties.HTTP_URL_IN, String.class);
             endpoint = (endpointURI == null) ? "" : endpointURI;
 
         }
@@ -77,7 +82,7 @@ public class LogEntryBuilder {
         String componentId = "";
 
         if (exchange != null) {
-            businessCorrelationId = exchange.getProperty(ApseExchangeProperties.SKLTP_CORRELATION_ID, "", String.class);
+            businessCorrelationId = exchange.getProperty(TjpExchangeProperties.SKLTP_CORRELATION_ID, "", String.class);
             messageId = exchange.getMessage().getMessageId();
 
             // The context name is set in property "camel.springboot.name"
