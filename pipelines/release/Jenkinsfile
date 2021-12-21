@@ -49,7 +49,7 @@ pipeline  {
                 }
                 sh "git config user.name ${params.GIT_USER_NAME}"
                 sh "git config user.email ${params.GIT_USER_EMAIL}"
-                git branch: ${params.CHECKOUT}, 
+                git branch: "${params.CHECKOUT}", 
                     changelog: true,
                     credentialsId: 'skltp-github-user', 
                     poll: true,
