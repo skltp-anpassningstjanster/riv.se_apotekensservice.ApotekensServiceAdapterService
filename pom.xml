@@ -21,7 +21,7 @@
         <lmax_disruptor-version>3.3.6</lmax_disruptor-version>
         <camel.version>3.7.4</camel.version>
         <javax.servlet-api-version>4.0.1</javax.servlet-api-version>
-        <netty.version>4.1.63.Final</netty.version>
+        <netty.version>9.4.45.v20220203</netty.version>
 
         <takdatahandler.version>1.0.1</takdatahandler.version>
 

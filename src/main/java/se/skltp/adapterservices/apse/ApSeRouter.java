@@ -117,10 +117,16 @@ public class ApSeRouter extends RouteBuilder {
                 .removeHeaders(headerFilter.getRequestHeadersToRemove(), headerFilter.getRequestHeadersToKeep())
                 .bean(MessageInfoLogger.class, LOG_REQ_OUT_METHOD)
                 .log(LoggingLevel.DEBUG, "executing request for \"${exchangeProperty[servicecontract_namespace]}\" on url: ${exchangeProperty[outbound_url]}")
+                .threads(15,50)
                 .choice().when(exchangeProperty("outbound_url").startsWith("https"))
-                        .toD("${exchangeProperty[outbound_url]}?sslContextParameters=#outgoingSSLContextParameters")
+                        .toD("${exchangeProperty[outbound_url]}"
+                                + "?sslContextParameters=#outgoingSSLContextParameters"
+                                + "&connectTimeout={{producer.https.connect.timeout}}"
+                        )
                     .otherwise()
-                        .toD("${exchangeProperty[outbound_url]}")
+                        .toD("${exchangeProperty[outbound_url]}"
+                                + "&connectTimeout={{producer.http.connect.timeout}}"
+                        )
                 .end()
                 .bean(MessageInfoLogger.class, LOG_RESP_IN_METHOD)
         ;

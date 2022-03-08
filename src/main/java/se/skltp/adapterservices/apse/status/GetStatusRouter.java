@@ -1,6 +1,7 @@
 package se.skltp.adapterservices.apse.status;
 
 import lombok.extern.log4j.Log4j2;
+import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,6 +21,7 @@ public class GetStatusRouter extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from(NETTY_HTTP_GET).routeId(HTTP_GET)
+                .log(LoggingLevel.DEBUG, "se.skltp.adapterservices.apse.GetStatus","status requested")
                 .process(getStatusProcessor);
     }
 }
