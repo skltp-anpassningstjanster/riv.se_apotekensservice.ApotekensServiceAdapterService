@@ -1,12 +1,12 @@
 node {
-jdk = tool name: 'Java_8_221', type: 'jdk'
+jdk = tool name: 'openjdk-11', type: 'jdk'
    env.JAVA_HOME = "${jdk}"
    def mvnHome
    catchError {
       stage('Build') {
         // Run the maven build
         configFileProvider([configFile(fileId: 'ae5eda6d-e166-4b43-a78c-ed67ed10cac0', variable: 'MAVEN_SETTINGS')]) {
-          def maven = docker.image("maven:3.8.1-openjdk-8-slim")
+          def maven = docker.image("maven:3.8.4-jdk-11-slim")
 	  	  maven.pull()
 		  maven.inside("-v ${jdk}:${jdk}") {
 		    sh 'mvn -X --global-settings ${MAVEN_SETTINGS} clean install'
