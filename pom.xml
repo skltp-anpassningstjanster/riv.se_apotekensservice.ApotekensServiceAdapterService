@@ -136,12 +136,6 @@
                 <version>${camel.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-all</artifactId>
-                <version>${netty.version}</version>
-            </dependency>
-
             <!--Netty-->
             <dependency>
                 <groupId>io.netty</groupId>
