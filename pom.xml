@@ -198,8 +198,8 @@
             </dependency>
             <dependency>
                 <groupId>org.bouncycastle</groupId>
-                <artifactId>bcprov-ext-jdk16</artifactId>
-                <version>1.46</version>
+                <artifactId>bcprov-jdk15on</artifactId>
+                <version>1.70</version>
                 <scope>test</scope>
             </dependency>
 
@@ -290,7 +290,7 @@
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-ext-jdk16</artifactId>
+            <artifactId>bcprov-jdk15on</artifactId>
             <scope>test</scope>
         </dependency>
 
