@@ -14,7 +14,7 @@ pipeline  {
                         parameters ([
                             string (
                                 name: 'CHECKOUT', 
-                                defaultValue: 'release/3.0.0', 
+                                defaultValue: 'release/3.1.0', 
                                 description: '''Välj en specifik branch eller commit-hash att checka ut från git. OBS! Lightweight checkout-rutan får inte vara ikryssad om commit-hash används (se Pipeline-steget).''', 
                                 trim: true), 
                             string (
@@ -49,7 +49,7 @@ pipeline  {
                 }
                 sh "git config user.name ${params.GIT_USER_NAME}"
                 sh "git config user.email ${params.GIT_USER_EMAIL}"
-                git branch: ${params.CHECKOUT}, 
+                git branch: "${params.CHECKOUT}", 
                     changelog: true,
                     credentialsId: 'skltp-github-user', 
                     poll: true,
