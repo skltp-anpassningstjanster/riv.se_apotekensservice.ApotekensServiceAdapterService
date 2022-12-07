@@ -15,4 +15,4 @@ WORKDIR ${BASE_DIR}
 USER ${APPUSER}
 
 ADD target/apse-adapter-*.jar ${APPJAR}
-CMD java ${JAVA_OPTS} -jar ${APPJAR}
+CMD java ${JAVA_OPTS} -jar ${APPJAR} ${CONFIG_FILE_PARAM}
