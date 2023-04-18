@@ -8,7 +8,9 @@ container:
 environment:
   variables:
     _default_config_maps:
-      - apse-adapter-configmap-default
+      - application-properties-configmap
+      - environment-configmap
+      - log4j2-configmap
     config_maps:
       # Nothing yet. Override to supply your own values.
     secrets:
