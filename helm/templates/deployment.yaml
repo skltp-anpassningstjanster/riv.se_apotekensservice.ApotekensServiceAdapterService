@@ -18,9 +18,10 @@ spec:
         - name: application-properties
           configMap:
             name: application-properties-configmap
-        - name: certs
-          secret:
-            secretName: apse-secret-certs
+        # Activate when we've got vp-certs fixed
+        # - name: certs
+        #   secret:
+        #     secretName: apse-secret-certs
         - name: log4j
           configMap:
             name: log4j2-configmap
@@ -58,9 +59,10 @@ spec:
             - name: application-properties
               mountPath: /opt/apse/config/application-properties
               readOnly: true
-            - name: certs
-              mountPath: /opt/apse/certs
-              readOnly: true
+            # Activate when we've got vp-certs fixed
+            # - name: certs
+            #   mountPath: /opt/apse/certs
+            #   readOnly: true
             - name: log4j
               mountPath: /opt/apse/config/log4j
               readOnly: true
