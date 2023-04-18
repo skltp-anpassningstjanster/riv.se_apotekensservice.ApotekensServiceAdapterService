@@ -1,0 +1,15 @@
+repository: docker.drift.inera.se/ntjp/
+replicaCount: 1
+
+container:
+  image:
+    tag: # Nothing yet. Override to supply your own values.
+
+environment:
+  variables:
+    _default_config_maps:
+      - apse-adapter-configmap-default
+    config_maps:
+      # Nothing yet. Override to supply your own values.
+    secrets:
+      # Nothing yet. Override to supply your own values.

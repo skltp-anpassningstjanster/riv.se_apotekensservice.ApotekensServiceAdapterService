@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: application-properties-configmap
+data:
+  application.properties: |
+    apse.endpoint.inbound.nmtstub=http://0.0.0.0:11005/tjanstebryggan
+    apse.endpoint.outbound.nmtstub.apotekensservice.axs.HamtaPatientInfoResponder.6=https://load-mocks.sm.nordicmedtest.se/HamtaPatientInfoResponder/V6
+    apse.endpoint.outbound.nmtstub.apotekensservice.axs.HamtaPatientInfoResponder.5=https://load-mocks.sm.nordicmedtest.se/HamtaPatientInfoResponder/V5
+
+    apse.endpoint.connect.timeout=2000
