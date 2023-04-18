@@ -75,4 +75,4 @@ data:
   classpath: /opt/apse/config/application-properties
 
 # This port is overridden here to free up 8080 for us to use.
-  server.port: 53217
+  server.port: "53217"
