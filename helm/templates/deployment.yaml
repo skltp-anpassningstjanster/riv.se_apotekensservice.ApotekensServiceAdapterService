@@ -25,7 +25,7 @@ spec:
           configMap:
             name: log4j2-configmap
       imagePullSecrets:
-        regcred
+        - name: regcred
       containers:
         - name: apse-adapter
           image: {{ .Values.repository }}apse-adapter:{{ .Values.container.image.tag | default .Chart.AppVersion }}
