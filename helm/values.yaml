@@ -5,6 +5,10 @@ container:
   image:
     tag: # Nothing yet. Override to supply your own values.
 
+# Environment-specific backwards-compatible service name
+vip:
+  name: default-anp-vip
+
 environment:
   variables:
     _default_config_maps:
