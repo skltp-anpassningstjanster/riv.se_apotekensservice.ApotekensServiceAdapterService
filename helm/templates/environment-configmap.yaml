@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: environment-configmap
+data:
+  apse.host: "0.0.0.0"
+  apse.port: "8080"
+  apse.status.url: "http://${apse.host}:${apse.port}/status"
+
+  # Response size in bytes (15Mb=15*1024*1024)
+  apse.max.receive.length: "15728640"
+
+  apse.tls.allowedincomingprotocols: "TLSv1.2"
+  apse.tls.allowedoutgoingprotocols: "TLSv1.2"
+  apse.tls.store.location: "${base.dir}/certs/"
+
+  apse.tls.store.consumer.file: "test.esb.ntjp.sjunet.org.p12"
+  apse.tls.store.consumer.hostnameverifyskiplist: "localhost,127.0.0.1,0.0.0.0,ind-dtjp-anp1"
+  apse.tls.store.consumer.type: "PKCS12"
+  
+  apse.tls.store.producer.file: "test.esb.ntjp.sjunet.org.p12"
+  apse.tls.store.producer.type: "PKCS12"
+  apse.tls.store.truststore.file: "apse-trust.p12"
+  apse.tls.store.truststore.type: "PKCS12"
+  
+  buildingsubjectconfirmation: "true"
+  camel.springboot.name: "ApSeAdapter"
+
+  # Key where to find senderid in certificates subject
+  certificate.senderid.subject.pattern: "OU=([^,]+)"
+  certificateserial: "1074b135296e3b04" # Secret?
+  certificatesubject: "C=se, O=apotekensservice, CN=pascalonline"
+  certificatesubjectname: "pascalonline"
+  credentialtype: "X509_CREDENTIAL"
+  includekeyinfoinsignature: "true"
+  java.opts: "-Dlog4j2.formatMsgNoLookups=true -Duser.country=SE -Duser.language=en -Xms512m -Xmx1536m -XX:MaxMetaspaceSize=256m -XX:CompressedClassSpaceSize=256m"
+  keystorefilename: "Pascal.pfx"
+  keystorepath: "certificates/"
+  keystoretype: "PKCS12"
+  log4j.configuration.file: "/opt/apse/config/log4j/log4j2.xml"
+
+  # Allow to obtain basic information about camel routes (read only mode)
+  management.camelroutes.enabled: "true"
+  management.camelroutes.read-only: "true"
+  
+  # show verbose health details (/actuator/health) so you can see Camel information also
+  management.endpoint.health.show-details: "always"
+  management.endpoints.web.exposure.include: "info,health"
+  management.health.enabled: "true"
+
+  # Turn on actuator health check
+  endpoints.health.enabled: "true"
+
+  # to turn off Camel info in (/actuator/info)
+  management.info.camel.enabled: "true"
+  management.info.camel.verbose: "true"
+  
+  # All access to actuator endpoints without security
+  management.security.enabled: "false"
+  
+  memory.logger.period.seconds: "120"
+  namespaceaware: "true"
+  producer.http.connect.timeout: "5000"
+  producer.https.connect.timeout: "5000"
+  removeinitialxmlstring: "true"
+  spring.profiles.include: "security"
+  ticketvalidity: "15"
+
+  #validate incoming tickets?
+  validatebif: "false"
+  validatelktj: "false"
+
+  xmlstringtoremove: "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+
+  classpath: /opt/apse/config/application-properties
+
+# This port is overridden here to free up 8080 for us to use. It needs to be specified.
+  server.port: "53217"

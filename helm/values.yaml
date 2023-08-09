@@ -1,0 +1,21 @@
+repository: docker.drift.inera.se/ntjp/
+replicaCount: 1
+
+container:
+  image:
+    tag: # Nothing yet. Override to supply your own values.
+
+# Environment-specific backwards-compatible service name
+vip:
+  name: default-anp-vip
+
+environment:
+  variables:
+    _default_config_maps:
+      - application-properties-configmap
+      - environment-configmap
+      - log4j2-configmap
+    config_maps:
+      # Nothing yet. Override to supply your own values.
+    secrets:
+      # Nothing yet. Override to supply your own values.

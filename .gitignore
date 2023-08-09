@@ -4,6 +4,8 @@
 .studio
 target
 
+template-test
+
 # IntelliJ
 .idea
 *.iml

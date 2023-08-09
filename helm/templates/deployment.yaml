@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apse-adapter
+  labels:
+    {{- include "apse-adapter.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "apse-adapter.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "apse-adapter.selectorLabels" . | nindent 8 }}
+    spec:
+      volumes:
+        - name: application-properties
+          configMap:
+            name: application-properties-configmap
+        # Activate when we've got vp-certs fixed
+        # - name: certs
+        #   secret:
+        #     secretName: apse-secret-certs
+        - name: log4j
+          configMap:
+            name: log4j2-configmap
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: apse-adapter
+          image: {{ .Values.repository }}apse-adapter:{{ .Values.container.image.tag | default .Chart.AppVersion }}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /status
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /status
+              port: http
+          envFrom:
+            {{- range $.Values.environment.variables._default_config_maps }}
+            - configMapRef:
+                name: {{ . }}
+            {{- end }}
+            {{- range $.Values.environment.variables.config_maps }}
+            - configMapRef:
+                name: {{ . }}
+            {{- end }}
+            {{- range $.Values.environment.variables.secrets }}
+            - secretRef:
+                name: {{ . }}
+            {{- end }}
+          volumeMounts:
+            - name: application-properties
+              mountPath: /opt/apse/config/application-properties
+              readOnly: true
+            # Activate when we've got vp-certs fixed
+            # - name: certs
+            #   mountPath: /opt/apse/certs
+            #   readOnly: true
+            - name: log4j
+              mountPath: /opt/apse/config/log4j
+              readOnly: true
