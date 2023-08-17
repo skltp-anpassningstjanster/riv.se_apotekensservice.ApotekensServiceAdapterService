@@ -4,6 +4,8 @@ metadata:
   name: application-properties-configmap
 data:
   application.properties: |
+    server.port=8089
+    
     apse.endpoint.inbound.nmtstub=http://0.0.0.0:8080/tjanstebryggan
     apse.endpoint.outbound.nmtstub.apotekensservice.axs.HamtaPatientInfoResponder.6=https://load-mocks.sm.nordicmedtest.se/HamtaPatientInfoResponder/V6
     apse.endpoint.outbound.nmtstub.apotekensservice.axs.HamtaPatientInfoResponder.5=https://load-mocks.sm.nordicmedtest.se/HamtaPatientInfoResponder/V5
