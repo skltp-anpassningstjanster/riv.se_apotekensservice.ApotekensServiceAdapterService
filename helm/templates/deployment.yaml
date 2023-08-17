@@ -30,7 +30,7 @@ spec:
       containers:
         - name: apse-adapter
           image: {{ .Values.repository }}apse-adapter:{{ .Values.container.image.tag | default .Chart.AppVersion }}
-          imagePullPolicy: {{ .Values.container.frontend.image.pullPolicy }}
+          imagePullPolicy: {{ .Values.container.image.pullPolicy }}
           ports:
             - name: http
               containerPort: 8080
