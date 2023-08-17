@@ -30,18 +30,35 @@ spec:
       containers:
         - name: apse-adapter
           image: {{ .Values.repository }}apse-adapter:{{ .Values.container.image.tag | default .Chart.AppVersion }}
+          imagePullPolicy: {{ .Values.container.image.pullPolicy }}
           ports:
             - name: http
               containerPort: 8080
               protocol: TCP
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sleep", "10"]
           livenessProbe:
+            failureThreshold: 10
             httpGet:
-              path: /status
+              path: actuator/health/liveness
               port: http
+              scheme: HTTP
+            initialDelaySeconds: 90
+            periodSeconds: 20
+            successThreshold: 1
+            timeoutSeconds: 5
           readinessProbe:
+            failureThreshold: 10
             httpGet:
-              path: /status
+              path: actuator/health/readiness
               port: http
+              scheme: HTTP
+            initialDelaySeconds: 40
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
           envFrom:
             {{- range $.Values.environment.variables._default_config_maps }}
             - configMapRef:
