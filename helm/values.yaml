@@ -4,6 +4,7 @@ replicaCount: 1
 container:
   image:
     tag: # Nothing yet. Override to supply your own values.
+    pullPolicy: Always
 
 # Environment-specific backwards-compatible service name
 vip:
