@@ -72,7 +72,7 @@ spec:
               {{- end }}
           envFrom:
             - configMapRef:
-                name: pem2pfx
+                name: apse_pem2pfx
 
 
       containers:

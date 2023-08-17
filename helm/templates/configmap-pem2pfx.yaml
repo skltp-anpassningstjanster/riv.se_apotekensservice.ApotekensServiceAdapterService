@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: pem2pfx
+  name: apse_pem2pfx
 data:
 
   {{- with .Values.pem_to_pfx }}

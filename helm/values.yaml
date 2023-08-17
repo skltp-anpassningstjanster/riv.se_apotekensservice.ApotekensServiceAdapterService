@@ -25,6 +25,7 @@ initContainer:
   certGen:
     image:
       name: cert-generator-utility
+      tag: 4.3.2-RC2-SNAPSHOT
 
 pem_to_pfx:
   envPrefix: PEM2PFX
