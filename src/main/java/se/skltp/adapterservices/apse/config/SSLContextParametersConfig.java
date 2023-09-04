@@ -15,6 +15,10 @@ public class SSLContextParametersConfig {
     public static final String DELIMITER = ",";
 
     @Autowired
+    public SSLContextParametersConfig(SecurityProperties secProp) {
+        securityProperties = secProp;
+    }
+
     SecurityProperties securityProperties;
 
     @Bean
@@ -22,41 +26,49 @@ public class SSLContextParametersConfig {
         KeyStoreParameters ksp = new KeyStoreParameters();
         KeyManagersParameters kmp = new KeyManagersParameters();
         FileSystems.getDefault().getPath("logs", "access.log");
-        ksp.setResource(securityProperties.getStore().getLocation() + securityProperties.getStore().getProducer().getFile());
-        ksp.setPassword(securityProperties.getStore().getProducer().getPassword());
-
-        kmp.setKeyPassword(securityProperties.getStore().getProducer().getKeyPassword());
-        kmp.setKeyStore(ksp);
 
         SSLContextParameters sslContextParameters = new SSLContextParameters();
-        sslContextParameters.setKeyManagers(kmp);
+        if(securityProperties.getStore().getProducer().getFile() != null) {
+            ksp.setResource(securityProperties.getStore().getLocation() + securityProperties.getStore().getProducer().getFile());
+            ksp.setPassword(securityProperties.getStore().getProducer().getPassword());
+
+            kmp.setKeyPassword(securityProperties.getStore().getProducer().getKeyPassword());
+            kmp.setKeyStore(ksp);
+            sslContextParameters.setKeyManagers(kmp);
+        }
 
         TrustManagersParameters trustManagersParameters = createTrustManagerParameters();
         sslContextParameters.setTrustManagers(trustManagersParameters);
 
-        SecureSocketProtocolsParameters secureProtocolParameters = createSecureProtocolParameters(securityProperties.getAllowedIncomingProtocols());
-        sslContextParameters.setSecureSocketProtocols(secureProtocolParameters);
+        if (securityProperties.getAllowedIncomingProtocols() != null) {
+            SecureSocketProtocolsParameters secureProtocolParameters = createSecureProtocolParameters(securityProperties.getAllowedIncomingProtocols());
+            sslContextParameters.setSecureSocketProtocols(secureProtocolParameters);
+        }
         return sslContextParameters;
     }
 
     @Bean
     public SSLContextParameters outgoingSSLContextParameters() {
         KeyStoreParameters ksp = new KeyStoreParameters();
-        ksp.setResource(securityProperties.getStore().getLocation() + securityProperties.getStore().getConsumer().getFile());
-        ksp.setPassword(securityProperties.getStore().getConsumer().getPassword());
-        KeyManagersParameters kmp = new KeyManagersParameters();
-        kmp.setKeyPassword(securityProperties.getStore().getConsumer().getKeyPassword());
-        kmp.setKeyStore(ksp);
-
         SSLContextParameters sslContextParameters = new SSLContextParameters();
-        sslContextParameters.setKeyManagers(kmp);
 
-        TrustManagersParameters trustManagersParameters = createTrustManagerParameters();
-        sslContextParameters.setTrustManagers(trustManagersParameters);
+        if(securityProperties.getStore().getConsumer().getFile() != null && !securityProperties.getStore().getConsumer().getFile().isEmpty()) {
+            ksp.setResource(securityProperties.getStore().getLocation() + securityProperties.getStore().getConsumer().getFile());
+            ksp.setPassword(securityProperties.getStore().getConsumer().getPassword());
+            KeyManagersParameters kmp = new KeyManagersParameters();
+            kmp.setKeyPassword(securityProperties.getStore().getConsumer().getKeyPassword());
+            kmp.setKeyStore(ksp);
 
-
-        SecureSocketProtocolsParameters sspp = createSecureProtocolParameters(securityProperties.getAllowedOutgoingProtocols());
-        sslContextParameters.setSecureSocketProtocols(sspp);
+            sslContextParameters.setKeyManagers(kmp);
+        }
+        if(securityProperties.getStore().getTruststore().getFile() != null) {
+            TrustManagersParameters trustManagersParameters = createTrustManagerParameters();
+            sslContextParameters.setTrustManagers(trustManagersParameters);
+        }
+        if (securityProperties.getAllowedOutgoingProtocols() != null) {
+            SecureSocketProtocolsParameters sspp = createSecureProtocolParameters(securityProperties.getAllowedOutgoingProtocols());
+            sslContextParameters.setSecureSocketProtocols(sspp);
+        }
         return sslContextParameters;
     }
 
