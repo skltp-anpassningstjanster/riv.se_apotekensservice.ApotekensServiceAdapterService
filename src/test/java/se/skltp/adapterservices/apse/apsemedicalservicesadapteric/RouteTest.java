@@ -14,14 +14,18 @@ import se.skltp.adapterservices.apse.EndpointResolverProcessor;
 import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
 import se.skltp.adapterservices.apse.config.SSLContextParametersConfig;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class RouteTest extends CamelTestSupport {
 
     SamlHeaderFromArgosProcessor samlHeaderFromArgosProcessor;
     EndpointResolverProcessor resolveEndpoint;
 
-    private static String hamtaPatientInfoRequestIn = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:urn=\"urn:riv:inera.se.apotekensservice:argos:1\" xmlns:urn1=\"urn:riv:itintegration:registry:1\" xmlns:urn2=\"urn:riv:se.apotekensservice:axs:HamtaPatientInfoResponder:6\">\n" +
+    private static String hamtaPatientInfoRequestIn =
+            "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:urn=\"urn:riv:inera.se.apotekensservice:argos:1\" xmlns:urn1=\"urn:riv:itintegration:registry:1\" xmlns:urn2=\"urn:riv:se.apotekensservice:axs:HamtaPatientInfoResponder:6\">\n" +
             "   <soapenv:Header>\n" +
             "      <urn:ArgosHeader>\n" +
             "         <!--Optional:-->\n" +
@@ -52,11 +56,13 @@ public class RouteTest extends CamelTestSupport {
         Exchange e = exchanges.get(0);
         String body = e.getIn().getBody(String.class);
 
-        assert(body.contains("83xHIE0CAwEAAaNZMFcwVQYDVR0BBE4wTIAQg6JKNhP"));
-        assert(body.contains("<ds:KeyName>Pascal Key</ds:KeyName>"));
-        assert(body.contains("<saml2:AttributeValue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"xs:string\">Förskrivare</saml2:AttributeValue>"));
+        assertThat(body).contains(new String[]{
+                "83xHIE0CAwEAAaNZMFcwVQYDVR0BBE4wTIAQg6JKNhP",
+                "<ds:KeyName>Pascal Key</ds:KeyName>",
+                "<saml2:AttributeValue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"xs:string\">Förskrivare</saml2:AttributeValue>"
+        });
 
-        }
+    }
 
     @Test
     public void testSslToHttpBin() throws Exception {
@@ -73,7 +79,7 @@ public class RouteTest extends CamelTestSupport {
         List<Exchange> exchanges = getMockEndpoint("mock:result").getExchanges();
         Exchange e = exchanges.get(0);
         String body = e.getIn().getBody(String.class);
-        assert(body.contains("Apache-HttpClient"));
+        assertThat(body).contains("Apache-HttpClient");
     }
 
     @Override
