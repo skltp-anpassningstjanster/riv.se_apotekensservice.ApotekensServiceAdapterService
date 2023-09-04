@@ -29,6 +29,7 @@ import se.skltp.adapterservices.apse.config.SecurityProperties;
 import se.skltp.adapterservices.apse.constants.ApseExchangeProperties;
 import se.skltp.adapterservices.apse.errorhandling.HandleProducerExceptionProcessor;
 import se.skltp.adapterservices.apse.logging.MessageInfoLogger;
+import se.skltp.adapterservices.apse.utils.CustomHostnameVerifier;
 import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
 
 import javax.net.ssl.HostnameVerifier;
@@ -85,7 +86,9 @@ public class ApSeRouter extends RouteBuilder {
             System.exit(-404);
         }
 
-        resolveHostnameVerifier();
+
+        getContext().getComponent("https", HttpComponent.class)
+                .setX509HostnameVerifier(new CustomHostnameVerifier(securityProperties));
 
         onException(Throwable.class)
                 .process(handleProducerExceptionProcessor)
@@ -132,41 +135,4 @@ public class ApSeRouter extends RouteBuilder {
         ;
     }
 
-    private void resolveHostnameVerifier() {
-        getContext().getComponent("https", HttpComponent.class)
-                .setX509HostnameVerifier(new HostnameVerifier() {
-
-                                             @Override
-                                             public boolean verify(String hostname, SSLSession session) {
-                                                 AtomicBoolean returnValue = new AtomicBoolean(false);
-                                                 DefaultHostnameVerifier defaultHostnameVerifier = new DefaultHostnameVerifier();
-                                                 boolean defaultVerifyResponse = defaultHostnameVerifier.verify(hostname, session);
-                                                 if (defaultVerifyResponse) {
-                                                     returnValue.set(true);
-                                                 } else {
-                                                     X509Certificate[] pc;
-                                                     String subj = "----";
-                                                     try {
-                                                         pc = session.getPeerCertificateChain();
-                                                         subj = pc[0].getSubjectDN().getName();
-                                                     } catch (SSLPeerUnverifiedException e) {
-                                                         e.printStackTrace();
-                                                     }
-                                                     log.warn(String.format("Hostname verification failed, the host \"%s\" presented a certificate with subject: \"%s\"", subj, hostname, subj));
-                                                     if (securityProperties.getStore().getConsumer().getHostNameVerifySkipList() != null) {
-                                                         securityProperties.getStore().getConsumer().getHostNameVerifySkipList().forEach(
-                                                                 skipMe -> {
-                                                                     if (skipMe.equals(hostname)) {
-                                                                         log.error("Despite a failed host name verification the host was accepted. this should not be allowed outside a development environment");
-                                                                         returnValue.set(true);
-                                                                     }
-                                                                 }
-                                                         );
-                                                     }
-                                                 }
-                                                 return returnValue.get();
-                                             }
-                                         }
-                );
-    }
 }
