@@ -28,7 +28,9 @@ public class SSLContextParametersConfig {
         FileSystems.getDefault().getPath("logs", "access.log");
 
         SSLContextParameters sslContextParameters = new SSLContextParameters();
-        if(securityProperties.getStore().getProducer().getFile() != null) {
+        String producerCertFile = securityProperties.getStore().getConsumer().getFile();
+        String incomingProtocols = securityProperties.getAllowedOutgoingProtocols();
+        if(producerCertFile != null && !producerCertFile.isEmpty()) {
             ksp.setResource(securityProperties.getStore().getLocation() + securityProperties.getStore().getProducer().getFile());
             ksp.setPassword(securityProperties.getStore().getProducer().getPassword());
 
@@ -40,7 +42,7 @@ public class SSLContextParametersConfig {
         TrustManagersParameters trustManagersParameters = createTrustManagerParameters();
         sslContextParameters.setTrustManagers(trustManagersParameters);
 
-        if (securityProperties.getAllowedIncomingProtocols() != null) {
+        if (incomingProtocols != null && !incomingProtocols.isEmpty()) {
             SecureSocketProtocolsParameters secureProtocolParameters = createSecureProtocolParameters(securityProperties.getAllowedIncomingProtocols());
             sslContextParameters.setSecureSocketProtocols(secureProtocolParameters);
         }
@@ -52,7 +54,11 @@ public class SSLContextParametersConfig {
         KeyStoreParameters ksp = new KeyStoreParameters();
         SSLContextParameters sslContextParameters = new SSLContextParameters();
 
-        if(securityProperties.getStore().getConsumer().getFile() != null && !securityProperties.getStore().getConsumer().getFile().isEmpty()) {
+        String trustStoreFile = securityProperties.getStore().getTruststore().getFile();
+        String consumerCertFile = securityProperties.getStore().getConsumer().getFile();
+        String outgoingProtocols = securityProperties.getAllowedOutgoingProtocols();
+
+        if(consumerCertFile != null && !consumerCertFile.isEmpty()) {
             ksp.setResource(securityProperties.getStore().getLocation() + securityProperties.getStore().getConsumer().getFile());
             ksp.setPassword(securityProperties.getStore().getConsumer().getPassword());
             KeyManagersParameters kmp = new KeyManagersParameters();
@@ -61,11 +67,11 @@ public class SSLContextParametersConfig {
 
             sslContextParameters.setKeyManagers(kmp);
         }
-        if(securityProperties.getStore().getTruststore().getFile() != null) {
+        if(trustStoreFile != null && !trustStoreFile.isEmpty()) {
             TrustManagersParameters trustManagersParameters = createTrustManagerParameters();
             sslContextParameters.setTrustManagers(trustManagersParameters);
         }
-        if (securityProperties.getAllowedOutgoingProtocols() != null) {
+        if (outgoingProtocols != null && !outgoingProtocols.isEmpty()) {
             SecureSocketProtocolsParameters sspp = createSecureProtocolParameters(securityProperties.getAllowedOutgoingProtocols());
             sslContextParameters.setSecureSocketProtocols(sspp);
         }
