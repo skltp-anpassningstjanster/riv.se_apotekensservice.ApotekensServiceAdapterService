@@ -10,37 +10,7 @@ data:
   # Response size in bytes (15Mb=15*1024*1024)
   apse.max.receive.length: "15728640"
 
-  apse.tls.allowedincomingprotocols: "TLSv1.2"
-  apse.tls.allowedoutgoingprotocols: "TLSv1.2"
-  apse.tls.store.consumer.hostnameverifyskiplist: "localhost,127.0.0.1,0.0.0.0,ind-dtjp-anp1"
 
-{{ if .Values.pem_to_pfx }}
-  {{ with .Values.pem_to_pfx -}}
-  apse.tls.store.location: "file:{{ .pfx.path }}/"
-
-  apse.tls.store.truststore.file: {{ .trust.pfxFile }}
-  apse.tls.store.truststore.type: "PKCS12"
-  apse.tls.store.truststore.password: {{ .trust.password }}
-
-  apse.tls.store.producer.file: {{ .producer.pfxFile }}
-  apse.tls.store.producer.type: "PKCS12"
-  apse.tls.store.producer.password: {{ .producer.password }}
-
-  apse.tls.store.consumer.file: {{ if .consumer }}{{ .consumer.pfxFile }}{{ else }}{{ .producer.pfxFile }}{{ end }}
-  apse.tls.store.consumer.type: "PKCS12"
-  apse.tls.store.consumer.password: {{ if .consumer }}{{ .consumer.password }}{{ else }}{{ .producer.password }}{{ end }}
-  {{ end }}
-{{ else }}
-  apse.tls.store.location: "${base.dir}/certs/"
-
-  apse.tls.store.consumer.file: "test.esb.ntjp.sjunet.org.p12"
-  apse.tls.store.consumer.type: "PKCS12"
-
-  apse.tls.store.producer.file: "test.esb.ntjp.sjunet.org.p12"
-  apse.tls.store.producer.type: "PKCS12"
-  apse.tls.store.truststore.file: "apse-trust.p12"
-  apse.tls.store.truststore.type: "PKCS12"
-{{ end }}
 
   buildingsubjectconfirmation: "true"
   camel.springboot.name: "ApSeAdapter"

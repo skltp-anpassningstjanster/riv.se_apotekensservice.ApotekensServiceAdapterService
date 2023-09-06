@@ -4,8 +4,20 @@ metadata:
   name: application-properties-configmap
 data:
   application.properties: |
-    apse.endpoint.inbound.nmtstub=http://0.0.0.0:8080/tjanstebryggan
-    apse.endpoint.outbound.nmtstub.apotekensservice.axs.HamtaPatientInfoResponder.6=https://load-mocks.sm.nordicmedtest.se/HamtaPatientInfoResponder/V6
-    apse.endpoint.outbound.nmtstub.apotekensservice.axs.HamtaPatientInfoResponder.5=https://load-mocks.sm.nordicmedtest.se/HamtaPatientInfoResponder/V5
+    apse.tls.store.truststore.file=""
+    apse.tls.store.producer.file=""
+    apse.tls.store.consumer.hostNameVerifySkipList=""
+    apse.tls.store.consumer.file=""
+
+    {{- range .Values.endpoints  }}
+    {{- $name := .name }}
+
+    apse.endpoint.inbound.{{ $name }}={{ .inboundUrl }}
+      {{- range .outbounds  }}
+    apse.endpoint.outbound.{{ $name }}.{{ regexReplaceAll "^.*(apotekens)" (.namespace | replace ":" ".")  "$1" }}={{ .url }}
+
+
+      {{- end }}
+    {{ end }}
 
     apse.endpoint.connect.timeout=2000
