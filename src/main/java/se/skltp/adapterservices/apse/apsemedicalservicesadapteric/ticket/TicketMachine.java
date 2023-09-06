@@ -93,32 +93,6 @@ public class TicketMachine {
     }
 
     private String createOrganizationTicket(ArgosHeader argosHeader) {
-        argosHeader.getForskrivarkod();
-        argosHeader.getLegitimationskod();
-        argosHeader.getFornamn();
-        argosHeader.getEfternamn();
-
-        argosHeader.getYrkesgrupp();
-        argosHeader.getBefattningskod();
-        argosHeader.getArbetsplatskod();
-
-        argosHeader.getArbetsplatsnamn();
-        argosHeader.getPostort();
-        argosHeader.getPostadress();
-
-        argosHeader.getPostnummer();
-        argosHeader.getTelefonnummer();
-        argosHeader.getRequestId();
-
-        argosHeader.getRollnamn();
-        argosHeader.getHsaID();
-        argosHeader.getKatalog();
-
-        argosHeader.getOrganisationsnummer();
-        argosHeader.getSystemnamn();
-        argosHeader.getSystemversion();
-
-        argosHeader.getSystemIp();
         return getArgosTicketMachine().getTicketForOrganization(argosHeader.getForskrivarkod(),
                 argosHeader.getLegitimationskod(), argosHeader.getFornamn(), argosHeader.getEfternamn(),
                 argosHeader.getYrkesgrupp(), argosHeader.getBefattningskod(), argosHeader.getArbetsplatskod(),

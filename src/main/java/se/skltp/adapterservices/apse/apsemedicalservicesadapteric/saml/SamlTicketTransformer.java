@@ -42,23 +42,13 @@ public class SamlTicketTransformer {
 
     private final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
     private final XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
-    //private final byte[] inputBody;
-    
-/*    public SamlTicketTransformer(byte[] inputBodyParam)
-    {
-        inputBody = inputBodyParam;
-    }
-*/
-    /*SamlTicketTransformer() {
-        //inputBody = null;
-    }*/
 
     private XMLEventReader getInputXmlEventReader(byte[] inputBody) throws XMLStreamException {
         return xmlInputFactory.createXMLEventReader(new ByteArrayInputStream(inputBody));
     }
 
-    public String transform(byte[] inputBodyParam) throws Exception {
-        log.info("Saml ticket transformer executing");
+    public ByteArrayOutputStream transform(byte[] inputBodyParam) throws Exception {
+        log.debug("Saml ticket transformer executing");
 
         ArgosHeaderHelper argosUtil = new ArgosHeaderHelper();
 
@@ -71,7 +61,7 @@ public class SamlTicketTransformer {
             OutputXmlWriterWrapper updatedRequestXER = new OutputXmlWriterWrapper();
 
             addSamlTicketToOriginalRequest(inputRequestXER, samlTicketXER, updatedRequestXER.writer);
-            return updatedRequestXER.os.toString();
+            return updatedRequestXER.os;
 
         } catch (IllegalStateException | XMLStreamException | TicketMachineException e) {
             log.error("Could not transform/apply saml ticket to message", e);

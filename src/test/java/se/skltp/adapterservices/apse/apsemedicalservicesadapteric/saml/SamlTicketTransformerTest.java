@@ -21,10 +21,8 @@
 
 package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.saml;
 
-
 import lombok.extern.log4j.Log4j2;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import se.skltp.adapterservices.apse.apsemedicalservicesadapteric.argos.ArgosHeader;
 
 import javax.xml.stream.XMLEventReader;
@@ -33,10 +31,12 @@ import javax.xml.stream.XMLOutputFactory;
 import java.io.ByteArrayOutputStream;
 import java.io.StringReader;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
 @Log4j2
 public class SamlTicketTransformerTest {
 
-    public static final CharSequence EXPECTED_NAMESPACE = "<wsse:Security xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">";
+    public static final String EXPECTED_NAMESPACE = "<wsse:Security xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">";
     static final XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
     static final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
     static final Holder mockPayloadHolder = new Holder();
@@ -84,20 +84,18 @@ public class SamlTicketTransformerTest {
         ByteArrayOutputStream result = new ByteArrayOutputStream();
         samlTicketTransformer.addSamlTicketToOriginalRequest(payload, samlTicket, xmlOutputFactory.createXMLEventWriter(result));
         String xml = result.toString(UTF8);
-
-        Assert.assertTrue(xml.contains(EXPECTED_NAMESPACE));
-        Assert.assertFalse(xml.contains("<urn:ArgosHeader"));
+        assertThat(xml).contains(EXPECTED_NAMESPACE);
+        assertThat(xml).doesNotContain("<urn:ArgosHeader");
 
     }
 
     @Test
     public void testSamlTicketReplacesArgosHeader() throws Exception {
 
-        String msgIncludingSaml = new SamlTicketTransformer().transform(PAYLOAD.getBytes("UTF-8"));
+        String msgIncludingSaml = new SamlTicketTransformer().transform(PAYLOAD.getBytes("UTF-8")).toString("UTF-8");
 
-
-        Assert.assertTrue(msgIncludingSaml.contains(EXPECTED_NAMESPACE));
-        Assert.assertFalse(msgIncludingSaml.contains("<urn:ArgosHeader"));
+        assertThat(msgIncludingSaml).contains(EXPECTED_NAMESPACE);
+        assertThat(msgIncludingSaml).doesNotContain("<urn:ArgosHeader");
     }
 
     private ArgosHeader getArgosHeader() {

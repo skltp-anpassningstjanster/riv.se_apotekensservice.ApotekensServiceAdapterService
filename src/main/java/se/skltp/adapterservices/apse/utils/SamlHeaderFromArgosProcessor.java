@@ -52,13 +52,11 @@ public class SamlHeaderFromArgosProcessor implements Processor {
         if (in.length() < 1) {
             throw new PayloadExcepption("The message payload was empty");
         }
-        byte[] bodyBytes = in.getBytes("UTF-8");
+        String utf8 = "UTF-8";
+        byte[] bodyBytes = in.getBytes(utf8);
 
         extractPropertiesFromBody(bodyBytes, exchange);
-
-        String transformed;
-        transformed = (new SamlTicketTransformer()).transform(bodyBytes);
-        exchange.getIn().setBody(transformed);
+        exchange.getIn().setBody((new SamlTicketTransformer()).transform(bodyBytes).toString(utf8));
     }
 
     private void extractPropertiesFromBody(byte[] bodyBytes, Exchange exchange) throws XMLStreamException {
