@@ -25,18 +25,18 @@ import static org.mockito.Mockito.lenient;
 public class TestCustomHostnameVerifier {
 
     @Test
-    public void testVerify(@Mock SSLSession sslSession, @Mock HostnameVerifier defaultHostnameVerifier) throws Exception {
-        lenient().when(defaultHostnameVerifier.verify("phonyHost", sslSession)).thenReturn(true);
-        lenient().when(sslSession.getPeerCertificates()).thenThrow(SSLPeerUnverifiedException.class);
+    public void testVerify(@Mock SSLSession mockedSslSession, @Mock HostnameVerifier mockHostnameVerifier) throws Exception {
+        lenient().when(mockHostnameVerifier.verify("phonyHost", mockedSslSession)).thenReturn(true);
+        lenient().when(mockedSslSession.getPeerCertificates()).thenThrow(SSLPeerUnverifiedException.class);
 
         SecurityProperties secProp = new SecurityProperties();
         secProp.setStore(new SecurityProperties.Store());
         secProp.getStore().setConsumer(new SecurityProperties.Store.Consumer());
         secProp.getStore().getConsumer().setHostNameVerifySkipList(List.of(new String[]{"localhost"}));
 
-        CustomHostnameVerifier customHostnameVerifier = new CustomHostnameVerifier(secProp, defaultHostnameVerifier);
-        assertThat(customHostnameVerifier.verify("localhost", sslSession)).isTrue();
-        assertThat(customHostnameVerifier.verify("phonyHost", sslSession)).isTrue();
-        assertThat(customHostnameVerifier.verify("fakeHost", sslSession)).isFalse();
+        CustomHostnameVerifier customHostnameVerifier = new CustomHostnameVerifier(secProp, mockHostnameVerifier);
+        assertThat(customHostnameVerifier.verify("localhost", mockedSslSession)).isTrue();
+        assertThat(customHostnameVerifier.verify("phonyHost", mockedSslSession)).isTrue();
+        assertThat(customHostnameVerifier.verify("fakeHost", mockedSslSession)).isFalse();
     }
 }
