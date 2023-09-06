@@ -5,7 +5,6 @@ import org.apache.camel.support.jsse.SSLContextParameters;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.info.BuildProperties;
 import org.springframework.boot.test.context.SpringBootTest;
 import se.skltp.adapterservices.apse.config.SSLContextParametersConfig;
 import se.skltp.adapterservices.apse.config.SecurityProperties;

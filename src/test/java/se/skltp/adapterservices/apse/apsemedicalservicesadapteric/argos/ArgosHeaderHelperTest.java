@@ -19,7 +19,8 @@
  */
 package se.skltp.adapterservices.apse.apsemedicalservicesadapteric.argos;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -27,7 +28,7 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import java.io.StringReader;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class ArgosHeaderHelperTest {
 
@@ -81,56 +82,58 @@ public class ArgosHeaderHelperTest {
     }
 
     private void assertArgosHeaderIsEmpty(ArgosHeader argosHeader) {
-        assertNotNull(argosHeader);
+        assertThat(argosHeader).isNotNull();
 
-        assertNull(argosHeader.getArbetsplatskod());
-        assertNull(argosHeader.getArbetsplatsnamn());
-        assertNull(argosHeader.getBefattningskod());
-        assertNull(argosHeader.getDirectoryID());
-        assertNull(argosHeader.getEfternamn());
-        assertNull(argosHeader.getFornamn());
-        assertNull(argosHeader.getForskrivarkod());
-        assertNull(argosHeader.getHsaID());
-        assertNull(argosHeader.getKatalog());
-        assertNull(argosHeader.getLegitimationskod());
-        assertNull(argosHeader.getOrganisationsnummer());
-        assertNull(argosHeader.getPostadress());
-        assertNull(argosHeader.getPostnummer());
-        assertNull(argosHeader.getPostort());
-        assertNull(argosHeader.getRequestId());
-        assertNull(argosHeader.getRollnamn());
-        assertNull(argosHeader.getSystemIp());
-        assertNull(argosHeader.getSystemnamn());
-        assertNull(argosHeader.getSystemversion());
-        assertNull(argosHeader.getTelefonnummer());
-        assertNull(argosHeader.getYrkesgrupp());
+
+        assertThat(argosHeader.getArbetsplatskod()).isNull();
+        assertThat(argosHeader.getArbetsplatsnamn()).isNull();
+        assertThat(argosHeader.getBefattningskod()).isNull();
+        assertThat(argosHeader.getDirectoryID()).isNull();
+        assertThat(argosHeader.getEfternamn()).isNull();
+        assertThat(argosHeader.getFornamn()).isNull();
+        assertThat(argosHeader.getForskrivarkod()).isNull();
+        assertThat(argosHeader.getHsaID()).isNull();
+        assertThat(argosHeader.getKatalog()).isNull();
+        assertThat(argosHeader.getLegitimationskod()).isNull();
+        assertThat(argosHeader.getOrganisationsnummer()).isNull();
+        assertThat(argosHeader.getPostadress()).isNull();
+        assertThat(argosHeader.getPostnummer()).isNull();
+        assertThat(argosHeader.getPostort()).isNull();
+        assertThat(argosHeader.getRequestId()).isNull();
+        assertThat(argosHeader.getRollnamn()).isNull();
+        assertThat(argosHeader.getSystemIp()).isNull();
+        assertThat(argosHeader.getSystemnamn()).isNull();
+        assertThat(argosHeader.getSystemversion()).isNull();
+        assertThat(argosHeader.getTelefonnummer()).isNull();
+        assertThat(argosHeader.getYrkesgrupp()).isNull();
     }
 
     private void assertCompleteArgosHeader(ArgosHeader expectedArgosHeader, ArgosHeader actualArgosHeader) {
-        assertNotNull(actualArgosHeader);
-        assertNotNull(expectedArgosHeader);
+        assertThat(actualArgosHeader).isNotNull();
+        assertThat(expectedArgosHeader).isNotNull();
 
-        assertEquals(expectedArgosHeader.getArbetsplatskod(), actualArgosHeader.getArbetsplatskod());
-        assertEquals(expectedArgosHeader.getArbetsplatsnamn(), actualArgosHeader.getArbetsplatsnamn());
-        assertEquals(expectedArgosHeader.getBefattningskod(), actualArgosHeader.getBefattningskod());
-        assertEquals(expectedArgosHeader.getDirectoryID(), actualArgosHeader.getDirectoryID());
-        assertEquals(expectedArgosHeader.getEfternamn(), actualArgosHeader.getEfternamn());
-        assertEquals(expectedArgosHeader.getFornamn(), actualArgosHeader.getFornamn());
-        assertEquals(expectedArgosHeader.getForskrivarkod(), actualArgosHeader.getForskrivarkod());
-        assertEquals(expectedArgosHeader.getHsaID(), actualArgosHeader.getHsaID());
-        assertEquals(expectedArgosHeader.getKatalog(), actualArgosHeader.getKatalog());
-        assertEquals(expectedArgosHeader.getLegitimationskod(), actualArgosHeader.getLegitimationskod());
-        assertEquals(expectedArgosHeader.getOrganisationsnummer(), actualArgosHeader.getOrganisationsnummer());
-        assertEquals(expectedArgosHeader.getPostadress(), actualArgosHeader.getPostadress());
-        assertEquals(expectedArgosHeader.getPostnummer(), actualArgosHeader.getPostnummer());
-        assertEquals(expectedArgosHeader.getPostort(), actualArgosHeader.getPostort());
-        assertEquals(expectedArgosHeader.getRequestId(), actualArgosHeader.getRequestId());
-        assertEquals(expectedArgosHeader.getRollnamn(), actualArgosHeader.getRollnamn());
-        assertEquals(expectedArgosHeader.getSystemIp(), actualArgosHeader.getSystemIp());
-        assertEquals(expectedArgosHeader.getSystemnamn(), actualArgosHeader.getSystemnamn());
-        assertEquals(expectedArgosHeader.getSystemversion(), actualArgosHeader.getSystemversion());
-        assertEquals(expectedArgosHeader.getTelefonnummer(), actualArgosHeader.getTelefonnummer());
-        assertEquals(expectedArgosHeader.getYrkesgrupp(), actualArgosHeader.getYrkesgrupp());
+
+        assertThat(actualArgosHeader.getArbetsplatskod()).isEqualTo(expectedArgosHeader.getArbetsplatskod());
+        assertThat(actualArgosHeader.getArbetsplatsnamn()).isEqualTo(expectedArgosHeader.getArbetsplatsnamn());
+        assertThat(actualArgosHeader.getBefattningskod()).isEqualTo(expectedArgosHeader.getBefattningskod());
+        assertThat(actualArgosHeader.getDirectoryID()).isEqualTo(expectedArgosHeader.getDirectoryID());
+        assertThat(actualArgosHeader.getEfternamn()).isEqualTo(expectedArgosHeader.getEfternamn());
+        assertThat(actualArgosHeader.getFornamn()).isEqualTo(expectedArgosHeader.getFornamn());
+        assertThat(actualArgosHeader.getForskrivarkod()).isEqualTo(expectedArgosHeader.getForskrivarkod());
+        assertThat(actualArgosHeader.getHsaID()).isEqualTo(expectedArgosHeader.getHsaID());
+        assertThat(actualArgosHeader.getKatalog()).isEqualTo(expectedArgosHeader.getKatalog());
+        assertThat(actualArgosHeader.getLegitimationskod()).isEqualTo(expectedArgosHeader.getLegitimationskod());
+        assertThat(actualArgosHeader.getOrganisationsnummer()).isEqualTo(expectedArgosHeader.getOrganisationsnummer());
+        assertThat(actualArgosHeader.getPostadress()).isEqualTo(expectedArgosHeader.getPostadress());
+        assertThat(actualArgosHeader.getPostnummer()).isEqualTo(expectedArgosHeader.getPostnummer());
+        assertThat(actualArgosHeader.getPostort()).isEqualTo(expectedArgosHeader.getPostort());
+        assertThat(actualArgosHeader.getRequestId()).isEqualTo(expectedArgosHeader.getRequestId());
+        assertThat(actualArgosHeader.getRollnamn()).isEqualTo(expectedArgosHeader.getRollnamn());
+        assertThat(actualArgosHeader.getSystemIp()).isEqualTo(expectedArgosHeader.getSystemIp());
+        assertThat(actualArgosHeader.getSystemnamn()).isEqualTo(expectedArgosHeader.getSystemnamn());
+        assertThat(actualArgosHeader.getSystemversion()).isEqualTo(expectedArgosHeader.getSystemversion());
+        assertThat(actualArgosHeader.getTelefonnummer()).isEqualTo(expectedArgosHeader.getTelefonnummer());
+        assertThat(actualArgosHeader.getYrkesgrupp()).isEqualTo(expectedArgosHeader.getYrkesgrupp());
     }
 
     private ArgosHeader createExpectedArgosHeader() {
