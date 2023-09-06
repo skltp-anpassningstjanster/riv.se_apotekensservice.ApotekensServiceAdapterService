@@ -32,7 +32,7 @@ public class CustomHostnameVerifier implements HostnameVerifier {
                     pc = session.getPeerCertificateChain();
                     subj = pc[0].getSubjectDN().getName();
                 } catch (SSLPeerUnverifiedException e) {
-                    e.printStackTrace();
+                    log.error(" javax.net.ssl.SSLException.SSLPeerUnverifiedException");
                 }
                 log.warn(String.format("Hostname verification failed, the host \"%s\" presented a certificate with subject: \"%s\"", subj, hostname, subj));
                 if (securityProperties.getStore().getConsumer().getHostNameVerifySkipList() != null) {
