@@ -87,8 +87,8 @@ public class ApSeRouter extends RouteBuilder {
         }
 
 
-        getContext().getComponent("https", HttpComponent.class)
-                .setX509HostnameVerifier(new CustomHostnameVerifier(securityProperties));
+        // getContext().getComponent("https", HttpComponent.class)
+        //         .setX509HostnameVerifier(new CustomHostnameVerifier(securityProperties));
 
         onException(Throwable.class)
                 .process(handleProducerExceptionProcessor)
