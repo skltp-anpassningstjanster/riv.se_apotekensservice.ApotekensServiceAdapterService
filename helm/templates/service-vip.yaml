@@ -10,7 +10,7 @@ spec:
     - port: 11005
       targetPort: http
       protocol: TCP
-      name: http1
+      name: http-tj-bryggan
     - port: 11009
       targetPort: http
       protocol: TCP

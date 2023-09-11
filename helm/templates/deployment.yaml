@@ -38,6 +38,9 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
+            - name: http-tj-bryggan
+              containerPort: 11005
+              protocol: TCP
           lifecycle:
             preStop:
               exec:
