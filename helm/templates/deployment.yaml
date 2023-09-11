@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "apse-adapter.labels" . | nindent 4 }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.deployment.replicaCount }}
   selector:
     matchLabels:
       {{- include "apse-adapter.selectorLabels" . | nindent 6 }}
@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         {{- include "apse-adapter.selectorLabels" . | nindent 8 }}
+        elastic.grok.filter: {{ .Values.deployment.elasticGrokFilter }}
     spec:
       volumes:
         - name: application-properties
