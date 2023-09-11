@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         {{- include "apse-adapter.selectorLabels" . | nindent 8 }}
-        elastic.grok.filter: {{ .Values.deployment.elasticGrokFilter }}
+        elasticGrokFilter: {{ .Values.deployment.elasticGrokFilter }}
     spec:
       volumes:
         - name: application-properties
