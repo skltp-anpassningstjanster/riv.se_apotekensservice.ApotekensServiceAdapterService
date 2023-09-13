@@ -19,7 +19,7 @@ spec:
         - name: application-properties
           configMap:
             name: application-properties-configmap
-        {{- if .Values.trust.anchorSecret.secretName }}
+        {{- if .Values.trust.anchorSecret.name }}
         - name: truststore
           secret:
             secretName: {{ .Values.trust.anchorSecret.name }}
