@@ -28,7 +28,7 @@ public class SSLContextParametersConfig {
         FileSystems.getDefault().getPath("logs", "access.log");
 
         SSLContextParameters sslContextParameters = new SSLContextParameters();
-        String producerCertFile = securityProperties.getStore().getConsumer().getFile();
+        String producerCertFile = securityProperties.getStore().getProducer().getFile();
         String incomingProtocols = securityProperties.getAllowedOutgoingProtocols();
         if(producerCertFile != null && !producerCertFile.isEmpty()) {
             ksp.setResource(securityProperties.getStore().getLocation() + securityProperties.getStore().getProducer().getFile());
