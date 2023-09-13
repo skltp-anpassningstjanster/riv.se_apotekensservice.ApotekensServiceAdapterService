@@ -92,6 +92,6 @@ spec:
               readOnly: true
               {{- if .Values.trust.anchorSecret.name }}
             - name: truststore
-              mountPath: {{ .Values.trust.anchorMountPath }}/ca.crt
+              mountPath: {{ .Values.trust.anchorMountPath }}
               readonly: true
               {{- end }}
