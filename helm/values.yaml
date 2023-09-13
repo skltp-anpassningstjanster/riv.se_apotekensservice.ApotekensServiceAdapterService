@@ -24,6 +24,13 @@ environment:
     secrets:
       # Nothing yet. Override to supply your own values.
 
+trust:
+  anchorMountPath: /etc/pki/ca-trust/source/anchors
+  anchorSecret:
+    name:
+    key: ca.crt
+
+
 endpoints:
   - name: nmtstubs
     inboundUrl: http://0.0.0.0:11005/tjanstebryggan

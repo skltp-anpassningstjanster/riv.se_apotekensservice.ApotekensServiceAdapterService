@@ -19,14 +19,17 @@ spec:
         - name: application-properties
           configMap:
             name: application-properties-configmap
-        # Activate when we've got vp-certs fixed
-        # - name: certs
-        #   secret:
-        #     secretName: apse-secret-certs
+        {{- if .Values.trust.anchorSecret.secretName }}
+        - name: truststore
+          secret:
+            secretName: {{ .Values.trust.anchorSecret.secretName }}
+            items:
+              - key: {{ .Values.trust.anchorSecret.secretKey }}
+                path: ca.crt
+        {{- end }}
         - name: log4j
           configMap:
             name: log4j2-configmap
-        - name: data-volume
 
       imagePullSecrets:
         - name: regcred
@@ -87,3 +90,8 @@ spec:
             - name: log4j
               mountPath: /opt/apse/config/log4j
               readOnly: true
+              {{- if .Values.trust.anchorSecret.secretName }}
+            - name: truststore
+              mountPath: {{ .Values.trust.anchorMountPath }}/ca.crt
+              readonly: true
+              {{- end }}
