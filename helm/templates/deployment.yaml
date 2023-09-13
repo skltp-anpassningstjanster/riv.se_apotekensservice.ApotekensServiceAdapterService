@@ -22,9 +22,9 @@ spec:
         {{- if .Values.trust.anchorSecret.secretName }}
         - name: truststore
           secret:
-            secretName: {{ .Values.trust.anchorSecret.secretName }}
+            secretName: {{ .Values.trust.anchorSecret.name }}
             items:
-              - key: {{ .Values.trust.anchorSecret.secretKey }}
+              - key: {{ .Values.trust.anchorSecret.key }}
                 path: ca.crt
         {{- end }}
         - name: log4j
@@ -90,7 +90,7 @@ spec:
             - name: log4j
               mountPath: /opt/apse/config/log4j
               readOnly: true
-              {{- if .Values.trust.anchorSecret.secretName }}
+              {{- if .Values.trust.anchorSecret.name }}
             - name: truststore
               mountPath: {{ .Values.trust.anchorMountPath }}/ca.crt
               readonly: true
