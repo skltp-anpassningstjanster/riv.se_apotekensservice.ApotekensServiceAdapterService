@@ -9,10 +9,14 @@ ENV BASE_DIR=/opt/apse \
 
 RUN mkdir -p ${BASE_DIR} ${LOG_DIR} \
  && useradd -Ms /bin/bash -b ${BASE_DIR} -u 556559423 ${APPUSER} \
- && chown ${APPUSER}:${APPUSER} -R ${BASE_DIR} ${LOG_DIR}
+ && chown ${APPUSER}:${APPUSER} -R ${BASE_DIR} ${LOG_DIR} \
+ && chown root:${APPUSER} -R /etc/pki/ca-trust/extracted/ \
+ && chmod g+w -R /etc/pki/ca-trust/extracted/
+
 
 WORKDIR ${BASE_DIR}
 USER ${APPUSER}
 
 ADD target/apse-adapter-*.jar ${APPJAR}
-CMD java ${JAVA_OPTS} -jar ${APPJAR} ${CONFIG_FILE_PARAM}
+CMD update-ca-trust \
+ && java ${JAVA_OPTS} -jar ${APPJAR} ${CONFIG_FILE_PARAM}
