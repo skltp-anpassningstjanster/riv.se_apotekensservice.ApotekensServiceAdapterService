@@ -42,6 +42,9 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
+            - name: http2
+              containerPort: 11009
+              protocol: TCP
             - name: http-tj-bryggan
               containerPort: 11005
               protocol: TCP
