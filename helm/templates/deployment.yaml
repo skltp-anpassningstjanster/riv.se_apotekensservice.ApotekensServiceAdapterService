@@ -18,7 +18,7 @@ spec:
       volumes:
         - name: application-properties
           configMap:
-            name: {{ .Chart.Name }}-application-properties
+            name: application-properties-configmap
         {{- if .Values.trust.anchorSecret.name }}
         - name: truststore
           secret:
