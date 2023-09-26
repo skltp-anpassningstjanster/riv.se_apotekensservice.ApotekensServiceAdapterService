@@ -4,11 +4,6 @@ metadata:
   name: {{ .Chart.Name }}-application-properties
 data:
   application.properties: |
-    apse.tls.store.truststore.file=""
-    apse.tls.store.producer.file=""
-    apse.tls.store.consumer.hostNameVerifySkipList=""
-    apse.tls.store.consumer.file=""
-
     {{- range .Values.endpoints  }}
     {{- $name := .name }}
 
