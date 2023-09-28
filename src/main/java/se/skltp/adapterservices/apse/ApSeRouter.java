@@ -123,7 +123,6 @@ public class ApSeRouter extends RouteBuilder {
                 .threads(15,50)
                 .choice().when(exchangeProperty("outbound_url").startsWith("https"))
                         .toD("${exchangeProperty[outbound_url]}"
-                                + "?sslContextParameters=#outgoingSSLContextParameters"
                                 + "&connectTimeout={{producer.https.connect.timeout}}"
                         )
                     .otherwise()
