@@ -72,6 +72,15 @@ spec:
             periodSeconds: 10
             successThreshold: 1
             timeoutSeconds: 5
+          {{- with .Values.environment.variables }}
+          {{- if .map }}
+          env:
+            {{- range $k, $v := .map }}
+            - name: {{ $k }}
+              value: {{ $v }}
+            {{- end }}
+          {{- end }}
+          {{- end }}
           envFrom:
             {{- range $.Values.environment.variables._default_config_maps }}
             - configMapRef:
