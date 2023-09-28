@@ -123,11 +123,11 @@ public class ApSeRouter extends RouteBuilder {
                 .threads(15,50)
                 .choice().when(exchangeProperty("outbound_url").startsWith("https"))
                         .toD("${exchangeProperty[outbound_url]}"
-                                + "&connectTimeout={{producer.https.connect.timeout}}"
+                                + "?connectTimeout={{producer.https.connect.timeout}}"
                         )
                     .otherwise()
                         .toD("${exchangeProperty[outbound_url]}"
-                                + "&connectTimeout={{producer.http.connect.timeout}}"
+                                + "?connectTimeout={{producer.http.connect.timeout}}"
                         )
                 .end()
                 .bean(MessageInfoLogger.class, LOG_RESP_IN_METHOD)
