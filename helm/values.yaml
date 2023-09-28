@@ -23,6 +23,8 @@ environment:
       # Nothing yet. Override to supply your own values.
     secrets:
       # Nothing yet. Override to supply your own values.
+    map: 
+      SPRING_PROFILES_ACTIVE: production
 
 trust:
   anchorMountPath: /etc/pki/ca-trust/source/anchors
@@ -32,8 +34,8 @@ trust:
 
 
 endpoints:
-  - name: nmtstubs
-    inboundUrl: http://0.0.0.0:11005/tjanstebryggan
+  - name: nmtstub
+    inboundUrl: http://0.0.0.0:11005/nmtmocks
     outbounds:
       - namespace: apotekensservice.axs.HamtaPatientInfoResponder.6
         url: https://load-mocks.sm.nordicmedtest.se/HamtaPatientInfoResponder/V6
