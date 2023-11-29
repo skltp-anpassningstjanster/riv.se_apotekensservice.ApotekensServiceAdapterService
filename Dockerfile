@@ -4,7 +4,8 @@ ENV BASE_DIR=/opt/apse \
     APPJAR=/opt/apse/apse-adapter.jar \
     APPUSER=ind-app \
     LOG_DIR=/var/log/camel \
-    RESET_CACHE_SCRIPT=/usr/local/bin/resetCaches.sh
+    RESET_CACHE_SCRIPT=/usr/local/bin/resetCaches.sh \
+    APSE_LOG_APPENDER=EcsLayout
 
 
 RUN mkdir -p ${BASE_DIR} ${LOG_DIR} \
