@@ -1,19 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="">
+    <Properties>
+        <Property name="rootLogAppender">${env:APSE_LOG_APPENDER:-Console}</Property>
+        <Property name="reqInLevel">${env:APSE_REQ_IN_LOGLEVEL:-DEBUG}</Property>
+        <Property name="reqOutLevel">${env:APSE_REQ_OUT_LOGLEVEL:-DEBUG}</Property>
+        <Property name="respInLevel">${env:APSE_RESP_IN_LOGLEVEL:-DEBUG}</Property>
+        <Property name="respOutLevel">${env:APSE_RESP_OUT_LOGLEVEL:-DEBUG}</Property>
+        <Property name="errorLevel">${env:APSE_ERROR_LOGLEVEL:-DEBUG}</Property>
+    </Properties>
     <Appenders>
         <Console name="Console">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
+        <Console name="EcsLayout">
+            <EcsLayout/>
+        </Console>
     </Appenders>
     <Loggers>
-        <Logger name="se.skltp.adapterservices.apse" level="DEBUG" additivity="false">
-            <AppenderRef ref="Console"/>
-        </Logger>
-        <Logger name="se.skltp" level="INFO" additivity="false">
-            <AppenderRef ref="Console"/>
-        </Logger>
-        <Root level="WARN">
-            <AppenderRef ref="Console"/>
+        <Logger name="se.skltp.adapterservices.apse" level="DEBUG" />
+        <Logger name="se.skltp.adapterservices.apse.logging.req.in" level="${reqInLevel}" />
+        <Logger name="se.skltp.adapterservices.apse.logging.req.out" level="${reqOutLevel}" />
+        <Logger name="se.skltp.adapterservices.apse.logging.resp.in" level="${respInLevel}" />
+        <Logger name="se.skltp.adapterservices.apse.logging.resp.out" level="${respOutLevel}" />
+        <Logger name="se.skltp.adapterservices.apse.logging.error" level="${errorLevel}" />
+        <Logger name="se.skltp" level="INFO"/>
+        <Root level="INFO">
+            <AppenderRef ref="${rootLogAppender}"/>
         </Root>
     </Loggers>
 </Configuration>
