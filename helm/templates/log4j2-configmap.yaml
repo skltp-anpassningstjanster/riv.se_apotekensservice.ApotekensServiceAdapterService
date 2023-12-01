@@ -8,18 +8,16 @@ data:
     <Configuration status="">
       <Appenders>
       <Console name="Console">
-        <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        <EcsLayout/>
       </Console>
       </Appenders>
       <Loggers>
-        <Logger name="se.skltp.adapterservices.apse" level="DEBUG" additivity="false">
+        {{- range .Values.log4j.loggers }}
+        <AsyncLogger name="{{ .name }}" level="{{ .level }}"/>
+        {{- end }}
+    
+        <AsyncRoot level="{{ .Values.log4j.rootLoggerLevel }}">
           <AppenderRef ref="Console"/>
-        </Logger>
-        <Logger name="se.skltp" level="INFO" additivity="false">
-          <AppenderRef ref="Console"/>
-        </Logger>
-        <Root level="WARN">
-          <AppenderRef ref="Console"/>
-        </Root>
+        </AsyncRoot>
       </Loggers>
     </Configuration>

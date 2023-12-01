@@ -41,3 +41,11 @@ endpoints:
         url: https://load-mocks.sm.nordicmedtest.se/HamtaPatientInfoResponder/V6
       - namespace: urn:riv:se.apotekensservice.axs.HamtaPatientInfoResponder.5
         url: https://load-mocks.sm.nordicmedtest.se/HamtaPatientInfoResponder/V5
+
+log4j:
+  loggers:
+    - name: se.skltp.adapterservices.apse
+      level: DEBUG
+    - name: se.skltp
+      level: INFO
+  rootLoggerLevel: WARN
