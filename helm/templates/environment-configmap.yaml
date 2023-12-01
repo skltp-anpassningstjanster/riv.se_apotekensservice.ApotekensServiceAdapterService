@@ -26,7 +26,8 @@ data:
   keystorefilename: "Pascal.pfx"
   keystorepath: "certificates/"
   keystoretype: "PKCS12"
-  log4j.configuration.file: "/opt/apse/config/log4j/log4j2.xml"
+
+  logging.config: "/opt/apse/config/log4j/log4j2.xml"
 
   # Allow to obtain basic information about camel routes (read only mode)
   management.camelroutes.enabled: "true"
