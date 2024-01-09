@@ -20,4 +20,4 @@ WORKDIR ${BASE_DIR}
 
 ADD target/apse-adapter-*.jar ${APPJAR}
 CMD update-ca-trust \
- && java ${JAVA_OPTS} -jar ${APPJAR} ${CONFIG_FILE_PARAM}
+ && java -XX:MaxRAMPercentage=75 ${JAVA_OPTS} -jar ${APPJAR} ${CONFIG_FILE_PARAM}
