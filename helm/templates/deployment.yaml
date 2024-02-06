@@ -12,6 +12,7 @@ spec:
   template:
     metadata:
       labels:
+        app: apse-adapter
         {{- include "apse-adapter.selectorLabels" . | nindent 8 }}
         elasticGrokFilter: {{ .Values.deployment.elasticGrokFilter }}
     spec:
