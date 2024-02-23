@@ -1,23 +1,26 @@
-FROM openjdk:11-oraclelinux8
+FROM eclipse-temurin:11-jre-alpine
 
 ENV BASE_DIR=/opt/apse \
     APPJAR=/opt/apse/apse-adapter.jar \
     APPUSER=ind-app \
     LOG_DIR=/var/log/camel \
     RESET_CACHE_SCRIPT=/usr/local/bin/resetCaches.sh \
-    APSE_LOG_APPENDER=EcsLayout
+    APSE_LOG_APPENDER=EcsLayout \
+    JAVA_CACERTS=${JAVA_HOME}/lib/security/cacerts
+
 
 
 RUN mkdir -p ${BASE_DIR} ${LOG_DIR} \
- && useradd -Ms /bin/bash -b ${BASE_DIR} -u 556559423 ${APPUSER} \
+ && adduser -HD -u 1000 -h ${BASE_DIR} ${APPUSER} \
  && chown ${APPUSER}:${APPUSER} -R ${BASE_DIR} ${LOG_DIR} \
- && chown root:${APPUSER} -R /etc/pki/ca-trust/extracted/ \
- && chmod g+w -R /etc/pki/ca-trust/extracted/ \
- && cat /etc/pki/tls/certs/ca-bundle.crt | sed  '/DigiCert Global Root G2/,/----END/d' > /etc/pki/ca-trust/source/blacklist/all_but_digicert_gr2.pem
+ && mkdir /certificates \
+ && cp /usr/share/ca-certificates/mozilla/DigiCert_Global_Root_G2.crt /usr/local/share/ca-certificates/ \
+ && rm /usr/share/ca-certificates/mozilla/*.crt && echo -n > /etc/ca-certificates.conf \
+ && update-ca-certificates \
+ && trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth ${JAVA_CACERTS}
 
 WORKDIR ${BASE_DIR}
-#USER ${APPUSER}
+USER ${APPUSER}
 
 ADD target/apse-adapter-*.jar ${APPJAR}
-CMD update-ca-trust \
- && java -XX:MaxRAMPercentage=75 ${JAVA_OPTS} -jar ${APPJAR} ${CONFIG_FILE_PARAM}
+CMD java -XX:MaxRAMPercentage=75 ${JAVA_OPTS} -jar ${APPJAR} ${CONFIG_FILE_PARAM}
