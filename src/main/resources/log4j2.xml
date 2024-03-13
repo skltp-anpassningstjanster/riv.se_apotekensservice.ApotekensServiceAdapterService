@@ -1,4 +1,4 @@
-<Configuration status="">
+<Configuration status="ERROR">
     <Properties>
         <Property name="rootLogAppender">${env:APSE_LOG_APPENDER:-Console}</Property>
         <Property name="reqInLevel">${env:APSE_REQ_IN_LOGLEVEL:-DEBUG}</Property>
