@@ -33,7 +33,7 @@ environment:
       SPRING_PROFILES_ACTIVE: production
 
 trust:
-  anchorMountPath: /etc/pki/ca-trust/source/anchors
+  anchorMountPath: /cacerts
   anchorSecret:
     name:
     key: ca.crt
