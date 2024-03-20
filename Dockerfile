@@ -29,7 +29,7 @@ COPY <<EOF /run.sh
 chmod +w $JAVA_CACERTS
 for cacert in $(find /cacerts/ -type f 2>/dev/null)
 do
-  keytool -import -trustcacerts -alias $(basename \${cacert}) -file \$cacert -keystore $JAVA_CACERTS -storepass changeit
+  keytool -import -trustcacerts -alias $(basename \${cacert}) -file \$cacert -keystore $JAVA_CACERTS -storepass changeit -noprompt
 done
 chmod -w $JAVA_CACERTS
 exec java -XX:MaxRAMPercentage=75 ${JAVA_OPTS} -jar ${APPJAR} ${CONFIG_FILE_PARAM}
