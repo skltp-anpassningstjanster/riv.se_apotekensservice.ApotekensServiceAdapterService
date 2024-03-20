@@ -17,8 +17,7 @@ RUN mkdir -p ${BASE_DIR} ${LOG_DIR} \
  && echo -n > /etc/ca-certificates.conf \
  && update-ca-certificates \
  && trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth ${JAVA_CACERTS} \
- && chown ${APPUSER}:${APPUSER} -R ${BASE_DIR} ${LOG_DIR} ${JAVA_CACERTS} \
- && chown ${APPUSER}:${APPUSER}  ${JAVA_CACERTS}
+ && chown ${APPUSER}:${APPUSER} -R ${BASE_DIR} ${LOG_DIR} ${JAVA_CACERTS}
 
 
 WORKDIR ${BASE_DIR}
