@@ -11,11 +11,14 @@ ENV BASE_DIR=/opt/apse \
 RUN mkdir -p ${BASE_DIR} ${LOG_DIR} \
  && adduser -HD -u 1000 -h ${BASE_DIR} ${APPUSER} \
  && touch ${JAVA_CACERTS} \
- && chown ${APPUSER}:${APPUSER} -R ${BASE_DIR} ${LOG_DIR} ${JAVA_HOME} /etc/ssl/certs \
  && mkdir /certificates \
  && cp /usr/share/ca-certificates/mozilla/DigiCert_Global_Root_G2.crt /usr/local/share/ca-certificates/ \
  && rm /usr/share/ca-certificates/mozilla/*.crt  \
- && echo -n > /etc/ca-certificates.conf
+ && echo -n > /etc/ca-certificates.conf \
+ && update-ca-certificates \
+ && trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth ${JAVA_CACERTS} \
+ && chown ${APPUSER}:${APPUSER} -R ${BASE_DIR} ${LOG_DIR} ${JAVA_CACERTS} \
+ && chown ${APPUSER}:${APPUSER}  ${JAVA_CACERTS}
 
 
 WORKDIR ${BASE_DIR}
@@ -24,9 +27,12 @@ USER ${APPUSER}
 ADD target/apse-adapter-*.jar ${APPJAR}
 
 COPY <<EOF /run.sh
-test -d /cacerts && cp $(find /cacerts/ -type f) /usr/local/share/ca-certificates/
-update-ca-certificates
-trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth ${JAVA_CACERTS}
+chmod +w $JAVA_CACERTS
+for cacert in $(find /cacerts/ -type f 2>/dev/null)
+do
+  keytool -import -trustcacerts -alias $(basename \${cacert}) -file \$cacert -keystore $JAVA_CACERTS -storepass changeit
+done
+chmod -w $JAVA_CACERTS
 exec java -XX:MaxRAMPercentage=75 ${JAVA_OPTS} -jar ${APPJAR} ${CONFIG_FILE_PARAM}
 EOF
 
