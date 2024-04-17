@@ -1,4 +1,13 @@
-FROM eclipse-temurin:11-jre-alpine
+FROM maven:3.9-eclipse-temurin-17 AS maven
+
+RUN mkdir -p /opt/build
+WORKDIR  /opt/build
+ADD pom.xml /opt/build/
+ADD src/ /opt/build/src
+
+RUN --mount=type=cache,target=/root/.m2 mvn clean install
+
+FROM eclipse-temurin:17-jre-alpine
 
 ENV BASE_DIR=/opt/apse \
     APPJAR=/opt/apse/apse-adapter.jar \
@@ -21,7 +30,7 @@ RUN mkdir -p ${BASE_DIR} ${LOG_DIR} \
 WORKDIR ${BASE_DIR}
 USER ${APPUSER}
 
-ADD target/apse-adapter-*.jar ${APPJAR}
+COPY --from=maven /opt/build/target/apse-adapter-*.jar ${APPJAR}
 
 COPY <<EOF /run.sh
 chmod +w $JAVA_CACERTS
