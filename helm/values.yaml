@@ -24,7 +24,6 @@ environment:
     _default_config_maps:
       - application-properties-configmap
       - environment-configmap
-      - log4j2-configmap
     config_maps:
       # Nothing yet. Override to supply your own values.
     secrets:
@@ -47,14 +46,6 @@ endpoints:
         url: https://load-mocks.sm.nordicmedtest.se/HamtaPatientInfoResponder/V6
       - namespace: urn:riv:se.apotekensservice.axs.HamtaPatientInfoResponder.5
         url: https://load-mocks.sm.nordicmedtest.se/HamtaPatientInfoResponder/V5
-
-log4j:
-  loggers:
-    - name: se.skltp.adapterservices.apse
-      level: DEBUG
-    - name: se.skltp
-      level: INFO
-  rootLoggerLevel: WARN
 
 probes:
   startupProbe:
