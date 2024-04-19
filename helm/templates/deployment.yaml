@@ -28,9 +28,6 @@ spec:
               - key: {{ .Values.trust.anchorSecret.key }}
                 path: ca.crt
         {{- end }}
-        - name: log4j
-          configMap:
-            name: log4j2-configmap
 
       imagePullSecrets:
         - name: regcred
@@ -91,9 +88,6 @@ spec:
           volumeMounts:
             - name: application-properties
               mountPath: /opt/apse/config/application-properties
-              readOnly: true
-            - name: log4j
-              mountPath: /opt/apse/config/log4j
               readOnly: true
               {{- if .Values.trust.anchorSecret.name }}
             - name: truststore
