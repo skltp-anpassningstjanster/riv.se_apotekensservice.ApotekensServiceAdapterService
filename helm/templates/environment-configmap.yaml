@@ -22,12 +22,10 @@ data:
   certificatesubjectname: "pascalonline"
   credentialtype: "X509_CREDENTIAL"
   includekeyinfoinsignature: "true"
-  java.opts: "-Dlog4j2.formatMsgNoLookups=true -Duser.country=SE -Duser.language=en -Xms512m -Xmx1536m -XX:MaxMetaspaceSize=256m -XX:CompressedClassSpaceSize=256m"
+  java.opts: " -Duser.country=SE -Duser.language=en -Xms512m -Xmx1536m -XX:MaxMetaspaceSize=256m -XX:CompressedClassSpaceSize=256m"
   keystorefilename: "Pascal.pfx"
   keystorepath: "certificates/"
   keystoretype: "PKCS12"
-
-  logging.config: "/opt/apse/config/log4j/log4j2.xml"
 
   # Allow to obtain basic information about camel routes (read only mode)
   management.camelroutes.enabled: "true"
