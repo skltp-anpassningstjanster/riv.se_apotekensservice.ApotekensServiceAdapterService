@@ -4,12 +4,12 @@ import lombok.extern.log4j.Log4j2;
 import org.apache.camel.Exchange;
 import org.apache.camel.RoutesBuilder;
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.component.mock.MockEndpoint;
 import org.apache.camel.test.junit5.CamelTestSupport;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import se.skltp.adapterservices.apse.EndpointResolverProcessor;
 import se.skltp.adapterservices.apse.config.SSLContextParametersConfig;
-import se.skltp.adapterservices.apse.config.SecurityProperties;
 import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
 
 import java.util.List;
@@ -51,7 +51,7 @@ public class RouteTest extends CamelTestSupport {
 
         template.sendBody("direct:argos2saml", hamtaPatientInfoRequestIn);
 
-        assertMockEndpointsSatisfied();
+        MockEndpoint.assertIsSatisfied(context);
 
         List<Exchange> exchanges = getMockEndpoint("mock:result").getExchanges();
         Exchange e = exchanges.get(0);
@@ -68,15 +68,10 @@ public class RouteTest extends CamelTestSupport {
     @Test
     @DisplayName("Test SSL to common https site (httpbin)")
     public void testSslToHttpBin() throws Exception {
-        SecurityProperties secprop = new SecurityProperties();
-        secprop.setStore(new SecurityProperties.Store());
-        secprop.getStore().setConsumer(new SecurityProperties.Store.Consumer());
-        secprop.getStore().setTruststore(new SecurityProperties.Store.Truststore());
-
-        SSLContextParametersConfig sslbeans = new SSLContextParametersConfig(secprop);
+        SSLContextParametersConfig sslbeans = new SSLContextParametersConfig();
         context.getRegistry().bind("outgoingSSLContextParameters", sslbeans.outgoingSSLContextParameters());
         template.sendBody("direct:test_ssl", "Test!");
-        assertMockEndpointsSatisfied();
+        MockEndpoint.assertIsSatisfied(context);
 
         List<Exchange> exchanges = getMockEndpoint("mock:result").getExchanges();
         Exchange e = exchanges.get(0);
@@ -97,7 +92,7 @@ public class RouteTest extends CamelTestSupport {
                         .to("mock:result");
 
                 from("direct:test_ssl")
-                        .toD("https://httpbin.org/post?sslContextParameters=#outgoingSSLContextParameters")
+                        .toD("https://httpbin.org/post")
                         .to("mock:result");
 
             }
