@@ -11,30 +11,28 @@
     <description>Adapter för ApSe byggt med Camel och Spring Boot</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
 
+        <spring.boot-version>2.7.18</spring.boot-version>
+        <camel.version>3.22.1</camel.version>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <junit.version>5.10.0</junit.version>
+        <log4j2-ecs-layout.version>1.5.0</log4j2-ecs-layout.version>
+        <jaxws-rt.version>2.3.5</jaxws-rt.version>
+        <json.version>20240303</json.version>
+        <TicketMachine.version>1.1.3-RC1</TicketMachine.version>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring.boot-version>2.6.6</spring.boot-version>
-        <lmax_disruptor-version>3.3.6</lmax_disruptor-version>
-        <camel.version>3.7.4</camel.version>
-        <javax.servlet-api-version>4.0.1</javax.servlet-api-version>
-        <netty.version>9.4.45.v20220203</netty.version>
-
-        <takdatahandler.version>1.0.1</takdatahandler.version>
-
-        <ecs-logging-java.version>1.5.0</ecs-logging-java.version>
-
-        <maven.javadoc.skip>true</maven.javadoc.skip>
-
 
         <!-- ************************-->
         <!-- Sonar/Reporting settings -->
         <!-- ************************-->
-        <jacoco.plugin.version>0.8.5</jacoco.plugin.version>
         <sonar.plugin.version>3.5.0.1254</sonar.plugin.version>
+
+        <jacoco.plugin.version>0.8.5</jacoco.plugin.version>
 
         <jacoco.outputDir>${project.build.directory}</jacoco.outputDir>
         <jacoco.out.ut.file>jacoco-ut.exec</jacoco.out.ut.file>
@@ -49,10 +47,38 @@
         <sonar.coverage.exclusions>
             **/se/skl/vp/constants/*
         </sonar.coverage.exclusions>
-        <junit-jupiter.version>5.10.1</junit-jupiter.version>
-        <lombok.version>1.18.30</lombok.version>
-        <org-json.version>20240303</org-json.version>
     </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Log4J BOM placed first to override version -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-bom</artifactId>
+                <version>2.17.1</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <!-- Spring Boot BOM -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Camel BOM -->
+            <dependency>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-spring-boot-dependencies</artifactId>
+                <version>${camel.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
 
     <dependencies>
@@ -60,7 +86,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring.boot-version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
@@ -75,119 +100,95 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
-            <version>${spring.boot-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-actuator</artifactId>
-            <version>${spring.boot-version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
-            <version>${spring.boot-version}</version>
             <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>co.elastic.logging</groupId>
-            <artifactId>log4j2-ecs-layout</artifactId>
-            <version>${ecs-logging-java.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
             <optional>true</optional>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
         <!-- Camel -->
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-spring-boot-starter</artifactId>
-            <version>${camel.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel.springboot</groupId>
+            <artifactId>camel-stream-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
-            <version>${camel.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-management</artifactId>
-            <version>${camel.version}</version>
         </dependency>
 
         <!-- test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>${spring.boot-version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-test-spring-junit5</artifactId>
-            <version>${camel.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-netty-http-starter</artifactId>
-            <version>${camel.version}</version>
         </dependency>
 
         <!-- logging -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
-            <version>${spring.boot-version}</version>
         </dependency>
-
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
+            <groupId>co.elastic.logging</groupId>
+            <artifactId>log4j2-ecs-layout</artifactId>
+            <version>${log4j2-ecs-layout.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.sun.xml.ws</groupId>
             <artifactId>jaxws-rt</artifactId>
-            <version>2.3.5</version>
+            <version>${jaxws-rt.version}</version>
             <scope>provided</scope>
         </dependency>
-
 
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>${org-json.version}</version>
+            <version>${json.version}</version>
         </dependency>
 
         <!-- Inera -->
         <dependency>
             <groupId>se.skltp.adapterservices.se.apotekensservice</groupId>
             <artifactId>TicketMachine</artifactId>
-            <version>1.1.3-RC1</version>
+            <version>${TicketMachine.version}</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-http</artifactId>
-            <version>${camel.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-test-spring</artifactId>
-            <version>${camel.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -209,6 +210,17 @@
                     <localCheckout>true</localCheckout>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-maven-plugin</artifactId>
+                <version>${camel.version}</version>
+                <!-- allows to fail if not all routes are fully covered during testing -->
+                <configuration>
+
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
