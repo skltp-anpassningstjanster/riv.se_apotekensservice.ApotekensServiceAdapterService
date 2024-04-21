@@ -53,9 +53,9 @@ probes:
       path: actuator/health/readiness
       port: 8089
       scheme: HTTP
-    initialDelaySeconds: 20
-    failureThreshold: 10
-    periodSeconds: 4  # 20s + 10 * 4s = 1 minute max startup time
+    initialDelaySeconds: 6
+    failureThreshold: 27
+    periodSeconds: 2  # 6s + 27 * 2s = 1 minute max startup time
     successThreshold: 1
     timeoutSeconds: 1
   livenessProbe:
