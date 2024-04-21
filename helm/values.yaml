@@ -55,7 +55,7 @@ probes:
       scheme: HTTP
     initialDelaySeconds: 6
     failureThreshold: 27
-    periodSeconds: 2  # 6s + 27 * 2s = 1 minute max startup time
+    periodSeconds: 2  # 6s delay + 27 accepted fails * tested every 2s = 60s =  1 minute max startup time
     successThreshold: 1
     timeoutSeconds: 1
   livenessProbe:
