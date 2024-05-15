@@ -39,7 +39,7 @@ do
   keytool -import -trustcacerts -alias $(basename \${cacert}) -file \$cacert -cacerts -storepass changeit -noprompt
 done
 chmod -w $JAVA_CACERTS
-exec java -XX:MaxRAMPercentage=75 ${JAVA_OPTS} -jar ${APPJAR} ${CONFIG_FILE_PARAM}
+exec java \${JAVA_OPTS} -jar \${APPJAR} \${CONFIG_FILE_PARAM}
 EOF
 
 CMD ["sh", "/run.sh"]
