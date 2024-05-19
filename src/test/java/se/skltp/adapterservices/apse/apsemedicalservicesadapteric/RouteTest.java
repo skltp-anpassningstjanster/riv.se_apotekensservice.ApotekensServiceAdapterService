@@ -9,7 +9,6 @@ import org.apache.camel.test.junit5.CamelTestSupport;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import se.skltp.adapterservices.apse.EndpointResolverProcessor;
-import se.skltp.adapterservices.apse.config.SSLContextParametersConfig;
 import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
 
 import java.util.List;
@@ -68,8 +67,6 @@ public class RouteTest extends CamelTestSupport {
     @Test
     @DisplayName("Test SSL to common https site (httpbin)")
     public void testSslToHttpBin() throws Exception {
-        SSLContextParametersConfig sslbeans = new SSLContextParametersConfig();
-        context.getRegistry().bind("outgoingSSLContextParameters", sslbeans.outgoingSSLContextParameters());
         template.sendBody("direct:test_ssl", "Test!");
         MockEndpoint.assertIsSatisfied(context);
 
