@@ -20,18 +20,14 @@ import lombok.extern.log4j.Log4j2;
 import org.apache.camel.*;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.http.HttpComponent;
-import org.apache.camel.support.jsse.KeyManagersParameters;
-import org.apache.camel.support.jsse.KeyStoreParameters;
-import org.apache.camel.support.jsse.SSLContextParameters;
-import org.apache.http.conn.scheme.SchemeRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import se.skltp.adapterservices.apse.config.ClientCertificateProperties;
 import se.skltp.adapterservices.apse.config.EndpointConfig;
 import se.skltp.adapterservices.apse.config.HttpHeaderFilterProperties;
 import se.skltp.adapterservices.apse.constants.ApseExchangeProperties;
 import se.skltp.adapterservices.apse.errorhandling.HandleProducerExceptionProcessor;
 import se.skltp.adapterservices.apse.logging.MessageInfoLogger;
+import se.skltp.adapterservices.apse.config.SSLContextParameterConfig;
 import se.skltp.adapterservices.apse.utils.SamlHeaderFromArgosProcessor;
 
 /**
@@ -68,11 +64,13 @@ public class ApSeRouter extends RouteBuilder {
     private HandleProducerExceptionProcessor handleProducerExceptionProcessor;
 
     @Autowired
-    private ClientCertificateProperties clientCertificateProperties;
+    SSLContextParameterConfig sslCtxCfg;
 
     @Override
     public void configure() throws Exception {
-        configureSSLContextParameters(getContext());
+        // Configure SSL
+        sslCtxCfg.setSSLContextParameters(getContext().getComponent("https", HttpComponent.class));
+
         log.debug("Configuring routes for ApSe");
         if (endpointConfig.getInbound() == null) {
             log.error("no inbound values, check configuration.");
@@ -120,29 +118,4 @@ public class ApSeRouter extends RouteBuilder {
                 .bean(MessageInfoLogger.class, LOG_RESP_IN_METHOD)
         ;
     }
-
-    private void configureSSLContextParameters(CamelContext context) {
-
-        if (clientCertificateProperties.isUseClientCertificate()) {
-            KeyStoreParameters ksp = new KeyStoreParameters();
-            ksp.setResource("file:" + clientCertificateProperties.getKeystoreFile());
-            ksp.setPassword(clientCertificateProperties.getKeystorePassword());
-
-            KeyManagersParameters kmp = new KeyManagersParameters();
-            kmp.setKeyStore(ksp);
-            if (clientCertificateProperties.getKeyPassword() == null || clientCertificateProperties.getKeyPassword().isEmpty()) {
-                kmp.setKeyPassword(clientCertificateProperties.getKeystorePassword());
-            } else {
-                kmp.setKeyPassword(clientCertificateProperties.getKeyPassword());
-            }
-
-
-            SSLContextParameters scp = new SSLContextParameters();
-            scp.setKeyManagers(kmp);
-
-            HttpComponent httpComponent = context.getComponent("https", HttpComponent.class);
-            httpComponent.setSslContextParameters(scp);
-        }
-    }
-
 }

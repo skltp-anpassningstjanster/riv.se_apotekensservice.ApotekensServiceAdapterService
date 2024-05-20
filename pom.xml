@@ -272,6 +272,23 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.rodnansol</groupId>
+                <artifactId>spring-configuration-property-documenter-maven-plugin</artifactId>
+                <version>0.6.1</version>
+                <executions>
+                    <execution>
+                        <id>generate-markdown</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>generate-property-document</goal>
+                        </goals>
+                        <configuration>
+                            <type>MARKDOWN</type>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
