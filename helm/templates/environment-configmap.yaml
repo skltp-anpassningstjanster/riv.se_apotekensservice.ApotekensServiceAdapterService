@@ -70,3 +70,8 @@ data:
   APSE_RESP_IN_LOGLEVEL: DEBUG
   APSE_RESP_OUT_LOGLEVEL: DEBUG
   APSE_ERROR_LOGLEVEL: DEBUG
+
+  #debug
+  locatorLabelApseAdapt: "Rigel"
+  locatorLabelTicketMachine: "Regulus"
+  locatorLabelGeneral: "Vega"

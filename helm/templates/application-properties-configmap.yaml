@@ -16,3 +16,8 @@ data:
     {{ end }}
 
     apse.endpoint.connect.timeout=2000
+    
+    #debug
+    locatorLabelApseAdapt=Castor
+    locatorLabelTicketMachine=Pollux
+    locatorLabelGeneral=Polaris
