@@ -5,7 +5,8 @@ WORKDIR  /opt/build
 ADD pom.xml /opt/build/
 ADD src/ /opt/build/src
 
-RUN --mount=type=cache,target=/root/.m2 mvn clean install
+RUN --mount=type=secret,id=maven,target=/root/.m2/settings.xml \
+    --mount=type=cache,target=/root/.m2/repository mvn clean install
 
 FROM eclipse-temurin:17-jre-alpine
 
