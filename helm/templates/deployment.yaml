@@ -21,8 +21,8 @@ spec:
           configMap:
             name: application-properties-configmap
         - name: saml-keystore
-          configMap:
-            name: apse-adapter-certs
+          secret:
+            secretName: apse-adapter-certs
         {{- if .Values.trust.anchorSecret.name }}
         - name: truststore
           secret:
