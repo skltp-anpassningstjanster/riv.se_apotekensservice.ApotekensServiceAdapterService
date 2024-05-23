@@ -24,7 +24,7 @@ data:
   includekeyinfoinsignature: "true"
   java.opts: " -Duser.country=SE -Duser.language=en -Xms512m -Xmx1536m -XX:MaxMetaspaceSize=256m -XX:CompressedClassSpaceSize=256m"
   keystorefilename: "Pascal.pfx"
-  keystorepath: "certificates/"
+  keystorepath: "/opt/apse/keystore/"
   keystoretype: "PKCS12"
 
   # Allow to obtain basic information about camel routes (read only mode)

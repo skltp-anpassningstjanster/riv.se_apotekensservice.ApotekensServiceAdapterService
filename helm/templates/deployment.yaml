@@ -20,6 +20,9 @@ spec:
         - name: application-properties
           configMap:
             name: application-properties-configmap
+        - name: saml-keystore
+          configMap:
+            name: apse-adapter-certs
         {{- if .Values.trust.anchorSecret.name }}
         - name: truststore
           secret:
@@ -94,3 +97,6 @@ spec:
               mountPath: {{ .Values.trust.anchorMountPath }}
               readonly: true
               {{- end }}
+            - name: saml-keystore
+              mountPath: /opt/apse/keystore
+              readonly: true
