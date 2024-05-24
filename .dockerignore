@@ -1,4 +1,4 @@
 *
 !pom.xml
-!src
+!target/apse-adapter-*.jar
 !Dockerfile
