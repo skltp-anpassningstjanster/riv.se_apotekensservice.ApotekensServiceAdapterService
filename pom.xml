@@ -331,6 +331,13 @@
         </developerConnection>
         <tag>HEAD</tag>
     </scm>
+    <repositories>
+        <repository>
+            <name>inera</name>
+            <id>inera</id>
+            <url>https://nexus.drift.inera.se/repository/maven-public/</url>
+        </repository>
+    </repositories>
     <distributionManagement>
         <repository>
             <id>release-nexus</id>
