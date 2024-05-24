@@ -22,7 +22,7 @@
         <log4j2-ecs-layout.version>1.5.0</log4j2-ecs-layout.version>
         <jaxws-rt.version>2.3.5</jaxws-rt.version>
         <json.version>20240303</json.version>
-        <TicketMachine.version>1.2.0-RC5</TicketMachine.version>
+        <TicketMachine.version>1.2.0-RC10</TicketMachine.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -32,7 +32,7 @@
         <!-- ************************-->
         <sonar.plugin.version>3.5.0.1254</sonar.plugin.version>
 
-        <jacoco.plugin.version>0.8.5</jacoco.plugin.version>
+        <jacoco.plugin.version>0.8.12</jacoco.plugin.version>
 
         <jacoco.outputDir>${project.build.directory}</jacoco.outputDir>
         <jacoco.out.ut.file>jacoco-ut.exec</jacoco.out.ut.file>

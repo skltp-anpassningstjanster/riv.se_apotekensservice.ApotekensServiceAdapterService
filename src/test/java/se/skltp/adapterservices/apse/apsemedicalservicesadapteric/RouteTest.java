@@ -57,8 +57,7 @@ public class RouteTest extends CamelTestSupport {
         String body = e.getIn().getBody(String.class);
 
         assertThat(body).contains(new String[]{
-                "83xHIE0CAwEAAaNZMFcwVQYDVR0BBE4wTIAQg6JKNhP",
-                "<ds:KeyName>Pascal Key</ds:KeyName>",
+                "<urn2:personnummer>191212121212</urn2:personnummer>",
                 "<saml2:AttributeValue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"xs:string\">"+prescripber+"</saml2:AttributeValue>"
         });
 
