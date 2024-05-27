@@ -65,13 +65,6 @@ data:
   VALIDATELKTJ: "false"
   ## END BLOCK
 
-  ## LOGGING LEVELS
-  APSE_REQ_IN_LOGLEVEL: DEBUG
-  APSE_REQ_OUT_LOGLEVEL: DEBUG
-  APSE_RESP_IN_LOGLEVEL: DEBUG
-  APSE_RESP_OUT_LOGLEVEL: DEBUG
-  APSE_ERROR_LOGLEVEL: DEBUG
-
   #debug
   locatorLabelApseAdapt: "Rigel"
   locatorLabelTicketMachine: "Regulus"
