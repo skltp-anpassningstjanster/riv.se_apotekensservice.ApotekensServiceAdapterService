@@ -32,7 +32,7 @@ public class LogExtraInfoBuilder {
     public static final String VP_X_FORWARDED_PROTO = ApseExchangeProperties.VP_X_FORWARDED_PROTO;
     public static final String VP_X_FORWARDED_PORT = ApseExchangeProperties.VP_X_FORWARDED_PORT;
 
-    protected static final List<String> HEADERS_TO_FILTER = Arrays.asList(CERTIFICATE_FROM_REVERSE_PROXY, "x-fk-auth-cert");
+    public static final String FILTER_HEADER_REGEX = "(?i)x-fk-auth-cert|" + CERTIFICATE_FROM_REVERSE_PROXY;
     protected static final String FILTERED_TEXT = "<filtered>";
 
 
@@ -151,8 +151,8 @@ public class LogExtraInfoBuilder {
                 .collect(Collectors.joining(", ", "{", "}"));
     }
 
-    private static String filterHeaderValue(String key, Map<String, ?> headersMap) {
-        return HEADERS_TO_FILTER.contains(key) ? FILTERED_TEXT : "" + headersMap.get(key);
+    static String filterHeaderValue(String key, Map<String, ?> headersMap) {
+        return key.matches(FILTER_HEADER_REGEX)? FILTERED_TEXT : "" + headersMap.get(key);
     }
 
     private static class ExtraInfoMap<K, V> extends HashMap<K, V> {
