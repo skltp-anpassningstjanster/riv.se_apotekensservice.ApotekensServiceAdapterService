@@ -1,11 +1,11 @@
 <Configuration status="ERROR">
     <Properties>
         <Property name="rootLogAppender">${env:APSE_LOG_APPENDER:-Console}</Property>
-        <Property name="reqInLevel">${env:APSE_REQ_IN_LOGLEVEL:-DEBUG}</Property>
-        <Property name="reqOutLevel">${env:APSE_REQ_OUT_LOGLEVEL:-DEBUG}</Property>
-        <Property name="respInLevel">${env:APSE_RESP_IN_LOGLEVEL:-DEBUG}</Property>
-        <Property name="respOutLevel">${env:APSE_RESP_OUT_LOGLEVEL:-DEBUG}</Property>
-        <Property name="errorLevel">${env:APSE_ERROR_LOGLEVEL:-DEBUG}</Property>
+        <Property name="reqInLevel">${env:APSE_REQ_IN_LOGLEVEL:-INFO}</Property>
+        <Property name="reqOutLevel">${env:APSE_REQ_OUT_LOGLEVEL:-INFO}</Property>
+        <Property name="respInLevel">${env:APSE_RESP_IN_LOGLEVEL:-INFO}</Property>
+        <Property name="respOutLevel">${env:APSE_RESP_OUT_LOGLEVEL:-INFO}</Property>
+        <Property name="errorLevel">${env:APSE_ERROR_LOGLEVEL:-INFO}</Property>
     </Properties>
     <Appenders>
         <Console name="Console">
