@@ -3,4 +3,5 @@ sonar-java-binaries: 'target/classes/**/*'              # What binaries to scan.
 sonar-jacoco-reports: './target/site/jacoco/jacoco.xml' # Where the jacoco coverage report is stored.
 maven-docker-image: maven:3.9.6-eclipse-temurin-17
 skip-stages: 'Nexus upload'
+jdk-path: openjdk-17
 
