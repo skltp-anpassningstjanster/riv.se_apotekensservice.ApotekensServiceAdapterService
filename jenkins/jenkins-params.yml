@@ -4,4 +4,3 @@ sonar-jacoco-reports: './target/site/jacoco/jacoco.xml' # Where the jacoco cover
 maven-docker-image: maven:3.9.6-eclipse-temurin-17
 skip-stages: 'Nexus upload'
 jdk-path: openjdk-17
-
