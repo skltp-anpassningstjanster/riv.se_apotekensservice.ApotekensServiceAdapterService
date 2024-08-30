@@ -43,36 +43,7 @@ data:
   # Used for actuator
   server.port: "8089"
 
-  namespaceaware: "true"
-  removeinitialxmlstring: "true"
-  xmlstringtoremove: "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
-  ticketvalidity: "15"
   # Key where to find senderid in certificates subject
   certificate.senderid.subject.pattern: "OU=([^,]+)"
 
-  ## MISCELLANEOUS CASE-SENSITIVE PROPERTIES
-  BUILDINGSUBJECTCONFIRMATION: "true"
-  CERTIFICATESUBJECT: "C=se, O=apotekensservice, CN=pascalonline"
-  CERTIFICATESUBJECTNAME: "pascalonline"
-  CREDENTIALTYPE: "X509_CREDENTIAL"
-  INCLUDEKEYINFOINSIGNATURE: "true"
-  KEYSTOREALIAS: ""
-  KEYSTOREFILENAME: "Pascal.pfx"
-  KEYSTOREPATH: "/opt/apse/keystore/"
-  KEYSTORETYPE: "PKCS12"
-  #validate incoming tickets?
-  VALIDATEBIF: "false"
-  VALIDATELKTJ: "false"
-  ## END BLOCK
-
-  ## LOGGING LEVELS
-  APSE_REQ_IN_LOGLEVEL: DEBUG
-  APSE_REQ_OUT_LOGLEVEL: DEBUG
-  APSE_RESP_IN_LOGLEVEL: DEBUG
-  APSE_RESP_OUT_LOGLEVEL: DEBUG
-  APSE_ERROR_LOGLEVEL: DEBUG
-
-  #debug
-  locatorLabelApseAdapt: "Rigel"
-  locatorLabelTicketMachine: "Regulus"
-  locatorLabelGeneral: "Vega"
+  KEYSTORETYPE: PKCS12

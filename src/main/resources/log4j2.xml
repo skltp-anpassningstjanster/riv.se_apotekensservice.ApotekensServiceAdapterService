@@ -1,11 +1,12 @@
 <Configuration status="ERROR">
     <Properties>
         <Property name="rootLogAppender">${env:APSE_LOG_APPENDER:-Console}</Property>
-        <Property name="reqInLevel">${env:APSE_REQ_IN_LOGLEVEL:-DEBUG}</Property>
-        <Property name="reqOutLevel">${env:APSE_REQ_OUT_LOGLEVEL:-DEBUG}</Property>
-        <Property name="respInLevel">${env:APSE_RESP_IN_LOGLEVEL:-DEBUG}</Property>
-        <Property name="respOutLevel">${env:APSE_RESP_OUT_LOGLEVEL:-DEBUG}</Property>
-        <Property name="errorLevel">${env:APSE_ERROR_LOGLEVEL:-DEBUG}</Property>
+        <Property name="baseLogLevel">${env:APSE_BASE_LOGLEVEL:-INFO}</Property>
+        <Property name="reqInLevel">${env:APSE_REQ_IN_LOGLEVEL:-INFO}</Property>
+        <Property name="reqOutLevel">${env:APSE_REQ_OUT_LOGLEVEL:-INFO}</Property>
+        <Property name="respInLevel">${env:APSE_RESP_IN_LOGLEVEL:-INFO}</Property>
+        <Property name="respOutLevel">${env:APSE_RESP_OUT_LOGLEVEL:-INFO}</Property>
+        <Property name="errorLevel">${env:APSE_ERROR_LOGLEVEL:-INFO}</Property>
     </Properties>
     <Appenders>
         <Console name="Console">
@@ -16,7 +17,7 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="se.skltp.adapterservices.apse" level="DEBUG" />
+        <Logger name="se.skltp.adapterservices.apse" level="${baseLogLevel}" />
         <Logger name="se.skltp.adapterservices.apse.logging.req.in" level="${reqInLevel}" />
         <Logger name="se.skltp.adapterservices.apse.logging.req.out" level="${reqOutLevel}" />
         <Logger name="se.skltp.adapterservices.apse.logging.resp.in" level="${respInLevel}" />
