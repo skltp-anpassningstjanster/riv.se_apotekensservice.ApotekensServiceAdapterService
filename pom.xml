@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>se.skltp.adapterservices.apse</groupId>
   <artifactId>apse-adapter</artifactId>
-  <version>3.2.0</version>
+  <version>3.2.1</version>
   <name>apse-adapter</name>
   <description>Adapter för ApSe byggt med Camel och Spring Boot</description>
   <scm>

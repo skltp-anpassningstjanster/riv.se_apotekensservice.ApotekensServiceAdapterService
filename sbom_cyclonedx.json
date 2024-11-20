@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:c4ed83f2-6b81-40aa-a5e0-baf822543b1f",
+  "serialNumber": "urn:uuid:872e90dd-3f97-4a2d-a594-348918e46c45",
   "version": 1,
   "metadata": {
-    "timestamp": "2024-11-20T10:28:41+00:00",
+    "timestamp": "2024-11-20T12:35:55+00:00",
     "tools": {
       "components": [
         {
@@ -17,7 +17,7 @@
       ]
     },
     "component": {
-      "bom-ref": "c2124127-d15c-4974-be06-d289cca7d1cc",
+      "bom-ref": "c7478cb0-ad41-4f52-a02a-9f51348ea6f5",
       "type": "application",
       "name": ".",
       "properties": [
@@ -30,7 +30,7 @@
   },
   "components": [
     {
-      "bom-ref": "176604d4-1f1a-4b07-881d-79b1da909948",
+      "bom-ref": "c5600cfb-abfa-4882-bb7b-8a9a48df7ce9",
       "type": "application",
       "name": "pom.xml",
       "properties": [
@@ -4830,16 +4830,16 @@
       ]
     },
     {
-      "bom-ref": "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.2.0",
+      "bom-ref": "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.2.1",
       "type": "library",
       "group": "se.skltp.adapterservices.apse",
       "name": "apse-adapter",
-      "version": "3.2.0",
-      "purl": "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.2.0",
+      "version": "3.2.1",
+      "purl": "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.2.1",
       "properties": [
         {
           "name": "aquasecurity:trivy:PkgID",
-          "value": "se.skltp.adapterservices.apse:apse-adapter:3.2.0"
+          "value": "se.skltp.adapterservices.apse:apse-adapter:3.2.1"
         },
         {
           "name": "aquasecurity:trivy:PkgType",
@@ -4978,15 +4978,15 @@
   ],
   "dependencies": [
     {
-      "ref": "176604d4-1f1a-4b07-881d-79b1da909948",
+      "ref": "c5600cfb-abfa-4882-bb7b-8a9a48df7ce9",
       "dependsOn": [
-        "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.2.0"
+        "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.2.1"
       ]
     },
     {
-      "ref": "c2124127-d15c-4974-be06-d289cca7d1cc",
+      "ref": "c7478cb0-ad41-4f52-a02a-9f51348ea6f5",
       "dependsOn": [
-        "176604d4-1f1a-4b07-881d-79b1da909948"
+        "c5600cfb-abfa-4882-bb7b-8a9a48df7ce9"
       ]
     },
     {
@@ -6369,7 +6369,7 @@
       "dependsOn": []
     },
     {
-      "ref": "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.2.0",
+      "ref": "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.2.1",
       "dependsOn": [
         "pkg:maven/co.elastic.logging/log4j2-ecs-layout@1.5.0",
         "pkg:maven/org.apache.camel.springboot/camel-netty-http-starter@3.22.2",
@@ -7896,7 +7896,7 @@
           "source": {
             "name": "amazon"
           },
-          "severity": "low"
+          "severity": "medium"
         },
         {
           "source": {
