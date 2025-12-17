@@ -18,13 +18,15 @@ data:
   endpoints.health.enabled: "true"
 
   ## MANAGEMENT ##
+  # Provide custom port for management endpoints
+  management.server.port: '8089'
   # Allow to obtain basic information about camel routes (read only mode)
   management.camelroutes.enabled: "true"
   management.camelroutes.read-only: "true"
 
   # show verbose health details (/actuator/health) so you can see Camel information also
   management.endpoint.health.show-details: "always"
-  management.endpoints.web.exposure.include: "info,health"
+  management.endpoints.web.exposure.include: "info,health,prometheus"
   management.health.enabled: "true"
 
   # to turn off Camel info in (/actuator/info)
@@ -34,16 +36,19 @@ data:
   # All access to actuator endpoints without security
   management.security.enabled: "false"
 
+  # Prometheus endpoint access level
+  management.endpoint.prometheus.enabled: 'read_only'
+
   ## OTHER
   memory.logger.period.seconds: "120"
   producer.http.connect.timeout: "5000"
   producer.https.connect.timeout: "5000"
-  classpath: /opt/apse/config/application-properties
+  classpath: '/opt/apse/config/application-properties'
 
-  # Used for actuator
-  server.port: "8089"
+  # Only management endpoints are exposed
+  server.port: '-1'
 
   # Key where to find senderid in certificates subject
   certificate.senderid.subject.pattern: "OU=([^,]+)"
 
-  KEYSTORETYPE: PKCS12
+  KEYSTORETYPE: 'PKCS12'
