@@ -2,22 +2,25 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:c7313d6e-3cbe-4f86-8e59-d4f9d0e18cfb",
+  "serialNumber": "urn:uuid:1aa2342c-25ee-4926-8dca-6fb25a7ed34c",
   "version": 1,
   "metadata": {
-    "timestamp": "2025-03-21T11:13:56+00:00",
+    "timestamp": "2025-12-18T12:07:40+00:00",
     "tools": {
       "components": [
         {
           "type": "application",
+          "manufacturer": {
+            "name": "Aqua Security Software Ltd."
+          },
           "group": "aquasecurity",
           "name": "trivy",
-          "version": "0.58.2"
+          "version": "0.67.2"
         }
       ]
     },
     "component": {
-      "bom-ref": "38848096-e360-4b91-b6c6-33d6f7fdfb1b",
+      "bom-ref": "03824f4a-5331-4fcd-a469-f3d9efc6ee04",
       "type": "application",
       "name": ".",
       "properties": [
@@ -30,7 +33,7 @@
   },
   "components": [
     {
-      "bom-ref": "b3a4ba3d-e794-4e38-a576-17572b4f3300",
+      "bom-ref": "0430d334-07c7-4151-ad3b-5bfacc96a62e",
       "type": "application",
       "name": "pom.xml",
       "properties": [
@@ -53,7 +56,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -78,12 +81,12 @@
       "licenses": [
         {
           "license": {
-            "name": "EPL-1.0"
+            "id": "EPL-1.0"
           }
         },
         {
           "license": {
-            "name": "LGPL-2.1-only"
+            "id": "LGPL-2.1-only"
           }
         }
       ],
@@ -108,12 +111,12 @@
       "licenses": [
         {
           "license": {
-            "name": "EPL-1.0"
+            "id": "EPL-1.0"
           }
         },
         {
           "license": {
-            "name": "LGPL-2.1-only"
+            "id": "LGPL-2.1-only"
           }
         }
       ],
@@ -138,7 +141,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -163,7 +166,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -188,7 +191,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -213,7 +216,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -238,7 +241,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -263,7 +266,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -288,7 +291,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -313,7 +316,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -338,7 +341,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -363,7 +366,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -388,7 +391,7 @@
       "licenses": [
         {
           "license": {
-            "name": "BSD-3-Clause"
+            "id": "BSD-3-Clause"
           }
         }
       ],
@@ -413,7 +416,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -438,7 +441,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -463,7 +466,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -488,7 +491,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -513,7 +516,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -538,7 +541,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -563,7 +566,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -588,7 +591,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -613,7 +616,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -630,6 +633,31 @@
       ]
     },
     {
+      "bom-ref": "pkg:maven/io.micrometer/micrometer-registry-prometheus@1.13.11",
+      "type": "library",
+      "group": "io.micrometer",
+      "name": "micrometer-registry-prometheus",
+      "version": "1.13.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/io.micrometer/micrometer-registry-prometheus@1.13.11",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "io.micrometer:micrometer-registry-prometheus:1.13.11"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
       "bom-ref": "pkg:maven/io.netty/netty-buffer@4.1.118.Final",
       "type": "library",
       "group": "io.netty",
@@ -638,7 +666,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -663,7 +691,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -688,7 +716,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -713,7 +741,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -738,7 +766,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -763,7 +791,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -788,7 +816,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -813,7 +841,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -838,7 +866,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -863,7 +891,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -888,7 +916,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -913,7 +941,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -930,6 +958,156 @@
       ]
     },
     {
+      "bom-ref": "pkg:maven/io.prometheus/prometheus-metrics-config@1.2.1",
+      "type": "library",
+      "group": "io.prometheus",
+      "name": "prometheus-metrics-config",
+      "version": "1.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/io.prometheus/prometheus-metrics-config@1.2.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "io.prometheus:prometheus-metrics-config:1.2.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/io.prometheus/prometheus-metrics-core@1.2.1",
+      "type": "library",
+      "group": "io.prometheus",
+      "name": "prometheus-metrics-core",
+      "version": "1.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/io.prometheus/prometheus-metrics-core@1.2.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "io.prometheus:prometheus-metrics-core:1.2.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/io.prometheus/prometheus-metrics-exposition-formats@1.2.1",
+      "type": "library",
+      "group": "io.prometheus",
+      "name": "prometheus-metrics-exposition-formats",
+      "version": "1.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/io.prometheus/prometheus-metrics-exposition-formats@1.2.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "io.prometheus:prometheus-metrics-exposition-formats:1.2.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/io.prometheus/prometheus-metrics-model@1.2.1",
+      "type": "library",
+      "group": "io.prometheus",
+      "name": "prometheus-metrics-model",
+      "version": "1.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/io.prometheus/prometheus-metrics-model@1.2.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "io.prometheus:prometheus-metrics-model:1.2.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/io.prometheus/prometheus-metrics-shaded-protobuf@1.2.1",
+      "type": "library",
+      "group": "io.prometheus",
+      "name": "prometheus-metrics-shaded-protobuf",
+      "version": "1.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/io.prometheus/prometheus-metrics-shaded-protobuf@1.2.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "io.prometheus:prometheus-metrics-shaded-protobuf:1.2.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/io.prometheus/prometheus-metrics-tracer-common@1.2.1",
+      "type": "library",
+      "group": "io.prometheus",
+      "name": "prometheus-metrics-tracer-common",
+      "version": "1.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/io.prometheus/prometheus-metrics-tracer-common@1.2.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "io.prometheus:prometheus-metrics-tracer-common:1.2.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
       "bom-ref": "pkg:maven/io.undertow/undertow-core@2.3.18.Final",
       "type": "library",
       "group": "io.undertow",
@@ -938,7 +1116,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -963,7 +1141,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -988,7 +1166,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1013,7 +1191,7 @@
       "licenses": [
         {
           "license": {
-            "name": "BSD-3-Clause"
+            "id": "BSD-3-Clause"
           }
         }
       ],
@@ -1038,12 +1216,12 @@
       "licenses": [
         {
           "license": {
-            "name": "EPL-2.0"
+            "id": "EPL-2.0"
           }
         },
         {
           "license": {
-            "name": "GPL-2.0-with-classpath-exception"
+            "name": "GPL-2.0-only WITH classpath-exception"
           }
         }
       ],
@@ -1068,12 +1246,12 @@
       "licenses": [
         {
           "license": {
-            "name": "EPL-2.0"
+            "id": "EPL-2.0"
           }
         },
         {
           "license": {
-            "name": "GPL-2.0-with-classpath-exception"
+            "name": "GPL-2.0-only WITH classpath-exception"
           }
         }
       ],
@@ -1098,12 +1276,12 @@
       "licenses": [
         {
           "license": {
-            "name": "EPL-2.0"
+            "id": "EPL-2.0"
           }
         },
         {
           "license": {
-            "name": "GPL-2.0-with-classpath-exception"
+            "name": "GPL-2.0-only WITH classpath-exception"
           }
         }
       ],
@@ -1128,12 +1306,12 @@
       "licenses": [
         {
           "license": {
-            "name": "EPL-2.0"
+            "id": "EPL-2.0"
           }
         },
         {
           "license": {
-            "name": "GPL-2.0-with-classpath-exception"
+            "name": "GPL-2.0-only WITH classpath-exception"
           }
         }
       ],
@@ -1158,7 +1336,7 @@
       "licenses": [
         {
           "license": {
-            "name": "BSD-3-Clause"
+            "id": "BSD-3-Clause"
           }
         }
       ],
@@ -1183,7 +1361,7 @@
       "licenses": [
         {
           "license": {
-            "name": "BSD-3-Clause"
+            "id": "BSD-3-Clause"
           }
         }
       ],
@@ -1208,7 +1386,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1233,7 +1411,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1258,7 +1436,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1283,7 +1461,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1308,7 +1486,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1333,7 +1511,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1358,7 +1536,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1383,7 +1561,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1408,7 +1586,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1433,7 +1611,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1458,7 +1636,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1483,7 +1661,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1508,7 +1686,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1533,7 +1711,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1558,7 +1736,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1583,7 +1761,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1608,7 +1786,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1633,7 +1811,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1658,7 +1836,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1683,7 +1861,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1708,7 +1886,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1733,7 +1911,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1758,7 +1936,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1783,7 +1961,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1808,7 +1986,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1833,7 +2011,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1858,7 +2036,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1883,7 +2061,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1908,7 +2086,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1933,7 +2111,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1958,7 +2136,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1983,7 +2161,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2008,7 +2186,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2033,7 +2211,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2058,7 +2236,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2083,7 +2261,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2108,7 +2286,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2133,7 +2311,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2158,7 +2336,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2183,7 +2361,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2208,7 +2386,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2233,7 +2411,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2258,7 +2436,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2283,7 +2461,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2308,7 +2486,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2333,7 +2511,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2358,7 +2536,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2383,7 +2561,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2408,7 +2586,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2433,7 +2611,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2458,7 +2636,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2483,7 +2661,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2508,7 +2686,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2533,7 +2711,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2558,7 +2736,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2583,7 +2761,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2608,7 +2786,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2633,7 +2811,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2658,7 +2836,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2683,7 +2861,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2708,7 +2886,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2733,7 +2911,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2758,7 +2936,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2783,7 +2961,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2808,7 +2986,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2833,7 +3011,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2858,7 +3036,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2883,7 +3061,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2908,7 +3086,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2933,7 +3111,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2958,7 +3136,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -2983,7 +3161,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3008,7 +3186,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3033,7 +3211,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3058,7 +3236,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3083,7 +3261,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3108,7 +3286,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3133,7 +3311,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3158,7 +3336,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3183,7 +3361,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3208,7 +3386,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3233,7 +3411,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3258,7 +3436,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3283,7 +3461,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3308,7 +3486,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3333,7 +3511,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3358,7 +3536,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3383,7 +3561,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3408,7 +3586,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3433,7 +3611,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3458,7 +3636,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3483,7 +3661,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3508,7 +3686,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3533,7 +3711,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3558,7 +3736,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3583,7 +3761,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3608,7 +3786,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3633,7 +3811,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3658,7 +3836,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3683,7 +3861,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3708,7 +3886,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3733,7 +3911,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3758,7 +3936,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3783,7 +3961,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3808,7 +3986,7 @@
       "licenses": [
         {
           "license": {
-            "name": "MIT"
+            "id": "MIT"
           }
         }
       ],
@@ -3833,7 +4011,7 @@
       "licenses": [
         {
           "license": {
-            "name": "BSD-3-Clause"
+            "id": "BSD-3-Clause"
           }
         }
       ],
@@ -3858,7 +4036,7 @@
       "licenses": [
         {
           "license": {
-            "name": "BSD-3-Clause"
+            "id": "BSD-3-Clause"
           }
         }
       ],
@@ -3883,7 +4061,7 @@
       "licenses": [
         {
           "license": {
-            "name": "BSD-3-Clause"
+            "id": "BSD-3-Clause"
           }
         }
       ],
@@ -3908,7 +4086,7 @@
       "licenses": [
         {
           "license": {
-            "name": "BSD-3-Clause"
+            "id": "BSD-3-Clause"
           }
         }
       ],
@@ -3933,12 +4111,12 @@
       "licenses": [
         {
           "license": {
-            "name": "CC0-1.0"
+            "id": "CC0-1.0"
           }
         },
         {
           "license": {
-            "name": "BSD-2-Clause"
+            "id": "BSD-2-Clause"
           }
         }
       ],
@@ -3963,7 +4141,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -3988,7 +4166,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4013,7 +4191,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4038,7 +4216,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4063,7 +4241,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4088,7 +4266,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Public Domain"
+            "name": "Public-Domain"
           }
         }
       ],
@@ -4113,7 +4291,7 @@
       "licenses": [
         {
           "license": {
-            "name": "CC0-1.0"
+            "id": "CC0-1.0"
           }
         }
       ],
@@ -4138,7 +4316,7 @@
       "licenses": [
         {
           "license": {
-            "name": "MIT"
+            "id": "MIT"
           }
         }
       ],
@@ -4163,7 +4341,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4188,7 +4366,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4213,7 +4391,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4238,7 +4416,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4263,7 +4441,7 @@
       "licenses": [
         {
           "license": {
-            "name": "BSD-3-Clause"
+            "id": "BSD-3-Clause"
           }
         }
       ],
@@ -4288,12 +4466,12 @@
       "licenses": [
         {
           "license": {
-            "name": "BSD-3-Clause"
+            "id": "BSD-3-Clause"
           }
         },
         {
           "license": {
-            "name": "CC-BY-SA-3.0"
+            "id": "CC-BY-SA-3.0"
           }
         }
       ],
@@ -4318,7 +4496,7 @@
       "licenses": [
         {
           "license": {
-            "name": "MIT"
+            "id": "MIT"
           }
         }
       ],
@@ -4343,7 +4521,7 @@
       "licenses": [
         {
           "license": {
-            "name": "MIT"
+            "id": "MIT"
           }
         }
       ],
@@ -4368,7 +4546,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4393,7 +4571,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4418,7 +4596,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4443,7 +4621,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4468,7 +4646,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4493,7 +4671,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4518,7 +4696,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4543,7 +4721,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4568,7 +4746,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4593,7 +4771,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4618,7 +4796,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4643,7 +4821,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4668,7 +4846,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4693,7 +4871,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4718,7 +4896,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4743,7 +4921,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4768,7 +4946,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4793,7 +4971,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4818,7 +4996,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4843,7 +5021,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4868,7 +5046,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4893,7 +5071,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4918,7 +5096,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -4935,16 +5113,16 @@
       ]
     },
     {
-      "bom-ref": "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.3.1",
+      "bom-ref": "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.3.2",
       "type": "library",
       "group": "se.skltp.adapterservices.apse",
       "name": "apse-adapter",
-      "version": "3.3.1",
-      "purl": "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.3.1",
+      "version": "3.3.2",
+      "purl": "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.3.2",
       "properties": [
         {
           "name": "aquasecurity:trivy:PkgID",
-          "value": "se.skltp.adapterservices.apse:apse-adapter:3.3.1"
+          "value": "se.skltp.adapterservices.apse:apse-adapter:3.3.2"
         },
         {
           "name": "aquasecurity:trivy:PkgType",
@@ -4979,7 +5157,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -5004,7 +5182,7 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -5029,17 +5207,17 @@
       "licenses": [
         {
           "license": {
-            "name": "Apache-2.0"
+            "id": "Apache-2.0"
           }
         },
         {
           "license": {
-            "name": "The SAX License"
+            "name": "The-SAX-License"
           }
         },
         {
           "license": {
-            "name": "W3C"
+            "id": "W3C"
           }
         }
       ],
@@ -5064,7 +5242,7 @@
       "licenses": [
         {
           "license": {
-            "name": "LGPL-2.1-only"
+            "id": "LGPL-2.1-only"
           }
         }
       ],
@@ -5083,15 +5261,15 @@
   ],
   "dependencies": [
     {
-      "ref": "38848096-e360-4b91-b6c6-33d6f7fdfb1b",
+      "ref": "03824f4a-5331-4fcd-a469-f3d9efc6ee04",
       "dependsOn": [
-        "b3a4ba3d-e794-4e38-a576-17572b4f3300"
+        "0430d334-07c7-4151-ad3b-5bfacc96a62e"
       ]
     },
     {
-      "ref": "b3a4ba3d-e794-4e38-a576-17572b4f3300",
+      "ref": "0430d334-07c7-4151-ad3b-5bfacc96a62e",
       "dependsOn": [
-        "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.3.1"
+        "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.3.2"
       ]
     },
     {
@@ -5224,6 +5402,15 @@
       ]
     },
     {
+      "ref": "pkg:maven/io.micrometer/micrometer-registry-prometheus@1.13.11",
+      "dependsOn": [
+        "pkg:maven/io.micrometer/micrometer-core@1.13.11",
+        "pkg:maven/io.prometheus/prometheus-metrics-core@1.2.1",
+        "pkg:maven/io.prometheus/prometheus-metrics-exposition-formats@1.2.1",
+        "pkg:maven/io.prometheus/prometheus-metrics-tracer-common@1.2.1"
+      ]
+    },
+    {
       "ref": "pkg:maven/io.netty/netty-buffer@4.1.118.Final",
       "dependsOn": [
         "pkg:maven/io.netty/netty-common@4.1.118.Final",
@@ -5331,6 +5518,37 @@
         "pkg:maven/io.netty/netty-resolver@4.1.118.Final",
         "pkg:maven/org.mockito/mockito-core@5.11.0"
       ]
+    },
+    {
+      "ref": "pkg:maven/io.prometheus/prometheus-metrics-config@1.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/io.prometheus/prometheus-metrics-core@1.2.1",
+      "dependsOn": [
+        "pkg:maven/io.prometheus/prometheus-metrics-config@1.2.1",
+        "pkg:maven/io.prometheus/prometheus-metrics-model@1.2.1"
+      ]
+    },
+    {
+      "ref": "pkg:maven/io.prometheus/prometheus-metrics-exposition-formats@1.2.1",
+      "dependsOn": [
+        "pkg:maven/io.prometheus/prometheus-metrics-config@1.2.1",
+        "pkg:maven/io.prometheus/prometheus-metrics-model@1.2.1",
+        "pkg:maven/io.prometheus/prometheus-metrics-shaded-protobuf@1.2.1"
+      ]
+    },
+    {
+      "ref": "pkg:maven/io.prometheus/prometheus-metrics-model@1.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/io.prometheus/prometheus-metrics-shaded-protobuf@1.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/io.prometheus/prometheus-metrics-tracer-common@1.2.1",
+      "dependsOn": []
     },
     {
       "ref": "pkg:maven/io.undertow/undertow-core@2.3.18.Final",
@@ -6523,9 +6741,10 @@
       "dependsOn": []
     },
     {
-      "ref": "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.3.1",
+      "ref": "pkg:maven/se.skltp.adapterservices.apse/apse-adapter@3.3.2",
       "dependsOn": [
         "pkg:maven/co.elastic.logging/log4j2-ecs-layout@1.5.0",
+        "pkg:maven/io.micrometer/micrometer-registry-prometheus@1.13.11",
         "pkg:maven/org.apache.camel.springboot/camel-netty-http-starter@4.8.4",
         "pkg:maven/org.apache.camel.springboot/camel-spring-boot-starter@4.8.4",
         "pkg:maven/org.apache.camel.springboot/camel-stream-starter@4.8.4",
@@ -6721,7 +6940,7 @@
         }
       ],
       "published": "2012-11-04T22:55:03+00:00",
-      "updated": "2024-11-21T01:45:12+00:00",
+      "updated": "2025-04-11T00:51:21+00:00",
       "affects": [
         {
           "ref": "pkg:maven/commons-httpclient/commons-httpclient@3.1",
@@ -6801,7 +7020,7 @@
         }
       ],
       "published": "2014-10-25T00:55:03+00:00",
-      "updated": "2024-11-21T02:08:29+00:00",
+      "updated": "2025-04-12T10:46:40+00:00",
       "affects": [
         {
           "ref": "pkg:maven/ca.juliusdavies/not-yet-commons-ssl@0.3.9",
@@ -6881,7 +7100,7 @@
         }
       ],
       "published": "2015-07-08T15:59:02+00:00",
-      "updated": "2024-11-21T02:26:09+00:00",
+      "updated": "2025-04-12T10:46:40+00:00",
       "affects": [
         {
           "ref": "pkg:maven/org.opensaml/opensaml@2.6.4",
@@ -6939,6 +7158,9 @@
           "url": "https://arxiv.org/pdf/2306.05534"
         },
         {
+          "url": "https://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/"
+        },
+        {
           "url": "https://github.com/apache/commons-collections"
         },
         {
@@ -6954,7 +7176,13 @@
           "url": "https://lists.apache.org/thread.html/r352e40ca9874d1beb4ad95403792adca7eb295e6bc3bd7b65fabcc21@%3Ccommits.samza.apache.org%3E"
         },
         {
+          "url": "https://news.apache.org/foundation/entry/apache_commons_statement_to_widespread"
+        },
+        {
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-6420"
+        },
+        {
+          "url": "https://www.kb.cert.org/vuls/id/576313"
         },
         {
           "url": "https://www.kb.cert.org/vuls/id/581311"
@@ -6967,7 +7195,7 @@
         }
       ],
       "published": "2015-12-15T05:59:07+00:00",
-      "updated": "2024-11-21T02:34:57+00:00",
+      "updated": "2025-04-12T10:46:40+00:00",
       "affects": [
         {
           "ref": "pkg:maven/commons-collections/commons-collections@3.2.1",
@@ -7170,7 +7398,7 @@
         }
       ],
       "published": "2017-11-09T17:29:00+00:00",
-      "updated": "2024-11-21T02:36:53+00:00",
+      "updated": "2025-04-20T01:37:25+00:00",
       "affects": [
         {
           "ref": "pkg:maven/commons-collections/commons-collections@3.2.1",
@@ -7621,17 +7849,233 @@
           "url": "https://santuario.apache.org/secadv.data/CVE-2023-44483.txt.asc?version=1&modificationDate=1697782758000&api=v2"
         },
         {
+          "url": "https://security.netapp.com/advisory/ntap-20241108-0002"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20241108-0002/"
+        },
+        {
           "url": "https://www.cve.org/CVERecord?id=CVE-2023-44483"
         }
       ],
       "published": "2023-10-20T10:15:12+00:00",
-      "updated": "2025-02-13T17:17:14+00:00",
+      "updated": "2025-11-03T22:16:28+00:00",
       "affects": [
         {
           "ref": "pkg:maven/org.apache.santuario/xmlsec@1.5.7",
           "versions": [
             {
               "version": "1.5.7",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-11226",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "severity": "medium"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 6.4,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:C/C:H/I:L/A:L"
+        }
+      ],
+      "cwes": [
+        20
+      ],
+      "description": "ACE vulnerability in conditional configuration file processing  by QOS.CH logback-core up to and including version 1.5.18 in Java applications, allows an attacker to execute arbitrary code by compromising an existing logback configuration file or by injecting an environment variable before program execution.\n\n\n\nA successful attack requires the presence of Janino library and Spring Framework to be present on the user's class path. In addition, the attacker must  have write access to a \nconfiguration file. Alternatively, the attacker could inject a malicious \nenvironment variable pointing to a malicious configuration file. In both \ncases, the attack requires existing privilege.",
+      "recommendation": "Upgrade ch.qos.logback:logback-core to version 1.5.19, 1.3.16",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2025-11226"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2025-11226"
+        },
+        {
+          "url": "https://github.com/qos-ch/logback"
+        },
+        {
+          "url": "https://github.com/qos-ch/logback/commit/61f6a2544f36b3016e0efd434ee21f19269f1df7"
+        },
+        {
+          "url": "https://github.com/qos-ch/logback/issues/974"
+        },
+        {
+          "url": "https://github.com/qos-ch/logback/releases/tag/v_1.5.19"
+        },
+        {
+          "url": "https://logback.qos.ch/news.html#1.3.16"
+        },
+        {
+          "url": "https://logback.qos.ch/news.html#1.5.19"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-11226"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11226"
+        }
+      ],
+      "published": "2025-10-01T08:15:31+00:00",
+      "updated": "2025-10-31T15:15:41+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/ch.qos.logback/logback-core@1.5.16",
+          "versions": [
+            {
+              "version": "1.5.16",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-22233",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "score": 3.1,
+          "severity": "low",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        }
+      ],
+      "cwes": [
+        20
+      ],
+      "description": "CVE-2024-38820 ensured Locale-independent, lowercase conversion for both the configured disallowedFields patterns and for request parameter names. However, there are still cases where it is possible to bypass the disallowedFields checks.\n\nAffected Spring Products and Versions\n\nSpring Framework:\n  *  6.2.0 - 6.2.6\n\n  *  6.1.0 - 6.1.19\n\n  *  6.0.0 - 6.0.27\n\n  *  5.3.0 - 5.3.42\n  *  Older, unsupported versions are also affected\n\n\n\nMitigation\n\nUsers of affected versions should upgrade to the corresponding fixed version.\n\nAffected version(s)Fix Version Availability 6.2.x\n 6.2.7\nOSS6.1.x\n 6.1.20\nOSS6.0.x\n 6.0.28\n Commercial https://enterprise.spring.io/ 5.3.x\n 5.3.43\n Commercial https://enterprise.spring.io/ \nNo further mitigation steps are necessary.\n\n\nGenerally, we recommend using a dedicated model object with properties only for data binding, or using constructor binding since constructor arguments explicitly declare what to bind together with turning off setter binding through the declarativeBinding flag. See the Model Design section in the reference documentation.\n\nFor setting binding, prefer the use of allowedFields (an explicit list) over disallowedFields.\n\nCredit\n\nThis issue was responsibly reported by the TERASOLUNA Framework Development Team from NTT DATA Group Corporation.",
+      "recommendation": "Upgrade org.springframework:spring-context to version 6.2.7, 6.1.20",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2025-22233"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework/commit/edfcc6ffb188e4614ec9b212e3208b666981851c"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework/commit/ee62701f5634e904e42e218baad142cea2bcd332"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework/issues/34801"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N&version=3.1"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-22233"
+        },
+        {
+          "url": "https://spring.io/security/cve-2025-22233"
+        }
+      ],
+      "published": "2025-05-16T20:15:22+00:00",
+      "updated": "2025-05-19T13:35:20+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/org.springframework/spring-context@6.1.17",
+          "versions": [
+            {
+              "version": "6.1.17",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-22235",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "score": 7.3,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 7.3,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        }
+      ],
+      "cwes": [
+        20
+      ],
+      "description": "EndpointRequest.to() creates a matcher for null/** if the actuator endpoint, for which the EndpointRequest has been created, is disabled or not exposed.\n\nYour application may be affected by this if all the following conditions are met:\n\n  *  You use Spring Security\n  *  EndpointRequest.to() has been used in a Spring Security chain configuration\n  *  The endpoint which EndpointRequest references is disabled or not exposed via web\n  *  Your application handles requests to /null and this path needs protection\n\n\nYou are not affected if any of the following is true:\n\n  *  You don't use Spring Security\n  *  You don't use EndpointRequest.to()\n  *  The endpoint which EndpointRequest.to() refers to is enabled and is exposed\n  *  Your application does not handle requests to /null or this path does not need protection",
+      "recommendation": "Upgrade org.springframework.boot:spring-boot to version 3.3.11, 3.4.5",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2025-22235"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2025-22235"
+        },
+        {
+          "url": "https://github.com/advisories/GHSA-rc42-6c7j-7h5r"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-boot"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-22235"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20250516-0010"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20250516-0010/"
+        },
+        {
+          "url": "https://spring.io/security/cve-2025-22235"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-22235"
+        }
+      ],
+      "published": "2025-04-28T08:15:15+00:00",
+      "updated": "2025-05-16T23:15:19+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/org.springframework.boot/spring-boot@3.3.9",
+          "versions": [
+            {
+              "version": "3.3.9",
               "status": "affected"
             }
           ]
@@ -7714,7 +8158,7 @@
         }
       ],
       "published": "2025-03-09T13:15:34+00:00",
-      "updated": "2025-03-17T15:15:44+00:00",
+      "updated": "2025-06-23T18:54:52+00:00",
       "affects": [
         {
           "ref": "pkg:maven/org.apache.camel/camel-support@4.8.4",
@@ -7794,13 +8238,686 @@
         }
       ],
       "published": "2025-03-12T15:15:40+00:00",
-      "updated": "2025-03-19T14:15:39+00:00",
+      "updated": "2025-04-02T20:37:07+00:00",
       "affects": [
         {
           "ref": "pkg:maven/org.apache.camel/camel-support@4.8.4",
           "versions": [
             {
               "version": "4.8.4",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-41234",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:L/A:N"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:L/A:N"
+        }
+      ],
+      "cwes": [
+        113
+      ],
+      "description": "Description\n\nIn Spring Framework, versions 6.0.x as of 6.0.5, versions 6.1.x and 6.2.x, an application is vulnerable to a reflected file download (RFD) attack when it sets a “Content-Disposition” header with a non-ASCII charset, where the filename attribute is derived from user-supplied input.\n\nSpecifically, an application is vulnerable when all the following are true:\n\n  *  The header is prepared with org.springframework.http.ContentDisposition.\n  *  The filename is set via ContentDisposition.Builder#filename(String, Charset).\n  *  The value for the filename is derived from user-supplied input.\n  *  The application does not sanitize the user-supplied input.\n  *  The downloaded content of the response is injected with malicious commands by the attacker (see RFD paper reference for details).\n\n\nAn application is not vulnerable if any of the following is true:\n\n  *  The application does not set a “Content-Disposition” response header.\n  *  The header is not prepared with org.springframework.http.ContentDisposition.\n  *  The filename is set via one of:  *  ContentDisposition.Builder#filename(String), or\n  *  ContentDisposition.Builder#filename(String, ASCII)\n\n\n\n  *  The filename is not derived from user-supplied input.\n  *  The filename is derived from user-supplied input but sanitized by the application.\n  *  The attacker cannot inject malicious content in the downloaded content of the response.\n\n\nAffected Spring Products and VersionsSpring Framework:\n\n  *  6.2.0 - 6.2.7\n  *  6.1.0 - 6.1.20\n  *  6.0.5 - 6.0.28\n  *  Older, unsupported versions are not affected\n\n\nMitigationUsers of affected versions should upgrade to the corresponding fixed version.\n\nAffected version(s)Fix versionAvailability6.2.x6.2.8OSS6.1.x6.1.21OSS6.0.x6.0.29 Commercial https://enterprise.spring.io/ No further mitigation steps are necessary.\n\n\nCWE-113 in `Content-Disposition` handling in VMware Spring Framework versions 6.0.5 to 6.2.7 allows remote attackers to launch Reflected File Download (RFD) attacks via unsanitized user input in `ContentDisposition.Builder#filename(String, Charset)` with non-ASCII charsets.",
+      "recommendation": "Upgrade org.springframework:spring-web to version 6.2.8, 6.1.21",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2025-41234"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2025-41234"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework/commit/f0e7b42704e6b33958f242d91bd690d6ef7ada9c"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework/commit/fd68ea6fcbf94fc1d38bfefd3692fe094652ab3d"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework/issues/35034"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:L/A:N&version=3.1"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-41234"
+        },
+        {
+          "url": "https://spring.io/security/cve-2025-41234"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-41234"
+        }
+      ],
+      "published": "2025-06-12T22:15:21+00:00",
+      "updated": "2025-06-16T12:32:18+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/org.springframework/spring-web@6.1.17",
+          "versions": [
+            {
+              "version": "6.1.17",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-41242",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "score": 5.9,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 5.9,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes": [
+        22
+      ],
+      "description": "Spring Framework MVC applications can be vulnerable to a “Path Traversal Vulnerability” when deployed on a non-compliant Servlet container.\n\nAn application can be vulnerable when all the following are true:\n\n  *  the application is deployed as a WAR or with an embedded Servlet container\n  *  the Servlet container  does not reject suspicious sequences https://jakarta.ee/specifications/servlet/6.1/jakarta-servlet-spec-6.1.html#uri-path-canonicalization \n  *  the application  serves static resources https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config/static-resources.html#page-title  with Spring resource handling\n\n\nWe have verified that applications deployed on Apache Tomcat or Eclipse Jetty are not vulnerable, as long as default security features are not disabled in the configuration. Because we cannot check exploits against all Servlet containers and configuration variants, we strongly recommend upgrading your application.",
+      "recommendation": "Upgrade org.springframework:spring-webmvc to version 6.2.10",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2025-41242"
+        },
+        {
+          "url": "http://spring.io/security/cve-2025-41242"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2025-41242"
+        },
+        {
+          "url": "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config/static-resources.html#page-title"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework"
+        },
+        {
+          "url": "https://jakarta.ee/specifications/servlet/6.1/jakarta-servlet-spec-6.1.html#uri-path-canonicalization"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-41242"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-41242"
+        }
+      ],
+      "published": "2025-08-18T09:15:28+00:00",
+      "updated": "2025-08-25T19:15:29+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/org.springframework/spring-webmvc@6.1.17",
+          "versions": [
+            {
+              "version": "6.1.17",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-41249",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes": [
+        285
+      ],
+      "description": "The Spring Framework annotation detection mechanism may not correctly resolve annotations on methods within type hierarchies with a parameterized super type with unbounded generics. This can be an issue if such annotations are used for authorization decisions.\n\nYour application may be affected by this if you are using Spring Security's @EnableMethodSecurity feature.\n\nYou are not affected by this if you are not using @EnableMethodSecurity or if you do not use security annotations on methods in generic superclasses or generic interfaces.\n\nThis CVE is published in conjunction with  CVE-2025-41248 https://spring.io/security/cve-2025-41248 .",
+      "recommendation": "Upgrade org.springframework:spring-core to version 6.2.11",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2025-41249"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2025-41249"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework/commit/6d710d482a6785b069e35022e81758953afc21ff"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework/issues/35342"
+        },
+        {
+          "url": "https://github.com/spring-projects/spring-framework/releases/tag/v6.2.11"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-41249"
+        },
+        {
+          "url": "https://spring.io/security/cve-2025-41249"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-41249"
+        }
+      ],
+      "published": "2025-09-16T11:15:30+00:00",
+      "updated": "2025-09-16T20:15:35+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/org.springframework/spring-core@6.1.17",
+          "versions": [
+            {
+              "version": "6.1.17",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-48924",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "amazon"
+          },
+          "severity": "low"
+        },
+        {
+          "source": {
+            "name": "azure"
+          },
+          "severity": "medium"
+        },
+        {
+          "source": {
+            "name": "cbl-mariner"
+          },
+          "severity": "medium"
+        },
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 3.7,
+          "severity": "low",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "cwes": [
+        674
+      ],
+      "description": "Uncontrolled Recursion vulnerability in Apache Commons Lang.\n\nThis issue affects Apache Commons Lang: Starting with commons-lang:commons-lang 2.0 to 2.6, and, from org.apache.commons:commons-lang3 3.0 before 3.18.0.\n\nThe methods ClassUtils.getClass(...) can throw StackOverflowError on very long inputs. Because an Error is usually not handled by applications and libraries, a \nStackOverflowError could cause an application to stop.\n\nUsers are recommended to upgrade to version 3.18.0, which fixes the issue.",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2025-48924"
+        },
+        {
+          "url": "http://www.openwall.com/lists/oss-security/2025/07/11/1"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2025-48924"
+        },
+        {
+          "url": "https://github.com/apache/commons-lang"
+        },
+        {
+          "url": "https://github.com/apache/commons-lang/commit/b424803abdb2bec818e4fbcb251ce031c22aca53"
+        },
+        {
+          "url": "https://lists.apache.org/thread/bgv0lpswokgol11tloxnjfzdl7yrc1g1"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2025/08/msg00000.html"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2025/08/msg00026.html"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2025/09/msg00032.html"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2025/09/msg00036.html"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-48924"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-48924"
+        }
+      ],
+      "published": "2025-07-11T15:15:24+00:00",
+      "updated": "2025-11-04T22:16:17+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/commons-lang/commons-lang@2.6",
+          "versions": [
+            {
+              "version": "2.6",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-58056",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "severity": "low"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 7.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        {
+          "source": {
+            "name": "ubuntu"
+          },
+          "severity": "low"
+        }
+      ],
+      "cwes": [
+        444
+      ],
+      "description": "Netty is an asynchronous event-driven network application framework for development of maintainable high performance protocol servers and clients. In versions 4.1.124.Final, and 4.2.0.Alpha3 through 4.2.4.Final, Netty incorrectly accepts standalone newline characters (LF) as a chunk-size line terminator, regardless of a preceding carriage return (CR), instead of requiring CRLF per HTTP/1.1 standards. When combined with reverse proxies that parse LF differently (treating it as part of the chunk extension), attackers can craft requests that the proxy sees as one request but Netty processes as two, enabling request smuggling attacks. This is fixed in versions 4.1.125.Final and 4.2.5.Final.",
+      "recommendation": "Upgrade io.netty:netty-codec-http to version 4.1.125.Final, 4.2.5.Final",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2025-58056"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2025-58056"
+        },
+        {
+          "url": "https://datatracker.ietf.org/doc/html/rfc9112#name-chunked-transfer-coding"
+        },
+        {
+          "url": "https://github.com/JLLeitschuh/unCVEed/issues/1"
+        },
+        {
+          "url": "https://github.com/github/advisory-database/pull/6092"
+        },
+        {
+          "url": "https://github.com/netty/netty"
+        },
+        {
+          "url": "https://github.com/netty/netty/commit/edb55fd8e0a3bcbd85881e423464f585183d1284"
+        },
+        {
+          "url": "https://github.com/netty/netty/issues/15522"
+        },
+        {
+          "url": "https://github.com/netty/netty/pull/15611"
+        },
+        {
+          "url": "https://github.com/netty/netty/security/advisories/GHSA-fghv-69vj-qj49"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-58056"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-7918-1"
+        },
+        {
+          "url": "https://w4ke.info/2025/06/18/funky-chunks.html"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-58056"
+        }
+      ],
+      "published": "2025-09-03T21:15:33+00:00",
+      "updated": "2025-09-08T16:46:36+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/io.netty/netty-codec-http@4.1.118.Final",
+          "versions": [
+            {
+              "version": "4.1.118.Final",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-58057",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "severity": "medium"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 5.3,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        {
+          "source": {
+            "name": "ubuntu"
+          },
+          "severity": "medium"
+        }
+      ],
+      "cwes": [
+        409
+      ],
+      "description": "Netty is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients. In netty-codec-compression versions 4.1.124.Final and below, and netty-codec versions 4.2.4.Final and below, when supplied with specially crafted input, BrotliDecoder and certain other decompression decoders will allocate a large number of reachable byte buffers, which can lead to denial of service. BrotliDecoder.decompress has no limit in how often it calls pull, decompressing data 64K bytes at a time. The buffers are saved in the output list, and remain reachable until OOM is hit. This is fixed in versions 4.1.125.Final of netty-codec and 4.2.5.Final of netty-codec-compression.",
+      "recommendation": "Upgrade io.netty:netty-codec to version 4.1.125.Final",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2025-58057"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2025-58057"
+        },
+        {
+          "url": "https://github.com/netty/netty"
+        },
+        {
+          "url": "https://github.com/netty/netty/commit/9d804c54ce962408ae6418255a83a13924f7145d"
+        },
+        {
+          "url": "https://github.com/netty/netty/commit/9d804c54ce962408ae6418255a83a13924f7145d"
+        },
+        {
+          "url": "https://github.com/netty/netty/security/advisories/GHSA-3p8m-j85q-pgmj"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-58057"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-7918-1"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-58057"
+        }
+      ],
+      "published": "2025-09-04T10:42:32+00:00",
+      "updated": "2025-09-08T16:45:55+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/io.netty/netty-codec@4.1.118.Final",
+          "versions": [
+            {
+              "version": "4.1.118.Final",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-67735",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        }
+      ],
+      "cwes": [
+        93
+      ],
+      "description": "Netty is an asynchronous, event-driven network application framework. In versions prior to 4.1.129.Final and 4.2.8.Final, the `io.netty.handler.codec.http.HttpRequestEncoder` has a CRLF injection with the request URI when constructing a request. This leads to request smuggling when `HttpRequestEncoder` is used without proper sanitization of the URI. Any application / framework using `HttpRequestEncoder` can be subject to be abused to perform request smuggling using CRLF injection. Versions 4.1.129.Final and 4.2.8.Final fix the issue.",
+      "recommendation": "Upgrade io.netty:netty-codec-http to version 4.2.8.Final, 4.1.129.Final",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2025-67735"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2025-67735"
+        },
+        {
+          "url": "https://github.com/netty/netty"
+        },
+        {
+          "url": "https://github.com/netty/netty/commit/77e81f1e5944d98b3acf887d3aa443b252752e94"
+        },
+        {
+          "url": "https://github.com/netty/netty/security/advisories/GHSA-84h7-rjj3-6jx4"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-67735"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-67735"
+        }
+      ],
+      "published": "2025-12-16T01:15:52+00:00",
+      "updated": "2025-12-16T14:10:11+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/io.netty/netty-codec-http@4.1.118.Final",
+          "versions": [
+            {
+              "version": "4.1.118.Final",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-9784",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        770,
+        404
+      ],
+      "description": "A flaw was found in Undertow where malformed client requests can trigger server-side stream resets without triggering abuse counters. This issue, referred to as the \"MadeYouReset\" attack, allows malicious clients to induce excessive server workload by repeatedly causing server-side stream aborts. While not a protocol bug, this highlights a common implementation weakness that can be exploited to cause a denial of service (DoS).",
+      "recommendation": "Upgrade io.undertow:undertow-core to version 2.2.38.Final, 2.3.20.Final",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2025-9784"
+        },
+        {
+          "url": "https://access.redhat.com/errata/RHSA-2025:23143"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2025-9784"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2392306"
+        },
+        {
+          "url": "https://github.com/undertow-io/undertow"
+        },
+        {
+          "url": "https://github.com/undertow-io/undertow/pull/1778"
+        },
+        {
+          "url": "https://github.com/undertow-io/undertow/pull/1802"
+        },
+        {
+          "url": "https://github.com/undertow-io/undertow/pull/1803"
+        },
+        {
+          "url": "https://github.com/undertow-io/undertow/pull/1804"
+        },
+        {
+          "url": "https://github.com/undertow-io/undertow/pull/1805"
+        },
+        {
+          "url": "https://github.com/undertow-io/undertow/releases/tag/2.2.38.Final"
+        },
+        {
+          "url": "https://issues.redhat.com/browse/UNDERTOW-2598"
+        },
+        {
+          "url": "https://kb.cert.org/vuls/id/767506"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-9784"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-9784"
+        },
+        {
+          "url": "https://www.kb.cert.org/vuls/id/767506"
+        }
+      ],
+      "published": "2025-09-02T14:15:36+00:00",
+      "updated": "2025-12-11T23:15:51+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/io.undertow/undertow-core@2.3.18.Final",
+          "versions": [
+            {
+              "version": "2.3.18.Final",
               "status": "affected"
             }
           ]
