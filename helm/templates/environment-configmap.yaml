@@ -37,7 +37,7 @@ data:
   management.security.enabled: "false"
 
   # Prometheus endpoint access level
-  management.endpoint.prometheus.enabled: 'read_only'
+  management.endpoint.prometheus.enabled: 'true'
 
   ## OTHER
   memory.logger.period.seconds: "120"
